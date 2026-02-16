@@ -6,7 +6,7 @@
     <meta name="description" content="SmartHockey Products - Professional Hockey Statistics and Tracking Apps for Players, Teams and Coaches. Track your performance with modern tools.">
     <meta name="keywords" content="Hockey, Statistics, Tracking, SmartHockey, Ice Hockey, Inline Hockey, Team Management">
     <meta name="author" content="SmartHockey Products">
-    <title>SmartHockey Products - Hockey Statistics & Tracking Apps 🏒</title>
+    <title>SmartHockey Products - Hockey Statistics & Tracking Apps</title>
     
     <style>
         * {
@@ -55,8 +55,9 @@
             gap: 10px;
         }
 
-        .logo-emoji {
-            font-size: 2rem;
+        .logo-img {
+            height: 45px;
+            width: auto;
         }
 
         /* Language Switcher */
@@ -268,6 +269,30 @@
             pointer-events: none;
         }
 
+        .btn.disabled:hover {
+            transform: none;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .app-buttons .btn {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: normal;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
         /* Features Section */
         .features-section {
             padding: 80px 0;
@@ -410,7 +435,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <span class="logo-emoji">🏒</span>
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
                 <span>SmartHockey Products</span>
             </div>
             <!-- Language Switcher -->
@@ -494,71 +519,83 @@
             </p>
 
             <div class="apps-grid">
-                <!-- App 1: SmartHockey Tracking Inline -->
+                <!-- App 1: SmartHockey Pro -->
                 <div class="app-card">
-                    <h3>SmartHockey Tracking Inline</h3>
+                    <h3>SmartHockey Pro</h3>
                     <p>
-                        <span data-lang-group="app1-desc">
-                            <span class="lang-en active">The comprehensive solution for inline and roller hockey players. Track your personal statistics, analyze your development, and optimize your game.</span>
-                            <span class="lang-de">Die umfassende Lösung für Inline-Hockey-Spieler. Verfolge deine persönlichen Statistiken, analysiere deine Entwicklung und optimiere dein Spiel.</span>
-                            <span class="lang-fr">La solution complète pour les joueurs de hockey en ligne et roller. Suivez vos statistiques personnelles, analysez votre développement et optimisez votre jeu.</span>
-                            <span class="lang-sv">Den kompletta lösningen för inline- och rullhockeyspelare. Spåra din personliga statistik, analysera din utveckling och optimera ditt spel.</span>
-                            <span class="lang-fi">Kattava ratkaisu inline- ja rullaluistelijoille. Seuraa henkilökohtaisia tilastojasi, analysoi kehitystäsi ja optimoi peliäsi.</span>
-                            <span class="lang-ru">Комплексное решение для игроков в инлайн и роллер-хоккей. Отслеживайте личную статистику, анализируйте развитие и оптимизируйте игру.</span>
+                        <span data-lang-group="app3-desc">
+                            <span class="lang-en active">The ultimate professional solution for ambitious teams and coaches. Advanced analytics, comprehensive reports, and professional features.</span>
+                            <span class="lang-de">Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.</span>
+                            <span class="lang-fr">La solution professionnelle ultime pour les équipes et entraîneurs ambitieux. Analyses avancées, rapports complets et fonctionnalités professionnelles.</span>
+                            <span class="lang-sv">Den ultimata professionella lösningen för ambitiösa lag och tränare. Avancerad analys, omfattande rapporter och professionella funktioner.</span>
+                            <span class="lang-fi">Lopullinen ammattiratkaisu kunnianhimoisille joukkueille ja valmentajille. Edistyneet analyysit, kattavat raportit ja ammattimaiset ominaisuudet.</span>
+                            <span class="lang-ru">Полное профессиональное решение для амбициозных команд и тренеров. Продвинутая аналитика, подробные отчеты и профессиональные функции.</span>
                         </span>
                     </p>
                     <ul>
                         <li>
-                            <span data-lang-group="app1-feat1">
-                                <span class="lang-en active">Detailed player statistics</span>
-                                <span class="lang-de">Detaillierte Spielerstatistiken</span>
-                                <span class="lang-fr">Statistiques détaillées des joueurs</span>
-                                <span class="lang-sv">Detaljerad spelarstatistik</span>
-                                <span class="lang-fi">Yksityiskohtaiset pelaajatilastot</span>
-                                <span class="lang-ru">Детальная статистика игроков</span>
+                            <span data-lang-group="app3-feat1">
+                                <span class="lang-en active">Advanced team analytics</span>
+                                <span class="lang-de">Erweiterte Team-Analysen</span>
+                                <span class="lang-fr">Analyses d'équipe avancées</span>
+                                <span class="lang-sv">Avancerad laganalys</span>
+                                <span class="lang-fi">Edistyneet joukkueanalyysit</span>
+                                <span class="lang-ru">Продвинутая командная аналитика</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app1-feat2">
-                                <span class="lang-en active">Individual performance analysis</span>
-                                <span class="lang-de">Individuelle Leistungsanalyse</span>
-                                <span class="lang-fr">Analyse de performance individuelle</span>
-                                <span class="lang-sv">Individuell prestationsanalys</span>
-                                <span class="lang-fi">Yksilöllinen suorituskyvyn analyysi</span>
-                                <span class="lang-ru">Индивидуальный анализ результатов</span>
+                            <span data-lang-group="app3-feat2">
+                                <span class="lang-en active">Professional reports</span>
+                                <span class="lang-de">Professionelle Reports</span>
+                                <span class="lang-fr">Rapports professionnels</span>
+                                <span class="lang-sv">Professionella rapporter</span>
+                                <span class="lang-fi">Ammattimaiset raportit</span>
+                                <span class="lang-ru">Профессиональные отчеты</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app1-feat3">
-                                <span class="lang-en active">Progress tracking</span>
-                                <span class="lang-de">Fortschritts-Tracking</span>
-                                <span class="lang-fr">Suivi des progrès</span>
-                                <span class="lang-sv">Framstegsspårning</span>
-                                <span class="lang-fi">Edistymisen seuranta</span>
-                                <span class="lang-ru">Отслеживание прогресса</span>
+                            <span data-lang-group="app3-feat4">
+                                <span class="lang-en active">Tactical board</span>
+                                <span class="lang-de">Taktik-Board</span>
+                                <span class="lang-fr">Tableau tactique</span>
+                                <span class="lang-sv">Taktisk tavla</span>
+                                <span class="lang-fi">Taktiikkataulu</span>
+                                <span class="lang-ru">Тактическая доска</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app1-feat4">
-                                <span class="lang-en active">Intuitive user interface</span>
-                                <span class="lang-de">Intuitive Benutzeroberfläche</span>
-                                <span class="lang-fr">Interface utilisateur intuitive</span>
-                                <span class="lang-sv">Intuitiv användargränssnitt</span>
-                                <span class="lang-fi">Intuitiivinen käyttöliittymä</span>
-                                <span class="lang-ru">Интуитивный интерфейс</span>
+                            <span data-lang-group="app3-feat5">
+                                <span class="lang-en active">Export functions</span>
+                                <span class="lang-de">Export-Funktionen</span>
+                                <span class="lang-fr">Fonctions d'export</span>
+                                <span class="lang-sv">Exportfunktioner</span>
+                                <span class="lang-fi">Vientitoiminnot</span>
+                                <span class="lang-ru">Функции экспорта</span>
                             </span>
                         </li>
                     </ul>
-                    <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
-                        <span data-lang-group="btn-start">
-                            <span class="lang-en active">Start Now</span>
-                            <span class="lang-de">Jetzt starten</span>
-                            <span class="lang-fr">Commencer</span>
-                            <span class="lang-sv">Starta nu</span>
-                            <span class="lang-fi">Aloita nyt</span>
-                            <span class="lang-ru">Начать</span>
-                        </span>
-                    </a>
+                    <div class="app-buttons">
+                        <a href="#" class="btn disabled">
+                            <span data-lang-group="btn-google-play">
+                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                            </span>
+                        </a>
+                        <a href="#" class="btn disabled">
+                            <span data-lang-group="btn-pro-web">
+                                <span class="lang-en active">Coming Soon – PC Version</span>
+                                <span class="lang-de">Bald verfügbar – PC Version</span>
+                                <span class="lang-fr">Bientôt disponible – Version PC</span>
+                                <span class="lang-sv">Kommer snart – PC-version</span>
+                                <span class="lang-fi">Tulossa pian – PC-versio</span>
+                                <span class="lang-ru">Скоро – ПК версия</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- App 2: SmartHockey Tracking Team Light -->
@@ -616,103 +653,107 @@
                             </span>
                         </li>
                     </ul>
-                    <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
-                        <span data-lang-group="btn-start">
-                            <span class="lang-en active">Start Now</span>
-                            <span class="lang-de">Jetzt starten</span>
-                            <span class="lang-fr">Commencer</span>
-                            <span class="lang-sv">Starta nu</span>
-                            <span class="lang-fi">Aloita nyt</span>
-                            <span class="lang-ru">Начать</span>
-                        </span>
-                    </a>
+                    <div class="app-buttons">
+                        <a href="#" class="btn disabled">
+                            <span data-lang-group="btn-google-play">
+                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                            </span>
+                        </a>
+                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
+                            <span data-lang-group="btn-light-web">
+                                <span class="lang-en active">Web App</span>
+                                <span class="lang-de">Web App öffnen</span>
+                                <span class="lang-fr">Ouvrir Web App</span>
+                                <span class="lang-sv">Öppna Web App</span>
+                                <span class="lang-fi">Avaa Web App</span>
+                                <span class="lang-ru">Открыть Web App</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- App 3: SmartHockey Pro (Coming Soon) -->
-                <div class="app-card coming-soon">
-                    <span class="coming-soon-badge">
-                        <span data-lang-group="coming-soon">
-                            <span class="lang-en active">Coming Soon</span>
-                            <span class="lang-de">Bald verfügbar</span>
-                            <span class="lang-fr">Bientôt disponible</span>
-                            <span class="lang-sv">Kommer snart</span>
-                            <span class="lang-fi">Tulossa pian</span>
-                            <span class="lang-ru">Скоро</span>
-                        </span>
-                    </span>
-                    <h3>SmartHockey Pro</h3>
+                <!-- App 3: SmartHockey Tracking Inline -->
+                <div class="app-card">
+                    <h3>SmartHockey Tracking Inline</h3>
                     <p>
-                        <span data-lang-group="app3-desc">
-                            <span class="lang-en active">The ultimate professional solution for ambitious teams and coaches. Advanced analytics, comprehensive reports, and professional features.</span>
-                            <span class="lang-de">Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.</span>
-                            <span class="lang-fr">La solution professionnelle ultime pour les équipes et entraîneurs ambitieux. Analyses avancées, rapports complets et fonctionnalités professionnelles.</span>
-                            <span class="lang-sv">Den ultimata professionella lösningen för ambitiösa lag och tränare. Avancerad analys, omfattande rapporter och professionella funktioner.</span>
-                            <span class="lang-fi">Lopullinen ammattiratkaisu kunnianhimoisille joukkueille ja valmentajille. Edistyneet analyysit, kattavat raportit ja ammattimaiset ominaisuudet.</span>
-                            <span class="lang-ru">Полное профессиональное решение для амбициозных команд и тренеров. Продвинутая аналитика, подробные отчеты и профессиональные функции.</span>
+                        <span data-lang-group="app1-desc">
+                            <span class="lang-en active">The comprehensive solution for inline and roller hockey players. Track your personal statistics, analyze your development, and optimize your game.</span>
+                            <span class="lang-de">Die umfassende Lösung für Inline-Hockey-Spieler. Verfolge deine persönlichen Statistiken, analysiere deine Entwicklung und optimiere dein Spiel.</span>
+                            <span class="lang-fr">La solution complète pour les joueurs de hockey en ligne et roller. Suivez vos statistiques personnelles, analysez votre développement et optimisez votre jeu.</span>
+                            <span class="lang-sv">Den kompletta lösningen för inline- och rullhockeyspelare. Spåra din personliga statistik, analysera din utveckling och optimera ditt spel.</span>
+                            <span class="lang-fi">Kattava ratkaisu inline- ja rullaluistelijoille. Seuraa henkilökohtaisia tilastojasi, analysoi kehitystäsi ja optimoi peliäsi.</span>
+                            <span class="lang-ru">Комплексное решение для игроков в инлайн и роллер-хоккей. Отслеживайте личную статистику, анализируйте развитие и оптимизируйте игру.</span>
                         </span>
                     </p>
                     <ul>
                         <li>
-                            <span data-lang-group="app3-feat1">
-                                <span class="lang-en active">Advanced team analytics</span>
-                                <span class="lang-de">Erweiterte Team-Analysen</span>
-                                <span class="lang-fr">Analyses d'équipe avancées</span>
-                                <span class="lang-sv">Avancerad laganalys</span>
-                                <span class="lang-fi">Edistyneet joukkueanalyysit</span>
-                                <span class="lang-ru">Продвинутая командная аналитика</span>
+                            <span data-lang-group="app1-feat1">
+                                <span class="lang-en active">Detailed player statistics</span>
+                                <span class="lang-de">Detaillierte Spielerstatistiken</span>
+                                <span class="lang-fr">Statistiques détaillées des joueurs</span>
+                                <span class="lang-sv">Detaljerad spelarstatistik</span>
+                                <span class="lang-fi">Yksityiskohtaiset pelaajatilastot</span>
+                                <span class="lang-ru">Детальная статистика игроков</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app3-feat2">
-                                <span class="lang-en active">Professional reports</span>
-                                <span class="lang-de">Professionelle Reports</span>
-                                <span class="lang-fr">Rapports professionnels</span>
-                                <span class="lang-sv">Professionella rapporter</span>
-                                <span class="lang-fi">Ammattimaiset raportit</span>
-                                <span class="lang-ru">Профессиональные отчеты</span>
+                            <span data-lang-group="app1-feat2">
+                                <span class="lang-en active">Individual performance analysis</span>
+                                <span class="lang-de">Individuelle Leistungsanalyse</span>
+                                <span class="lang-fr">Analyse de performance individuelle</span>
+                                <span class="lang-sv">Individuell prestationsanalys</span>
+                                <span class="lang-fi">Yksilöllinen suorituskyvyn analyysi</span>
+                                <span class="lang-ru">Индивидуальный анализ результатов</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app3-feat3">
-                                <span class="lang-en active">Video integration</span>
-                                <span class="lang-de">Video-Integration</span>
-                                <span class="lang-fr">Intégration vidéo</span>
-                                <span class="lang-sv">Videointegration</span>
-                                <span class="lang-fi">Videointegraatio</span>
-                                <span class="lang-ru">Видеоинтеграция</span>
+                            <span data-lang-group="app1-feat3">
+                                <span class="lang-en active">Progress tracking</span>
+                                <span class="lang-de">Fortschritts-Tracking</span>
+                                <span class="lang-fr">Suivi des progrès</span>
+                                <span class="lang-sv">Framstegsspårning</span>
+                                <span class="lang-fi">Edistymisen seuranta</span>
+                                <span class="lang-ru">Отслеживание прогресса</span>
                             </span>
                         </li>
                         <li>
-                            <span data-lang-group="app3-feat4">
-                                <span class="lang-en active">Tactical board</span>
-                                <span class="lang-de">Taktik-Board</span>
-                                <span class="lang-fr">Tableau tactique</span>
-                                <span class="lang-sv">Taktisk tavla</span>
-                                <span class="lang-fi">Taktiikkataulu</span>
-                                <span class="lang-ru">Тактическая доска</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span data-lang-group="app3-feat5">
-                                <span class="lang-en active">Export functions</span>
-                                <span class="lang-de">Export-Funktionen</span>
-                                <span class="lang-fr">Fonctions d'export</span>
-                                <span class="lang-sv">Exportfunktioner</span>
-                                <span class="lang-fi">Vientitoiminnot</span>
-                                <span class="lang-ru">Функции экспорта</span>
+                            <span data-lang-group="app1-feat4">
+                                <span class="lang-en active">Intuitive user interface</span>
+                                <span class="lang-de">Intuitive Benutzeroberfläche</span>
+                                <span class="lang-fr">Interface utilisateur intuitive</span>
+                                <span class="lang-sv">Intuitiv användargränssnitt</span>
+                                <span class="lang-fi">Intuitiivinen käyttöliittymä</span>
+                                <span class="lang-ru">Интуитивный интерфейс</span>
                             </span>
                         </li>
                     </ul>
-                    <a href="#" class="btn disabled">
-                        <span data-lang-group="in-development">
-                            <span class="lang-en active">In Development</span>
-                            <span class="lang-de">In Entwicklung</span>
-                            <span class="lang-fr">En développement</span>
-                            <span class="lang-sv">Under utveckling</span>
-                            <span class="lang-fi">Kehityksessä</span>
-                            <span class="lang-ru">В разработке</span>
-                        </span>
-                    </a>
+                    <div class="app-buttons">
+                        <a href="#" class="btn disabled">
+                            <span data-lang-group="btn-google-play">
+                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                            </span>
+                        </a>
+                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
+                            <span data-lang-group="btn-inline-web">
+                                <span class="lang-en active">Web App</span>
+                                <span class="lang-de">Web App öffnen</span>
+                                <span class="lang-fr">Ouvrir Web App</span>
+                                <span class="lang-sv">Öppna Web App</span>
+                                <span class="lang-fi">Avaa Web App</span>
+                                <span class="lang-ru">Открыть Web App</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -906,12 +947,12 @@
             <div class="about-content">
                 <p>
                     <span data-lang-group="about-p1">
-                        <span class="lang-en active">SmartHockey Products develops modern, web-based applications for hockey players, teams, and coaches. Our mission is to give everyone the opportunity to track and analyze their performance professionally.</span>
-                        <span class="lang-de">SmartHockey Products entwickelt moderne, webbasierte Anwendungen für Hockey-Spieler, Teams und Trainer. Unsere Mission ist es, jedem die Möglichkeit zu geben, seine Leistung professionell zu verfolgen und zu analysieren.</span>
-                        <span class="lang-fr">SmartHockey Products développe des applications web modernes pour les joueurs de hockey, les équipes et les entraîneurs. Notre mission est de donner à chacun la possibilité de suivre et d'analyser ses performances de manière professionnelle.</span>
-                        <span class="lang-sv">SmartHockey Products utvecklar moderna, webbaserade applikationer för hockeyspelare, lag och tränare. Vårt uppdrag är att ge alla möjlighet att spåra och analysera sin prestation professionellt.</span>
-                        <span class="lang-fi">SmartHockey Products kehittää moderneja, verkkopohjaisia sovelluksia jääkiekkoilijoille, joukkueille ja valmentajille. Missiomme on antaa kaikille mahdollisuus seurata ja analysoida suorituskykyään ammattimaisesti.</span>
-                        <span class="lang-ru">SmartHockey Products разрабатывает современные веб-приложения для хоккеистов, команд и тренеров. Наша миссия - дать каждому возможность профессионально отслеживать и анализировать свою результативность.</span>
+                        <span class="lang-en active">SmartHockey Products develops modern, web-based applications for hockey players, teams, coaches, and scouts. Our mission is to give everyone the opportunity to track and analyze their performance professionally.</span>
+                        <span class="lang-de">SmartHockey Products entwickelt moderne, webbasierte Anwendungen für Hockey-Spieler, Teams, Trainer und Scouts. Unsere Mission ist es, jedem die Möglichkeit zu geben, seine Leistung professionell zu verfolgen und zu analysieren.</span>
+                        <span class="lang-fr">SmartHockey Products développe des applications web modernes pour les joueurs de hockey, les équipes, les entraîneurs et les scouts. Notre mission est de donner à chacun la possibilité de suivre et d'analyser ses performances de manière professionnelle.</span>
+                        <span class="lang-sv">SmartHockey Products utvecklar moderna, webbaserade applikationer för hockeyspelare, lag, tränare och scouts. Vårt uppdrag är att ge alla möjlighet att spåra och analysera sin prestation professionellt.</span>
+                        <span class="lang-fi">SmartHockey Products kehittää moderneja, verkkopohjaisia sovelluksia jääkiekkoilijoille, joukkueille, valmentajille ja scouttaajille. Missiomme on antaa kaikille mahdollisuus seurata ja analysoida suorituskykyään ammattimaisesti.</span>
+                        <span class="lang-ru">SmartHockey Products разрабатывает современные веб-приложения для хоккеистов, команд, тренеров и скаутов. Наша миссия - дать каждому возможность профессионально отслеживать и анализировать свою результативность.</span>
                     </span>
                 </p>
                 <p>
@@ -926,12 +967,12 @@
                 </p>
                 <p>
                     <span data-lang-group="about-p3">
-                        <span class="lang-en active">Whether you're a beginner or experienced player, whether hobby team or ambitious club - SmartHockey Products offers the right solutions for every need. Start now and take your game to the next level!</span>
-                        <span class="lang-de">Ob du Anfänger oder erfahrener Spieler bist, ob Hobbyteam oder ambitionierte Mannschaft - SmartHockey Products bietet die passenden Lösungen für jeden Bedarf. Starte jetzt und bringe dein Spiel auf das nächste Level!</span>
-                        <span class="lang-fr">Que vous soyez débutant ou joueur expérimenté, équipe de loisir ou club ambitieux - SmartHockey Products offre les bonnes solutions pour chaque besoin. Commencez maintenant et amenez votre jeu au niveau supérieur!</span>
-                        <span class="lang-sv">Oavsett om du är nybörjare eller erfaren spelare, hobbylag eller ambitiös förening - SmartHockey Products erbjuder rätt lösningar för varje behov. Starta nu och ta ditt spel till nästa nivå!</span>
-                        <span class="lang-fi">Oletpa aloittelija tai kokenut pelaaja, harrastejoukkue tai kunnianhimoinen seura - SmartHockey Products tarjoaa oikeat ratkaisut jokaiseen tarpeeseen. Aloita nyt ja vie pelisi seuraavalle tasolle!</span>
-                        <span class="lang-ru">Будь вы новичок или опытный игрок, любительская команда или амбициозный клуб - SmartHockey Products предлагает правильные решения для любых нужд. Начните сейчас и выведите свою игру на новый уровень!</span>
+                        <span class="lang-en active">Whether you're a beginner or professional player, whether junior team or pro club - SmartHockey Products offers the right solutions for every need. Start now and take your game to the next level!</span>
+                        <span class="lang-de">Ob du Anfänger oder professioneller Spieler bist, ob Juniorenteam oder Pro-Mannschaft - SmartHockey Products bietet die passenden Lösungen für jeden Bedarf. Starte jetzt und bringe dein Spiel auf das nächste Level!</span>
+                        <span class="lang-fr">Que vous soyez débutant ou joueur professionnel, équipe junior ou club pro - SmartHockey Products offre les bonnes solutions pour chaque besoin. Commencez maintenant et amenez votre jeu au niveau supérieur!</span>
+                        <span class="lang-sv">Oavsett om du är nybörjare eller professionell spelare, juniorlag eller proffsklubb - SmartHockey Products erbjuder rätt lösningar för varje behov. Starta nu och ta ditt spel till nästa nivå!</span>
+                        <span class="lang-fi">Oletpa aloittelija tai ammattilainen, juniorijoukkue tai ammattiseura - SmartHockey Products tarjoaa oikeat ratkaisut jokaiseen tarpeeseen. Aloita nyt ja vie pelisi seuraavalle tasolle!</span>
+                        <span class="lang-ru">Будь вы новичок или профессиональный игрок, юниорская команда или профессиональный клуб - SmartHockey Products предлагает правильные решения для любых нужд. Начните сейчас и выведите свою игру на новый уровень!</span>
                     </span>
                 </p>
             </div>
@@ -1014,12 +1055,12 @@
                 
                 // Update meta and title
                 const titles = {
-                    en: 'SmartHockey Products - Hockey Statistics & Tracking Apps 🏒',
-                    de: 'SmartHockey Products - Hockey Statistik & Tracking Apps 🏒',
-                    fr: 'SmartHockey Products - Applications de Statistiques Hockey 🏒',
-                    sv: 'SmartHockey Products - Hockey Statistik & Spårnings Appar 🏒',
-                    fi: 'SmartHockey Products - Jääkiekkotilasto & Seuranta Sovellukset 🏒',
-                    ru: 'SmartHockey Products - Приложения Хоккейной Статистики 🏒'
+                    en: 'SmartHockey Products - Hockey Statistics & Tracking Apps',
+                    de: 'SmartHockey Products - Hockey Statistik & Tracking Apps',
+                    fr: 'SmartHockey Products - Applications de Statistiques Hockey',
+                    sv: 'SmartHockey Products - Hockey Statistik & Spårnings Appar',
+                    fi: 'SmartHockey Products - Jääkiekkotilasto & Seuranta Sovellukset',
+                    ru: 'SmartHockey Products - Приложения Хоккейной Статистики'
                 };
                 document.title = titles[lang] || titles[defaultLang];
                 
