@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Products - Professionelle Hockey-Statistik und Tracking-Apps für Spieler, Teams und Trainer. Verfolge deine Leistung mit modernsten Tools.">
+    <meta name="keywords" content="Hockey, Statistik, Tracking, SmartHockey, Eishockey, Inline Hockey, Team Management">
+    <meta name="author" content="SmartHockey Products">
+    <title>SmartHockey Products - Hockey Statistik & Tracking Apps 🏒</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-emoji {
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-accent {
+            color: #2563eb;
+        }
+
+        /* Apps Section */
+        .apps-section {
+            padding: 80px 0;
+            background-color: #1a1a2e;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 50px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #2a2a3e;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            border-color: #2563eb;
+        }
+
+        .app-card.coming-soon {
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .app-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .app-card p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .app-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .app-card ul li {
+            padding: 8px 0;
+            color: #c0c0c0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .app-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.05);
+        }
+
+        .btn.disabled {
+            background-color: #4a4a5e;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-box p {
+            color: #b0b0b0;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: #1a1a2e;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            color: #c0c0c0;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #16213e 0%, #0f0f1e 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+
+        footer p {
+            color: #808080;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .apps-section, .features-section, .about-section {
+                padding: 50px 0;
+            }
+
+            .app-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-emoji">🏒</span>
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="#apps">Apps</a>
+                <a href="#features">Features</a>
+                <a href="#about">Über uns</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                Professionelle <span class="hero-accent">Hockey-Statistik</span><br>
+                für Spieler und Teams
+            </h1>
+            <p>
+                Verfolge deine Leistung, analysiere deine Spiele und verbessere dein Spiel 
+                mit unseren modernen Tracking- und Statistik-Apps für Hockey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps-section">
+        <div class="container">
+            <h2 class="section-title">Unsere Apps</h2>
+            <p class="section-subtitle">
+                Wähle die perfekte App für deine Bedürfnisse
+            </p>
+
+            <div class="apps-grid">
+                <!-- App 1: SmartHockey Tracking Inline -->
+                <div class="app-card">
+                    <h3>SmartHockey Tracking Inline</h3>
+                    <p>
+                        Die umfassende Lösung für Inline-Hockey-Spieler. Verfolge deine 
+                        persönlichen Statistiken, analysiere deine Entwicklung und optimiere dein Spiel.
+                    </p>
+                    <ul>
+                        <li>Detaillierte Spielerstatistiken</li>
+                        <li>Individuelle Leistungsanalyse</li>
+                        <li>Fortschritts-Tracking</li>
+                        <li>Intuitive Benutzeroberfläche</li>
+                    </ul>
+                    <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
+                        Jetzt starten
+                    </a>
+                </div>
+
+                <!-- App 2: SmartHockey Tracking Team Light -->
+                <div class="app-card">
+                    <h3>SmartHockey Tracking Team Light</h3>
+                    <p>
+                        Die leichtgewichtige Team-Management-Lösung. Perfekt für kleinere Teams 
+                        und Hobbymannschaften, die ihre Statistiken professionell verwalten möchten.
+                    </p>
+                    <ul>
+                        <li>Team-Statistiken verwalten</li>
+                        <li>Spieler-Performance überwachen</li>
+                        <li>Einfaches Team-Management</li>
+                        <li>Schnelle Datenerfassung</li>
+                    </ul>
+                    <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
+                        Jetzt starten
+                    </a>
+                </div>
+
+                <!-- App 3: SmartHockey Pro (Coming Soon) -->
+                <div class="app-card coming-soon">
+                    <span class="coming-soon-badge">Bald verfügbar</span>
+                    <h3>SmartHockey Pro</h3>
+                    <p>
+                        Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. 
+                        Erweiterte Analysen, umfassende Reports und professionelle Funktionen.
+                    </p>
+                    <ul>
+                        <li>Erweiterte Team-Analysen</li>
+                        <li>Professionelle Reports</li>
+                        <li>Video-Integration</li>
+                        <li>Taktik-Board</li>
+                        <li>Export-Funktionen</li>
+                    </ul>
+                    <a href="#" class="btn disabled">
+                        In Entwicklung
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Warum SmartHockey?</h2>
+            <p class="section-subtitle">
+                Moderne Tools für ambitionierte Hockeyspieler und Teams
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📊</div>
+                    <h3>Detaillierte Statistiken</h3>
+                    <p>
+                        Erfasse Tore, Assists, Strafen und vieles mehr. Behalte den 
+                        Überblick über alle wichtigen Kennzahlen.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">📈</div>
+                    <h3>Leistungsanalyse</h3>
+                    <p>
+                        Analysiere deine Entwicklung über Zeit und identifiziere 
+                        Stärken und Verbesserungspotenziale.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">👥</div>
+                    <h3>Team-Management</h3>
+                    <p>
+                        Verwalte dein Team effizient und behalte die Leistung 
+                        aller Spieler im Blick.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        Nutze unsere Apps auf allen Geräten - ob Desktop, Tablet 
+                        oder Smartphone.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Benutzerfreundlich</h3>
+                    <p>
+                        Intuitive Bedienung ermöglicht schnelle Dateneingabe auch 
+                        während des Spiels.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Deine Daten</h3>
+                    <p>
+                        Alle Daten werden lokal in deinem Browser gespeichert. 
+                        Du behältst die volle Kontrolle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Über SmartHockey Products</h2>
+            <div class="about-content">
+                <p>
+                    SmartHockey Products entwickelt moderne, webbasierte Anwendungen für 
+                    Hockey-Spieler, Teams und Trainer. Unsere Mission ist es, jedem 
+                    die Möglichkeit zu geben, seine Leistung professionell zu verfolgen 
+                    und zu analysieren.
+                </p>
+                <p>
+                    Mit jahrelanger Erfahrung im Hockey-Sport und der Software-Entwicklung 
+                    schaffen wir Tools, die wirklich helfen. Unsere Apps kombinieren 
+                    einfache Bedienung mit leistungsstarken Funktionen und sind dabei 
+                    komplett kostenlos nutzbar.
+                </p>
+                <p>
+                    Ob du Anfänger oder erfahrener Spieler bist, ob Hobbyteam oder 
+                    ambitionierte Mannschaft - SmartHockey Products bietet die passenden 
+                    Lösungen für jeden Bedarf. Starte jetzt und bringe dein Spiel auf 
+                    das nächste Level!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 SmartHockey Products. Alle Rechte vorbehalten.
+            </p>
+            <p style="margin-top: 10px;">
+                Entwickelt mit ❤️ für die Hockey-Community
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
