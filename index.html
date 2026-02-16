@@ -58,6 +58,7 @@
         .logo-img {
             height: 45px;
             width: auto;
+            filter: brightness(0) invert(1);
         }
 
         /* Language Switcher */
@@ -189,6 +190,8 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid #2a2a3e;
+            display: flex;
+            flex-direction: column;
         }
 
         .app-card:hover {
@@ -277,7 +280,7 @@
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: auto;
         }
 
         .app-buttons .btn {
@@ -577,12 +580,12 @@
                     <div class="app-buttons">
                         <a href="#" class="btn disabled">
                             <span data-lang-group="btn-google-play">
-                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
                             </span>
                         </a>
                         <a href="#" class="btn disabled">
@@ -656,12 +659,12 @@
                     <div class="app-buttons">
                         <a href="#" class="btn disabled">
                             <span data-lang-group="btn-google-play">
-                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
                             </span>
                         </a>
                         <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
@@ -735,12 +738,12 @@
                     <div class="app-buttons">
                         <a href="#" class="btn disabled">
                             <span data-lang-group="btn-google-play">
-                                <span class="lang-en active">📱 Google Play<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de">📱 Google Play<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr">📱 Google Play<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv">📱 Google Play<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi">📱 Google Play<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru">📱 Google Play<span class="btn-subtitle">Скоро</span></span>
+                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
+                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
+                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
+                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
+                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
+                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
                             </span>
                         </a>
                         <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
