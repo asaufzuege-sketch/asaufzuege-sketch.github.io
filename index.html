@@ -156,6 +156,20 @@
             color: #2563eb;
         }
 
+        .hero-title-img {
+            max-width: 700px;
+            width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem !important;
+        }
+
         /* Apps Section */
         .apps-section {
             padding: 80px 0;
@@ -370,10 +384,18 @@
             text-decoration: underline;
         }
 
+        footer .instagram-link:hover {
+            color: #E1306C !important;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-title-img {
+                max-width: 90%;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.4rem !important;
             }
 
             .hero p {
@@ -419,8 +441,12 @@
                 padding: 50px 0;
             }
 
+            .hero-title-img {
+                max-width: 95%;
+            }
+
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.2rem !important;
             }
 
             .apps-section, .features-section, .about-section {
@@ -474,6 +500,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <img src="title-logo.png" alt="SmartHockey Products" class="hero-title-img">
             <h1>
                 <span data-lang-group="hero-title">
                     <span class="lang-en active">Professional <span class="hero-accent">Hockey Statistics</span><br>for Players and Teams</span>
@@ -601,9 +628,9 @@
                     </div>
                 </div>
 
-                <!-- App 2: SmartHockey Tracking Team Light -->
+                <!-- App 2: SmartHockey Light -->
                 <div class="app-card">
-                    <h3>SmartHockey Tracking Team Light</h3>
+                    <h3>SmartHockey Light</h3>
                     <p>
                         <span data-lang-group="app2-desc">
                             <span class="lang-en active">The lightweight team management solution. Perfect for smaller teams and hobby clubs who want to manage their statistics professionally.</span>
@@ -680,9 +707,9 @@
                     </div>
                 </div>
 
-                <!-- App 3: SmartHockey Tracking Inline -->
+                <!-- App 3: SmartHockey Inline -->
                 <div class="app-card">
-                    <h3>SmartHockey Tracking Inline</h3>
+                    <h3>SmartHockey Inline</h3>
                     <p>
                         <span data-lang-group="app1-desc">
                             <span class="lang-en active">The comprehensive solution for inline and roller hockey players. Track your personal statistics, analyze your development, and optimize your game.</span>
@@ -1005,6 +1032,32 @@
                     <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
                 </span>
             </p>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="https://www.instagram.com/smarthockeyproducts.ch/" target="_blank" rel="noopener noreferrer" class="instagram-link" style="display: inline-flex; align-items: center; gap: 10px; color: #a0a0a0; text-decoration: none; transition: color 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span data-lang-group="footer-instagram">
+                        <span class="lang-en active">Follow us on Instagram</span>
+                        <span class="lang-de">Folge uns auf Instagram</span>
+                        <span class="lang-fr">Suivez-nous sur Instagram</span>
+                        <span class="lang-sv">Följ oss på Instagram</span>
+                        <span class="lang-fi">Seuraa meitä Instagramissa</span>
+                        <span class="lang-ru">Подписывайтесь в Instagram</span>
+                    </span>
+                </a>
+            </div>
+            <div style="margin-top: 15px; text-align: center;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/smarthockeyproducts.ch/&bgcolor=1a1a2e&color=ffffff&format=png" alt="QR Code - Instagram SmartHockey Products" style="width: 130px; height: 130px; border-radius: 8px; border: 2px solid #333;">
+                <p style="margin-top: 8px; font-size: 0.85rem; color: #808080;">
+                    <span data-lang-group="footer-qr">
+                        <span class="lang-en active">Scan to follow us</span>
+                        <span class="lang-de">Scannen um uns zu folgen</span>
+                        <span class="lang-fr">Scannez pour nous suivre</span>
+                        <span class="lang-sv">Skanna för att följa oss</span>
+                        <span class="lang-fi">Skannaa seurataksesi meitä</span>
+                        <span class="lang-ru">Сканируйте, чтобы подписаться</span>
+                    </span>
+                </p>
+            </div>
         </div>
     </footer>
 
