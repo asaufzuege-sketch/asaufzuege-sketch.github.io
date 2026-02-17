@@ -63,39 +63,101 @@
 
         /* Language Switcher */
         .language-switcher {
-            display: flex;
-            gap: 8px;
-            align-items: center;
+            position: relative;
+            display: inline-block;
         }
 
-        .lang-btn {
+        .lang-dropdown-btn {
             background: transparent;
             border: 2px solid #2a2a3e;
             color: #e0e0e0;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            min-width: 140px;
         }
 
-        .lang-btn:hover {
+        .lang-dropdown-btn:hover {
             border-color: #2563eb;
             background-color: rgba(37, 99, 235, 0.1);
         }
 
-        .lang-btn.active {
-            background-color: #2563eb;
+        .lang-dropdown-btn.active {
             border-color: #2563eb;
+        }
+
+        .globe-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .current-lang {
+            flex-grow: 1;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .chevron-icon {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .lang-dropdown-btn.active .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 5px);
+            right: 0;
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            display: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .lang-dropdown-menu.show {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #e0e0e0;
+        }
+
+        .lang-option:hover {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .lang-option.active {
+            background-color: rgba(37, 99, 235, 0.3);
             color: #ffffff;
         }
 
-        .lang-text {
-            font-size: 0.85rem;
-            font-weight: 600;
+        .lang-option .flag {
+            font-size: 1.3rem;
+        }
+
+        .lang-option .name {
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         nav {
@@ -310,6 +372,88 @@
             margin-top: 4px;
         }
 
+        /* Products Section */
+        .products-section {
+            padding: 80px 0;
+            background-color: #1a1a2e;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #2a2a3e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            border-color: #2563eb;
+        }
+
+        .product-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .product-card p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .product-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-card ul li {
+            padding: 6px 0;
+            color: #c0c0c0;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .product-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #2563eb;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .product-card .btn {
+            margin-top: auto;
+        }
+
         /* Features Section */
         .features-section {
             padding: 80px 0;
@@ -467,32 +611,57 @@
                 <img src="logo.png" alt="SmartHockey Products" class="logo-img">
                 <span>SmartHockey Products</span>
             </div>
-            <!-- Language Switcher -->
+            <nav>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <!-- Language Switcher Dropdown -->
             <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en" title="English">
-                    <span>🇬🇧</span>
-                    <span class="lang-text">EN</span>
+                <button class="lang-dropdown-btn" id="langDropdownBtn">
+                    <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="current-lang" id="currentLangName">English</span>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </button>
-                <button class="lang-btn" data-lang="de" title="Deutsch">
-                    <span>🇩🇪</span>
-                    <span class="lang-text">DE</span>
-                </button>
-                <button class="lang-btn" data-lang="fr" title="Français">
-                    <span>🇫🇷</span>
-                    <span class="lang-text">FR</span>
-                </button>
-                <button class="lang-btn" data-lang="sv" title="Svenska">
-                    <span>🇸🇪</span>
-                    <span class="lang-text">SV</span>
-                </button>
-                <button class="lang-btn" data-lang="fi" title="Suomi">
-                    <span>🇫🇮</span>
-                    <span class="lang-text">FI</span>
-                </button>
-                <button class="lang-btn" data-lang="ru" title="Русский">
-                    <span>🇷🇺</span>
-                    <span class="lang-text">RU</span>
-                </button>
+                <div class="lang-dropdown-menu" id="langDropdownMenu">
+                    <div class="lang-option" data-lang="en">
+                        <span class="flag">🇬🇧</span>
+                        <span class="name">English</span>
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <span class="flag">🇩🇪</span>
+                        <span class="name">Deutsch</span>
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="name">Français</span>
+                    </div>
+                    <div class="lang-option" data-lang="sv">
+                        <span class="flag">🇸🇪</span>
+                        <span class="name">Svenska</span>
+                    </div>
+                    <div class="lang-option" data-lang="fi">
+                        <span class="flag">🇫🇮</span>
+                        <span class="name">Suomi</span>
+                    </div>
+                    <div class="lang-option" data-lang="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="name">Русский</span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -789,6 +958,269 @@
         </div>
     </section>
 
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-lang-group="products-title">
+                    <span class="lang-en active">Our Smart Products</span>
+                    <span class="lang-de">Unsere smarten Produkte</span>
+                    <span class="lang-fr">Nos Produits Intelligents</span>
+                    <span class="lang-sv">Våra Smarta Produkter</span>
+                    <span class="lang-fi">Älykkäät Tuotteemme</span>
+                    <span class="lang-ru">Наши Умные Продукты</span>
+                </span>
+            </h2>
+            <p class="section-subtitle">
+                <span data-lang-group="products-subtitle">
+                    <span class="lang-en active">Professional training equipment and accessories</span>
+                    <span class="lang-de">Professionelle Trainingsausrüstung und Zubehör</span>
+                    <span class="lang-fr">Équipement et accessoires d'entraînement professionnels</span>
+                    <span class="lang-sv">Professionell träningsutrustning och tillbehör</span>
+                    <span class="lang-fi">Ammattimaisia harjoitusvälineitä ja tarvikkeita</span>
+                    <span class="lang-ru">Профессиональное тренировочное оборудование и аксессуары</span>
+                </span>
+            </p>
+
+            <div class="products-grid">
+                <!-- Product 1: SmartBoards -->
+                <div class="product-card">
+                    <div class="product-emoji">🏒</div>
+                    <h3>SmartBoards</h3>
+                    <p>
+                        <span data-lang-group="prod1-desc">
+                            <span class="lang-en active">The smart dividers for ice hockey training. Mini barriers for field division, approx. 50cm high, stand firmly on ice.</span>
+                            <span class="lang-de">Die smarten Abtrenner für Eishockey-Training. Miniturbanden zur Spielfeldabtrennung, ca. 50cm hoch, stehen fest auf dem Eis.</span>
+                            <span class="lang-fr">Les séparateurs intelligents pour l'entraînement de hockey sur glace. Mini-bandes pour diviser le terrain, env. 50cm de haut, tiennent fermement sur la glace.</span>
+                            <span class="lang-sv">De smarta avskiljarna för ishockeyträning. Minibarriärer för planindelning, ca 50cm höga, står stadigt på isen.</span>
+                            <span class="lang-fi">Älykkäät erottimet jääkiekkoharjoitteluun. Miniaitoja kentän jakamiseen, noin 50cm korkeat, seisovat tukevasti jäällä.</span>
+                            <span class="lang-ru">Умные разделители для тренировок по хоккею. Мини-барьеры для разделения поля, около 50см высотой, устойчиво стоят на льду.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="prod1-feat1">
+                                <span class="lang-en active">Divide field into thirds or halves</span>
+                                <span class="lang-de">Feld dritteln oder halbieren</span>
+                                <span class="lang-fr">Diviser le terrain en tiers ou moitiés</span>
+                                <span class="lang-sv">Dela planen i tredjedelar eller halvor</span>
+                                <span class="lang-fi">Jaa kenttä kolmasosiin tai puoliksi</span>
+                                <span class="lang-ru">Разделить поле на трети или половины</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod1-feat2">
+                                <span class="lang-en active">Corner elements available</span>
+                                <span class="lang-de">Kurven-Elemente verfügbar</span>
+                                <span class="lang-fr">Éléments d'angle disponibles</span>
+                                <span class="lang-sv">Hörnelement tillgängliga</span>
+                                <span class="lang-fi">Kulmaelemit saatavilla</span>
+                                <span class="lang-ru">Доступны угловые элементы</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod1-feat3">
+                                <span class="lang-en active">Optional plexiglass pane</span>
+                                <span class="lang-de">Optional Plexiglasscheibe</span>
+                                <span class="lang-fr">Vitre en plexiglas optionnelle</span>
+                                <span class="lang-sv">Valfri plexiglasskiva</span>
+                                <span class="lang-fi">Valinnainen pleksilasilevy</span>
+                                <span class="lang-ru">Опциональное плексистекло</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price">
+                        <span data-lang-group="prod1-price">
+                            <span class="lang-en active">Price on request</span>
+                            <span class="lang-de">Preis auf Anfrage</span>
+                            <span class="lang-fr">Prix sur demande</span>
+                            <span class="lang-sv">Pris på förfrågan</span>
+                            <span class="lang-fi">Hinta pyynnöstä</span>
+                            <span class="lang-ru">Цена по запросу</span>
+                        </span>
+                    </div>
+                    <a href="shop.html" class="btn">
+                        <span data-lang-group="prod1-btn">
+                            <span class="lang-en active">Contact</span>
+                            <span class="lang-de">Kontakt</span>
+                            <span class="lang-fr">Contact</span>
+                            <span class="lang-sv">Kontakt</span>
+                            <span class="lang-fi">Ota yhteyttä</span>
+                            <span class="lang-ru">Контакт</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Product 2: SmartPen / IcePen -->
+                <div class="product-card">
+                    <div class="product-emoji">✏️</div>
+                    <h3>SmartPen / IcePen</h3>
+                    <p>
+                        <span data-lang-group="prod2-desc">
+                            <span class="lang-en active">The all-purpose marker for ice training. Training aid for marking on ice with special paint that covers on ice.</span>
+                            <span class="lang-de">Der Allesmarkierer für Eis-Training. Trainingshilfe zum Markieren auf Eis mit Spezialfarbe die auf Eis deckt.</span>
+                            <span class="lang-fr">Le marqueur universel pour l'entraînement sur glace. Aide à l'entraînement pour marquer sur glace avec peinture spéciale qui couvre sur glace.</span>
+                            <span class="lang-sv">Den universella markören för isträning. Träningshjälp för märkning på is med specialfärg som täcker på is.</span>
+                            <span class="lang-fi">Yleismarkkeri jääharjoitteluun. Harjoitusväline jään merkitsemiseen erikoismaalilla joka peittää jäällä.</span>
+                            <span class="lang-ru">Универсальный маркер для тренировок на льду. Тренировочное средство для разметки на льду специальной краской покрывающей лед.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="prod2-feat1">
+                                <span class="lang-en active">Available in black, blue, red</span>
+                                <span class="lang-de">Schwarz, Blau, Rot erhältlich</span>
+                                <span class="lang-fr">Disponible en noir, bleu, rouge</span>
+                                <span class="lang-sv">Tillgänglig i svart, blå, röd</span>
+                                <span class="lang-fi">Saatavilla mustana, sinisenä, punaisena</span>
+                                <span class="lang-ru">Доступен в черном, синем, красном</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod2-feat2">
+                                <span class="lang-en active">Special paint for ice</span>
+                                <span class="lang-de">Spezialfarbe für Eis</span>
+                                <span class="lang-fr">Peinture spéciale pour glace</span>
+                                <span class="lang-sv">Specialfärg för is</span>
+                                <span class="lang-fi">Erikoismaali jäälle</span>
+                                <span class="lang-ru">Специальная краска для льда</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price">CHF 23.00</div>
+                    <a href="shop.html" class="btn">
+                        <span data-lang-group="prod2-btn">
+                            <span class="lang-en active">Go to Shop</span>
+                            <span class="lang-de">Zum Shop</span>
+                            <span class="lang-fr">Aller à la boutique</span>
+                            <span class="lang-sv">Till butiken</span>
+                            <span class="lang-fi">Kauppaan</span>
+                            <span class="lang-ru">В магазин</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Product 3: SmartFresh -->
+                <div class="product-card">
+                    <div class="product-emoji">🧴</div>
+                    <h3>SmartFresh</h3>
+                    <p>
+                        <span data-lang-group="prod3-desc">
+                            <span class="lang-en active">The odor killer for hockey equipment. Pro-biotic spray with no chemical ingredients. Microorganisms eliminate odors. 200ml.</span>
+                            <span class="lang-de">Der Geruchskiller für Eishockey-Ausrüstung. Pro-Biotisches Spray ohne chemische Inhaltsstoffe. Mikroorganismen eliminieren Gerüche. 200ml.</span>
+                            <span class="lang-fr">Le tueur d'odeurs pour équipement de hockey. Spray probiotique sans ingrédients chimiques. Les micro-organismes éliminent les odeurs. 200ml.</span>
+                            <span class="lang-sv">Luktdödaren för hockeyutrustning. Probiotisk spray utan kemiska ingredienser. Mikroorganismer eliminerar lukter. 200ml.</span>
+                            <span class="lang-fi">Hajunpoistaja jääkiekkovarusteille. Probioottinen suihke ilman kemiallisia ainesosia. Mikro-organismit poistavat hajut. 200ml.</span>
+                            <span class="lang-ru">Убийца запахов для хоккейной экипировки. Пробиотический спрей без химических компонентов. Микроорганизмы устраняют запахи. 200мл.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="prod3-feat1">
+                                <span class="lang-en active">No chemical ingredients</span>
+                                <span class="lang-de">Keine chemischen Inhaltsstoffe</span>
+                                <span class="lang-fr">Pas d'ingrédients chimiques</span>
+                                <span class="lang-sv">Inga kemiska ingredienser</span>
+                                <span class="lang-fi">Ei kemiallisia ainesosia</span>
+                                <span class="lang-ru">Без химических компонентов</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod3-feat2">
+                                <span class="lang-en active">Pro-biotic microorganisms</span>
+                                <span class="lang-de">Pro-biotische Mikroorganismen</span>
+                                <span class="lang-fr">Micro-organismes probiotiques</span>
+                                <span class="lang-sv">Probiotiska mikroorganismer</span>
+                                <span class="lang-fi">Probioottiset mikro-organismit</span>
+                                <span class="lang-ru">Пробиотические микроорганизмы</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod3-feat3">
+                                <span class="lang-en active">200ml bottle</span>
+                                <span class="lang-de">200ml Flasche</span>
+                                <span class="lang-fr">Flacon de 200ml</span>
+                                <span class="lang-sv">200ml flaska</span>
+                                <span class="lang-fi">200ml pullo</span>
+                                <span class="lang-ru">Флакон 200мл</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price">CHF 25.00</div>
+                    <a href="shop.html" class="btn">
+                        <span data-lang-group="prod3-btn">
+                            <span class="lang-en active">Go to Shop</span>
+                            <span class="lang-de">Zum Shop</span>
+                            <span class="lang-fr">Aller à la boutique</span>
+                            <span class="lang-sv">Till butiken</span>
+                            <span class="lang-fi">Kauppaan</span>
+                            <span class="lang-ru">В магазин</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Product 4: SmartLightBall -->
+                <div class="product-card">
+                    <div class="product-emoji">🏑</div>
+                    <h3>SmartLightBall</h3>
+                    <p>
+                        <span data-lang-group="prod4-desc">
+                            <span class="lang-en active">The speed stickhandler. Natural wooden ball, 60mm diameter, 80g. Half puck weight. Perfect for off-ice speed stickhandling.</span>
+                            <span class="lang-de">Der Speedstickhandler. Natürlicher Holzball, 60mm Durchmesser, 80g. Halbes Puck-Gewicht. Perfekt für Off-Ice Speedstickhandling.</span>
+                            <span class="lang-fr">Le manipulateur de bâton rapide. Balle en bois naturel, diamètre 60mm, 80g. Moitié du poids d'un palet. Parfait pour le maniement rapide hors glace.</span>
+                            <span class="lang-sv">Snabbstickhanteraren. Naturlig träboll, 60mm diameter, 80g. Halva puckvikten. Perfekt för off-ice speed stickhandling.</span>
+                            <span class="lang-fi">Nopea mailankäsittelijä. Luonnollinen puupallo, 60mm halkaisija, 80g. Puolet kiekon painosta. Täydellinen off-ice nopean mailan käsittelyyn.</span>
+                            <span class="lang-ru">Скоростной стикхэндлер. Натуральный деревянный мяч, диаметр 60мм, 80г. Половина веса шайбы. Идеально для скоростного стикхэндлинга вне льда.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="prod4-feat1">
+                                <span class="lang-en active">Natural wood, 60mm diameter</span>
+                                <span class="lang-de">Naturholz, 60mm Durchmesser</span>
+                                <span class="lang-fr">Bois naturel, diamètre 60mm</span>
+                                <span class="lang-sv">Naturligt trä, 60mm diameter</span>
+                                <span class="lang-fi">Luonnonpuu, 60mm halkaisija</span>
+                                <span class="lang-ru">Натуральное дерево, диаметр 60мм</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod4-feat2">
+                                <span class="lang-en active">80g - half puck weight</span>
+                                <span class="lang-de">80g - halbes Puck-Gewicht</span>
+                                <span class="lang-fr">80g - moitié du poids d'un palet</span>
+                                <span class="lang-sv">80g - halva puckvikten</span>
+                                <span class="lang-fi">80g - puolet kiekon painosta</span>
+                                <span class="lang-ru">80г - половина веса шайбы</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="prod4-feat3">
+                                <span class="lang-en active">Perfect for off-ice training</span>
+                                <span class="lang-de">Perfekt für Off-Ice Training</span>
+                                <span class="lang-fr">Parfait pour l'entraînement hors glace</span>
+                                <span class="lang-sv">Perfekt för off-ice träning</span>
+                                <span class="lang-fi">Täydellinen off-ice harjoitteluun</span>
+                                <span class="lang-ru">Идеально для тренировок вне льда</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price">CHF 5.00</div>
+                    <a href="shop.html" class="btn">
+                        <span data-lang-group="prod4-btn">
+                            <span class="lang-en active">Go to Shop</span>
+                            <span class="lang-de">Zum Shop</span>
+                            <span class="lang-fr">Aller à la boutique</span>
+                            <span class="lang-sv">Till butiken</span>
+                            <span class="lang-fi">Kauppaan</span>
+                            <span class="lang-ru">В магазин</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">
@@ -1067,6 +1499,15 @@
             const defaultLang = 'en';
             const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
             
+            const langNames = {
+                en: 'English',
+                de: 'Deutsch',
+                fr: 'Français',
+                sv: 'Svenska',
+                fi: 'Suomi',
+                ru: 'Русский'
+            };
+            
             // Get browser language
             function getBrowserLanguage() {
                 const browserLang = navigator.language || navigator.userLanguage;
@@ -1081,6 +1522,22 @@
                     return saved;
                 }
                 return getBrowserLanguage();
+            }
+            
+            // Update dropdown display
+            function updateDropdownDisplay(lang) {
+                const currentLangName = document.getElementById('currentLangName');
+                if (currentLangName) {
+                    currentLangName.textContent = langNames[lang] || langNames[defaultLang];
+                }
+                
+                // Update active state in dropdown menu
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    }
+                });
             }
             
             // Switch language
@@ -1100,14 +1557,8 @@
                     }
                 });
                 
-                // Update language buttons
-                document.querySelectorAll('.lang-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
-                if (activeBtn) {
-                    activeBtn.classList.add('active');
-                }
+                // Update dropdown display
+                updateDropdownDisplay(lang);
                 
                 // Update meta and title
                 const titles = {
@@ -1127,15 +1578,47 @@
                 localStorage.setItem('smarthockey-lang', lang);
             }
             
+            // Toggle dropdown menu
+            function toggleDropdown() {
+                const dropdownBtn = document.getElementById('langDropdownBtn');
+                const dropdownMenu = document.getElementById('langDropdownMenu');
+                
+                dropdownBtn.classList.toggle('active');
+                dropdownMenu.classList.toggle('show');
+            }
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                const languageSwitcher = document.querySelector('.language-switcher');
+                const dropdownBtn = document.getElementById('langDropdownBtn');
+                const dropdownMenu = document.getElementById('langDropdownMenu');
+                
+                if (languageSwitcher && !languageSwitcher.contains(event.target)) {
+                    dropdownBtn.classList.remove('active');
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+            
             // Initialize
             const initialLang = getInitialLanguage();
             switchLanguage(initialLang);
             
-            // Add event listeners to language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
+            // Add event listener to dropdown button
+            const dropdownBtn = document.getElementById('langDropdownBtn');
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    toggleDropdown();
+                });
+            }
+            
+            // Add event listeners to language options
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function(event) {
+                    event.stopPropagation();
                     const lang = this.getAttribute('data-lang');
                     switchLanguage(lang);
+                    toggleDropdown();
                 });
             });
         })();
