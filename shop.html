@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Products Shop - Buy professional hockey training equipment and accessories.">
+    <meta name="keywords" content="Hockey, Shop, Training Equipment, SmartHockey, Ice Hockey Products">
+    <meta name="author" content="SmartHockey Products">
+    <title>SmartHockey Shop - Professional Hockey Products</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        nav a.active {
+            color: #2563eb;
+        }
+
+        /* Language Switcher Dropdown */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .lang-dropdown-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .lang-dropdown-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .lang-chevron {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s;
+        }
+
+        .language-switcher.active .lang-chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .language-switcher.active .lang-dropdown-menu {
+            display: block;
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .lang-option:hover {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .lang-option.active {
+            background-color: rgba(37, 99, 235, 0.3);
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .lang-option-flag {
+            font-size: 1.3rem;
+        }
+
+        .lang-option-name {
+            font-size: 0.95rem;
+        }
+
+        /* Content language visibility */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        [data-lang-group] span[class^="lang-"] {
+            display: none !important;
+        }
+
+        [data-lang-group] span[class^="lang-"].active {
+            display: inline !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-accent {
+            color: #2563eb;
+        }
+
+        /* Shop Section */
+        .shop-section {
+            padding: 80px 0;
+            background-color: #1a1a2e;
+        }
+
+        .shop-section .container {
+            max-width: 1400px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #2a2a3e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            border-color: #2563eb;
+        }
+
+        .product-emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .product-card p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .product-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-card ul li {
+            padding: 6px 0;
+            color: #c0c0c0;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .product-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .product-price-wrapper {
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 30px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        .paypal-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .paypal-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+        }
+
+        /* Shipping Notice */
+        .shipping-notice {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 15px;
+            margin-top: 50px;
+            border: 2px solid #2a2a3e;
+        }
+
+        .shipping-notice p {
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #16213e 0%, #0f0f1e 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+
+        footer p {
+            color: #808080;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .instagram-link:hover {
+            color: #E1306C !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .shop-section {
+                padding: 50px 0;
+            }
+
+            .product-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active">🏠 Home</span>
+                        <span class="lang-de">🏠 Home</span>
+                        <span class="lang-fr">🏠 Accueil</span>
+                        <span class="lang-sv">🏠 Hem</span>
+                        <span class="lang-fi">🏠 Koti</span>
+                        <span class="lang-ru">🏠 Главная</span>
+                    </span>
+                </a>
+                <a href="shop.html" class="active">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <!-- Language Switcher Dropdown -->
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en">
+                        <span class="lang-option-flag">🇬🇧</span>
+                        <span class="lang-option-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="de">
+                        <span class="lang-option-flag">🇩🇪</span>
+                        <span class="lang-option-name">Deutsch</span>
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-option-flag">🇫🇷</span>
+                        <span class="lang-option-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="sv">
+                        <span class="lang-option-flag">🇸🇪</span>
+                        <span class="lang-option-name">Svenska</span>
+                    </button>
+                    <button class="lang-option" data-lang="fi">
+                        <span class="lang-option-flag">🇫🇮</span>
+                        <span class="lang-option-name">Suomi</span>
+                    </button>
+                    <button class="lang-option" data-lang="ru">
+                        <span class="lang-option-flag">🇷🇺</span>
+                        <span class="lang-option-name">Русский</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span data-lang-group="shop-title">
+                    <span class="lang-en active"><span class="hero-accent">SmartHockey</span> Shop</span>
+                    <span class="lang-de"><span class="hero-accent">SmartHockey</span> Shop</span>
+                    <span class="lang-fr">Boutique <span class="hero-accent">SmartHockey</span></span>
+                    <span class="lang-sv"><span class="hero-accent">SmartHockey</span> Butik</span>
+                    <span class="lang-fi"><span class="hero-accent">SmartHockey</span> Kauppa</span>
+                    <span class="lang-ru">Магазин <span class="hero-accent">SmartHockey</span></span>
+                </span>
+            </h1>
+            <p>
+                <span data-lang-group="shop-subtitle">
+                    <span class="lang-en active">Professional hockey training equipment and accessories</span>
+                    <span class="lang-de">Professionelle Hockey-Trainingsausrüstung und Zubehör</span>
+                    <span class="lang-fr">Équipement et accessoires d'entraînement de hockey professionnel</span>
+                    <span class="lang-sv">Professionell hockeyträningsutrustning och tillbehör</span>
+                    <span class="lang-fi">Ammattitason jääkiekkoharjoitteluvälineet ja -tarvikkeet</span>
+                    <span class="lang-ru">Профессиональное хоккейное тренировочное оборудование и аксессуары</span>
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Product 1: SmartBoards -->
+                <div class="product-card">
+                    <div class="product-emoji">🏒</div>
+                    <h3>SmartBoards</h3>
+                    <p>
+                        <span data-lang-group="shop-product1-desc">
+                            <span class="lang-en active">SmartBoards are mini boards for field separation. Instead of unstable "Toblerones", the approximately 50cm high full boards stand firmly on the ice. The puck stays in the separated field and with the curve elements, no puck gets stuck in the corner anymore.</span>
+                            <span class="lang-de">Die SmartBoards sind Miniturbanden zur Spielfeldabtrennung. Anstelle der instabilen "Tobleronen" stehen die etwa 50cm hohen und vollwertigen Banden fest auf dem Eis. Der Puck bleibt im abgetrennten Spielfeld und durch die Kurven-Elemente bleibt kein Puck mehr in der Ecke stecken.</span>
+                            <span class="lang-fr">Les SmartBoards sont des mini-bandes pour la séparation du terrain. Au lieu des "Toblerones" instables, les bandes complètes d'environ 50 cm de haut se tiennent fermement sur la glace. Le palet reste dans le terrain séparé et avec les éléments de courbe, aucun palet ne reste coincé dans le coin.</span>
+                            <span class="lang-sv">SmartBoards är minibrädor för fältavskiljning. Istället för instabila "Toblerones" står de cirka 50 cm höga fullständiga banden stadigt på isen. Pucken stannar i det avskilda fältet och med kurvelementen fastnar ingen puck i hörnet längre.</span>
+                            <span class="lang-fi">SmartBoards ovat minilaitoja kentän erottamiseen. Epävakaiden "Tobleronien" sijaan noin 50 cm korkeat täydet laidat seisovat lujasti jäällä. Kiekko pysyy erotetussa kentässä ja kaarevien elementtien ansiosta mikään kiekko ei jää enää jumiin kulmaan.</span>
+                            <span class="lang-ru">SmartBoards - это мини-борта для разделения поля. Вместо неустойчивых "Тоблеронов", полноценные борта высотой около 50 см прочно стоят на льду. Шайба остается в отделенном поле, а благодаря изогнутым элементам ни одна шайба больше не застревает в углу.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="shop-product1-feat1">
+                                <span class="lang-en active">Customizable total length</span>
+                                <span class="lang-de">Gesamtlänge auf Wunsch anpassbar</span>
+                                <span class="lang-fr">Longueur totale personnalisable</span>
+                                <span class="lang-sv">Anpassningsbar total längd</span>
+                                <span class="lang-fi">Mukautettava kokonaispituus</span>
+                                <span class="lang-ru">Настраиваемая общая длина</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product1-feat2">
+                                <span class="lang-en active">Divide field into thirds or halves</span>
+                                <span class="lang-de">Feld dritteln oder halbieren</span>
+                                <span class="lang-fr">Diviser le terrain en tiers ou en moitiés</span>
+                                <span class="lang-sv">Dela fältet i tredjedelar eller halvor</span>
+                                <span class="lang-fi">Jaa kenttä kolmeen tai puoliksi</span>
+                                <span class="lang-ru">Разделить поле на трети или половины</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product1-feat3">
+                                <span class="lang-en active">Curve elements available</span>
+                                <span class="lang-de">Kurven-Elemente verfügbar</span>
+                                <span class="lang-fr">Éléments de courbe disponibles</span>
+                                <span class="lang-sv">Kurvelement tillgängliga</span>
+                                <span class="lang-fi">Kaarielementit saatavilla</span>
+                                <span class="lang-ru">Доступны изогнутые элементы</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product1-feat4">
+                                <span class="lang-en active">Optional advertising space under plexiglass</span>
+                                <span class="lang-de">Werbefläche unter Plexischeibe optional</span>
+                                <span class="lang-fr">Espace publicitaire sous plexiglas en option</span>
+                                <span class="lang-sv">Valfritt reklamutrymme under plexiglas</span>
+                                <span class="lang-fi">Valinnainen mainostila pleksilasin alla</span>
+                                <span class="lang-ru">Дополнительное рекламное пространство под оргстеклом</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price-wrapper">
+                        <div class="product-price">
+                            <span data-lang-group="shop-product1-price">
+                                <span class="lang-en active">Price on request</span>
+                                <span class="lang-de">Preis auf Anfrage</span>
+                                <span class="lang-fr">Prix sur demande</span>
+                                <span class="lang-sv">Pris på förfrågan</span>
+                                <span class="lang-fi">Hinta pyynnöstä</span>
+                                <span class="lang-ru">Цена по запросу</span>
+                            </span>
+                        </div>
+                        <a href="mailto:info@smarthockeyproducts.ch" class="btn">
+                            <span data-lang-group="shop-product1-btn">
+                                <span class="lang-en active">Contact Us</span>
+                                <span class="lang-de">Kontakt</span>
+                                <span class="lang-fr">Contactez-nous</span>
+                                <span class="lang-sv">Kontakta oss</span>
+                                <span class="lang-fi">Ota yhteyttä</span>
+                                <span class="lang-ru">Свяжитесь с нами</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: SmartPen / IcePen -->
+                <div class="product-card">
+                    <div class="product-emoji">✏️</div>
+                    <h3>SmartPen / IcePen</h3>
+                    <p>
+                        <span data-lang-group="shop-product2-desc">
+                            <span class="lang-en active">The SmartHockey IcePen is a training aid for active and youth players and goalkeepers. Mark the exercises on ice. The directions of travel after a maneuver or show the goalkeeper where to move. Our formula guarantees a special color that covers excellently on ice.</span>
+                            <span class="lang-de">Der SmartHockey IcePen ist eine Trainingshilfe für Aktiv- und Nachwuchsspieler und Torhüter. Markiere damit die Übungen auf Eis. Die Fahrtrichtungen nach einem Manöver oder zeige dem Torhüter wohin er verschieben soll. Unsere Formel garantiert eine spezielle Farbe die hervorragend auf Eis deckt.</span>
+                            <span class="lang-fr">Le SmartHockey IcePen est une aide à l'entraînement pour les joueurs actifs et juniors et les gardiens de but. Marquez les exercices sur glace. Les directions de déplacement après une manœuvre ou montrez au gardien où se déplacer. Notre formule garantit une couleur spéciale qui couvre excellemment sur la glace.</span>
+                            <span class="lang-sv">SmartHockey IcePen är ett träningshjälpmedel för aktiva och ungdomsspelare och målvakter. Markera övningarna på isen. Färdriktningarna efter en manöver eller visa målvakten vart han ska flytta sig. Vår formel garanterar en speciell färg som täcker utmärkt på is.</span>
+                            <span class="lang-fi">SmartHockey IcePen on harjoitteluapu aktiivisille ja nuorille pelaajille sekä maalivahdille. Merkitse harjoitukset jäällä. Suunnat liikkeen jälkeen tai näytä maalivahdille minne siirtyä. Kaavamme takaa erikoisvärin, joka peittää erinomaisesti jäällä.</span>
+                            <span class="lang-ru">SmartHockey IcePen - это тренировочное пособие для активных и юных игроков и вратарей. Отмечайте упражнения на льду. Направления движения после маневра или покажите вратарю, куда двигаться. Наша формула гарантирует специальный цвет, который отлично покрывает лед.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="shop-product2-feat1">
+                                <span class="lang-en active">Available in Black, Blue, Red</span>
+                                <span class="lang-de">Schwarz, Blau, Rot erhältlich</span>
+                                <span class="lang-fr">Disponible en Noir, Bleu, Rouge</span>
+                                <span class="lang-sv">Tillgänglig i Svart, Blå, Röd</span>
+                                <span class="lang-fi">Saatavana Musta, Sininen, Punainen</span>
+                                <span class="lang-ru">Доступен в Черном, Синем, Красном</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product2-feat2">
+                                <span class="lang-en active">Special color formula for ice</span>
+                                <span class="lang-de">Spezialfarbe für Eis</span>
+                                <span class="lang-fr">Formule de couleur spéciale pour glace</span>
+                                <span class="lang-sv">Speciell färgformel för is</span>
+                                <span class="lang-fi">Erikoinen värikaava jäälle</span>
+                                <span class="lang-ru">Специальная цветовая формула для льда</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price-wrapper">
+                        <div class="product-price">CHF 23.00</div>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="DEINE-PAYPAL-EMAIL@HIER-EINTRAGEN.com">
+                            <input type="hidden" name="item_name" value="SmartPen / IcePen">
+                            <input type="hidden" name="amount" value="23.00">
+                            <input type="hidden" name="currency_code" value="CHF">
+                            <input type="hidden" name="lc" value="CH">
+                            <button type="submit" class="paypal-btn">
+                                <span data-lang-group="shop-product2-btn">
+                                    <span class="lang-en active">🛒 Buy Now</span>
+                                    <span class="lang-de">🛒 Jetzt kaufen</span>
+                                    <span class="lang-fr">🛒 Acheter maintenant</span>
+                                    <span class="lang-sv">🛒 Köp nu</span>
+                                    <span class="lang-fi">🛒 Osta nyt</span>
+                                    <span class="lang-ru">🛒 Купить сейчас</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Product 3: SmartFresh -->
+                <div class="product-card">
+                    <div class="product-emoji">🧴</div>
+                    <h3>SmartFresh</h3>
+                    <p>
+                        <span data-lang-group="shop-product3-desc">
+                            <span class="lang-en active">SmartFresh is a performance spray specially developed for ice hockey equipment. The chemical or even alcohol-containing ingredients of common sprays penetrate the skin through the pores when sweating. This allows small amounts to enter the bloodstream, which can harm your health or that of your children. SmartFresh contains probiotic microorganisms, as they are also found in yogurts and drinks. These have a naturally pleasant scent and fight sweat bacteria sustainably. So odors are not just simply covered up, but eliminated by the microorganisms. Content 200ml.</span>
+                            <span class="lang-de">SmartFresh ist ein Leistungssport-Spray, speziell entwickelt für Eishockeyausrüstungen. Die chemischen oder gar Alkohol-haltigen Inhaltsstoffe üblicher Sprays dringen beim schwitzen durch die Poren in die Haut. Dadurch kommen kleine Mengen in die Blutbahn, was Ihre Gesundheit, oder die Ihrer Kinder, schädigen kann. SmartFresh enthält Pro Biotische Mikroorganismen, wie sie auch in Joghurts und Drinks enthalten sind. Diese haben von Natur aus einen angenehmen Duft und bekämpfen die Schweissbakterien nachhaltig. So werden Gerüche nicht nur einfach überdeckt, sondern von den Mikroorganismen eliminiert. Inhalt 200ml.</span>
+                            <span class="lang-fr">SmartFresh est un spray de performance spécialement développé pour l'équipement de hockey sur glace. Les ingrédients chimiques ou même alcoolisés des sprays courants pénètrent dans la peau par les pores lors de la transpiration. Cela permet à de petites quantités d'entrer dans la circulation sanguine, ce qui peut nuire à votre santé ou à celle de vos enfants. SmartFresh contient des micro-organismes probiotiques, comme on en trouve également dans les yaourts et les boissons. Ceux-ci ont naturellement un parfum agréable et combattent durablement les bactéries de la sueur. Ainsi, les odeurs ne sont pas simplement masquées, mais éliminées par les micro-organismes. Contenu 200ml.</span>
+                            <span class="lang-sv">SmartFresh är en prestationsspray speciellt utvecklad för ishockeyutrustning. De kemiska eller till och med alkoholhaltiga ingredienserna i vanliga sprayer tränger in i huden genom porerna vid svettning. Detta gör att små mängder kommer in i blodomloppet, vilket kan skada din hälsa eller dina barns. SmartFresh innehåller probiotiska mikroorganismer, som också finns i yoghurt och drycker. Dessa har en naturligt behaglig doft och bekämpar svettbakterier hållbart. Så lukter täcks inte bara över, utan elimineras av mikroorganismerna. Innehåll 200ml.</span>
+                            <span class="lang-fi">SmartFresh on suorituskykysuihke, joka on erityisesti kehitetty jääkiekkovarusteille. Tavallisten suihkeiden kemialliset tai jopa alkoholipitoiset aineosat tunkeutuvat ihoon huokosten kautta hikoillessa. Tämä mahdollistaa pienten määrien pääsyn verenkiertoon, mikä voi vahingoittaa terveyttäsi tai lastesi terveyttä. SmartFresh sisältää probioottiset mikro-organismit, joita löytyy myös jogurteista ja juomista. Niillä on luonnollisesti miellyttävä tuoksu ja ne torjuvat hien bakteereita kestävästi. Joten hajuja ei vain peitetä, vaan mikro-organismit eliminoivat ne. Sisältö 200ml.</span>
+                            <span class="lang-ru">SmartFresh - это спортивный спрей, специально разработанный для хоккейного снаряжения. Химические или даже содержащие алкоголь ингредиенты обычных спреев проникают в кожу через поры при потоотделении. Это позволяет небольшим количествам попасть в кровоток, что может навредить вашему здоровью или здоровью ваших детей. SmartFresh содержит пробиотические микроорганизмы, которые также содержатся в йогуртах и напитках. Они имеют естественный приятный аромат и устойчиво борются с бактериями пота. Таким образом, запахи не просто маскируются, а устраняются микроорганизмами. Содержимое 200мл.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="shop-product3-feat1">
+                                <span class="lang-en active">Pro-biotic & natural</span>
+                                <span class="lang-de">Pro-Biotisch & natürlich</span>
+                                <span class="lang-fr">Pro-biotique et naturel</span>
+                                <span class="lang-sv">Pro-biotisk & naturlig</span>
+                                <span class="lang-fi">Probioottiset & luonnolliset</span>
+                                <span class="lang-ru">Пробиотический и натуральный</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product3-feat2">
+                                <span class="lang-en active">No chemical ingredients</span>
+                                <span class="lang-de">Keine chemischen Inhaltsstoffe</span>
+                                <span class="lang-fr">Pas d'ingrédients chimiques</span>
+                                <span class="lang-sv">Inga kemiska ingredienser</span>
+                                <span class="lang-fi">Ei kemiallisia ainesosia</span>
+                                <span class="lang-ru">Без химических ингредиентов</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product3-feat3">
+                                <span class="lang-en active">200ml content</span>
+                                <span class="lang-de">200ml Inhalt</span>
+                                <span class="lang-fr">Contenu 200ml</span>
+                                <span class="lang-sv">200ml innehåll</span>
+                                <span class="lang-fi">200ml sisältö</span>
+                                <span class="lang-ru">Содержимое 200мл</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price-wrapper">
+                        <div class="product-price">CHF 25.00</div>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="DEINE-PAYPAL-EMAIL@HIER-EINTRAGEN.com">
+                            <input type="hidden" name="item_name" value="SmartFresh">
+                            <input type="hidden" name="amount" value="25.00">
+                            <input type="hidden" name="currency_code" value="CHF">
+                            <input type="hidden" name="lc" value="CH">
+                            <button type="submit" class="paypal-btn">
+                                <span data-lang-group="shop-product3-btn">
+                                    <span class="lang-en active">🛒 Buy Now</span>
+                                    <span class="lang-de">🛒 Jetzt kaufen</span>
+                                    <span class="lang-fr">🛒 Acheter maintenant</span>
+                                    <span class="lang-sv">🛒 Köp nu</span>
+                                    <span class="lang-fi">🛒 Osta nyt</span>
+                                    <span class="lang-ru">🛒 Купить сейчас</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Product 4: SmartLightBall -->
+                <div class="product-card">
+                    <div class="product-emoji">🏑</div>
+                    <h3>SmartLightBall</h3>
+                    <p>
+                        <span data-lang-group="shop-product4-desc">
+                            <span class="lang-en active">Our LightBall is a natural wooden ball with a diameter of 60mm, making it larger than commonly available wooden balls and very close to the dimensions of a puck. With a weight of over 80g and a rebound hardness of about 20cm, the LightBall has about half the weight of a puck. This makes it perfect for off-ice speed stickhandling training.</span>
+                            <span class="lang-de">Unser LightBall ist ein natürlicher Holzball mit einem Durchmesser von 60mm, damit ist er grösser als sonst erhältliche Holzbälle und kommt den Massen eines Pucks sehr nahe. Mit einem Gewicht von über 80g und einer Rücksprunghärte von ca. 20cm, hat der LightBall rund die Hälfte des Gewichts eines Pucks. Dadurch eignet er sich perfekt für das Off Ice Speedstickhandling Training.</span>
+                            <span class="lang-fr">Notre LightBall est une balle en bois naturel d'un diamètre de 60mm, ce qui la rend plus grande que les balles en bois couramment disponibles et très proche des dimensions d'un palet. Avec un poids de plus de 80g et une dureté de rebond d'environ 20cm, la LightBall a environ la moitié du poids d'un palet. Cela la rend parfaite pour l'entraînement de maniement rapide de la crosse hors glace.</span>
+                            <span class="lang-sv">Vår LightBall är en naturlig träboll med en diameter på 60mm, vilket gör den större än vanligt tillgängliga träbollar och mycket nära måtten på en puck. Med en vikt på över 80g och en studshårdhet på cirka 20cm, har LightBall ungefär hälften av vikten av en puck. Detta gör den perfekt för off-ice speed stickhandling träning.</span>
+                            <span class="lang-fi">LightBall on luonnollinen puupallo, jonka halkaisija on 60 mm, mikä tekee siitä suuremman kuin yleisesti saatavilla olevat puupallot ja hyvin lähellä kiekon mittoja. Yli 80 g painolla ja noin 20 cm kimmokkuudella LightBall on noin puolet kiekon painosta. Tämä tekee siitä täydellisen jään ulkopuoliseen nopeaan mailankäsittelyharjoitteluun.</span>
+                            <span class="lang-ru">Наш LightBall - это натуральный деревянный мяч диаметром 60 мм, что делает его больше, чем обычно доступные деревянные мячи, и очень близким к размерам шайбы. С весом более 80 г и твердостью отскока около 20 см, LightBall имеет примерно половину веса шайбы. Это делает его идеальным для скоростных тренировок работы клюшкой вне льда.</span>
+                        </span>
+                    </p>
+                    <ul>
+                        <li>
+                            <span data-lang-group="shop-product4-feat1">
+                                <span class="lang-en active">60mm diameter, 80g</span>
+                                <span class="lang-de">60mm Durchmesser, 80g</span>
+                                <span class="lang-fr">Diamètre 60mm, 80g</span>
+                                <span class="lang-sv">60mm diameter, 80g</span>
+                                <span class="lang-fi">60mm halkaisija, 80g</span>
+                                <span class="lang-ru">Диаметр 60мм, 80г</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product4-feat2">
+                                <span class="lang-en active">Half puck weight</span>
+                                <span class="lang-de">Halbes Puck-Gewicht</span>
+                                <span class="lang-fr">Moitié du poids d'un palet</span>
+                                <span class="lang-sv">Halva puckvikten</span>
+                                <span class="lang-fi">Puolet kiekon painosta</span>
+                                <span class="lang-ru">Половина веса шайбы</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span data-lang-group="shop-product4-feat3">
+                                <span class="lang-en active">Perfect for off-ice training</span>
+                                <span class="lang-de">Perfekt für Off-Ice Training</span>
+                                <span class="lang-fr">Parfait pour l'entraînement hors glace</span>
+                                <span class="lang-sv">Perfekt för off-ice träning</span>
+                                <span class="lang-fi">Täydellinen jään ulkopuoliseen harjoitteluun</span>
+                                <span class="lang-ru">Идеально для тренировок вне льда</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="product-price-wrapper">
+                        <div class="product-price">CHF 5.00</div>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="DEINE-PAYPAL-EMAIL@HIER-EINTRAGEN.com">
+                            <input type="hidden" name="item_name" value="SmartLightBall">
+                            <input type="hidden" name="amount" value="5.00">
+                            <input type="hidden" name="currency_code" value="CHF">
+                            <input type="hidden" name="lc" value="CH">
+                            <button type="submit" class="paypal-btn">
+                                <span data-lang-group="shop-product4-btn">
+                                    <span class="lang-en active">🛒 Buy Now</span>
+                                    <span class="lang-de">🛒 Jetzt kaufen</span>
+                                    <span class="lang-fr">🛒 Acheter maintenant</span>
+                                    <span class="lang-sv">🛒 Köp nu</span>
+                                    <span class="lang-fi">🛒 Osta nyt</span>
+                                    <span class="lang-ru">🛒 Купить сейчас</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Notice -->
+            <div class="shipping-notice">
+                <p>
+                    <span data-lang-group="shipping-notice">
+                        <span class="lang-en active">💳 Secure payment via PayPal. Shipping within Switzerland. Shipping costs calculated separately.</span>
+                        <span class="lang-de">💳 Sichere Bezahlung via PayPal. Versand innerhalb der Schweiz. Versandkosten werden separat berechnet.</span>
+                        <span class="lang-fr">💳 Paiement sécurisé via PayPal. Expédition en Suisse. Frais d'expédition calculés séparément.</span>
+                        <span class="lang-sv">💳 Säker betalning via PayPal. Frakt inom Schweiz. Fraktkostnader beräknas separat.</span>
+                        <span class="lang-fi">💳 Turvallinen maksu PayPalin kautta. Toimitus Sveitsissä. Toimituskulut lasketaan erikseen.</span>
+                        <span class="lang-ru">💳 Безопасная оплата через PayPal. Доставка по Швейцарии. Стоимость доставки рассчитывается отдельно.</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                <span data-lang-group="footer-copyright">
+                    <span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span>
+                    <span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span>
+                    <span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span>
+                    <span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span>
+                    <span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span>
+                    <span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span>
+                </span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span data-lang-group="footer-tagline">
+                    <span class="lang-en active">Developed with ❤️ for the Hockey Community</span>
+                    <span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span>
+                    <span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span>
+                    <span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span>
+                    <span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span>
+                    <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
+                </span>
+            </p>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="https://www.instagram.com/smarthockeyproducts.ch/" target="_blank" rel="noopener noreferrer" class="instagram-link" style="display: inline-flex; align-items: center; gap: 10px; color: #a0a0a0; text-decoration: none; transition: color 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span data-lang-group="footer-instagram">
+                        <span class="lang-en active">Follow us on Instagram</span>
+                        <span class="lang-de">Folge uns auf Instagram</span>
+                        <span class="lang-fr">Suivez-nous sur Instagram</span>
+                        <span class="lang-sv">Följ oss på Instagram</span>
+                        <span class="lang-fi">Seuraa meitä Instagramissa</span>
+                        <span class="lang-ru">Подписывайтесь в Instagram</span>
+                    </span>
+                </a>
+            </div>
+            <div style="margin-top: 15px; text-align: center;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/smarthockeyproducts.ch/&bgcolor=1a1a2e&color=ffffff&format=png" alt="QR Code - Instagram SmartHockey Products" style="width: 130px; height: 130px; border-radius: 8px; border: 2px solid #333;">
+                <p style="margin-top: 8px; font-size: 0.85rem; color: #808080;">
+                    <span data-lang-group="footer-qr">
+                        <span class="lang-en active">Scan to follow us</span>
+                        <span class="lang-de">Scannen um uns zu folgen</span>
+                        <span class="lang-fr">Scannez pour nous suivre</span>
+                        <span class="lang-sv">Skanna för att följa oss</span>
+                        <span class="lang-fi">Skannaa seurataksesi meitä</span>
+                        <span class="lang-ru">Сканируйте, чтобы подписаться</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = {
+                en: 'English',
+                de: 'Deutsch',
+                fr: 'Français',
+                sv: 'Svenska',
+                fi: 'Suomi',
+                ru: 'Русский'
+            };
+            
+            // Get browser language
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+            
+            // Get saved or browser language
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) {
+                    return saved;
+                }
+                return getBrowserLanguage();
+            }
+            
+            // Switch language
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) {
+                    lang = defaultLang;
+                }
+                
+                // Update all language-specific elements
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => {
+                        span.classList.remove('active');
+                    });
+                    const activeSpan = group.querySelector(`.lang-${lang}`);
+                    if (activeSpan) {
+                        activeSpan.classList.add('active');
+                    }
+                });
+                
+                // Update dropdown button text
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) {
+                    currentNameEl.textContent = langNames[lang];
+                }
+                
+                // Update language options
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    }
+                });
+                
+                // Update meta and title
+                const titles = {
+                    en: 'SmartHockey Shop - Professional Hockey Products',
+                    de: 'SmartHockey Shop - Professionelle Hockey Produkte',
+                    fr: 'Boutique SmartHockey - Produits de Hockey Professionnels',
+                    sv: 'SmartHockey Butik - Professionella Hockeyprodukter',
+                    fi: 'SmartHockey Kauppa - Ammattitason Jääkiekkotuotteet',
+                    ru: 'Магазин SmartHockey - Профессиональные Хоккейные Продукты'
+                };
+                document.title = titles[lang] || titles[defaultLang];
+                
+                // Update html lang attribute
+                document.documentElement.lang = lang;
+                
+                // Save preference
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+            
+            // Initialize
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+            
+            // Toggle dropdown
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) {
+                    langSwitcher.classList.remove('active');
+                }
+            });
+            
+            // Add event listeners to language options
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
