@@ -769,11 +769,11 @@
                 <!-- Product 2: SmartPen / IcePen -->
                 <div class="product-card">
                     <div class="product-image-gallery">
-                        <button class="gallery-arrow prev" onclick="changeGalleryImage(-1)">◀</button>
+                        <button class="gallery-arrow prev" onclick="changeGalleryImage(-1)" aria-label="Previous image">◀</button>
                         <img src="icepen-black.png" alt="IcePen Black" class="active gallery-img">
                         <img src="icepen-blue.png" alt="IcePen Blue" class="gallery-img">
                         <img src="icepen-red.png" alt="IcePen Red" class="gallery-img">
-                        <button class="gallery-arrow next" onclick="changeGalleryImage(1)">▶</button>
+                        <button class="gallery-arrow next" onclick="changeGalleryImage(1)" aria-label="Next image">▶</button>
                     </div>
                     <h3>SmartPen / IcePen</h3>
                     <p>
@@ -1161,9 +1161,9 @@
     </script>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Product image lightbox">
+        <span class="lightbox-close" aria-label="Close lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="">
     </div>
 
     <script>
@@ -1191,6 +1191,7 @@
             const lightboxImg = document.getElementById('lightbox-img');
             lightbox.classList.add('active');
             lightboxImg.src = imgSrc;
+            lightboxImg.alt = 'Enlarged product image';
         }
 
         function closeLightbox() {
@@ -1219,6 +1220,13 @@
             // Prevent lightbox close when clicking the image
             document.getElementById('lightbox-img').addEventListener('click', function(e) {
                 e.stopPropagation();
+            });
+
+            // Close lightbox on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
             });
         });
     </script>
