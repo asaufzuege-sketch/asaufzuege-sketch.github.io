@@ -282,28 +282,63 @@
             width: auto;
             margin-bottom: 15px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 15px;
         }
 
         .product-image-gallery {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
             margin-bottom: 15px;
-            flex-wrap: wrap;
+            min-height: 140px;
         }
 
         .product-image-gallery img {
-            height: 90px;
+            height: 120px;
             width: auto;
             object-fit: contain;
-            border-radius: 6px;
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
         }
 
-        .product-image-gallery img:hover {
-            transform: scale(1.1);
+        .product-image-gallery img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(37, 99, 235, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-arrow:hover {
+            background: rgba(37, 99, 235, 1);
+        }
+
+        .gallery-arrow.prev {
+            left: 10px;
+        }
+
+        .gallery-arrow.next {
+            right: 10px;
         }
 
         @media (max-width: 768px) {
@@ -311,15 +346,66 @@
                 max-height: 150px;
             }
             
-            .product-image-gallery img {
-                height: 70px;
+            .product-image-gallery {
+                min-height: 100px;
             }
+
+            .product-image-gallery img {
+                height: 90px;
+            }
+
+            .gallery-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: #2563eb;
         }
 
         .product-card h3 {
             font-size: 1.6rem;
             margin-bottom: 15px;
             color: #ffffff;
+            text-align: center;
         }
 
         .product-card p {
@@ -683,9 +769,11 @@
                 <!-- Product 2: SmartPen / IcePen -->
                 <div class="product-card">
                     <div class="product-image-gallery">
-                        <img src="icepen-blue.png" alt="IcePen Blue">
-                        <img src="icepen-red.png" alt="IcePen Red">
-                        <img src="icepen-black.png" alt="IcePen Black">
+                        <button class="gallery-arrow prev" onclick="changeGalleryImage(-1)" aria-label="Previous image">◀</button>
+                        <img src="icepen-black.png" alt="IcePen Black" class="active gallery-img">
+                        <img src="icepen-blue.png" alt="IcePen Blue" class="gallery-img">
+                        <img src="icepen-red.png" alt="IcePen Red" class="gallery-img">
+                        <button class="gallery-arrow next" onclick="changeGalleryImage(1)" aria-label="Next image">▶</button>
                     </div>
                     <h3>SmartPen / IcePen</h3>
                     <p>
@@ -1070,6 +1158,77 @@
                 });
             });
         })();
+    </script>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Product image lightbox">
+        <span class="lightbox-close" aria-label="Close lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="">
+    </div>
+
+    <script>
+        // Gallery carousel functionality
+        let currentGalleryIndex = 0;
+
+        function changeGalleryImage(direction) {
+            const galleryImages = document.querySelectorAll('.product-image-gallery .gallery-img');
+            
+            if (galleryImages.length === 0) return;
+            
+            // Remove active class from current image
+            galleryImages[currentGalleryIndex].classList.remove('active');
+            
+            // Calculate new index
+            currentGalleryIndex = (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
+            
+            // Add active class to new image
+            galleryImages[currentGalleryIndex].classList.add('active');
+        }
+
+        // Lightbox functionality
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.classList.add('active');
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = 'Enlarged product image';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Add click handlers to all product images
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle single product images
+            document.querySelectorAll('.product-image').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    openLightbox(this.src);
+                });
+            });
+
+            // Handle gallery images
+            document.querySelectorAll('.product-image-gallery img').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(this.src);
+                });
+            });
+
+            // Prevent lightbox close when clicking the image
+            document.getElementById('lightbox-img').addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+
+            // Close lightbox on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
     </script>
 </body>
 </html>
