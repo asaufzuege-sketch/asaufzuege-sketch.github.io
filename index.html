@@ -429,9 +429,13 @@
         .product-image {
             max-height: 180px;
             width: auto;
+            max-width: 100%;
             margin-bottom: 15px;
             object-fit: contain;
             border-radius: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .product-image-gallery {
@@ -440,12 +444,16 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
-            min-height: 140px;
+            height: 180px;
             align-self: center;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
         }
 
         .product-image-gallery img {
             max-height: 180px;
+            max-width: 100%;
             width: auto;
             object-fit: contain;
             border-radius: 15px;
@@ -497,7 +505,7 @@
             }
             
             .product-image-gallery {
-                min-height: 100px;
+                height: 150px;
             }
 
             .product-image-gallery img {
