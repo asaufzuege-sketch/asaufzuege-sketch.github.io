@@ -417,6 +417,45 @@
             margin-bottom: 15px;
         }
 
+        .product-image {
+            max-height: 180px;
+            width: auto;
+            margin-bottom: 15px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .product-image-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .product-image-gallery img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .product-image {
+                max-height: 150px;
+            }
+            
+            .product-image-gallery img {
+                height: 70px;
+            }
+        }
+
         .product-card h3 {
             font-size: 1.6rem;
             margin-bottom: 15px;
@@ -1098,7 +1137,11 @@
 
                 <!-- Product 2: SmartPen / IcePen -->
                 <div class="product-card">
-                    <div class="product-emoji">✏️</div>
+                    <div class="product-image-gallery">
+                        <img src="icepen-blue.png" alt="IcePen Blue">
+                        <img src="icepen-red.png" alt="IcePen Red">
+                        <img src="icepen-black.png" alt="IcePen Black">
+                    </div>
                     <h3>SmartPen / IcePen</h3>
                     <p>
                         <span data-lang-group="product2-desc">
@@ -1149,7 +1192,7 @@
 
                 <!-- Product 3: SmartFresh -->
                 <div class="product-card">
-                    <div class="product-emoji">🧴</div>
+                    <img src="smartfresh.png" alt="SmartFresh Spray" class="product-image">
                     <h3>SmartFresh</h3>
                     <p>
                         <span data-lang-group="product3-desc">
@@ -1220,7 +1263,7 @@
 
                 <!-- Product 4: SmartLightBall -->
                 <div class="product-card">
-                    <div class="product-emoji">🏑</div>
+                    <img src="smartlightball.png" alt="SmartLightBall" class="product-image">
                     <h3>SmartLightBall</h3>
                     <p>
                         <span data-lang-group="product4-desc">
