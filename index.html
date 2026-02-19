@@ -306,15 +306,12 @@
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            display: block;
             border-radius: 20px;
-            font-size: 40px;
+            object-fit: contain;
         }
 
         .app-card p {
@@ -447,7 +444,7 @@
         }
 
         .product-image-gallery img {
-            height: 120px;
+            max-height: 180px;
             width: auto;
             object-fit: contain;
             border-radius: 15px;
@@ -466,7 +463,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(37, 99, 235, 0.8);
+            background: rgba(0, 0, 0, 0.3);
             color: white;
             border: none;
             width: 40px;
@@ -482,7 +479,7 @@
         }
 
         .gallery-arrow:hover {
-            background: rgba(37, 99, 235, 1);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .gallery-arrow.prev {
@@ -503,7 +500,7 @@
             }
 
             .product-image-gallery img {
-                height: 90px;
+                max-height: 150px;
             }
 
             .gallery-arrow {
@@ -900,7 +897,7 @@
             <div class="apps-grid">
                 <!-- App 1: SmartHockey Pro -->
                 <div class="app-card">
-                    <div class="app-icon">📊</div>
+                    <img src="app-icon-pro.png" alt="SmartHockey Pro Icon" class="app-icon">
                     <h3>SmartHockey Pro</h3>
                     <p>
                         <span data-lang-group="app3-desc">
@@ -980,7 +977,7 @@
 
                 <!-- App 2: SmartHockey Light -->
                 <div class="app-card">
-                    <div class="app-icon">📱</div>
+                    <img src="app-icon-light.png" alt="SmartHockey Light Icon" class="app-icon">
                     <h3>SmartHockey Light</h3>
                     <p>
                         <span data-lang-group="app2-desc">
@@ -1060,7 +1057,7 @@
 
                 <!-- App 3: SmartHockey Inline -->
                 <div class="app-card">
-                    <div class="app-icon">⚡</div>
+                    <img src="app-icon-inline.png" alt="SmartHockey Inline Icon" class="app-icon">
                     <h3>SmartHockey Inline</h3>
                     <p>
                         <span data-lang-group="app1-desc">
