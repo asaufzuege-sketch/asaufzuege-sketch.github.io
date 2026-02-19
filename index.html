@@ -441,6 +441,7 @@
             align-items: center;
             margin-bottom: 15px;
             min-height: 140px;
+            align-self: center;
         }
 
         .product-image-gallery img {
@@ -1155,7 +1156,14 @@
             <div class="products-grid">
                 <!-- Product 1: SmartBoards -->
                 <div class="product-card">
-                    <div class="product-emoji">🏒</div>
+                    <div class="product-image-gallery">
+                        <button class="gallery-arrow prev" onclick="changeGalleryImage(this, -1)" aria-label="Previous image">◀</button>
+                        <img src="smartboard-1.png" alt="SmartBoard" class="active gallery-img">
+                        <img src="smartboard-2.png" alt="SmartBoard with measurements" class="gallery-img">
+                        <img src="smartboard-3.png" alt="SmartBoard curve element" class="gallery-img">
+                        <img src="smartboard-4.png" alt="SmartBoard in arena" class="gallery-img">
+                        <button class="gallery-arrow next" onclick="changeGalleryImage(this, 1)" aria-label="Next image">▶</button>
+                    </div>
                     <h3>SmartBoards</h3>
                     <p>
                         <span data-lang-group="product1-desc">
@@ -1236,11 +1244,11 @@
                 <!-- Product 2: SmartPen / IcePen -->
                 <div class="product-card">
                     <div class="product-image-gallery">
-                        <button class="gallery-arrow prev" onclick="changeGalleryImage(-1)" aria-label="Previous image">◀</button>
+                        <button class="gallery-arrow prev" onclick="changeGalleryImage(this, -1)" aria-label="Previous image">◀</button>
                         <img src="icepen-black.png" alt="IcePen Black" class="active gallery-img">
                         <img src="icepen-blue.png" alt="IcePen Blue" class="gallery-img">
                         <img src="icepen-red.png" alt="IcePen Red" class="gallery-img">
-                        <button class="gallery-arrow next" onclick="changeGalleryImage(1)" aria-label="Next image">▶</button>
+                        <button class="gallery-arrow next" onclick="changeGalleryImage(this, 1)" aria-label="Next image">▶</button>
                     </div>
                     <h3>SmartPen / IcePen</h3>
                     <p>
@@ -1694,6 +1702,16 @@
                     </span>
                 </p>
             </div>
+            <div style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
+                <span data-lang-group="footer-legal">
+                    <span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span>
+                    <span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
+                    <span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span>
+                    <span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span>
+                    <span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span>
+                    <span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span>
+                </span>
+            </div>
         </div>
     </footer>
 
@@ -1817,21 +1835,23 @@
 
     <script>
         // Gallery carousel functionality
-        let currentGalleryIndex = 0;
-
-        function changeGalleryImage(direction) {
-            const galleryImages = document.querySelectorAll('.product-image-gallery .gallery-img');
+        function changeGalleryImage(btn, direction) {
+            const gallery = btn.closest('.product-image-gallery');
+            const galleryImages = gallery.querySelectorAll('.gallery-img');
             
             if (galleryImages.length === 0) return;
             
+            const currentActive = gallery.querySelector('.gallery-img.active');
+            const currentIndex = Array.from(galleryImages).indexOf(currentActive);
+            
             // Remove active class from current image
-            galleryImages[currentGalleryIndex].classList.remove('active');
+            galleryImages[currentIndex].classList.remove('active');
             
             // Calculate new index
-            currentGalleryIndex = (currentGalleryIndex + direction + galleryImages.length) % galleryImages.length;
+            const newIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
             
             // Add active class to new image
-            galleryImages[currentGalleryIndex].classList.add('active');
+            galleryImages[newIndex].classList.add('active');
         }
 
         // Lightbox functionality

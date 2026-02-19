@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Products - Datenschutzerklärung / Privacy Policy">
+    <meta name="author" content="SmartHockey Products">
+    <title>Datenschutz – SmartHockey Products</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: url('ice-bg.jpg') center center / cover no-repeat fixed;
+            background-color: #0a1628;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        nav a.active {
+            color: #2563eb;
+        }
+
+        /* Language Switcher Dropdown */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .lang-dropdown-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .lang-dropdown-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .lang-chevron {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s;
+        }
+
+        .language-switcher.active .lang-chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.75) 0%, rgba(15, 52, 96, 0.75) 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .language-switcher.active .lang-dropdown-menu {
+            display: block;
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .lang-option:hover {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .lang-option.active {
+            background-color: rgba(37, 99, 235, 0.3);
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .lang-option-flag {
+            font-size: 1.3rem;
+        }
+
+        .lang-option-name {
+            font-size: 0.95rem;
+        }
+
+        /* Content language visibility */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        [data-lang-group] span[class^="lang-"] {
+            display: none !important;
+        }
+
+        [data-lang-group] span[class^="lang-"].active {
+            display: inline !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.70) 0%, rgba(15, 52, 96, 0.70) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+            background-color: rgba(26, 26, 46, 0.70);
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.80) 0%, rgba(15, 52, 96, 0.80) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #2a2a3e;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-card h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .content-card h3 {
+            font-size: 1.2rem;
+            color: #2563eb;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .content-card p {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .content-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.85) 0%, rgba(15, 15, 30, 0.85) 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+
+        footer p {
+            color: #808080;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .instagram-link:hover {
+            color: #E1306C !important;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
+                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
+                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
+                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <!-- Language Switcher Dropdown -->
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en">
+                        <span class="lang-option-flag">🇬🇧</span>
+                        <span class="lang-option-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="de">
+                        <span class="lang-option-flag">🇩🇪</span>
+                        <span class="lang-option-name">Deutsch</span>
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-option-flag">🇫🇷</span>
+                        <span class="lang-option-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="sv">
+                        <span class="lang-option-flag">🇸🇪</span>
+                        <span class="lang-option-name">Svenska</span>
+                    </button>
+                    <button class="lang-option" data-lang="fi">
+                        <span class="lang-option-flag">🇫🇮</span>
+                        <span class="lang-option-name">Suomi</span>
+                    </button>
+                    <button class="lang-option" data-lang="ru">
+                        <span class="lang-option-flag">🇷🇺</span>
+                        <span class="lang-option-name">Русский</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span data-lang-group="page-title">
+                    <span class="lang-en active">Privacy Policy</span>
+                    <span class="lang-de">Datenschutzerklärung</span>
+                    <span class="lang-fr">Politique de confidentialité</span>
+                    <span class="lang-sv">Integritetspolicy</span>
+                    <span class="lang-fi">Tietosuojakäytäntö</span>
+                    <span class="lang-ru">Политика конфиденциальности</span>
+                </span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-card">
+
+                <!-- English -->
+                <div class="lang-content lang-en active">
+                    <h2>Privacy Policy</h2>
+
+                    <h3>1. Responsible Party</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Switzerland<br>
+                        E-Mail: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. General Information on Data Processing</h3>
+                    <p>
+                        We take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with applicable data protection law (Swiss DSG / nDSG) and this privacy policy. When you visit our website, various personal data may be collected. Personal data is data with which you can be personally identified. This privacy policy explains what data we collect and what we use it for.
+                    </p>
+
+                    <h3>3. Hosting – GitHub Pages</h3>
+                    <p>
+                        This website is hosted on GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When you access our website, your browser automatically transmits data to GitHub's servers, including your IP address, browser type, operating system, and the pages you access. GitHub may store this data in server logs. For more information, please refer to GitHub's Privacy Policy at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.
+                    </p>
+
+                    <h3>4. Cookies and Google AdSense</h3>
+                    <p>
+                        This website uses Google AdSense, an advertising service provided by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google AdSense uses cookies and web beacons to display personalized advertisements based on your visits to this and other websites. Google may also use so-called "DoubleClick DART cookies" to show you ads based on your visits to other websites on the internet. You can opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Ad Settings</a>.
+                    </p>
+                    <p>
+                        The legal basis for using Google AdSense is your consent, which you can withdraw at any time. You can manage your Google ad settings at <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+                    </p>
+
+                    <h3>5. PayPal – Payment Processing</h3>
+                    <p>
+                        Our shop uses PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg) to process payments. When you make a purchase, you will be redirected to the PayPal website. PayPal may collect personal data such as your name, address, email address, and payment information. For more information on PayPal's data processing, please refer to PayPal's Privacy Statement at <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer">PayPal Privacy Policy</a>.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Our website contains links to our Instagram profile (Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Ireland). When you click on the Instagram link, you will be redirected to Instagram's website. Instagram may collect your personal data in accordance with their own privacy policy. We have no control over the data collected by Instagram. For more information, please refer to Instagram's Privacy Policy at <a href="https://help.instagram.com/519522125107875" target="_blank" rel="noopener noreferrer">Instagram Privacy Policy</a>.
+                    </p>
+
+                    <h3>7. External Links</h3>
+                    <p>
+                        Our website contains links to external websites. We have no control over the content and data protection practices of these websites. We therefore cannot assume any responsibility for these external contents. Please refer to the privacy policies of the respective websites for information on how they handle your data.
+                    </p>
+
+                    <h3>8. Your Rights</h3>
+                    <p>
+                        Under applicable data protection law (Swiss DSG/nDSG), you have the following rights:
+                    </p>
+                    <p>
+                        <strong>Right of access:</strong> You have the right to request information about the personal data we hold about you.<br>
+                        <strong>Right to rectification:</strong> You have the right to have inaccurate personal data corrected.<br>
+                        <strong>Right to erasure:</strong> You have the right to request the deletion of your personal data.<br>
+                        <strong>Right to object:</strong> You have the right to object to the processing of your personal data.<br>
+                        <strong>Right to data portability:</strong> You have the right to receive your personal data in a structured, commonly used format.
+                    </p>
+                    <p>
+                        To exercise these rights, please contact us at <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>.
+                    </p>
+                </div>
+
+                <!-- Deutsch -->
+                <div class="lang-content lang-de">
+                    <h2>Datenschutzerklärung</h2>
+
+                    <h3>1. Verantwortliche Stelle</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Schweiz<br>
+                        E-Mail: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. Allgemeine Hinweise zur Datenverarbeitung</h3>
+                    <p>
+                        Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend dem geltenden Datenschutzrecht (Schweizer DSG/nDSG) sowie dieser Datenschutzerklärung. Wenn Sie unsere Website besuchen, können verschiedene personenbezogene Daten erhoben werden. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Diese Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie verwenden.
+                    </p>
+
+                    <h3>3. Hosting – GitHub Pages</h3>
+                    <p>
+                        Diese Website wird auf GitHub Pages gehostet (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Beim Aufruf unserer Website übermittelt Ihr Browser automatisch Daten an die Server von GitHub, darunter Ihre IP-Adresse, Browsertyp, Betriebssystem und die aufgerufenen Seiten. GitHub kann diese Daten in Server-Logs speichern. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub unter <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.
+                    </p>
+
+                    <h3>4. Cookies und Google AdSense</h3>
+                    <p>
+                        Diese Website verwendet Google AdSense, einen Werbedienst der Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google AdSense verwendet Cookies und Web-Beacons, um personalisierte Werbeanzeigen basierend auf Ihren Besuchen auf dieser und anderen Websites anzuzeigen. Google kann auch sogenannte "DoubleClick DART-Cookies" verwenden, um Ihnen Anzeigen basierend auf Ihren Besuchen auf anderen Websites im Internet anzuzeigen. Sie können die Verwendung des DART-Cookies deaktivieren, indem Sie die Datenschutzrichtlinie des Google-Werbe- und Inhaltsnetzwerks unter <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Ad Settings</a> aufrufen.
+                    </p>
+                    <p>
+                        Die Rechtsgrundlage für die Verwendung von Google AdSense ist Ihre Einwilligung, die Sie jederzeit widerrufen können. Sie können Ihre Google-Werbeeinstellungen unter <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a> verwalten.
+                    </p>
+
+                    <h3>5. PayPal – Zahlungsabwicklung</h3>
+                    <p>
+                        Unser Shop nutzt PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxemburg) zur Zahlungsabwicklung. Bei einem Kauf werden Sie auf die Website von PayPal weitergeleitet. PayPal kann personenbezogene Daten wie Ihren Namen, Ihre Adresse, E-Mail-Adresse und Zahlungsinformationen erheben. Weitere Informationen zur Datenverarbeitung durch PayPal finden Sie in der Datenschutzerklärung von PayPal unter <a href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer">PayPal Datenschutzrichtlinie</a>.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Unsere Website enthält Links zu unserem Instagram-Profil (Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland). Wenn Sie auf den Instagram-Link klicken, werden Sie zur Instagram-Website weitergeleitet. Instagram kann Ihre personenbezogenen Daten gemäss ihrer eigenen Datenschutzrichtlinie erheben. Wir haben keinen Einfluss auf die von Instagram erhobenen Daten. Weitere Informationen finden Sie in der Instagram-Datenschutzrichtlinie unter <a href="https://help.instagram.com/519522125107875" target="_blank" rel="noopener noreferrer">Instagram Datenschutzrichtlinie</a>.
+                    </p>
+
+                    <h3>7. Externe Links</h3>
+                    <p>
+                        Unsere Website enthält Links zu externen Websites. Wir haben keinen Einfluss auf die Inhalte und Datenschutzpraktiken dieser Websites und übernehmen daher keine Verantwortung für diese fremden Inhalte. Bitte beachten Sie die Datenschutzrichtlinien der jeweiligen Websites für Informationen über den Umgang mit Ihren Daten.
+                    </p>
+
+                    <h3>8. Ihre Rechte</h3>
+                    <p>
+                        Gemäss dem anwendbaren Datenschutzrecht (Schweizer DSG/nDSG) haben Sie folgende Rechte:
+                    </p>
+                    <p>
+                        <strong>Auskunftsrecht:</strong> Sie haben das Recht, Auskunft über die von uns gespeicherten personenbezogenen Daten zu verlangen.<br>
+                        <strong>Recht auf Berichtigung:</strong> Sie haben das Recht, die Berichtigung unrichtiger personenbezogener Daten zu verlangen.<br>
+                        <strong>Recht auf Löschung:</strong> Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen.<br>
+                        <strong>Widerspruchsrecht:</strong> Sie haben das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen.<br>
+                        <strong>Recht auf Datenübertragbarkeit:</strong> Sie haben das Recht, Ihre personenbezogenen Daten in einem strukturierten, gängigen Format zu erhalten.
+                    </p>
+                    <p>
+                        Um diese Rechte auszuüben, wenden Sie sich bitte an <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>.
+                    </p>
+                </div>
+
+                <!-- Français -->
+                <div class="lang-content lang-fr">
+                    <h2>Politique de confidentialité</h2>
+
+                    <h3>1. Responsable du traitement</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhouse<br>
+                        CH – Suisse<br>
+                        E-mail : <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. Informations générales sur le traitement des données</h3>
+                    <p>
+                        Nous prenons très au sérieux la protection de vos données personnelles. Nous traitons vos données personnelles de manière confidentielle et conformément à la loi applicable sur la protection des données (DSG/nLPD suisse) et à la présente politique de confidentialité.
+                    </p>
+
+                    <h3>3. Hébergement – GitHub Pages</h3>
+                    <p>
+                        Ce site web est hébergé sur GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Lors de l'accès à notre site web, votre navigateur transmet automatiquement des données aux serveurs de GitHub, notamment votre adresse IP, le type de navigateur, le système d'exploitation et les pages consultées. GitHub peut stocker ces données dans des journaux de serveur.
+                    </p>
+
+                    <h3>4. Cookies et Google AdSense</h3>
+                    <p>
+                        Ce site web utilise Google AdSense, un service publicitaire de Google LLC. Google AdSense utilise des cookies et des balises web pour afficher des publicités personnalisées basées sur vos visites sur ce site et d'autres sites web. Vous pouvez gérer vos paramètres publicitaires Google sur <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+                    </p>
+
+                    <h3>5. PayPal – Traitement des paiements</h3>
+                    <p>
+                        Notre boutique utilise PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg) pour le traitement des paiements. Lors d'un achat, vous serez redirigé vers le site web de PayPal. Pour plus d'informations sur le traitement des données par PayPal, veuillez consulter la politique de confidentialité de PayPal.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Notre site web contient des liens vers notre profil Instagram (Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irlande). Lorsque vous cliquez sur le lien Instagram, vous serez redirigé vers le site web d'Instagram. Instagram peut collecter vos données personnelles conformément à sa propre politique de confidentialité.
+                    </p>
+
+                    <h3>7. Liens externes</h3>
+                    <p>
+                        Notre site web contient des liens vers des sites web externes. Nous n'avons aucun contrôle sur le contenu et les pratiques de protection des données de ces sites web et ne pouvons donc assumer aucune responsabilité pour ces contenus externes.
+                    </p>
+
+                    <h3>8. Vos droits</h3>
+                    <p>
+                        Conformément à la loi applicable sur la protection des données (DSG/nLPD suisse), vous disposez des droits suivants : droit d'accès, droit de rectification, droit à l'effacement, droit d'opposition et droit à la portabilité des données. Pour exercer ces droits, veuillez nous contacter à <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>.
+                    </p>
+                </div>
+
+                <!-- Svenska -->
+                <div class="lang-content lang-sv">
+                    <h2>Integritetspolicy</h2>
+
+                    <h3>1. Ansvarig part</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Schweiz<br>
+                        E-post: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. Allmän information om databehandling</h3>
+                    <p>
+                        Vi tar skyddet av dina personuppgifter på stort allvar. Vi behandlar dina personuppgifter konfidentiellt och i enlighet med tillämplig dataskyddslagstiftning (schweizisk DSG/nDSG) och denna integritetspolicy.
+                    </p>
+
+                    <h3>3. Webbhotell – GitHub Pages</h3>
+                    <p>
+                        Denna webbplats är värdad på GitHub Pages (GitHub, Inc., USA). När du besöker vår webbplats skickar din webbläsare automatiskt data till GitHubs servrar, inklusive din IP-adress, webbläsartyp och de sidor du besöker.
+                    </p>
+
+                    <h3>4. Cookies och Google AdSense</h3>
+                    <p>
+                        Denna webbplats använder Google AdSense, en reklamtjänst från Google LLC. Google AdSense använder cookies för att visa personliga annonser baserade på dina besök på denna och andra webbplatser. Du kan hantera dina Google-annonsinställningar på <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+                    </p>
+
+                    <h3>5. PayPal – Betalningsbehandling</h3>
+                    <p>
+                        Vår butik använder PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., Luxemburg) för betalningsbehandling. Vid ett köp omdirigeras du till PayPals webbplats.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Vår webbplats innehåller länkar till vår Instagram-profil (Meta Platforms Ireland Limited, Irland). Instagram kan samla in dina personuppgifter i enlighet med sin egen integritetspolicy.
+                    </p>
+
+                    <h3>7. Externa länkar</h3>
+                    <p>
+                        Vår webbplats innehåller länkar till externa webbplatser. Vi har ingen kontroll över innehållet och dataskyddspraxisen på dessa webbplatser.
+                    </p>
+
+                    <h3>8. Dina rättigheter</h3>
+                    <p>
+                        Enligt tillämplig dataskyddslagstiftning (schweizisk DSG/nDSG) har du rätt till tillgång, rättelse, radering, invändning och dataportabilitet. Kontakta oss på <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a> för att utöva dessa rättigheter.
+                    </p>
+                </div>
+
+                <!-- Suomi -->
+                <div class="lang-content lang-fi">
+                    <h2>Tietosuojakäytäntö</h2>
+
+                    <h3>1. Rekisterinpitäjä</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Sveitsi<br>
+                        Sähköposti: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. Yleiset tiedot tietojenkäsittelystä</h3>
+                    <p>
+                        Suhtaudumme henkilötietojesi suojaamiseen erittäin vakavasti. Käsittelemme henkilötietojasi luottamuksellisesti ja sovellettavan tietosuojalain (Sveitsin DSG/nDSG) mukaisesti.
+                    </p>
+
+                    <h3>3. Hosting – GitHub Pages</h3>
+                    <p>
+                        Tämä verkkosivusto on isännöity GitHub Pagesissa (GitHub, Inc., USA). Kun vierailet sivustollamme, selaimesi lähettää automaattisesti tietoja GitHubin palvelimille, mukaan lukien IP-osoitteesi, selaintyyppi ja vierailemasi sivut.
+                    </p>
+
+                    <h3>4. Evästeet ja Google AdSense</h3>
+                    <p>
+                        Tämä verkkosivusto käyttää Google AdSensea, Google LLC:n mainospalvelua. Google AdSense käyttää evästeitä näyttääkseen personoituja mainoksia vierailuihisi perustuen. Voit hallita Google-mainosasetuksiasi osoitteessa <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+                    </p>
+
+                    <h3>5. PayPal – Maksujen käsittely</h3>
+                    <p>
+                        Kauppamme käyttää PayPalia (PayPal (Europe) S.à r.l. et Cie, S.C.A., Luxemburg) maksujen käsittelyyn. Oston yhteydessä sinut ohjataan PayPalin verkkosivustolle.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Verkkosivustollamme on linkkejä Instagram-profiiliimme (Meta Platforms Ireland Limited, Irlanti). Instagram voi kerätä henkilötietojasi oman tietosuojakäytäntönsä mukaisesti.
+                    </p>
+
+                    <h3>7. Ulkoiset linkit</h3>
+                    <p>
+                        Verkkosivustollamme on linkkejä ulkoisille verkkosivustoille. Meillä ei ole vaikutusvaltaa näiden verkkosivustojen sisältöön tai tietosuojakäytäntöihin.
+                    </p>
+
+                    <h3>8. Oikeutesi</h3>
+                    <p>
+                        Sovellettavan tietosuojalain (Sveitsin DSG/nDSG) mukaan sinulla on oikeus saada tietoja, oikaista, poistaa, vastustaa käsittelyä ja tietojen siirrettävyyteen. Ota yhteyttä osoitteeseen <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a> käyttääksesi näitä oikeuksia.
+                    </p>
+                </div>
+
+                <!-- Русский -->
+                <div class="lang-content lang-ru">
+                    <h2>Политика конфиденциальности</h2>
+
+                    <h3>1. Ответственный за обработку данных</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Шаффхаузен<br>
+                        CH – Швейцария<br>
+                        Эл. почта: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>2. Общая информация об обработке данных</h3>
+                    <p>
+                        Мы очень серьёзно относимся к защите ваших персональных данных. Мы обрабатываем ваши персональные данные конфиденциально и в соответствии с применимым законодательством о защите данных (Швейцарский DSG/nDSG).
+                    </p>
+
+                    <h3>3. Хостинг – GitHub Pages</h3>
+                    <p>
+                        Этот веб-сайт размещён на GitHub Pages (GitHub, Inc., США). При посещении нашего веб-сайта ваш браузер автоматически передаёт данные серверам GitHub, включая ваш IP-адрес, тип браузера и посещённые страницы.
+                    </p>
+
+                    <h3>4. Файлы cookie и Google AdSense</h3>
+                    <p>
+                        Этот веб-сайт использует Google AdSense, рекламный сервис Google LLC. Google AdSense использует файлы cookie для отображения персонализированной рекламы на основе ваших посещений. Вы можете управлять настройками рекламы Google на <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.
+                    </p>
+
+                    <h3>5. PayPal – Обработка платежей</h3>
+                    <p>
+                        Наш магазин использует PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., Люксембург) для обработки платежей. При совершении покупки вы будете перенаправлены на веб-сайт PayPal.
+                    </p>
+
+                    <h3>6. Instagram</h3>
+                    <p>
+                        Наш веб-сайт содержит ссылки на наш профиль в Instagram (Meta Platforms Ireland Limited, Ирландия). Instagram может собирать ваши персональные данные в соответствии со своей собственной политикой конфиденциальности.
+                    </p>
+
+                    <h3>7. Внешние ссылки</h3>
+                    <p>
+                        Наш веб-сайт содержит ссылки на внешние веб-сайты. Мы не контролируем содержимое и практику защиты данных этих веб-сайтов.
+                    </p>
+
+                    <h3>8. Ваши права</h3>
+                    <p>
+                        В соответствии с применимым законодательством о защите данных (Швейцарский DSG/nDSG) вы имеете право на доступ, исправление, удаление, возражение и переносимость данных. Свяжитесь с нами по адресу <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a> для реализации этих прав.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                <span data-lang-group="footer-copyright">
+                    <span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span>
+                    <span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span>
+                    <span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span>
+                    <span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span>
+                    <span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span>
+                    <span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span>
+                </span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span data-lang-group="footer-tagline">
+                    <span class="lang-en active">Developed with ❤️ for the Hockey Community</span>
+                    <span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span>
+                    <span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span>
+                    <span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span>
+                    <span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span>
+                    <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
+                </span>
+            </p>
+            <div style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
+                <span data-lang-group="footer-legal">
+                    <span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span>
+                    <span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
+                    <span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span>
+                    <span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span>
+                    <span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span>
+                    <span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = {
+                en: 'English',
+                de: 'Deutsch',
+                fr: 'Français',
+                sv: 'Svenska',
+                fi: 'Suomi',
+                ru: 'Русский'
+            };
+
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) {
+                    return saved;
+                }
+                return getBrowserLanguage();
+            }
+
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) {
+                    lang = defaultLang;
+                }
+
+                // Update lang-content blocks
+                document.querySelectorAll('.lang-content').forEach(el => {
+                    el.classList.remove('active');
+                });
+                const activeContent = document.querySelector('.lang-content.lang-' + lang);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+
+                // Update all language-specific elements
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => {
+                        span.classList.remove('active');
+                    });
+                    const activeSpan = group.querySelector('.lang-' + lang);
+                    if (activeSpan) {
+                        activeSpan.classList.add('active');
+                    }
+                });
+
+                // Update dropdown button text
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) {
+                    currentNameEl.textContent = langNames[lang];
+                }
+
+                // Update language options
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    }
+                });
+
+                // Update page title
+                const titles = {
+                    en: 'Privacy Policy – SmartHockey Products',
+                    de: 'Datenschutz – SmartHockey Products',
+                    fr: 'Politique de confidentialité – SmartHockey Products',
+                    sv: 'Integritetspolicy – SmartHockey Products',
+                    fi: 'Tietosuojakäytäntö – SmartHockey Products',
+                    ru: 'Политика конфиденциальности – SmartHockey Products'
+                };
+                document.title = titles[lang] || titles[defaultLang];
+
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) {
+                    langSwitcher.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
