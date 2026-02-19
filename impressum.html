@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Products - Impressum / Imprint">
+    <meta name="author" content="SmartHockey Products">
+    <title>Impressum – SmartHockey Products</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: url('ice-bg.jpg') center center / cover no-repeat fixed;
+            background-color: #0a1628;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        nav a.active {
+            color: #2563eb;
+        }
+
+        /* Language Switcher Dropdown */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .lang-dropdown-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .lang-dropdown-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .lang-chevron {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s;
+        }
+
+        .language-switcher.active .lang-chevron {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.75) 0%, rgba(15, 52, 96, 0.75) 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .language-switcher.active .lang-dropdown-menu {
+            display: block;
+        }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .lang-option:hover {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .lang-option.active {
+            background-color: rgba(37, 99, 235, 0.3);
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .lang-option-flag {
+            font-size: 1.3rem;
+        }
+
+        .lang-option-name {
+            font-size: 0.95rem;
+        }
+
+        /* Content language visibility */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        [data-lang-group] span[class^="lang-"] {
+            display: none !important;
+        }
+
+        [data-lang-group] span[class^="lang-"].active {
+            display: inline !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.70) 0%, rgba(15, 52, 96, 0.70) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+            background-color: rgba(26, 26, 46, 0.70);
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.80) 0%, rgba(15, 52, 96, 0.80) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #2a2a3e;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-card h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .content-card h3 {
+            font-size: 1.2rem;
+            color: #2563eb;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .content-card p {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .content-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.85) 0%, rgba(15, 15, 30, 0.85) 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+
+        footer p {
+            color: #808080;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .instagram-link:hover {
+            color: #E1306C !important;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
+                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
+                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
+                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <!-- Language Switcher Dropdown -->
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en">
+                        <span class="lang-option-flag">🇬🇧</span>
+                        <span class="lang-option-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="de">
+                        <span class="lang-option-flag">🇩🇪</span>
+                        <span class="lang-option-name">Deutsch</span>
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        <span class="lang-option-flag">🇫🇷</span>
+                        <span class="lang-option-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="sv">
+                        <span class="lang-option-flag">🇸🇪</span>
+                        <span class="lang-option-name">Svenska</span>
+                    </button>
+                    <button class="lang-option" data-lang="fi">
+                        <span class="lang-option-flag">🇫🇮</span>
+                        <span class="lang-option-name">Suomi</span>
+                    </button>
+                    <button class="lang-option" data-lang="ru">
+                        <span class="lang-option-flag">🇷🇺</span>
+                        <span class="lang-option-name">Русский</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span data-lang-group="page-title">
+                    <span class="lang-en active">Imprint</span>
+                    <span class="lang-de">Impressum</span>
+                    <span class="lang-fr">Mentions légales</span>
+                    <span class="lang-sv">Impressum</span>
+                    <span class="lang-fi">Impressum</span>
+                    <span class="lang-ru">Выходные данные</span>
+                </span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-card">
+
+                <!-- English -->
+                <div class="lang-content lang-en active">
+                    <h2>Imprint</h2>
+
+                    <h3>Company Information</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Switzerland<br>
+                        E-Mail: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Responsible for Content</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Schaffhausen, Switzerland
+                    </p>
+
+                    <h3>Disclaimer – Liability for Content</h3>
+                    <p>
+                        The contents of this website have been created with the greatest possible care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages in accordance with applicable law. We are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
+                    </p>
+
+                    <h3>Disclaimer – Liability for Links</h3>
+                    <p>
+                        Our website contains links to external third-party websites, the content of which we have no control over. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for the content of those pages. We checked the linked pages at the time of linking for possible legal violations. Illegal content was not recognizable at the time of linking. Permanent monitoring of the content of the linked pages is not reasonable without concrete indications of a violation of law. Upon notification of violations, we will remove such links immediately.
+                    </p>
+
+                    <h3>Copyright</h3>
+                    <p>
+                        The content and works on this website created by the site operators are subject to applicable copyright law. Duplication, processing, distribution, or any form of commercialization of such material beyond the scope of the copyright law shall require the prior written consent of the author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.
+                    </p>
+                </div>
+
+                <!-- Deutsch -->
+                <div class="lang-content lang-de">
+                    <h2>Impressum</h2>
+
+                    <h3>Angaben zum Unternehmen</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Schweiz<br>
+                        E-Mail: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Verantwortlich für den Inhalt</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Schaffhausen, Schweiz
+                    </p>
+
+                    <h3>Haftungsausschluss – Haftung für Inhalte</h3>
+                    <p>
+                        Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß den geltenden Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                    </p>
+
+                    <h3>Haftungsausschluss – Haftung für Links</h3>
+                    <p>
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstösse überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                    </p>
+
+                    <h3>Urheberrecht</h3>
+                    <p>
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem anwendbaren Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                    </p>
+                </div>
+
+                <!-- Français -->
+                <div class="lang-content lang-fr">
+                    <h2>Mentions légales</h2>
+
+                    <h3>Informations sur l'entreprise</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhouse<br>
+                        CH – Suisse<br>
+                        E-mail : <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Responsable du contenu</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Schaffhouse, Suisse
+                    </p>
+
+                    <h3>Clause de non-responsabilité – Responsabilité pour le contenu</h3>
+                    <p>
+                        Le contenu de ce site web a été créé avec le plus grand soin. Cependant, nous ne pouvons pas garantir l'exactitude, l'exhaustivité ou l'actualité du contenu. En tant que prestataire de services, nous sommes responsables de notre propre contenu sur ces pages conformément à la loi applicable. Nous ne sommes pas tenus de surveiller les informations de tiers transmises ou stockées, ni de rechercher des circonstances indiquant une activité illégale.
+                    </p>
+
+                    <h3>Clause de non-responsabilité – Responsabilité pour les liens</h3>
+                    <p>
+                        Notre site web contient des liens vers des sites web tiers externes sur lesquels nous n'avons aucun contrôle. Nous ne pouvons donc assumer aucune responsabilité pour ces contenus externes. Le fournisseur ou opérateur respectif des pages liées est toujours responsable du contenu de ces pages. Nous avons vérifié les pages liées au moment de la mise en lien pour d'éventuelles violations légales. Aucun contenu illégal n'était reconnaissable au moment de la mise en lien.
+                    </p>
+
+                    <h3>Droits d'auteur</h3>
+                    <p>
+                        Le contenu et les œuvres créés par les opérateurs du site sur ce site web sont soumis à la loi applicable sur le droit d'auteur. La duplication, le traitement, la distribution ou toute forme de commercialisation de ce matériel au-delà du cadre de la loi sur le droit d'auteur nécessitent le consentement écrit préalable de l'auteur ou du créateur.
+                    </p>
+                </div>
+
+                <!-- Svenska -->
+                <div class="lang-content lang-sv">
+                    <h2>Impressum</h2>
+
+                    <h3>Företagsinformation</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Schweiz<br>
+                        E-post: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Ansvarig för innehåll</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Schaffhausen, Schweiz
+                    </p>
+
+                    <h3>Ansvarsfriskrivning – Ansvar för innehåll</h3>
+                    <p>
+                        Innehållet på denna webbplats har skapats med största möjliga omsorg. Vi kan dock inte garantera innehållets riktighet, fullständighet eller aktualitet. Som tjänsteleverantör är vi ansvariga för vårt eget innehåll på dessa sidor i enlighet med tillämplig lag.
+                    </p>
+
+                    <h3>Ansvarsfriskrivning – Ansvar för länkar</h3>
+                    <p>
+                        Vår webbplats innehåller länkar till externa webbplatser från tredje part, vars innehåll vi inte har något inflytande över. Vi kan därför inte ta något ansvar för dessa externa innehåll. Den respektive leverantören eller operatören av de länkade sidorna är alltid ansvarig för innehållet på dessa sidor.
+                    </p>
+
+                    <h3>Upphovsrätt</h3>
+                    <p>
+                        Det innehåll och de verk som skapats av webbplatsoperatörerna på denna webbplats är föremål för tillämplig upphovsrättslag. Duplicering, bearbetning, distribution eller någon form av kommersialisering av sådant material utöver upphovsrättslagens räckvidd kräver föregående skriftligt samtycke från upphovsmannen eller skaparen.
+                    </p>
+                </div>
+
+                <!-- Suomi -->
+                <div class="lang-content lang-fi">
+                    <h2>Impressum</h2>
+
+                    <h3>Yritystiedot</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Schaffhausen<br>
+                        CH – Sveitsi<br>
+                        Sähköposti: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Vastuuhenkilö sisällöstä</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Schaffhausen, Sveitsi
+                    </p>
+
+                    <h3>Vastuuvapauslauseke – Vastuu sisällöstä</h3>
+                    <p>
+                        Tämän verkkosivuston sisältö on laadittu suurimmalla mahdollisella huolella. Emme kuitenkaan voi taata sisällön oikeellisuutta, täydellisyyttä tai ajantasaisuutta. Palveluntarjoajana olemme vastuussa omasta sisällöstämme näillä sivuilla sovellettavan lain mukaisesti.
+                    </p>
+
+                    <h3>Vastuuvapauslauseke – Vastuu linkeistä</h3>
+                    <p>
+                        Verkkosivustollamme on linkkejä ulkoisille kolmannen osapuolen verkkosivustoille, joiden sisältöön meillä ei ole vaikutusvaltaa. Emme siksi voi ottaa mitään vastuuta näistä ulkoisista sisällöistä. Linkitettyjen sivujen kyseinen palveluntarjoaja tai operaattori on aina vastuussa kyseisten sivujen sisällöstä.
+                    </p>
+
+                    <h3>Tekijänoikeus</h3>
+                    <p>
+                        Sivuston operaattoreiden tällä verkkosivustolla luoma sisältö ja teokset ovat sovellettavan tekijänoikeuslain alaisia. Tällaisen materiaalin kopiointi, muokkaus, jakelu tai kaupallistaminen tekijänoikeuslain soveltamisalan ulkopuolella edellyttää tekijän tai luojan kirjallista ennakkosuostumusta.
+                    </p>
+                </div>
+
+                <!-- Русский -->
+                <div class="lang-content lang-ru">
+                    <h2>Выходные данные</h2>
+
+                    <h3>Информация о компании</h3>
+                    <p>
+                        <strong>SmartHockey Products</strong><br>
+                        8200 Шаффхаузен<br>
+                        CH – Швейцария<br>
+                        Эл. почта: <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
+                    </p>
+
+                    <h3>Ответственный за содержание</h3>
+                    <p>
+                        SmartHockey Products<br>
+                        8200 Шаффхаузен, Швейцария
+                    </p>
+
+                    <h3>Отказ от ответственности – Ответственность за содержание</h3>
+                    <p>
+                        Содержимое этого веб-сайта создано с максимальной тщательностью. Однако мы не можем гарантировать точность, полноту или актуальность содержимого. Как поставщик услуг мы несём ответственность за собственное содержимое на этих страницах в соответствии с применимым законодательством.
+                    </p>
+
+                    <h3>Отказ от ответственности – Ответственность за ссылки</h3>
+                    <p>
+                        Наш веб-сайт содержит ссылки на внешние сторонние веб-сайты, содержимое которых мы не контролируем. Поэтому мы не можем принять никакой ответственности за это внешнее содержимое. Соответствующий провайдер или оператор связанных страниц всегда несёт ответственность за их содержимое.
+                    </p>
+
+                    <h3>Авторские права</h3>
+                    <p>
+                        Содержимое и работы, созданные операторами сайта на этом веб-сайте, подпадают под действие применимого законодательства об авторском праве. Дублирование, обработка, распространение или любая форма коммерциализации такого материала за пределами авторского права требуют предварительного письменного согласия автора или создателя.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                <span data-lang-group="footer-copyright">
+                    <span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span>
+                    <span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span>
+                    <span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span>
+                    <span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span>
+                    <span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span>
+                    <span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span>
+                </span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span data-lang-group="footer-tagline">
+                    <span class="lang-en active">Developed with ❤️ for the Hockey Community</span>
+                    <span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span>
+                    <span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span>
+                    <span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span>
+                    <span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span>
+                    <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
+                </span>
+            </p>
+            <div style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
+                <span data-lang-group="footer-legal">
+                    <span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span>
+                    <span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
+                    <span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span>
+                    <span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span>
+                    <span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span>
+                    <span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = {
+                en: 'English',
+                de: 'Deutsch',
+                fr: 'Français',
+                sv: 'Svenska',
+                fi: 'Suomi',
+                ru: 'Русский'
+            };
+
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) {
+                    return saved;
+                }
+                return getBrowserLanguage();
+            }
+
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) {
+                    lang = defaultLang;
+                }
+
+                // Update lang-content blocks
+                document.querySelectorAll('.lang-content').forEach(el => {
+                    el.classList.remove('active');
+                });
+                const activeContent = document.querySelector('.lang-content.lang-' + lang);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+
+                // Update all language-specific elements
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => {
+                        span.classList.remove('active');
+                    });
+                    const activeSpan = group.querySelector('.lang-' + lang);
+                    if (activeSpan) {
+                        activeSpan.classList.add('active');
+                    }
+                });
+
+                // Update dropdown button text
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) {
+                    currentNameEl.textContent = langNames[lang];
+                }
+
+                // Update language options
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    }
+                });
+
+                // Update page title
+                const titles = {
+                    en: 'Imprint – SmartHockey Products',
+                    de: 'Impressum – SmartHockey Products',
+                    fr: 'Mentions légales – SmartHockey Products',
+                    sv: 'Impressum – SmartHockey Products',
+                    fi: 'Impressum – SmartHockey Products',
+                    ru: 'Выходные данные – SmartHockey Products'
+                };
+                document.title = titles[lang] || titles[defaultLang];
+
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) {
+                    langSwitcher.classList.remove('active');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
