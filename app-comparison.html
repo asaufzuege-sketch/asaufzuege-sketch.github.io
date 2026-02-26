@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare SmartHockey Pro, SmartHockey Light, and SmartHockey Inline to find the perfect hockey statistics app for your needs.">
+    <meta name="author" content="SmartHockey Products">
+    <title>SmartHockey App Comparison – Which App is Right for You?</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: url('ice-bg.jpg') center center / cover no-repeat fixed; background-color: #0a1628; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.85) 100%); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1.1rem; }
+        nav a:hover { color: #2563eb; }
+        nav a.active { color: #2563eb; }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border: 2px solid #2563eb; color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(37,99,235,0.3); }
+        .lang-dropdown-btn:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); box-shadow: 0 4px 12px rgba(37,99,235,0.5); transform: translateY(-1px); }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); min-width: 180px; z-index: 1000; overflow: hidden; }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #e0e0e0; cursor: pointer; transition: background-color 0.2s; border: none; background: transparent; width: 100%; text-align: left; font-size: 1rem; }
+        .lang-option:hover { background-color: rgba(37,99,235,0.2); }
+        .lang-option.active { background-color: rgba(37,99,235,0.3); color: #2563eb; font-weight: 600; }
+        .lang-option-flag { font-size: 1.3rem; }
+        .lang-option-name { font-size: 0.95rem; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        [data-lang-group] span[class^="lang-"] { display: none !important; }
+        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
+        .hero { background: linear-gradient(135deg, rgba(10,22,40,0.9) 0%, rgba(15,52,96,0.85) 100%); padding: 60px 0 40px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+        .hero .app-hero-icon { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
+        .hero p { font-size: 1.1rem; color: #a0b0c0; max-width: 700px; margin: 0 auto; }
+        .content-section { padding: 60px 0; }
+        .content-card { background: linear-gradient(135deg, rgba(22,33,62,0.85) 0%, rgba(15,52,96,0.85) 100%); border-radius: 15px; padding: 40px; margin-bottom: 30px; border: 2px solid #2a2a3e; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+        .content-card h2 { color: #2563eb; font-size: 1.8rem; margin-bottom: 20px; }
+        .content-card h3 { color: #60a0e0; font-size: 1.3rem; margin: 20px 0 10px; }
+        .content-card p { margin-bottom: 15px; color: #c0ccd8; line-height: 1.8; }
+        .content-card ul { margin: 10px 0 20px 20px; }
+        .content-card ul li { margin-bottom: 8px; color: #c0ccd8; line-height: 1.7; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .feature-item { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 20px; }
+        .feature-item h4 { color: #2563eb; margin-bottom: 8px; }
+        .feature-item p { margin: 0; font-size: 0.95rem; }
+        .status-notice { background: rgba(37,99,235,0.15); border: 2px solid #2563eb; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
+        .status-notice p { color: #e0e0e0; font-size: 1.1rem; margin: 0; }
+        .btn { display: inline-block; padding: 12px 30px; background-color: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s, transform 0.2s; text-align: center; }
+        .btn:hover { background-color: #1d4ed8; transform: scale(1.05); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: center; border: 1px solid #2a2a3e; }
+        .comparison-table th { background: rgba(37,99,235,0.2); color: #60a0e0; font-weight: 600; font-size: 1rem; }
+        .comparison-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+        .comparison-table td:first-child { text-align: left; font-weight: 500; color: #c0ccd8; }
+        .apps-mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
+        .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; }
+        .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin-bottom: 15px; }
+        .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
+        .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; }
+        footer { background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%); padding: 30px 0; text-align: center; color: #a0a0a0; border-top: 1px solid #2a2a3e; margin-top: 40px; }
+        footer p { margin-bottom: 8px; }
+        footer a { color: #a0a0a0; text-decoration: none; }
+        footer a:hover { color: #2563eb; }
+        @media (max-width: 768px) { nav { gap: 15px; } .hero h1 { font-size: 1.8rem; } .content-card { padding: 25px; } .comparison-table { font-size: 0.85rem; } .comparison-table th, .comparison-table td { padding: 8px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
+                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
+                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
+                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html" class="active">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-en active">📱 Apps</span>
+                        <span class="lang-de">📱 Apps</span>
+                        <span class="lang-fr">📱 Apps</span>
+                        <span class="lang-sv">📱 Appar</span>
+                        <span class="lang-fi">📱 Sovellukset</span>
+                        <span class="lang-ru">📱 Приложения</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option" data-lang="de"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                    <button class="lang-option" data-lang="fr"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button>
+                    <button class="lang-option" data-lang="sv"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button>
+                    <button class="lang-option" data-lang="fi"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button>
+                    <button class="lang-option" data-lang="ru"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>
+                <span data-lang-group="comparison-title">
+                    <span class="lang-en active">Which SmartHockey App is right for you?</span>
+                    <span class="lang-de">Welche SmartHockey App passt zu dir?</span>
+                    <span class="lang-fr">Quelle application SmartHockey vous convient?</span>
+                    <span class="lang-sv">Vilken SmartHockey-app passar dig?</span>
+                    <span class="lang-fi">Mikä SmartHockey-sovellus sopii sinulle?</span>
+                    <span class="lang-ru">Какое приложение SmartHockey вам подходит?</span>
+                </span>
+            </h1>
+            <p>
+                <span data-lang-group="comparison-subtitle">
+                    <span class="lang-en active">Compare all three apps and find the perfect solution for your needs</span>
+                    <span class="lang-de">Vergleiche alle drei Apps und finde die perfekte Lösung für deine Bedürfnisse</span>
+                    <span class="lang-fr">Comparez les trois applications et trouvez la solution parfaite pour vos besoins</span>
+                    <span class="lang-sv">Jämför alla tre appar och hitta den perfekta lösningen för dina behov</span>
+                    <span class="lang-fi">Vertaile kaikkia kolmea sovellusta ja löydä täydellinen ratkaisu tarpeisiisi</span>
+                    <span class="lang-ru">Сравните все три приложения и найдите идеальное решение для своих нужд</span>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+
+            <!-- English -->
+            <div class="lang-content lang-en active">
+                <div class="content-card">
+                    <h2>SmartHockey App Comparison</h2>
+                    <p>SmartHockey Products offers three distinct applications, each designed for a specific type of hockey player and team. Whether you are an elite coach managing multiple professional teams, a recreational player who wants to track personal statistics, or an inline hockey enthusiast, there is a SmartHockey app designed specifically for your needs.</p>
+                    <p>This comparison guide will help you understand the key differences between SmartHockey Pro, SmartHockey Light, and SmartHockey Inline, so you can make an informed decision about which app is the right choice for you.</p>
+
+                    <h2>Feature Comparison</h2>
+                    <div style="overflow-x:auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>🏆 SmartHockey Pro</th>
+                                <th>💡 SmartHockey Light</th>
+                                <th>⚡ SmartHockey Inline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Player Statistics</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Goal Map</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Season Overview</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Tactical Board</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                            <tr><td>Export (CSV/PDF)</td><td>✅</td><td>✅ Basic</td><td>✅ Basic</td></tr>
+                            <tr><td>Team Management</td><td>✅ Multi-team</td><td>✅ Single team</td><td>✅</td></tr>
+                            <tr><td>Line-Up Manager</td><td>✅ Advanced</td><td>❌</td><td>✅</td></tr>
+                            <tr><td>Advanced Analytics</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                            <tr><td>Sport Type</td><td>🏒 Ice Hockey</td><td>🏒 Ice Hockey</td><td>🛼 Inline Hockey</td></tr>
+                            <tr><td>Availability</td><td>Coming Soon</td><td>✅ Web App Now</td><td>✅ Web App Now</td></tr>
+                            <tr><td>Best For</td><td>Coaches &amp; Clubs</td><td>Small Teams</td><td>Inline Players</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Detailed App Profiles</h2>
+                    <div class="apps-mini-grid">
+                        <div class="app-card-mini">
+                            <img src="app-icon-pro.png" alt="SmartHockey Pro">
+                            <h3>SmartHockey Pro</h3>
+                            <p>The ultimate professional solution for ambitious ice hockey teams and coaches. Advanced analytics, tactical board, multi-team management, and comprehensive export functions.</p>
+                            <a href="app-pro.html" class="btn">Learn More</a>
+                        </div>
+                        <div class="app-card-mini">
+                            <img src="app-icon-light.png" alt="SmartHockey Light">
+                            <h3>SmartHockey Light</h3>
+                            <p>The perfect entry-level solution for individual players and small ice hockey teams. Simple, effective, and available now as a web app.</p>
+                            <a href="app-light.html" class="btn">Learn More</a>
+                        </div>
+                        <div class="app-card-mini">
+                            <img src="app-icon-inline.png" alt="SmartHockey Inline">
+                            <h3>SmartHockey Inline</h3>
+                            <p>The comprehensive solution for inline and roller hockey players. Track personal statistics, analyze development, and optimize your game. Available now as a web app.</p>
+                            <a href="app-inline.html" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <h2>Which App Should You Choose?</h2>
+                    <h3>Choose SmartHockey Pro if...</h3>
+                    <ul>
+                        <li>You are a coach or team manager at a club or league level</li>
+                        <li>You need advanced analytics and professional reporting</li>
+                        <li>You manage multiple teams or work with coaching staff</li>
+                        <li>You want a tactical board for planning and game preparation</li>
+                        <li>You need professional-quality CSV and PDF exports for club administration</li>
+                        <li>You play ice hockey and want the most comprehensive solution available</li>
+                    </ul>
+
+                    <h3>Choose SmartHockey Light if...</h3>
+                    <ul>
+                        <li>You are an individual player or manage a small recreational team</li>
+                        <li>You want something simple and easy to use without a steep learning curve</li>
+                        <li>You need a free or low-cost solution that gets the job done</li>
+                        <li>You want to start tracking statistics immediately without waiting for app downloads</li>
+                        <li>You play ice hockey and want the essential features without complexity</li>
+                    </ul>
+
+                    <h3>Choose SmartHockey Inline if...</h3>
+                    <ul>
+                        <li>You play inline hockey or roller hockey</li>
+                        <li>You want statistics tracking designed specifically for the inline hockey format</li>
+                        <li>You want to track your personal development as an inline hockey player</li>
+                        <li>You need line-up management for inline hockey teams</li>
+                        <li>You want to access your statistics on any device without downloading an app</li>
+                    </ul>
+
+                    <h2>Our Recommendation</h2>
+                    <p>If you are new to hockey statistics tracking, we recommend starting with <strong>SmartHockey Light</strong> (for ice hockey) or <strong>SmartHockey Inline</strong> (for inline hockey). Both are available immediately as web apps and give you a great introduction to hockey statistics tracking without any complexity.</p>
+                    <p>If you are a serious coach or team manager who wants the most powerful features available, <strong>SmartHockey Pro</strong> will be the right choice when it becomes available. Its advanced analytics, tactical board, and multi-team management capabilities make it the ideal tool for professional-level coaching.</p>
+                    <p>All three apps are developed by SmartHockey Products, a company dedicated to bringing professional-quality analytics tools to the hockey community at every level of the game. We are committed to continuous improvement and regularly add new features based on feedback from our users.</p>
+                </div>
+            </div>
+
+            <!-- German -->
+            <div class="lang-content lang-de">
+                <div class="content-card">
+                    <h2>SmartHockey App-Vergleich</h2>
+                    <p>SmartHockey Products bietet drei verschiedene Anwendungen an, die jeweils für einen bestimmten Typ von Hockeyspieler und Team entwickelt wurden. Egal ob du ein Elite-Trainer bist, der mehrere professionelle Teams betreut, ein Freizeitspieler, der persönliche Statistiken verfolgen möchte, oder ein Inline-Hockey-Enthusiast – es gibt eine SmartHockey App, die speziell für deine Bedürfnisse entwickelt wurde.</p>
+                    <p>Dieser Vergleichsführer hilft dir, die wichtigsten Unterschiede zwischen SmartHockey Pro, SmartHockey Light und SmartHockey Inline zu verstehen, damit du eine fundierte Entscheidung treffen kannst, welche App die richtige Wahl für dich ist.</p>
+
+                    <h2>Funktionsvergleich</h2>
+                    <div style="overflow-x:auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Funktion</th>
+                                <th>🏆 SmartHockey Pro</th>
+                                <th>💡 SmartHockey Light</th>
+                                <th>⚡ SmartHockey Inline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Spielerstatistiken</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Torschuss-Karte</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Saison-Übersicht</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Taktik-Board</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                            <tr><td>Export (CSV/PDF)</td><td>✅</td><td>✅ Basis</td><td>✅ Basis</td></tr>
+                            <tr><td>Team-Management</td><td>✅ Multi-Team</td><td>✅ Einzelteam</td><td>✅</td></tr>
+                            <tr><td>Line-Up-Manager</td><td>✅ Erweitert</td><td>❌</td><td>✅</td></tr>
+                            <tr><td>Erweiterte Analysen</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                            <tr><td>Sportart</td><td>🏒 Eishockey</td><td>🏒 Eishockey</td><td>🛼 Inline-Hockey</td></tr>
+                            <tr><td>Verfügbarkeit</td><td>Bald verfügbar</td><td>✅ Web-App jetzt</td><td>✅ Web-App jetzt</td></tr>
+                            <tr><td>Ideal für</td><td>Trainer &amp; Vereine</td><td>Kleine Teams</td><td>Inline-Spieler</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <h2>Detaillierte App-Profile</h2>
+                    <div class="apps-mini-grid">
+                        <div class="app-card-mini">
+                            <img src="app-icon-pro.png" alt="SmartHockey Pro">
+                            <h3>SmartHockey Pro</h3>
+                            <p>Die ultimative Profi-Lösung für ambitionierte Eishockey-Teams und Trainer. Erweiterte Analysen, Taktik-Board, Multi-Team-Management und umfassende Exportfunktionen.</p>
+                            <a href="app-pro.html" class="btn">Mehr erfahren</a>
+                        </div>
+                        <div class="app-card-mini">
+                            <img src="app-icon-light.png" alt="SmartHockey Light">
+                            <h3>SmartHockey Light</h3>
+                            <p>Die perfekte Einstiegslösung für Einzelspieler und kleine Eishockey-Teams. Einfach, effektiv und jetzt als Web-App verfügbar.</p>
+                            <a href="app-light.html" class="btn">Mehr erfahren</a>
+                        </div>
+                        <div class="app-card-mini">
+                            <img src="app-icon-inline.png" alt="SmartHockey Inline">
+                            <h3>SmartHockey Inline</h3>
+                            <p>Die umfassende Lösung für Inline- und Rollerhockey-Spieler. Verfolge persönliche Statistiken, analysiere deine Entwicklung und optimiere dein Spiel. Jetzt als Web-App verfügbar.</p>
+                            <a href="app-inline.html" class="btn">Mehr erfahren</a>
+                        </div>
+                    </div>
+
+                    <h2>Welche App solltest du wählen?</h2>
+                    <h3>Wähle SmartHockey Pro, wenn...</h3>
+                    <ul>
+                        <li>Du Trainer oder Teammanager auf Vereins- oder Ligaebene bist</li>
+                        <li>Du erweiterte Analysen und professionelle Berichte benötigst</li>
+                        <li>Du mehrere Teams betreust oder mit einem Trainerteam arbeitest</li>
+                        <li>Du ein Taktik-Board für die Spielplanung benötigst</li>
+                        <li>Du professionelle CSV- und PDF-Exporte für die Vereinsverwaltung benötigst</li>
+                        <li>Du Eishockey spielst und die umfassendste verfügbare Lösung möchtest</li>
+                    </ul>
+
+                    <h3>Wähle SmartHockey Light, wenn...</h3>
+                    <ul>
+                        <li>Du Einzelspieler bist oder ein kleines Freizeitteam betreust</li>
+                        <li>Du etwas Einfaches und Leicht zu Bedienendes ohne steile Lernkurve möchtest</li>
+                        <li>Du sofort ohne Downloads mit dem Statistik-Tracking beginnen möchtest</li>
+                        <li>Du Eishockey spielst und die wichtigsten Funktionen ohne Komplexität benötigst</li>
+                    </ul>
+
+                    <h3>Wähle SmartHockey Inline, wenn...</h3>
+                    <ul>
+                        <li>Du Inline-Hockey oder Rollerhockey spielst</li>
+                        <li>Du Statistik-Tracking möchtest, das speziell für das Inline-Hockey-Format entwickelt wurde</li>
+                        <li>Du deine persönliche Entwicklung als Inline-Hockey-Spieler verfolgen möchtest</li>
+                        <li>Du Line-Up-Management für Inline-Hockey-Teams benötigst</li>
+                    </ul>
+
+                    <h2>Unsere Empfehlung</h2>
+                    <p>Wenn du neu im Hockey-Statistik-Tracking bist, empfehlen wir mit <strong>SmartHockey Light</strong> (für Eishockey) oder <strong>SmartHockey Inline</strong> (für Inline-Hockey) zu beginnen. Beide sind sofort als Web-Apps verfügbar und bieten eine hervorragende Einführung in das Hockey-Statistik-Tracking.</p>
+                    <p>Wenn du ein ernsthafter Trainer oder Teammanager bist, der die leistungsstärksten verfügbaren Funktionen möchte, wird <strong>SmartHockey Pro</strong> die richtige Wahl sein, sobald es verfügbar ist. Die erweiterten Analysen, das Taktik-Board und die Multi-Team-Management-Funktionen machen es zum idealen Werkzeug für professionelles Coaching.</p>
+                    <p>Alle drei Apps werden von SmartHockey Products entwickelt, einem Unternehmen, das sich der Bereitstellung professioneller Analyse-Tools für die Hockey-Community auf allen Ebenen des Spiels widmet.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><span data-lang-group="footer-copyright"><span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span><span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span><span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span><span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span><span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span><span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span></span></p>
+            <p style="margin-top:10px;"><span data-lang-group="footer-tagline"><span class="lang-en active">Developed with ❤️ for the Hockey Community</span><span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span><span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span><span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span><span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span><span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span></span></p>
+            <div style="margin-top:15px; text-align:center; font-size:0.9rem;"><span data-lang-group="footer-legal"><span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span><span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span><span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span><span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span><span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span><span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span></span></div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
+            function getBrowserLanguage() { const browserLang = navigator.language || navigator.userLanguage; const langCode = browserLang.split('-')[0].toLowerCase(); return supportedLangs.includes(langCode) ? langCode : defaultLang; }
+            function getInitialLanguage() { const saved = localStorage.getItem('smarthockey-lang'); if (saved && supportedLangs.includes(saved)) return saved; return getBrowserLanguage(); }
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+                document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+                const activeContent = document.querySelector('.lang-content.lang-' + lang);
+                if (activeContent) activeContent.classList.add('active');
+                document.querySelectorAll('[data-lang-group]').forEach(group => { group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active')); const activeSpan = group.querySelector('.lang-' + lang); if (activeSpan) activeSpan.classList.add('active'); });
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) currentNameEl.textContent = langNames[lang];
+                document.querySelectorAll('.lang-option').forEach(option => { option.classList.remove('active'); if (option.getAttribute('data-lang') === lang) option.classList.add('active'); });
+                const titles = { en: 'SmartHockey App Comparison – Which App is Right for You?', de: 'SmartHockey App-Vergleich – Welche App passt zu dir?', fr: 'Comparaison des Applications SmartHockey – Quelle App Vous Convient?', sv: 'SmartHockey App-Jämförelse – Vilken App Passar Dig?', fi: 'SmartHockey Sovellusvertailu – Mikä Sovellus Sopii Sinulle?', ru: 'Сравнение приложений SmartHockey – Какое подходит вам?' };
+                document.title = titles[lang] || titles[defaultLang];
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (dropdownBtn) { dropdownBtn.addEventListener('click', function(e) { e.stopPropagation(); langSwitcher.classList.toggle('active'); }); }
+            document.addEventListener('click', function(e) { if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active'); });
+            document.querySelectorAll('.lang-option').forEach(option => { option.addEventListener('click', function() { const lang = this.getAttribute('data-lang'); switchLanguage(lang); langSwitcher.classList.remove('active'); }); });
+        })();
+    </script>
+</body>
+</html>

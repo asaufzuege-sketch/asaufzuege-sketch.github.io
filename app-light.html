@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Light - The perfect entry-level hockey statistics app for individual players and small teams. Available now as a web app.">
+    <meta name="author" content="SmartHockey Products">
+    <title>SmartHockey Light – Hockey Statistics Web App</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: url('ice-bg.jpg') center center / cover no-repeat fixed; background-color: #0a1628; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.85) 100%); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1.1rem; }
+        nav a:hover { color: #2563eb; }
+        nav a.active { color: #2563eb; }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border: 2px solid #2563eb; color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(37,99,235,0.3); }
+        .lang-dropdown-btn:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); box-shadow: 0 4px 12px rgba(37,99,235,0.5); transform: translateY(-1px); }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); min-width: 180px; z-index: 1000; overflow: hidden; }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #e0e0e0; cursor: pointer; transition: background-color 0.2s; border: none; background: transparent; width: 100%; text-align: left; font-size: 1rem; }
+        .lang-option:hover { background-color: rgba(37,99,235,0.2); }
+        .lang-option.active { background-color: rgba(37,99,235,0.3); color: #2563eb; font-weight: 600; }
+        .lang-option-flag { font-size: 1.3rem; }
+        .lang-option-name { font-size: 0.95rem; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        [data-lang-group] span[class^="lang-"] { display: none !important; }
+        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
+        .hero { background: linear-gradient(135deg, rgba(10,22,40,0.9) 0%, rgba(15,52,96,0.85) 100%); padding: 60px 0 40px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+        .hero .app-hero-icon { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
+        .hero p { font-size: 1.1rem; color: #a0b0c0; max-width: 700px; margin: 0 auto; }
+        .content-section { padding: 60px 0; }
+        .content-card { background: linear-gradient(135deg, rgba(22,33,62,0.85) 0%, rgba(15,52,96,0.85) 100%); border-radius: 15px; padding: 40px; margin-bottom: 30px; border: 2px solid #2a2a3e; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+        .content-card h2 { color: #2563eb; font-size: 1.8rem; margin-bottom: 20px; }
+        .content-card h3 { color: #60a0e0; font-size: 1.3rem; margin: 20px 0 10px; }
+        .content-card p { margin-bottom: 15px; color: #c0ccd8; line-height: 1.8; }
+        .content-card ul { margin: 10px 0 20px 20px; }
+        .content-card ul li { margin-bottom: 8px; color: #c0ccd8; line-height: 1.7; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .feature-item { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 20px; }
+        .feature-item h4 { color: #2563eb; margin-bottom: 8px; }
+        .feature-item p { margin: 0; font-size: 0.95rem; }
+        .status-notice { background: rgba(37,99,235,0.15); border: 2px solid #2563eb; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
+        .status-notice p { color: #e0e0e0; font-size: 1.1rem; margin: 0; }
+        .btn { display: inline-block; padding: 12px 30px; background-color: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s, transform 0.2s; text-align: center; }
+        .btn:hover { background-color: #1d4ed8; transform: scale(1.05); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: center; border: 1px solid #2a2a3e; }
+        .comparison-table th { background: rgba(37,99,235,0.2); color: #60a0e0; font-weight: 600; }
+        .comparison-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+        .comparison-table td:first-child { text-align: left; font-weight: 500; color: #c0ccd8; }
+        .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; }
+        .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin-bottom: 15px; }
+        .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
+        .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; }
+        .apps-mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
+        footer { background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%); padding: 30px 0; text-align: center; color: #a0a0a0; border-top: 1px solid #2a2a3e; margin-top: 40px; }
+        footer p { margin-bottom: 8px; }
+        footer a { color: #a0a0a0; text-decoration: none; }
+        footer a:hover { color: #2563eb; }
+        @media (max-width: 768px) { nav { gap: 15px; } .hero h1 { font-size: 1.8rem; } .content-card { padding: 25px; } .comparison-table { font-size: 0.85rem; } .comparison-table th, .comparison-table td { padding: 8px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
+                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
+                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
+                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html" class="active">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-en active">📱 Apps</span>
+                        <span class="lang-de">📱 Apps</span>
+                        <span class="lang-fr">📱 Apps</span>
+                        <span class="lang-sv">📱 Appar</span>
+                        <span class="lang-fi">📱 Sovellukset</span>
+                        <span class="lang-ru">📱 Приложения</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option" data-lang="de"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                    <button class="lang-option" data-lang="fr"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button>
+                    <button class="lang-option" data-lang="sv"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button>
+                    <button class="lang-option" data-lang="fi"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button>
+                    <button class="lang-option" data-lang="ru"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <img src="app-icon-light.png" alt="SmartHockey Light" class="app-hero-icon">
+            <h1>SmartHockey Light</h1>
+            <p>
+                <span data-lang-group="light-hero-sub">
+                    <span class="lang-en active">The perfect entry-level solution for individual players and small teams</span>
+                    <span class="lang-de">Die perfekte Einstiegslösung für Einzelspieler und kleine Teams</span>
+                    <span class="lang-fr">La solution d'entrée de gamme parfaite pour les joueurs individuels et les petites équipes</span>
+                    <span class="lang-sv">Den perfekta nybörjarlösningen för enskilda spelare och små lag</span>
+                    <span class="lang-fi">Täydellinen aloittelijan ratkaisu yksittäisille pelaajille ja pienille joukkueille</span>
+                    <span class="lang-ru">Идеальное решение для начинающих – для отдельных игроков и небольших команд</span>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+
+            <!-- English -->
+            <div class="lang-content lang-en active">
+                <div class="content-card">
+                    <h2>SmartHockey Light – Smart Hockey Statistics for Every Player</h2>
+                    <p>SmartHockey Light is the perfect entry-level solution for individual players and small teams who want to start tracking their hockey performance without being overwhelmed by complexity. With an intuitive interface and all the essential features, SmartHockey Light makes statistics tracking accessible to everyone.</p>
+                    <p>Whether you're a recreational player who wants to keep track of your personal performance across the season, or a small team manager who needs a simple and effective tool for team statistics, SmartHockey Light has everything you need to get started on your journey to data-driven hockey improvement.</p>
+                    <p>Unlike more complex solutions, SmartHockey Light focuses on the features that matter most, delivering a streamlined experience that doesn't require any technical expertise. You can be up and running in minutes, tracking your first game data immediately.</p>
+
+                    <h2>Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📊 Player Statistics Tracking</h4>
+                            <p>Track goals, assists, penalties, and other key performance indicators for all your players. Build a comprehensive statistical picture over the course of the season and identify trends in individual performance over time.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>�� Goal Map</h4>
+                            <p>Visualize where your team's goals are scored and conceded using an intuitive goal map. Understanding scoring patterns helps you identify strengths and weaknesses in your team's play, enabling targeted improvement.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📅 Season Overview</h4>
+                            <p>Monitor your team's performance across the entire season with a clear and comprehensive season overview. Track results, goal differences, and standings. See how your team has improved over time and identify key turning points in the season.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>👥 Team Management</h4>
+                            <p>Manage your team's roster with ease. Add and update player information, track attendance, and keep all your team data organized and accessible. Perfect for small teams and recreational leagues where simplicity is key.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>⚡ Quick Data Entry</h4>
+                            <p>Enter game data quickly and efficiently with our optimized data entry interface. Record goals, assists, and penalties in seconds, allowing you to focus on coaching rather than administration during and after games.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📤 Easy Export</h4>
+                            <p>Export your statistics and data with a single click. Share season summaries with players, parents, and club officials. The export function creates clean, readable reports that present your team's performance clearly and professionally.</p>
+                        </div>
+                    </div>
+
+                    <h2>How SmartHockey Light Works</h2>
+                    <p>SmartHockey Light is designed to be as simple as possible while still providing powerful statistics tracking. The app is available as a web application, meaning you can access it directly from your browser without needing to download or install anything.</p>
+                    <p>Getting started takes just a few minutes. Create your team by entering player names, then start recording game data. The interface is clean and intuitive, with large buttons and clear labels that make it easy to find what you need even in the heat of the moment.</p>
+                    <p>During a game, you can quickly log goals and assists by selecting the player and type of statistic. The app updates your statistics in real time, so you always have an up-to-date picture of your team's performance. After the game, you can review the statistics, check the goal map, and export reports if needed.</p>
+                    <p>At the end of the season, the season overview feature gives you a complete picture of your team's performance, showing how you've improved over time and providing data for planning next season. The export function allows you to save all your data and share it with players and club officials.</p>
+
+                    <h2>Web App – Available Now</h2>
+                    <p>SmartHockey Light is available right now as a fully functional web application. No download required – just open your browser and start tracking. The web app works on all devices including smartphones, tablets, and computers, so you can access your statistics wherever you are.</p>
+                    <p>The web app is regularly updated with new features and improvements based on user feedback. As a web-based solution, updates happen automatically without you needing to do anything – you always have access to the latest version.</p>
+
+                    <h2>Who Is SmartHockey Light For?</h2>
+                    <p>SmartHockey Light is perfect for recreational hockey players who want to start tracking their statistics, small teams and hobby clubs looking for an affordable and easy-to-use solution, youth coaches who want a simple tool without a steep learning curve, players who want to monitor their own development over time, and anyone who is new to hockey statistics and wants to start with the basics before moving to a more comprehensive solution.</p>
+
+                    <div class="status-notice">
+                        <p>🌐 <strong>SmartHockey Light</strong> is available now as a web app! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Launch Web App →</a></p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px;">
+                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Open Web App</a>
+                        &nbsp;&nbsp;
+                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Compare All Apps</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- German -->
+            <div class="lang-content lang-de">
+                <div class="content-card">
+                    <h2>SmartHockey Light – Smarte Hockey-Statistiken für jeden Spieler</h2>
+                    <p>SmartHockey Light ist die perfekte Einstiegslösung für Einzelspieler und kleine Teams, die ihre Hockey-Leistung verfolgen möchten, ohne von Komplexität überwältigt zu werden. Mit einer intuitiven Benutzeroberfläche und allen wesentlichen Funktionen macht SmartHockey Light das Verfolgen von Statistiken für jeden zugänglich.</p>
+                    <p>Ob du ein Freizeitspieler bist, der seine persönliche Leistung über die Saison im Blick behalten möchte, oder ein kleiner Teammanager, der ein einfaches und effektives Werkzeug für Teamstatistiken benötigt – SmartHockey Light hat alles, was du brauchst, um deine Reise zur datengesteuerten Hockey-Verbesserung zu beginnen.</p>
+                    <p>Im Gegensatz zu komplexeren Lösungen konzentriert sich SmartHockey Light auf die wichtigsten Funktionen und bietet ein optimiertes Erlebnis, das keinerlei technisches Fachwissen erfordert. Du kannst in wenigen Minuten loslegen und sofort die ersten Spieldaten erfassen.</p>
+
+                    <h2>Hauptfunktionen</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📊 Spielerstatistiken</h4>
+                            <p>Verfolge Tore, Assists, Strafen und andere wichtige Leistungsindikatoren für alle deine Spieler. Erstelle über den Verlauf der Saison ein umfassendes statistisches Bild und erkenne Trends in der individuellen Leistung im Zeitverlauf.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🎯 Torschuss-Karte</h4>
+                            <p>Visualisiere, wo die Tore deines Teams erzielt und kassiert werden. Das Verstehen von Tormustern hilft dir, Stärken und Schwächen im Spiel deines Teams zu erkennen und gezielte Verbesserungen zu ermöglichen.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📅 Saison-Übersicht</h4>
+                            <p>Überwache die Leistung deines Teams über die gesamte Saison mit einer klaren Saisonübersicht. Verfolge Ergebnisse, Tordifferenzen und Tabellenstände. Sieh, wie sich dein Team im Laufe der Zeit verbessert hat.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>👥 Team-Management</h4>
+                            <p>Verwalte den Kader deines Teams ganz einfach. Füge Spielerinformationen hinzu und aktualisiere sie, verfolge die Anwesenheit und halte alle Teamdaten organisiert und zugänglich. Perfekt für kleine Teams und Freizeitligen.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>⚡ Schnelle Dateneingabe</h4>
+                            <p>Gib Spieldaten schnell und effizient mit unserer optimierten Dateneingabeoberfläche ein. Erfasse Tore, Assists und Strafen in Sekunden, damit du dich während und nach den Spielen auf das Coaching konzentrieren kannst.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📤 Einfacher Export</h4>
+                            <p>Exportiere deine Statistiken und Daten mit einem einzigen Klick. Teile Saisonsummaries mit Spielern, Eltern und Vereinsverantwortlichen. Die Exportfunktion erstellt klare, lesbare Berichte, die die Leistung deines Teams professionell präsentieren.</p>
+                        </div>
+                    </div>
+
+                    <h2>So funktioniert SmartHockey Light</h2>
+                    <p>SmartHockey Light ist so einfach wie möglich gestaltet und bietet dennoch leistungsstarkes Statistik-Tracking. Die App ist als Web-Applikation verfügbar, was bedeutet, dass du direkt von deinem Browser aus darauf zugreifen kannst, ohne etwas herunterladen oder installieren zu müssen.</p>
+                    <p>Der Einstieg dauert nur wenige Minuten. Erstelle dein Team durch Eingabe von Spielernamen und beginne dann, Spieldaten zu erfassen. Die Benutzeroberfläche ist übersichtlich und intuitiv, mit großen Schaltflächen und klaren Beschriftungen.</p>
+                    <p>Während eines Spiels kannst du schnell Tore und Assists protokollieren, indem du den Spieler und die Statistikart auswählst. Die App aktualisiert deine Statistiken in Echtzeit. Nach dem Spiel kannst du die Statistiken überprüfen, die Torschuss-Karte ansehen und bei Bedarf Berichte exportieren.</p>
+                    <p>Am Ende der Saison gibt dir die Saison-Übersicht ein vollständiges Bild der Leistung deines Teams und liefert Daten für die Planung der nächsten Saison.</p>
+
+                    <h2>Web App – Jetzt verfügbar</h2>
+                    <p>SmartHockey Light ist jetzt als voll funktionsfähige Web-App verfügbar. Kein Download erforderlich – öffne einfach deinen Browser und starte das Tracking. Die Web-App funktioniert auf allen Geräten, einschließlich Smartphones, Tablets und Computern.</p>
+                    <p>Die Web-App wird regelmäßig mit neuen Funktionen und Verbesserungen basierend auf Nutzerfeedback aktualisiert. Als webbasierte Lösung erfolgen Updates automatisch, ohne dass du etwas tun musst – du hast immer Zugriff auf die neueste Version.</p>
+
+                    <h2>Für wen ist SmartHockey Light?</h2>
+                    <p>SmartHockey Light ist perfekt für Freizeithockeyspieler, die ihre Statistiken verfolgen möchten, kleine Teams und Hobbyvereine, die nach einer erschwinglichen und einfach zu bedienenden Lösung suchen, Jugendtrainer, die ein einfaches Werkzeug ohne steile Lernkurve suchen, Spieler, die ihre eigene Entwicklung über die Zeit beobachten möchten, und alle, die neu in der Hockey-Statistik sind und mit den Grundlagen beginnen möchten.</p>
+
+                    <div class="status-notice">
+                        <p>🌐 <strong>SmartHockey Light</strong> ist jetzt als Web-App verfügbar! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Web-App starten →</a></p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px;">
+                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Web-App öffnen</a>
+                        &nbsp;&nbsp;
+                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Alle Apps vergleichen</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><span data-lang-group="footer-copyright"><span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span><span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span><span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span><span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span><span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span><span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span></span></p>
+            <p style="margin-top:10px;"><span data-lang-group="footer-tagline"><span class="lang-en active">Developed with ❤️ for the Hockey Community</span><span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span><span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span><span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span><span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span><span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span></span></p>
+            <div style="margin-top:15px; text-align:center; font-size:0.9rem;"><span data-lang-group="footer-legal"><span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span><span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span><span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span><span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span><span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span><span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span></span></div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
+            function getBrowserLanguage() { const browserLang = navigator.language || navigator.userLanguage; const langCode = browserLang.split('-')[0].toLowerCase(); return supportedLangs.includes(langCode) ? langCode : defaultLang; }
+            function getInitialLanguage() { const saved = localStorage.getItem('smarthockey-lang'); if (saved && supportedLangs.includes(saved)) return saved; return getBrowserLanguage(); }
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+                document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+                const activeContent = document.querySelector('.lang-content.lang-' + lang);
+                if (activeContent) activeContent.classList.add('active');
+                document.querySelectorAll('[data-lang-group]').forEach(group => { group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active')); const activeSpan = group.querySelector('.lang-' + lang); if (activeSpan) activeSpan.classList.add('active'); });
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) currentNameEl.textContent = langNames[lang];
+                document.querySelectorAll('.lang-option').forEach(option => { option.classList.remove('active'); if (option.getAttribute('data-lang') === lang) option.classList.add('active'); });
+                const titles = { en: 'SmartHockey Light – Hockey Statistics Web App', de: 'SmartHockey Light – Hockey Statistik Web-App', fr: 'SmartHockey Light – Application Web de Statistiques Hockey', sv: 'SmartHockey Light – Hockeystatistik Webb-App', fi: 'SmartHockey Light – Jääkiekkotilasto Verkkosovellus', ru: 'SmartHockey Light – Веб-приложение для хоккейной статистики' };
+                document.title = titles[lang] || titles[defaultLang];
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (dropdownBtn) { dropdownBtn.addEventListener('click', function(e) { e.stopPropagation(); langSwitcher.classList.toggle('active'); }); }
+            document.addEventListener('click', function(e) { if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active'); });
+            document.querySelectorAll('.lang-option').forEach(option => { option.addEventListener('click', function() { const lang = this.getAttribute('data-lang'); switchLanguage(lang); langSwitcher.classList.remove('active'); }); });
+        })();
+    </script>
+</body>
+</html>
