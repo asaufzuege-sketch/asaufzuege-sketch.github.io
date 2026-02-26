@@ -63,10 +63,11 @@
         .comparison-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         .comparison-table td:first-child { text-align: left; font-weight: 500; color: #c0ccd8; }
         .apps-mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
-        .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; }
+        .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; display: flex; flex-direction: column; }
         .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin-bottom: 15px; }
         .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
         .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; }
+        .app-card-mini .btn { margin-top: auto; }
         footer { background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%); padding: 30px 0; text-align: center; color: #a0a0a0; border-top: 1px solid #2a2a3e; margin-top: 40px; }
         footer p { margin-bottom: 8px; }
         footer a { color: #a0a0a0; text-decoration: none; }
@@ -172,23 +173,23 @@
                         <thead>
                             <tr>
                                 <th>Feature</th>
-                                <th>🏆 SmartHockey Pro</th>
-                                <th>💡 SmartHockey Light</th>
-                                <th>⚡ SmartHockey Inline</th>
+                                <th>SmartHockey Pro</th>
+                                <th>SmartHockey Light</th>
+                                <th>SmartHockey Inline</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr><td>Player Statistics</td><td>✅</td><td>✅</td><td>✅</td></tr>
                             <tr><td>Goal Map</td><td>✅</td><td>✅</td><td>✅</td></tr>
                             <tr><td>Season Overview</td><td>✅</td><td>✅</td><td>✅</td></tr>
-                            <tr><td>Tactical Board</td><td>✅</td><td>❌</td><td>❌</td></tr>
-                            <tr><td>Export (CSV/PDF)</td><td>✅</td><td>✅ Basic</td><td>✅ Basic</td></tr>
-                            <tr><td>Team Management</td><td>✅ Multi-team</td><td>✅ Single team</td><td>✅</td></tr>
-                            <tr><td>Line-Up Manager</td><td>✅ Advanced</td><td>❌</td><td>✅</td></tr>
-                            <tr><td>Advanced Analytics</td><td>✅</td><td>❌</td><td>❌</td></tr>
-                            <tr><td>Sport Type</td><td>🏒 Ice Hockey</td><td>🏒 Ice Hockey</td><td>🛼 Inline Hockey</td></tr>
-                            <tr><td>Availability</td><td>Coming Soon</td><td>✅ Web App Now</td><td>✅ Web App Now</td></tr>
-                            <tr><td>Best For</td><td>Coaches &amp; Clubs</td><td>Small Teams</td><td>Inline Players</td></tr>
+                            <tr><td>Export (CSV/PDF)</td><td>✅</td><td>❌</td><td>✅</td></tr>
+                            <tr><td>Team Management</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Number of Teams</td><td>3</td><td>1</td><td>3</td></tr>
+                            <tr><td>Goalies &amp; Players</td><td>5 + 40</td><td>5 + 40</td><td>5 + 40</td></tr>
+                            <tr><td>Line-Up Manager</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Sport Type</td><td>Ice Hockey</td><td>Ice Hockey</td><td>Inline Hockey</td></tr>
+                            <tr><td>Price</td><td>Coming Soon</td><td>Free</td><td>Free</td></tr>
+                            <tr><td>Best For</td><td>Scouts, Team Managers, and Coaches</td><td>Coaches and Players</td><td>Team Managers, Coaches, and Players</td></tr>
                         </tbody>
                     </table>
                     </div>
@@ -264,23 +265,23 @@
                         <thead>
                             <tr>
                                 <th>Funktion</th>
-                                <th>🏆 SmartHockey Pro</th>
-                                <th>💡 SmartHockey Light</th>
-                                <th>⚡ SmartHockey Inline</th>
+                                <th>SmartHockey Pro</th>
+                                <th>SmartHockey Light</th>
+                                <th>SmartHockey Inline</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr><td>Spielerstatistiken</td><td>✅</td><td>✅</td><td>✅</td></tr>
                             <tr><td>Torschuss-Karte</td><td>✅</td><td>✅</td><td>✅</td></tr>
                             <tr><td>Saison-Übersicht</td><td>✅</td><td>✅</td><td>✅</td></tr>
-                            <tr><td>Taktik-Board</td><td>✅</td><td>❌</td><td>❌</td></tr>
-                            <tr><td>Export (CSV/PDF)</td><td>✅</td><td>✅ Basis</td><td>✅ Basis</td></tr>
-                            <tr><td>Team-Management</td><td>✅ Multi-Team</td><td>✅ Einzelteam</td><td>✅</td></tr>
-                            <tr><td>Line-Up-Manager</td><td>✅ Erweitert</td><td>❌</td><td>✅</td></tr>
-                            <tr><td>Erweiterte Analysen</td><td>✅</td><td>❌</td><td>❌</td></tr>
-                            <tr><td>Sportart</td><td>🏒 Eishockey</td><td>🏒 Eishockey</td><td>🛼 Inline-Hockey</td></tr>
-                            <tr><td>Verfügbarkeit</td><td>Bald verfügbar</td><td>✅ Web-App jetzt</td><td>✅ Web-App jetzt</td></tr>
-                            <tr><td>Ideal für</td><td>Trainer &amp; Vereine</td><td>Kleine Teams</td><td>Inline-Spieler</td></tr>
+                            <tr><td>Exportfunktion (CSV/PDF)</td><td>✅</td><td>❌</td><td>✅</td></tr>
+                            <tr><td>Team-Management</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Anzahl Teams</td><td>3</td><td>1</td><td>3</td></tr>
+                            <tr><td>Goalies &amp; Spieler</td><td>5 + 40</td><td>5 + 40</td><td>5 + 40</td></tr>
+                            <tr><td>Line-Up-Manager</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                            <tr><td>Sportart</td><td>Eishockey</td><td>Eishockey</td><td>Inline-Hockey</td></tr>
+                            <tr><td>Preis</td><td>Bald verfügbar</td><td>Kostenlos</td><td>Kostenlos</td></tr>
+                            <tr><td>Ideal für</td><td>Scouts, Teammanager und Trainer</td><td>Trainer und Spieler</td><td>Teammanager, Trainer und Spieler</td></tr>
                         </tbody>
                     </table>
                     </div>
