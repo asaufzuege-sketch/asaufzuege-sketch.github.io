@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartHockey Pro - The ultimate professional ice hockey statistics app for teams and coaches. Advanced analytics, goal maps, tactical board, and CSV/PDF export.">
+    <meta name="author" content="SmartHockey Products">
+    <title>SmartHockey Pro – Professional Hockey Statistics App</title>
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: url('ice-bg.jpg') center center / cover no-repeat fixed;
+            background-color: #0a1628;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.85) 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky; top: 0; z-index: 100;
+        }
+        header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1.1rem; }
+        nav a:hover { color: #2563eb; }
+        nav a.active { color: #2563eb; }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb; color: #fff; padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 0.95rem; transition: all 0.3s;
+            display: flex; align-items: center; gap: 8px; font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+        }
+        .lang-dropdown-btn:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); box-shadow: 0 4px 12px rgba(37,99,235,0.5); transform: translateY(-1px); }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            display: none; position: absolute; top: 100%; right: 0; margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%);
+            border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            min-width: 180px; z-index: 1000; overflow: hidden;
+        }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+            color: #e0e0e0; cursor: pointer; transition: background-color 0.2s;
+            border: none; background: transparent; width: 100%; text-align: left; font-size: 1rem;
+        }
+        .lang-option:hover { background-color: rgba(37,99,235,0.2); }
+        .lang-option.active { background-color: rgba(37,99,235,0.3); color: #2563eb; font-weight: 600; }
+        .lang-option-flag { font-size: 1.3rem; }
+        .lang-option-name { font-size: 0.95rem; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        [data-lang-group] span[class^="lang-"] { display: none !important; }
+        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
+        .hero {
+            background: linear-gradient(135deg, rgba(10,22,40,0.9) 0%, rgba(15,52,96,0.85) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+        .hero .app-hero-icon { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
+        .hero p { font-size: 1.1rem; color: #a0b0c0; max-width: 700px; margin: 0 auto; }
+        .content-section { padding: 60px 0; }
+        .content-card {
+            background: linear-gradient(135deg, rgba(22,33,62,0.85) 0%, rgba(15,52,96,0.85) 100%);
+            border-radius: 15px; padding: 40px; margin-bottom: 30px;
+            border: 2px solid #2a2a3e; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .content-card h2 { color: #2563eb; font-size: 1.8rem; margin-bottom: 20px; }
+        .content-card h3 { color: #60a0e0; font-size: 1.3rem; margin: 20px 0 10px; }
+        .content-card p { margin-bottom: 15px; color: #c0ccd8; line-height: 1.8; }
+        .content-card ul { margin: 10px 0 20px 20px; }
+        .content-card ul li { margin-bottom: 8px; color: #c0ccd8; line-height: 1.7; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .feature-item { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 20px; }
+        .feature-item h4 { color: #2563eb; margin-bottom: 8px; }
+        .feature-item p { margin: 0; font-size: 0.95rem; }
+        .status-notice {
+            background: rgba(37,99,235,0.15); border: 2px solid #2563eb;
+            border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center;
+        }
+        .status-notice p { color: #e0e0e0; font-size: 1.1rem; margin: 0; }
+        .btn {
+            display: inline-block; padding: 12px 30px;
+            background-color: #2563eb; color: #fff; text-decoration: none;
+            border-radius: 8px; font-weight: bold; transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+        .btn:hover { background-color: #1d4ed8; transform: scale(1.05); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: center; border: 1px solid #2a2a3e; }
+        .comparison-table th { background: rgba(37,99,235,0.2); color: #60a0e0; font-weight: 600; }
+        .comparison-table tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+        .comparison-table td:first-child { text-align: left; font-weight: 500; color: #c0ccd8; }
+        .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; }
+        .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin-bottom: 15px; }
+        .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
+        .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; }
+        footer {
+            background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%);
+            padding: 30px 0; text-align: center; color: #a0a0a0;
+            border-top: 1px solid #2a2a3e; margin-top: 40px;
+        }
+        footer p { margin-bottom: 8px; }
+        footer a { color: #a0a0a0; text-decoration: none; }
+        footer a:hover { color: #2563eb; }
+        @media (max-width: 768px) {
+            nav { gap: 15px; }
+            .hero h1 { font-size: 1.8rem; }
+            .content-card { padding: 25px; }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table th, .comparison-table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
+            </div>
+            <nav>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
+                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
+                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
+                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html" class="active">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-en active">📱 Apps</span>
+                        <span class="lang-de">📱 Apps</span>
+                        <span class="lang-fr">📱 Apps</span>
+                        <span class="lang-sv">📱 Appar</span>
+                        <span class="lang-fi">📱 Sovellukset</span>
+                        <span class="lang-ru">📱 Приложения</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option" data-lang="de"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                    <button class="lang-option" data-lang="fr"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button>
+                    <button class="lang-option" data-lang="sv"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button>
+                    <button class="lang-option" data-lang="fi"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button>
+                    <button class="lang-option" data-lang="ru"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <img src="app-icon-pro.png" alt="SmartHockey Pro" class="app-hero-icon">
+            <h1>SmartHockey Pro</h1>
+            <p>
+                <span data-lang-group="pro-hero-sub">
+                    <span class="lang-en active">The ultimate professional solution for ambitious teams and coaches</span>
+                    <span class="lang-de">Die ultimative Profi-Lösung für ambitionierte Teams und Trainer</span>
+                    <span class="lang-fr">La solution professionnelle ultime pour les équipes et entraîneurs ambitieux</span>
+                    <span class="lang-sv">Den ultimata professionella lösningen för ambitiösa lag och tränare</span>
+                    <span class="lang-fi">Lopullinen ammattiratkaisu kunnianhimoisille joukkueille ja valmentajille</span>
+                    <span class="lang-ru">Полное профессиональное решение для амбициозных команд и тренеров</span>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+
+            <!-- English -->
+            <div class="lang-content lang-en active">
+                <div class="content-card">
+                    <h2>SmartHockey Pro – Professional Hockey Statistics App</h2>
+                    <p>SmartHockey Pro is the ultimate professional solution for ambitious ice hockey teams, coaches, and club managers. Whether you are coaching a youth team, a junior squad, or a senior league team, SmartHockey Pro gives you all the tools you need to track, analyze, and improve your team's performance at the highest level.</p>
+                    <p>In modern ice hockey, data-driven decisions make the difference between winning and losing. SmartHockey Pro bridges the gap between amateur sports management and professional-grade analytics, putting powerful statistics tools in the hands of every coach and team manager, regardless of their technical background.</p>
+
+                    <h2>Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📊 Player Statistics Tracking</h4>
+                            <p>Track every aspect of your players' performance including goals, assists, plus/minus ratings, penalty minutes, shots on goal, face-off percentages, and much more. Build a complete statistical profile for each player over the entire season.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🎯 Goal Map Visualization</h4>
+                            <p>Visualize where your team scores and concedes goals using our interactive goal map. Identify patterns in your offensive and defensive play, and use this data to adjust your tactical approach and improve your team's performance.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📅 Season Overview &amp; Analytics</h4>
+                            <p>Get a comprehensive overview of your entire season at a glance. Track win/loss records, goal differences, points standings, and performance trends over time. Identify when your team performs best and when improvements are needed.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🏒 Tactical Board</h4>
+                            <p>Design and visualize your tactical plays using our digital tactical board. Draw player positions, movement patterns, and play designs. Share tactics with your team and build a comprehensive library of plays for different game situations.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📤 Export Functions (CSV/PDF)</h4>
+                            <p>Export your statistics and reports in professional CSV and PDF formats. Share detailed reports with players, parents, club management, or scouts. Professional-quality reports that present your team's data in a clear and compelling way.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>👥 Team Management with Multiple Teams</h4>
+                            <p>Manage multiple teams within a single app. Perfect for coaches who work with several teams simultaneously, or for clubs that want to manage all their teams from one platform. Keep everything organized and easily switch between teams.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🔄 Line-Up Management</h4>
+                            <p>Organize and manage your team's lines and defensive pairings. Plan your line combinations, track line performance, and optimize your rotations based on statistical data. Make informed decisions about which lines perform best in different situations.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📈 Advanced Analytics</h4>
+                            <p>Go beyond basic statistics with advanced analytics tools. Analyze possession time, shot quality, zone entries and exits, and other advanced metrics that professional teams use to gain a competitive edge.</p>
+                        </div>
+                    </div>
+
+                    <h2>How SmartHockey Pro Works</h2>
+                    <p>Getting started with SmartHockey Pro is straightforward. First, set up your team by entering your players' names and jersey numbers. You can create multiple teams within the app, making it perfect for coaches who manage several squads.</p>
+                    <p>During or after games, you enter game data including goals, assists, penalties, shots, and other statistics. The app processes this information and immediately generates comprehensive statistics and visualizations. The goal map feature lets you tap on the ice surface to mark where each goal was scored, building a visual picture of your team's offensive and defensive patterns.</p>
+                    <p>Between games, you can review detailed reports, compare player statistics, analyze trends, and use the tactical board to plan your next game. When you need to share information, the export function creates professional PDF reports or CSV files that can be opened in spreadsheet software like Microsoft Excel or Google Sheets.</p>
+                    <p>The season overview feature gives you a bird's-eye view of your entire campaign, showing how your team has progressed, which games were decisive, and where improvements have been made. This long-term view is invaluable for planning and for annual performance reviews.</p>
+
+                    <h2>Who Is SmartHockey Pro For?</h2>
+                    <p>SmartHockey Pro is designed for serious hockey people who want more than just basic scorekeeping. It's ideal for coaches at all levels who want to base their decisions on data rather than gut feeling alone. It's perfect for team managers who need to maintain detailed records for club administration. It's also an excellent tool for analytics-minded assistant coaches who want to contribute detailed statistical analysis to the coaching staff.</p>
+                    <p>Youth coaches will find SmartHockey Pro particularly valuable for tracking player development over multiple seasons. Parents and players can see concrete evidence of improvement in statistical form, which is highly motivating for young athletes.</p>
+
+                    <h2>Status</h2>
+                    <div class="status-notice">
+                        <p>🚀 <strong>SmartHockey Pro</strong> is currently in development. The app will be available on the Google Play Store and as a PC version. Sign up for updates to be notified when the app launches.</p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px;">
+                        <a href="app-comparison.html" class="btn">Compare All Apps</a>
+                        &nbsp;&nbsp;
+                        <a href="index.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Back to Home</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- German -->
+            <div class="lang-content lang-de">
+                <div class="content-card">
+                    <h2>SmartHockey Pro – Professionelle Hockey-Statistik-App</h2>
+                    <p>SmartHockey Pro ist die ultimative Profi-Lösung für ambitionierte Eishockey-Teams, Trainer und Vereinsmanager. Egal ob du eine Jugendmannschaft, ein Juniorenteam oder eine Seniorenliga-Mannschaft betreust – SmartHockey Pro gibt dir alle Werkzeuge, die du brauchst, um die Leistung deines Teams auf höchstem Niveau zu verfolgen, zu analysieren und zu verbessern.</p>
+                    <p>Im modernen Eishockey machen datenbasierte Entscheidungen den Unterschied zwischen Sieg und Niederlage. SmartHockey Pro überbrückt die Lücke zwischen Amateursportmanagement und professioneller Analytik und bringt leistungsstarke Statistik-Tools in die Hände jedes Trainers und Teammanagers.</p>
+
+                    <h2>Hauptfunktionen</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📊 Spielerstatistiken</h4>
+                            <p>Verfolge alle Aspekte der Leistung deiner Spieler, einschließlich Tore, Assists, Plus/Minus-Wertungen, Strafminuten, Torschüsse, Face-Off-Prozentsätze und vieles mehr. Erstelle ein vollständiges statistisches Profil für jeden Spieler über die gesamte Saison.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🎯 Torschuss-Karte</h4>
+                            <p>Visualisiere, wo dein Team Tore schießt und kassiert, mit unserer interaktiven Torschuss-Karte. Erkenne Muster in deinem Angriffs- und Abwehrspiel und nutze diese Daten zur Anpassung deiner taktischen Ausrichtung.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📅 Saison-Übersicht &amp; Analysen</h4>
+                            <p>Erhalte auf einen Blick einen umfassenden Überblick über deine gesamte Saison. Verfolge Sieg/Niederlage-Bilanzen, Tordifferenzen, Punktestände und Leistungstrends im Zeitverlauf.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🏒 Taktik-Board</h4>
+                            <p>Entwerfe und visualisiere deine Spielzüge mit unserem digitalen Taktik-Board. Zeichne Spielerpositionen und Bewegungsmuster. Teile Taktiken mit deinem Team und baue eine Spielzug-Bibliothek für verschiedene Spielsituationen auf.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📤 Export-Funktionen (CSV/PDF)</h4>
+                            <p>Exportiere deine Statistiken und Berichte in professionellen CSV- und PDF-Formaten. Teile detaillierte Berichte mit Spielern, Eltern, Vereinsführung oder Scouts. Professionelle Berichte, die die Daten deines Teams klar und überzeugend präsentieren.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>👥 Team-Management mit mehreren Teams</h4>
+                            <p>Verwalte mehrere Teams in einer einzigen App. Ideal für Trainer, die gleichzeitig mit mehreren Teams arbeiten, oder für Vereine, die alle ihre Teams von einer Plattform aus verwalten möchten.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🔄 Line-Up-Management</h4>
+                            <p>Organisiere und verwalte die Sturm- und Verteidigungsreihen deines Teams. Plane deine Linienkombinationen, verfolge die Leistung der Reihen und optimiere deine Rotationen auf Basis statistischer Daten.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📈 Erweiterte Analysen</h4>
+                            <p>Gehe über einfache Statistiken hinaus mit erweiterten Analysetools. Analysiere Puck-Besitzzeiten, Schussqualität, Zoneneinstiege und andere fortgeschrittene Metriken, die Profi-Teams für einen Wettbewerbsvorteil nutzen.</p>
+                        </div>
+                    </div>
+
+                    <h2>So funktioniert SmartHockey Pro</h2>
+                    <p>Der Einstieg in SmartHockey Pro ist einfach. Zunächst richtest du dein Team ein, indem du Namen und Trikotnummern deiner Spieler eingibst. Du kannst mehrere Teams in der App erstellen – ideal für Trainer, die mehrere Mannschaften betreuen.</p>
+                    <p>Während oder nach Spielen gibst du Spieldaten ein, darunter Tore, Assists, Strafen, Schüsse und andere Statistiken. Die App verarbeitet diese Informationen und erstellt sofort umfassende Statistiken und Visualisierungen. Die Torschuss-Karte ermöglicht es dir, auf der Eisfläche zu tippen, um zu markieren, wo jedes Tor erzielt wurde.</p>
+                    <p>Zwischen den Spielen kannst du detaillierte Berichte einsehen, Spielerstatistiken vergleichen, Trends analysieren und das Taktik-Board für die Planung des nächsten Spiels nutzen. Wenn du Informationen teilen musst, erstellt die Export-Funktion professionelle PDF-Berichte oder CSV-Dateien.</p>
+                    <p>Die Saison-Übersicht gibt dir einen Gesamtblick auf deine gesamte Kampagne und zeigt, wie sich dein Team entwickelt hat, welche Spiele entscheidend waren und wo Verbesserungen erzielt wurden.</p>
+
+                    <h2>Für wen ist SmartHockey Pro?</h2>
+                    <p>SmartHockey Pro ist für ernsthafte Hockeyspieler und Trainer konzipiert, die mehr als nur einfache Spielstandhaltung wollen. Es ist ideal für Trainer auf allen Ebenen, die ihre Entscheidungen auf Daten statt auf Bauchgefühl allein stützen wollen. Es ist perfekt für Teammanager, die detaillierte Aufzeichnungen für die Vereinsverwaltung führen müssen.</p>
+                    <p>Jugendtrainer werden SmartHockey Pro besonders wertvoll finden, um die Spielerentwicklung über mehrere Saisons hinweg zu verfolgen. Eltern und Spieler können konkrete Belege für Verbesserungen in statistischer Form sehen, was für junge Athleten sehr motivierend ist.</p>
+
+                    <h2>Status</h2>
+                    <div class="status-notice">
+                        <p>🚀 <strong>SmartHockey Pro</strong> befindet sich derzeit in der Entwicklung. Die App wird im Google Play Store und als PC-Version verfügbar sein. Melde dich für Updates an, um benachrichtigt zu werden, wenn die App veröffentlicht wird.</p>
+                    </div>
+                    <p style="text-align:center; margin-top:20px;">
+                        <a href="app-comparison.html" class="btn">Alle Apps vergleichen</a>
+                        &nbsp;&nbsp;
+                        <a href="index.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Zurück zur Startseite</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <span data-lang-group="footer-copyright">
+                    <span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span>
+                    <span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span>
+                    <span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span>
+                    <span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span>
+                    <span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span>
+                    <span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span>
+                </span>
+            </p>
+            <p style="margin-top:10px;">
+                <span data-lang-group="footer-tagline">
+                    <span class="lang-en active">Developed with ❤️ for the Hockey Community</span>
+                    <span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span>
+                    <span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span>
+                    <span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span>
+                    <span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span>
+                    <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
+                </span>
+            </p>
+            <div style="margin-top:15px; text-align:center; font-size:0.9rem;">
+                <span data-lang-group="footer-legal">
+                    <span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a></span>
+                    <span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a></span>
+                    <span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a></span>
+                    <span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a></span>
+                    <span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a></span>
+                    <span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a></span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) return saved;
+                return getBrowserLanguage();
+            }
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+                document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+                const activeContent = document.querySelector('.lang-content.lang-' + lang);
+                if (activeContent) activeContent.classList.add('active');
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active'));
+                    const activeSpan = group.querySelector('.lang-' + lang);
+                    if (activeSpan) activeSpan.classList.add('active');
+                });
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) currentNameEl.textContent = langNames[lang];
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
+                });
+                const titles = { en: 'SmartHockey Pro – Professional Hockey Statistics App', de: 'SmartHockey Pro – Professionelle Hockey-Statistik-App', fr: 'SmartHockey Pro – Application Professionnelle de Statistiques Hockey', sv: 'SmartHockey Pro – Professionell Hockeystatistik-App', fi: 'SmartHockey Pro – Ammattimainen Jääkiekkotilasto-sovellus', ru: 'SmartHockey Pro – Профессиональное приложение для хоккейной статистики' };
+                document.title = titles[lang] || titles[defaultLang];
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active');
+            });
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
