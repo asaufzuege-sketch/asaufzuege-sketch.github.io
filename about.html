@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About SmartHockey Products – Our mission, philosophy, and the team behind the SmartHockey Team Tracker Pro app for ice hockey coaches and teams.">
+    <meta name="description" content="About SmartHockey Products – Erfahre alles über SmartHockey Pro, SmartHockey Light und SmartHockey Inline: professionelle Eishockey-Statistik-Apps für Trainer und Teams.">
     <meta name="author" content="SmartHockey Products">
-    <title>About Us – SmartHockey Products</title>
+    <title>About SmartHockey Products – Pro, Light &amp; Inline Apps</title>
     <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
     <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405"
@@ -19,7 +19,10 @@
             color: #e0e0e0;
             line-height: 1.8;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
         header {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
             padding: 20px 0;
@@ -27,6 +30,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(8px);
         }
         header .container {
             display: flex;
@@ -34,10 +38,9 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            max-width: 1200px;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #ffffff;
             text-decoration: none;
@@ -45,53 +48,61 @@
             align-items: center;
             gap: 10px;
         }
-        .logo-img { height: 40px; width: auto; filter: brightness(0) invert(1); }
-        nav { display: flex; gap: 24px; align-items: center; }
+        .logo-img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+        nav { display: flex; gap: 30px; align-items: center; }
         nav a {
             color: #e0e0e0;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         nav a:hover { color: #2563eb; }
-        nav a.home-link {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: #fff;
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: box-shadow 0.3s, transform 0.2s;
+        nav a.active { color: #2563eb; }
+
+        /* Language Switcher */
+        [data-lang-group] span[class^="lang-"] { display: none; }
+        [data-lang-group] span[class^="lang-"].active { display: inline; }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn {
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            color: #e0e0e0; padding: 8px 14px; border-radius: 8px; cursor: pointer;
+            font-size: 0.95rem; transition: background 0.3s;
         }
-        nav a.home-link:hover {
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
-            color: #fff;
+        .lang-dropdown-btn:hover { background: rgba(255,255,255,0.15); }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            display: none; position: absolute; top: 100%; right: 0; margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.97) 0%, rgba(15, 52, 96, 0.97) 100%);
+            border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            min-width: 180px; z-index: 1000; overflow: hidden;
         }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 16px; width: 100%; border: none;
+            background: transparent; color: #e0e0e0; cursor: pointer;
+            font-size: 0.95rem; transition: background 0.2s;
+        }
+        .lang-option:hover { background: rgba(37, 99, 235, 0.2); }
+        .lang-option.active { background: rgba(37, 99, 235, 0.3); color: #fff; font-weight: 600; }
+
+        /* Main content */
         main {
             background: rgba(10, 22, 40, 0.82);
             min-height: calc(100vh - 140px);
             padding: 60px 0 80px;
         }
-        h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        .page-subtitle {
-            color: #2563eb;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 40px;
-        }
+        h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; line-height: 1.2; }
+        .page-subtitle { color: #2563eb; font-size: 1.1rem; font-weight: 600; margin-bottom: 40px; }
         h2 {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin: 40px 0 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid rgba(37, 99, 235, 0.4);
+            font-size: 1.6rem; color: #ffffff; margin: 50px 0 16px;
+            padding-bottom: 10px; border-bottom: 2px solid rgba(37, 99, 235, 0.4);
         }
+        h3 { font-size: 1.25rem; color: #90b8f8; margin: 28px 0 10px; }
         p { color: #c8d6e8; margin-bottom: 18px; font-size: 1.05rem; }
         strong { color: #ffffff; }
         ul { color: #c8d6e8; padding-left: 24px; margin-bottom: 18px; }
@@ -100,109 +111,567 @@
             background: rgba(37, 99, 235, 0.12);
             border-left: 4px solid #2563eb;
             border-radius: 0 10px 10px 0;
-            padding: 20px 24px;
-            margin: 30px 0;
+            padding: 20px 24px; margin: 30px 0;
         }
         .highlight-box p { margin-bottom: 0; color: #d0e0f8; font-style: italic; }
+        .app-section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #fff; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
+            padding: 4px 14px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase;
+        }
+        .contact-box {
+            background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 12px; padding: 28px 32px; margin-top: 50px;
+        }
+        .contact-box a { color: #2563eb; text-decoration: none; }
+        .contact-box a:hover { text-decoration: underline; }
+
+        /* Footer */
         footer {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
-            padding: 30px 0;
-            text-align: center;
-            color: #a0a0a0;
-            font-size: 0.9rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(22, 33, 62, 0.98) 100%);
+            padding: 30px 0; text-align: center; color: #a0a0a0; font-size: 0.9rem;
         }
         footer a { color: #a0a0a0; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: #2563eb; }
-        footer .footer-links { margin-top: 10px; }
-        footer .footer-links a { margin: 0 10px; }
+        .footer-links { margin-top: 12px; }
+        .footer-links a { margin: 0 10px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="title-logo.png" alt="SmartHockey Products" class="logo-img">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
             </a>
             <nav>
-                <a href="index.html" class="home-link">← Home</a>
-                <a href="/SmartHockey-Tracking-Team-Pro/">Launch App</a>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active">🏠 Home</span>
+                        <span class="lang-de">🏠 Home</span>
+                        <span class="lang-fr">🏠 Accueil</span>
+                        <span class="lang-sv">🏠 Hem</span>
+                        <span class="lang-fi">🏠 Koti</span>
+                        <span class="lang-ru">🏠 Главная</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-en active">📱 Apps</span>
+                        <span class="lang-de">📱 Apps</span>
+                        <span class="lang-fr">📱 Apps</span>
+                        <span class="lang-sv">📱 Appar</span>
+                        <span class="lang-fi">📱 Sovellukset</span>
+                        <span class="lang-ru">📱 Приложения</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-en active">🛒 Shop</span>
+                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-fr">🛒 Boutique</span>
+                        <span class="lang-sv">🛒 Butik</span>
+                        <span class="lang-fi">🛒 Kauppa</span>
+                        <span class="lang-ru">🛒 Магазин</span>
+                    </span>
+                </a>
+                <a href="about.html" class="active">
+                    <span data-lang-group="nav-about">
+                        <span class="lang-en active">ℹ️ About</span>
+                        <span class="lang-de">ℹ️ Über uns</span>
+                        <span class="lang-fr">ℹ️ À propos</span>
+                        <span class="lang-sv">ℹ️ Om oss</span>
+                        <span class="lang-fi">ℹ️ Tietoja</span>
+                        <span class="lang-ru">ℹ️ О нас</span>
+                    </span>
+                </a>
             </nav>
+            <!-- Language Switcher Dropdown -->
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option" data-lang="de"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                    <button class="lang-option" data-lang="fr"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button>
+                    <button class="lang-option" data-lang="sv"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button>
+                    <button class="lang-option" data-lang="fi"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button>
+                    <button class="lang-option" data-lang="ru"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <h1>About SmartHockey Products</h1>
-            <p class="page-subtitle">Our Mission, Philosophy &amp; Story</p>
+        <div class="container-narrow">
 
-            <p>
-                <strong>SmartHockey Products</strong> was founded with a single, clear conviction: every ice hockey coach — regardless of budget, club size, or technical background — deserves access to professional-grade game analysis tools. For too long, detailed statistical tracking and performance analysis have been the exclusive domain of NHL and KHL franchises with full-time analytics departments and expensive proprietary software. We believe that is wrong, and we set out to change it.
+            <!-- Page Title -->
+            <h1>
+                <span data-lang-group="about-title">
+                    <span class="lang-en active">About SmartHockey Products</span>
+                    <span class="lang-de">Über SmartHockey Products</span>
+                    <span class="lang-fr">À propos de SmartHockey Products</span>
+                    <span class="lang-sv">Om SmartHockey Products</span>
+                    <span class="lang-fi">Tietoja SmartHockey Productsista</span>
+                    <span class="lang-ru">О SmartHockey Products</span>
+                </span>
+            </h1>
+            <p class="page-subtitle">
+                <span data-lang-group="about-subtitle">
+                    <span class="lang-en active">Professional Hockey Statistics Apps for Coaches &amp; Teams</span>
+                    <span class="lang-de">Professionelle Eishockey-Statistik-Apps für Trainer und Teams</span>
+                    <span class="lang-fr">Applications professionnelles de statistiques hockey pour entraîneurs et équipes</span>
+                    <span class="lang-sv">Professionella hockeystatistik-appar för tränare och lag</span>
+                    <span class="lang-fi">Ammattimaiset jääkiekkotilasto-sovellukset valmentajille ja joukkueille</span>
+                    <span class="lang-ru">Профессиональные хоккейные статистические приложения для тренеров и команд</span>
+                </span>
             </p>
 
-            <div class="highlight-box">
-                <p>"Great coaching decisions come from great data. We make that data accessible to every coach on the planet, from the smallest junior league rink to the professional arena."</p>
+            <!-- Intro -->
+            <div data-lang-group="about-intro">
+                <span class="lang-en active">
+                    <p><strong>SmartHockey Products</strong> was founded with a single, clear conviction: every ice hockey and inline hockey coach — regardless of budget, club size, or technical background — deserves access to professional-grade game analysis tools. For too long, detailed statistical tracking and performance analysis have been the exclusive domain of NHL and KHL franchises with full-time analytics departments and expensive proprietary software. We believe that is fundamentally wrong, and we set out to change it.</p>
+                    <p>Our web-based apps run on any modern smartphone, tablet, or laptop — directly from the browser, with no installation required. All data is stored locally on the device, guaranteeing complete data privacy without any cloud account or external server. Whether you are coaching a junior team, a recreational league, or a semi-professional club, SmartHockey Products gives you the analytical tools previously reserved for elite-level organisations.</p>
+                </span>
+                <span class="lang-de">
+                    <p><strong>SmartHockey Products</strong> wurde mit einer klaren Überzeugung gegründet: Jeder Eishockey- und Inline-Hockey-Trainer – unabhängig von Budget, Vereinsgröße oder technischem Hintergrund – verdient Zugang zu professionellen Spielanalyse-Tools. Viel zu lange waren detailliertes Statistik-Tracking und Leistungsanalyse das exklusive Privileg von NHL- und KHL-Franchises mit eigenen Analyse-Abteilungen und teurer Spezialsoftware. Wir sind überzeugt, dass das grundlegend falsch ist – und haben uns aufgemacht, das zu ändern.</p>
+                    <p>Unsere webbasierten Apps laufen auf jedem modernen Smartphone, Tablet oder Laptop – direkt im Browser, ohne Installation. Alle Daten werden lokal auf dem Gerät gespeichert, was vollständige Datenprivatsphäre ohne Cloud-Konto oder externen Server garantiert. Egal ob du ein Jugendteam, eine Hobbyliga oder einen semi-professionellen Verein trainierst – SmartHockey Products gibt dir die Analysetools, die bisher Elite-Organisationen vorbehalten waren.</p>
+                </span>
+                <span class="lang-fr">
+                    <p><strong>SmartHockey Products</strong> a été fondé avec une conviction claire : chaque entraîneur de hockey sur glace ou de hockey en ligne — indépendamment du budget, de la taille du club ou des compétences techniques — mérite d'avoir accès à des outils d'analyse de jeu professionnels. Pendant trop longtemps, le suivi statistique détaillé et l'analyse des performances ont été réservés aux franchises NHL et KHL disposant de départements analytiques à temps plein et de logiciels propriétaires coûteux.</p>
+                    <p>Nos applications web fonctionnent sur n'importe quel smartphone, tablette ou ordinateur portable moderne — directement depuis le navigateur, sans installation. Toutes les données sont stockées localement sur l'appareil, garantissant une confidentialité totale sans compte cloud ni serveur externe.</p>
+                </span>
+                <span class="lang-sv">
+                    <p><strong>SmartHockey Products</strong> grundades med en tydlig övertygelse: varje ishockey- och inlinehockeytränare — oavsett budget, klubbstorlek eller teknisk bakgrund — förtjänar tillgång till professionella spelanalysverktyg. Under alltför lång tid har detaljerad statistikspårning och prestandaanalys varit exklusivt för NHL- och KHL-franchiser med heltidsanställda analytiker och dyr specialprogramvara.</p>
+                    <p>Våra webbaserade appar fungerar på alla moderna smartphones, surfplattor eller bärbara datorer — direkt i webbläsaren, utan installation. All data lagras lokalt på enheten, vilket garanterar fullständig dataintegritet utan molnkonto eller extern server.</p>
+                </span>
+                <span class="lang-fi">
+                    <p><strong>SmartHockey Products</strong> perustettiin yhden selkeän vakaumuksen pohjalta: jokainen jääkiekko- ja inlinekiekkovalmentaja — budjetista, seuran koosta tai teknisestä taustasta riippumatta — ansaitsee pääsyn ammattitason pelianalyysivälineisiin. Liian pitkään yksityiskohtainen tilastoseuranta ja suorituskykyanalyysi on ollut NHL- ja KHL-seurojen yksinoikeus.</p>
+                    <p>Verkkopohjaiset sovelluksemme toimivat kaikilla moderneilla älypuhelimilla, tableteilla tai kannettavilla tietokoneilla — suoraan selaimesta, ilman asennusta. Kaikki tiedot tallennetaan paikallisesti laitteelle, mikä takaa täydellisen tietosuojan ilman pilvipalvelutiliä tai ulkoista palvelinta.</p>
+                </span>
+                <span class="lang-ru">
+                    <p><strong>SmartHockey Products</strong> была основана с одной чёткой убеждённостью: каждый тренер по хоккею на льду и роликовому хоккею — независимо от бюджета, размера клуба или технического опыта — заслуживает доступа к профессиональным инструментам анализа игры. Слишком долго детальный статистический учёт и анализ производительности были исключительной привилегией франшиз НХЛ и КХЛ.</p>
+                    <p>Наши веб-приложения работают на любом современном смартфоне, планшете или ноутбуке — прямо в браузере, без установки. Все данные хранятся локально на устройстве, что гарантирует полную конфиденциальность без облачного аккаунта или внешнего сервера.</p>
+                </span>
             </div>
 
-            <h2>Our Story</h2>
-            <p>
-                SmartHockey Products grew out of a genuine frustration felt by coaches at the amateur and semi-professional level. During games, these coaches were forced to rely on handwritten notes, basic spreadsheets, or expensive systems originally designed for professional teams — none of which were truly fit for purpose in the fast-paced, tablet-on-the-bench environment of a real hockey game.
-            </p>
-            <p>
-                Our founders — with backgrounds spanning both competitive hockey and software engineering — began building the first version of what would become the <strong>SmartHockey Team Tracker Pro</strong> in response to this exact problem. The goal was radical simplicity on the surface, combined with genuine analytical depth underneath. A tool that could be operated with one hand during a penalty kill, yet produce the kind of Corsi and Fenwick reports that rival those used in the NHL.
-            </p>
-            <p>
-                Over time, and through close collaboration with active coaches across multiple countries and leagues, the product evolved into a fully featured, multilingual, cross-platform Progressive Web App — available on any device, in the browser, and installable on Android via Google Play.
-            </p>
+            <div class="highlight-box">
+                <p>
+                    <span data-lang-group="about-quote">
+                        <span class="lang-en active">"Great coaching decisions come from great data. We make that data accessible to every coach on the planet — from the smallest junior league rink to the professional arena."</span>
+                        <span class="lang-de">„Großartige Coaching-Entscheidungen entstehen aus großartigen Daten. Wir machen diese Daten jedem Trainer auf der Welt zugänglich – vom kleinsten Nachwuchsverein bis zur Profi-Arena."</span>
+                        <span class="lang-fr">« Les grandes décisions d'entraînement viennent des grandes données. Nous rendons ces données accessibles à chaque entraîneur sur la planète — de la plus petite patinoire junior à l'arène professionnelle. »</span>
+                        <span class="lang-sv">«Bra tränarebeslut kommer från bra data. Vi gör denna data tillgänglig för varje tränare på planeten — från den minsta juniorrinken till den professionella arenan.»</span>
+                        <span class="lang-fi">«Hienot valmennuspäätökset syntyvät hienoista tiedoista. Me teemme nämä tiedot saataviksi jokaiselle valmentajalle maailmassa — pienimmältä juniorijäähallilta ammattilaisareenalle.»</span>
+                        <span class="lang-ru">«Великие тренерские решения рождаются из великих данных. Мы делаем эти данные доступными для каждого тренера на планете — от самой маленькой юниорской площадки до профессиональной арены.»</span>
+                    </span>
+                </p>
+            </div>
 
-            <h2>Our Philosophy</h2>
-            <p>
-                At SmartHockey Products, we are guided by four core principles that shape every feature we build:
-            </p>
-            <ul>
-                <li><strong>Accessibility First:</strong> Every coach should be able to use our tools, not just those with large budgets or technical teams. Our web-based approach means there is nothing to install, no annual licence fee for core features, and no special hardware required.</li>
-                <li><strong>Real-World Usability:</strong> Software built for coaches must work under pressure, on a phone screen, in a noisy arena. We obsess over interface speed, touch-target size, and the number of taps needed to record a critical game event.</li>
-                <li><strong>Data Privacy:</strong> We believe your coaching data belongs to you and your club. That is why all statistics in the SmartHockey Team Tracker Pro are stored locally in the user's browser — no cloud account, no data sharing, no third-party access.</li>
-                <li><strong>Continuous Improvement:</strong> Hockey evolves, analytics evolve, and so do our products. We maintain a close dialogue with coaches around the world and regularly ship new statistics modules, export formats, and quality-of-life improvements based directly on their feedback.</li>
-            </ul>
+            <!-- App 1: SmartHockey Team Tracker Pro -->
+            <h2>
+                <span data-lang-group="about-pro-title">
+                    <span class="lang-en active">🏒 SmartHockey Team Tracker Pro</span>
+                    <span class="lang-de">🏒 SmartHockey Team Tracker Pro</span>
+                    <span class="lang-fr">🏒 SmartHockey Team Tracker Pro</span>
+                    <span class="lang-sv">🏒 SmartHockey Team Tracker Pro</span>
+                    <span class="lang-fi">🏒 SmartHockey Team Tracker Pro</span>
+                    <span class="lang-ru">🏒 SmartHockey Team Tracker Pro</span>
+                </span>
+            </h2>
+            <div class="app-section-badge">
+                <span data-lang-group="about-pro-badge">
+                    <span class="lang-en active">Flagship App – Full Analytics Suite</span>
+                    <span class="lang-de">Flagship App – Vollständige Analyse-Suite</span>
+                    <span class="lang-fr">Application phare – Suite d'analyses complète</span>
+                    <span class="lang-sv">Flaggskepp App – Fullständig analysprogramsvit</span>
+                    <span class="lang-fi">Lippulaiva-sovellus – Täydellinen analytiikkapaketti</span>
+                    <span class="lang-ru">Флагманское приложение – Полный пакет аналитики</span>
+                </span>
+            </div>
+            <div data-lang-group="about-pro-text">
+                <span class="lang-en active">
+                    <p>The <strong>SmartHockey Team Tracker Pro</strong> is our flagship application — a comprehensive, browser-based web app designed specifically for ice hockey coaches, assistant coaches, and analysts who demand the highest level of precision in game analysis. Unlike traditional pen-and-paper methods or cumbersome spreadsheet solutions, the Team Tracker Pro puts a full professional statistics suite directly in your hands, accessible from any smartphone, tablet, or laptop right from the bench or the stands.</p>
+                    <p>At the heart of the app is a powerful <strong>real-time tracking engine</strong> that lets coaches record every meaningful on-ice event as it happens. You can log <strong>shots on goal</strong> (distinguishing between shots from different zones), <strong>goals</strong> with full assist attribution, <strong>penalties</strong> including penalty type and duration, <strong>power play</strong> and <strong>penalty kill</strong> situations, faceoffs, blocked shots, hits, giveaways, and turnovers — all with a single tap. The intuitive interface is designed so that even during the heat of a period, data entry never takes more than a second.</p>
+                    <p>Beyond basic event tracking, the Team Tracker Pro calculates advanced metrics automatically. <strong>Plus/Minus ratings</strong> are updated live for every skater, giving you an instant snapshot of each player's defensive and offensive impact. <strong>Corsi and Fenwick statistics</strong> — the gold standard for possession-based analysis in modern professional hockey — are computed continuously so you can see shot-attempt differentials at even strength in real time. <strong>Ice time (Eiszeit)</strong> per player and per line is tracked with precision, helping coaches make informed decisions about deployment and line matchups.</p>
+                    <p>The app supports full <strong>roster management</strong> for multiple teams and seasons. You can define lines, assign jersey numbers, and track statistics across an entire season. After each match, detailed summary reports can be reviewed directly in the browser and exported. Because all data is stored locally in your browser, <strong>no server account is required</strong> and your data always remains private and under your full control. The app is available as a Progressive Web App (PWA), installable on Android via Google Play for offline use at the rink.</p>
+                </span>
+                <span class="lang-de">
+                    <p>Der <strong>SmartHockey Team Tracker Pro</strong> ist unsere Flaggschiff-Anwendung – eine umfassende, browserbasierte Web-App, die speziell für Eishockey-Trainer, Co-Trainer und Analysten entwickelt wurde, die höchste Präzision bei der Spielanalyse verlangen. Im Gegensatz zu herkömmlichen Methoden mit Stift und Papier oder umständlichen Tabellenkalkulationen bringt der Team Tracker Pro eine vollständige professionelle Statistiksuite direkt in Ihre Hände – zugänglich von jedem Smartphone, Tablet oder Laptop direkt von der Bank oder dem Tribünenplatz.</p>
+                    <p>Das Herzstück der App ist eine leistungsstarke <strong>Echtzeit-Tracking-Engine</strong>, mit der Trainer jeden wichtigen Spielzug direkt erfassen können. Sie können <strong>Torschüsse</strong> (unterschieden nach Zonen), <strong>Tore</strong> mit vollständiger Vorlagen-Zuordnung, <strong>Strafen</strong> inklusive Art und Dauer, <strong>Powerplay</strong>- und <strong>Penaltykill</strong>-Situationen, Bully-Gewinne, geblockte Schüsse, Bodychecks, Puckverluste und Puck-Gewinne protokollieren – alles mit einem einzigen Antippen.</p>
+                    <p>Über das grundlegende Event-Tracking hinaus berechnet der Team Tracker Pro automatisch erweiterte Metriken. <strong>Plus/Minus-Wertungen</strong> werden für jeden Feldspieler live aktualisiert. <strong>Corsi- und Fenwick-Statistiken</strong> – der Goldstandard der modernen Eishockey-Analyse – werden kontinuierlich berechnet. Die <strong>Eiszeit</strong> pro Spieler und pro Linie wird präzise erfasst, was Trainern fundierte Entscheidungen über Spielereinsatz und Linien-Matchups ermöglicht.</p>
+                    <p>Die App unterstützt vollständiges <strong>Roster-Management</strong> für mehrere Teams und Saisons. Du kannst Linien definieren, Trikotnummern vergeben und Statistiken über eine gesamte Saison verfolgen. Da alle Daten lokal im Browser gespeichert werden, ist <strong>kein Server-Account erforderlich</strong> und deine Daten bleiben immer privat und unter deiner vollen Kontrolle. Die App ist als Progressive Web App (PWA) verfügbar und kann auf Android-Geräten über Google Play installiert werden.</p>
+                </span>
+                <span class="lang-fr">
+                    <p>Le <strong>SmartHockey Team Tracker Pro</strong> est notre application phare — une application web complète, basée sur le navigateur, conçue spécifiquement pour les entraîneurs de hockey sur glace, les entraîneurs adjoints et les analystes. Avec cet outil, vous pouvez enregistrer des <strong>tirs au but</strong>, des <strong>buts</strong> avec attribution complète des assistances, des <strong>pénalités</strong>, des situations de <strong>jeu de puissance</strong> et de <strong>désavantage numérique</strong>, des mises en jeu, des tirs bloqués, des mises en échec et des revirements en temps réel.</p>
+                    <p>L'application calcule automatiquement des métriques avancées : les cotes <strong>Plus/Minus</strong> sont mises à jour en direct pour chaque patineur, et les statistiques <strong>Corsi et Fenwick</strong> — l'étalon-or de l'analyse basée sur la possession dans le hockey professionnel moderne — sont calculées en continu. Le <strong>temps de glace</strong> par joueur et par ligne est suivi avec précision, aidant les entraîneurs à prendre des décisions éclairées.</p>
+                    <p>L'application prend en charge la gestion complète des effectifs pour plusieurs équipes et saisons. Toutes les données sont stockées localement dans votre navigateur — <strong>aucun compte serveur n'est nécessaire</strong> et vos données restent toujours privées. L'application est disponible en tant que Progressive Web App (PWA), installable sur Android via Google Play.</p>
+                </span>
+                <span class="lang-sv">
+                    <p><strong>SmartHockey Team Tracker Pro</strong> är vår flaggskeppsapplikation — en heltäckande webbaserad app för ishockeytränare, assistenttränare och analytiker. Med den kan du registrera <strong>skott på mål</strong>, <strong>mål</strong> med full assisttilldelning, <strong>utvisningar</strong>, <strong>powerplay</strong>- och <strong>boxplay</strong>-situationer, tekning, blockerade skott, tacklingar och puckförluster i realtid.</p>
+                    <p>Appen beräknar automatiskt avancerade statistik: <strong>Plus/Minus-betyg</strong> uppdateras live för varje spelare, och <strong>Corsi- och Fenwick-statistik</strong> — guldstandarden för besittningsbaserad analys — beräknas kontinuerligt. <strong>Istid</strong> per spelare och per kedja spåras precist. All data lagras lokalt i webbläsaren — <strong>inget serverkonto krävs</strong>.</p>
+                </span>
+                <span class="lang-fi">
+                    <p><strong>SmartHockey Team Tracker Pro</strong> on lippulaiva-sovelluksemme — kattava, selainpohjainen verkkosovellus jääkiekkovalmentajille, apuvalmentajille ja analyytikoille. Sen avulla voit kirjata <strong>laukaukset maalille</strong>, <strong>maalit</strong> täydellisine syöttöosoituksineen, <strong>rangaistukset</strong>, <strong>ylivoimatilanteet</strong> ja <strong>alivoimatilanteet</strong>, kasvot, torjutut laukaukset, taklaukset ja kiekonmenetykset reaaliajassa.</p>
+                    <p>Sovellus laskee automaattisesti kehittyneitä tilastoja: <strong>Plus/Minus-arvot</strong> päivittyvät live jokaiselle pelaajalle, ja <strong>Corsi- ja Fenwick-tilastot</strong> lasketaan jatkuvasti. <strong>Jääaika</strong> pelaajaa ja kenttää kohden seurataan tarkasti. Kaikki tiedot tallennetaan paikallisesti selaimeesi — <strong>palvelintiliä ei tarvita</strong>.</p>
+                </span>
+                <span class="lang-ru">
+                    <p><strong>SmartHockey Team Tracker Pro</strong> — наше флагманское приложение, комплексное веб-приложение для тренеров по хоккею на льду, помощников тренера и аналитиков. С его помощью можно записывать <strong>броски в створ</strong>, <strong>голы</strong> с полной записью передач, <strong>штрафы</strong>, ситуации <strong>большинства</strong> и <strong>меньшинства</strong>, вбрасывания, заблокированные броски, силовые приёмы и потери шайбы в режиме реального времени.</p>
+                    <p>Приложение автоматически рассчитывает продвинутые метрики: показатели <strong>«плюс/минус»</strong> обновляются в режиме реального времени для каждого полевого игрока, а статистика <strong>Corsi и Fenwick</strong> — золотой стандарт современного хоккейного анализа — вычисляется непрерывно. <strong>Время на льду</strong> каждого игрока и каждого звена отслеживается с точностью. Все данные хранятся локально в браузере — <strong>серверный аккаунт не требуется</strong>.</p>
+                </span>
+            </div>
 
-            <h2>What We Build</h2>
-            <p>
-                Our flagship product, the <strong>SmartHockey Team Tracker Pro</strong>, is a comprehensive real-time game-tracking application. It captures a full range of statistics including shots on goal, goals with assists, penalty events, power plays, penalty kills, faceoffs, hits, blocked shots, giveaways, and turnovers. Advanced metrics including <strong>Plus/Minus</strong>, <strong>Corsi</strong>, and <strong>Fenwick</strong> ratings are calculated automatically and updated live throughout the game. Ice time per player and per line is tracked with precision.
-            </p>
-            <p>
-                Beyond the flagship app, SmartHockey Products also offers companion tools for lighter tracking needs and inline hockey management. All products are built with the same philosophy: maximum usability, genuine analytical value, and complete respect for user data privacy.
-            </p>
+            <!-- App 2: SmartHockey Light -->
+            <h2>
+                <span data-lang-group="about-light-title">
+                    <span class="lang-en active">⚡ SmartHockey Team Tracker Light</span>
+                    <span class="lang-de">⚡ SmartHockey Team Tracker Light</span>
+                    <span class="lang-fr">⚡ SmartHockey Team Tracker Light</span>
+                    <span class="lang-sv">⚡ SmartHockey Team Tracker Light</span>
+                    <span class="lang-fi">⚡ SmartHockey Team Tracker Light</span>
+                    <span class="lang-ru">⚡ SmartHockey Team Tracker Light</span>
+                </span>
+            </h2>
+            <div class="app-section-badge">
+                <span data-lang-group="about-light-badge">
+                    <span class="lang-en active">Essential Stats – Fast &amp; Lightweight</span>
+                    <span class="lang-de">Wesentliche Statistiken – Schnell &amp; Leichtgewichtig</span>
+                    <span class="lang-fr">Statistiques essentielles – Rapide et léger</span>
+                    <span class="lang-sv">Väsentlig statistik – Snabb och lätt</span>
+                    <span class="lang-fi">Olennaiset tilastot – Nopea ja kevyt</span>
+                    <span class="lang-ru">Основная статистика – Быстро и легко</span>
+                </span>
+            </div>
+            <div data-lang-group="about-light-text">
+                <span class="lang-en active">
+                    <p>The <strong>SmartHockey Team Tracker Light</strong> is the streamlined companion app in the SmartHockey Products family. It is designed for coaches, managers, and clubs who need to track the most important team statistics quickly and efficiently, without the full complexity of the Pro version. Light is the perfect choice for smaller teams, hobby leagues, youth clubs, or any situation where speed of data entry matters more than comprehensive analytical depth.</p>
+                    <p>The Light app focuses on the essentials: recording <strong>goals and assists</strong>, tracking <strong>shots on goal</strong>, managing basic <strong>penalty events</strong>, and giving coaches a clear overview of team performance at a glance. The interface is deliberately simplified — with larger buttons and fewer steps per action — making it ideal for coaches who are simultaneously managing their bench and tracking statistics on their own.</p>
+                    <p>Despite its simplified surface, the Light app still provides meaningful post-game summaries. Coaches can review who scored, who assisted, how many shots each player took, and what the penalty situation looked like — everything needed for a productive post-game team conversation. The data is exported in clear, readable formats, making it easy to communicate results to players, parents, and club management.</p>
+                    <p>Like all SmartHockey Products apps, the Light version is browser-based, works on any device, requires no installation, and stores all data locally. It is the ideal entry point into the world of data-driven hockey coaching.</p>
+                </span>
+                <span class="lang-de">
+                    <p>Der <strong>SmartHockey Team Tracker Light</strong> ist die schlanke Begleit-App der SmartHockey Products Familie. Er ist für Trainer, Manager und Vereine konzipiert, die die wichtigsten Teamstatistiken schnell und effizient erfassen möchten, ohne die volle Komplexität der Pro-Version. Light ist die perfekte Wahl für kleinere Teams, Hobbyligen, Jugendvereine oder Situationen, in denen Geschwindigkeit bei der Dateneingabe wichtiger ist als umfassende analytische Tiefe.</p>
+                    <p>Die Light-App konzentriert sich auf das Wesentliche: Erfassung von <strong>Toren und Vorlagen</strong>, Verfolgung von <strong>Torschüssen</strong>, Verwaltung grundlegender <strong>Strafzeiten</strong> und Verschaffung eines klaren Überblicks über die Teamleistung auf einen Blick. Die Oberfläche ist bewusst vereinfacht – mit größeren Schaltflächen und weniger Schritten pro Aktion –, was sie ideal für Trainer macht, die gleichzeitig ihre Bank managen und Statistiken erfassen.</p>
+                    <p>Trotz der vereinfachten Oberfläche liefert die Light-App aussagekräftige Spiel-Zusammenfassungen. Trainer können überprüfen, wer getroffen hat, wer Vorlagen gegeben hat, wie viele Schüsse jeder Spieler abgegeben hat und wie die Strafsituation aussah. Wie alle SmartHockey Products Apps ist die Light-Version browserbasiert, läuft auf jedem Gerät und speichert alle Daten lokal.</p>
+                </span>
+                <span class="lang-fr">
+                    <p>Le <strong>SmartHockey Team Tracker Light</strong> est l'application compagnon simplifiée de la famille SmartHockey Products. Elle est conçue pour les entraîneurs, managers et clubs qui ont besoin de suivre les statistiques d'équipe les plus importantes rapidement et efficacement, sans la complexité complète de la version Pro. L'interface est délibérément simplifiée — avec des boutons plus grands et moins d'étapes par action — ce qui la rend idéale pour les entraîneurs gérant leur banc seul tout en suivant les statistiques.</p>
+                    <p>L'application Light se concentre sur l'essentiel : enregistrement des <strong>buts et des assistances</strong>, suivi des <strong>tirs au but</strong>, gestion des <strong>pénalités</strong> de base et aperçu clair des performances de l'équipe. Comme toutes les applications SmartHockey Products, la version Light est basée sur le navigateur, fonctionne sur n'importe quel appareil et stocke toutes les données localement.</p>
+                </span>
+                <span class="lang-sv">
+                    <p><strong>SmartHockey Team Tracker Light</strong> är den förenklade följeappen i SmartHockey Products-familjen. Den är utformad för tränare, managers och klubbar som behöver spåra de viktigaste teamstatistiken snabbt och effektivt, utan Pro-versionens fulla komplexitet. Gränssnittet är medvetet förenklat — med större knappar och färre steg per åtgärd — vilket gör det perfekt för tränare som hanterar sin bänk och spårar statistik på egen hand.</p>
+                    <p>Light-appen fokuserar på det väsentliga: registrering av <strong>mål och assist</strong>, spårning av <strong>skott på mål</strong>, hantering av grundläggande <strong>utvisningar</strong> och en tydlig översikt av lagets prestationer. Precis som alla SmartHockey Products-appar är Light-versionen webbläsarbaserad och lagrar all data lokalt.</p>
+                </span>
+                <span class="lang-fi">
+                    <p><strong>SmartHockey Team Tracker Light</strong> on SmartHockey Products -perheen virtaviivaistettu sovellus. Se on suunniteltu valmentajille, managereille ja seuroille, jotka tarvitsevat tärkeimpien joukkuetilastojen nopeaa ja tehokasta seurantaa ilman Pro-version täyttä monimutkaisuutta. Käyttöliittymä on tarkoituksellisesti yksinkertaistettu — suuremmilla painikkeilla ja vähemmillä vaiheilla per toiminto — mikä tekee siitä ihanteellisen valmentajille, jotka hallitsevat penkkiä yksin.</p>
+                    <p>Light-sovellus keskittyy olennaiseen: <strong>maalien ja syöttöjen</strong> kirjaamiseen, <strong>laukausten</strong> seurantaan, perusjäärangaistusten hallintaan ja selkeään yleiskatsaukseen joukkueen suorituksesta. Kuten kaikki SmartHockey Products -sovellukset, Light-versio on selainpohjainen ja tallentaa kaikki tiedot paikallisesti.</p>
+                </span>
+                <span class="lang-ru">
+                    <p><strong>SmartHockey Team Tracker Light</strong> — упрощённое сопутствующее приложение семейства SmartHockey Products. Оно разработано для тренеров, менеджеров и клубов, которым нужно быстро и эффективно отслеживать наиболее важную командную статистику без полной сложности версии Pro. Интерфейс намеренно упрощён — с более крупными кнопками и меньшим количеством шагов на действие.</p>
+                    <p>Приложение Light сосредоточено на главном: записи <strong>голов и передач</strong>, отслеживании <strong>бросков в створ</strong>, управлении основными <strong>штрафами</strong> и чётком обзоре результатов команды. Как и все приложения SmartHockey Products, версия Light основана на браузере и хранит все данные локально.</p>
+                </span>
+            </div>
 
-            <h2>Our Global Reach</h2>
-            <p>
-                SmartHockey Products tools are used by coaches and teams across Europe, North America, and beyond. Our apps are available in English, German, French, Swedish, Finnish, and Russian — reflecting the truly international nature of the hockey community we serve. We have collaborated with coaches who have worked in the NHL, KHL, Swiss National League (NL), and various European Extraligas to ensure our statistics definitions and workflows match real-world professional standards.
-            </p>
+            <!-- App 3: SmartHockey Inline -->
+            <h2>
+                <span data-lang-group="about-inline-title">
+                    <span class="lang-en active">🛼 SmartHockey Inline Tracker</span>
+                    <span class="lang-de">🛼 SmartHockey Inline Tracker</span>
+                    <span class="lang-fr">🛼 SmartHockey Inline Tracker</span>
+                    <span class="lang-sv">🛼 SmartHockey Inline Tracker</span>
+                    <span class="lang-fi">🛼 SmartHockey Inline Tracker</span>
+                    <span class="lang-ru">🛼 SmartHockey Inline Tracker</span>
+                </span>
+            </h2>
+            <div class="app-section-badge">
+                <span data-lang-group="about-inline-badge">
+                    <span class="lang-en active">Built for Inline &amp; Roller Hockey</span>
+                    <span class="lang-de">Speziell für Inline- &amp; Rollhockey</span>
+                    <span class="lang-fr">Conçu pour le hockey en ligne et sur roulettes</span>
+                    <span class="lang-sv">Byggd för inline- och rullhockey</span>
+                    <span class="lang-fi">Rakennettu inline- ja rullakiekolle</span>
+                    <span class="lang-ru">Создано для инлайн- и роликового хоккея</span>
+                </span>
+            </div>
+            <div data-lang-group="about-inline-text">
+                <span class="lang-en active">
+                    <p>The <strong>SmartHockey Inline Tracker</strong> is a dedicated statistics application built specifically for the inline hockey and roller hockey community. While ice hockey and inline hockey share many similarities, there are important structural differences in gameplay, team composition, and game format. The Inline Tracker has been developed from the ground up to reflect these differences and provide inline hockey coaches with a tool that fits their sport perfectly.</p>
+                    <p>The app supports the full range of inline hockey statistics: <strong>goals and assists</strong>, <strong>shots on goal</strong>, <strong>penalty tracking</strong> (including the specific penalty types used in inline hockey rulebooks), <strong>power play efficiency</strong>, <strong>face-off win percentages</strong>, and individual <strong>player performance metrics</strong> including Plus/Minus. The game-clock functionality is adapted to the typical period lengths and overtime formats used in inline hockey competitions.</p>
+                    <p>Because inline hockey teams often have smaller rosters and different line structures than ice hockey teams, the Inline Tracker offers flexible roster management that accommodates the varying squad sizes of inline hockey clubs. Coaches can define their own line combinations, track substitution patterns, and analyse which player groupings produce the best results.</p>
+                    <p>The Inline Tracker is especially popular with coaches who run both ice hockey and inline hockey programmes simultaneously. The consistent interface across all three SmartHockey apps means coaches only need to learn one system — switching between Pro, Light, and Inline is intuitive and effortless. All SmartHockey Products apps are browser-based, require no installation, and guarantee full data privacy through local storage.</p>
+                </span>
+                <span class="lang-de">
+                    <p>Der <strong>SmartHockey Inline Tracker</strong> ist eine dedizierte Statistik-Anwendung, die speziell für die Inline-Hockey- und Rollhockey-Community entwickelt wurde. Obwohl Eis- und Inline-Hockey viele Gemeinsamkeiten teilen, gibt es wichtige strukturelle Unterschiede im Spielablauf, der Teamzusammensetzung und dem Spielformat. Der Inline Tracker wurde von Grund auf entwickelt, um diese Unterschiede widerzuspiegeln.</p>
+                    <p>Die App unterstützt die vollständige Palette der Inline-Hockey-Statistiken: <strong>Tore und Vorlagen</strong>, <strong>Torschüsse</strong>, <strong>Strafzeiten-Tracking</strong> (inklusive der spezifischen Strafarten in Inline-Hockey-Regelwerken), <strong>Powerplay-Effizienz</strong>, <strong>Bully-Gewinnquoten</strong> und individuelle <strong>Spielerleistungsmetriken</strong> einschließlich Plus/Minus.</p>
+                    <p>Da Inline-Hockey-Teams oft kleinere Kader und andere Linienstrukturen als Eishockey-Teams haben, bietet der Inline Tracker flexibles Roster-Management, das die unterschiedlichen Kadergrössen von Inline-Hockey-Vereinen berücksichtigt. Der Inline Tracker ist besonders beliebt bei Trainern, die gleichzeitig Eis- und Inline-Hockey-Programme leiten. Wie alle SmartHockey Products Apps ist der Inline Tracker browserbasiert, erfordert keine Installation und garantiert durch lokale Speicherung vollständigen Datenschutz.</p>
+                </span>
+                <span class="lang-fr">
+                    <p>Le <strong>SmartHockey Inline Tracker</strong> est une application de statistiques dédiée, construite spécifiquement pour la communauté du hockey en ligne et du hockey sur roulettes. Bien que le hockey sur glace et le hockey en ligne partagent de nombreuses similitudes, il existe des différences structurelles importantes dans le gameplay, la composition de l'équipe et le format du jeu.</p>
+                    <p>L'application prend en charge toute la gamme des statistiques du hockey en ligne : <strong>buts et assistances</strong>, <strong>tirs au but</strong>, <strong>suivi des pénalités</strong> (y compris les types de pénalités spécifiques aux règlements du hockey en ligne), <strong>efficacité du jeu de puissance</strong>, <strong>pourcentages de victoires à la mise en jeu</strong> et <strong>métriques de performance individuelle</strong> des joueurs incluant le Plus/Minus. Comme toutes les applications SmartHockey Products, le Inline Tracker est basé sur le navigateur et stocke toutes les données localement.</p>
+                </span>
+                <span class="lang-sv">
+                    <p><strong>SmartHockey Inline Tracker</strong> är en dedikerad statistikapplikation byggd specifikt för inline- och rullhockeygemenskapen. Appen stöder hela utbudet av inlinehockeystatistik: <strong>mål och assist</strong>, <strong>skott på mål</strong>, <strong>utvisningsspårning</strong> (inklusive de specifika utvisningstyper som används i inlinehockeyregelböcker), <strong>powerplay-effektivitet</strong>, <strong>tekning-vinstprocenter</strong> och individuella <strong>spelarprestandamätvärden</strong> inklusive Plus/Minus.</p>
+                    <p>Inline Tracker är speciellt populär bland tränare som driver både ishockey- och inlinehockeyprogram. Det enhetliga gränssnittet i alla tre SmartHockey-apparna innebär att tränare bara behöver lära sig ett system. Precis som alla SmartHockey Products-appar är Inline Tracker webbläsarbaserad och lagrar all data lokalt.</p>
+                </span>
+                <span class="lang-fi">
+                    <p><strong>SmartHockey Inline Tracker</strong> on omistettu tilastosovellus, joka on rakennettu erityisesti inlinekiekko- ja rullaluisteluhockeyyhteisölle. Sovellus tukee koko inlinekiekkotilastojen kirjoa: <strong>maaleja ja syöttöjä</strong>, <strong>laukauksia maalille</strong>, <strong>rangaistusten seurantaa</strong> (mukaan lukien inlinekiekkosäännöissä käytetyt erityiset rangaistustyypit), <strong>ylivoimatehoa</strong>, <strong>aloitusvoittoprosentteja</strong> ja yksilöllisiä <strong>pelaajan suorituskykyä kuvaavia mittareita</strong> kuten Plus/Minus.</p>
+                    <p>Inline Tracker on erityisen suosittu valmentajien keskuudessa, jotka ohjaavat sekä jääkiekko- että inlinekiekkoohjelmia samanaikaisesti. Kuten kaikki SmartHockey Products -sovellukset, Inline Tracker on selainpohjainen ja tallentaa kaikki tiedot paikallisesti.</p>
+                </span>
+                <span class="lang-ru">
+                    <p><strong>SmartHockey Inline Tracker</strong> — специализированное статистическое приложение, созданное специально для сообщества инлайн-хоккея и роликового хоккея. Приложение поддерживает полный спектр статистики инлайн-хоккея: <strong>голы и передачи</strong>, <strong>броски в створ</strong>, <strong>отслеживание штрафов</strong> (включая специфические виды штрафов в правилах инлайн-хоккея), <strong>эффективность большинства</strong>, <strong>процент выигранных вбрасываний</strong> и индивидуальные <strong>показатели эффективности игроков</strong>, включая «плюс/минус».</p>
+                    <p>Inline Tracker особенно популярен среди тренеров, которые одновременно ведут как хоккейные, так и инлайн-хоккейные программы. Как и все приложения SmartHockey Products, Inline Tracker основан на браузере и хранит все данные локально.</p>
+                </span>
+            </div>
 
-            <h2>Contact Us</h2>
-            <p>
-                We love hearing from the coaching community. Whether you have a feature request, a bug report, or simply want to share how SmartHockey Products has helped your team, please reach out:
-            </p>
-            <p>
-                📧 <strong><a href="mailto:support@smarthockeyproducts.com" style="color:#2563eb; text-decoration:none;">support@smarthockeyproducts.com</a></strong>
-            </p>
-            <p>
-                You can also follow us on <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer" style="color:#2563eb; text-decoration:none;">Instagram @smarthockeyproducts</a> for the latest updates, tips, and community content.
-            </p>
+            <!-- Our Philosophy -->
+            <h2>
+                <span data-lang-group="about-philosophy-title">
+                    <span class="lang-en active">Our Philosophy</span>
+                    <span class="lang-de">Unsere Philosophie</span>
+                    <span class="lang-fr">Notre philosophie</span>
+                    <span class="lang-sv">Vår filosofi</span>
+                    <span class="lang-fi">Filosofiamme</span>
+                    <span class="lang-ru">Наша философия</span>
+                </span>
+            </h2>
+            <div data-lang-group="about-philosophy-text">
+                <span class="lang-en active">
+                    <p>At SmartHockey Products, we are guided by four core principles that shape every feature we build:</p>
+                    <ul>
+                        <li><strong>Accessibility First:</strong> Every coach should be able to use our tools, not just those with large budgets or technical teams. Our web-based approach means there is nothing to install, no annual licence fee for core features, and no special hardware required.</li>
+                        <li><strong>Real-World Usability:</strong> Software built for coaches must work under pressure, on a phone screen, in a noisy arena. We obsess over interface speed, touch-target size, and the number of taps needed to record a critical game event.</li>
+                        <li><strong>Data Privacy:</strong> We believe your coaching data belongs to you and your club. That is why all statistics are stored locally in the user's browser — no cloud account, no data sharing, no third-party access.</li>
+                        <li><strong>Continuous Improvement:</strong> Hockey evolves, analytics evolve, and so do our products. We maintain a close dialogue with coaches around the world and regularly ship new statistics modules and quality-of-life improvements based directly on their feedback.</li>
+                    </ul>
+                    <p>Our apps are used by coaches and teams across Europe, North America, and beyond. Available in English, German, French, Swedish, Finnish, and Russian — reflecting the international nature of the hockey community we serve.</p>
+                </span>
+                <span class="lang-de">
+                    <p>Bei SmartHockey Products leiten uns vier Kernprinzipien, die jede Funktion prägen, die wir entwickeln:</p>
+                    <ul>
+                        <li><strong>Zugänglichkeit zuerst:</strong> Jeder Trainer sollte unsere Tools nutzen können, nicht nur solche mit großen Budgets oder technischen Teams. Unser webbasierter Ansatz bedeutet, dass nichts installiert werden muss, keine jährliche Lizenzgebühr für Kernfunktionen anfällt und keine spezielle Hardware benötigt wird.</li>
+                        <li><strong>Praxistauglichkeit:</strong> Software für Trainer muss unter Druck, auf einem Handybildschirm, in einer lauten Arena funktionieren. Wir arbeiten akribisch an Schnelligkeit, Touch-Zielgröße und der Anzahl der Tipps zum Erfassen eines kritischen Spielereignisses.</li>
+                        <li><strong>Datenprivatsphäre:</strong> Deine Coaching-Daten gehören dir und deinem Verein. Deshalb werden alle Statistiken lokal im Browser gespeichert – kein Cloud-Konto, kein Datenaustausch, kein Drittparteien-Zugriff.</li>
+                        <li><strong>Kontinuierliche Verbesserung:</strong> Hockey entwickelt sich weiter, Analytik entwickelt sich weiter – und so auch unsere Produkte. Wir pflegen einen engen Dialog mit Trainern weltweit und veröffentlichen regelmäßig neue Statistikmodule und Qualitätsverbesserungen.</li>
+                    </ul>
+                    <p>Unsere Apps werden von Trainern und Teams in ganz Europa, Nordamerika und darüber hinaus genutzt. Verfügbar auf Englisch, Deutsch, Französisch, Schwedisch, Finnisch und Russisch.</p>
+                </span>
+                <span class="lang-fr">
+                    <p>Chez SmartHockey Products, nous sommes guidés par quatre principes fondamentaux :</p>
+                    <ul>
+                        <li><strong>Accessibilité d'abord :</strong> Chaque entraîneur devrait pouvoir utiliser nos outils. Notre approche web signifie qu'il n'y a rien à installer et aucune licence annuelle pour les fonctionnalités de base.</li>
+                        <li><strong>Utilisabilité dans le monde réel :</strong> Le logiciel pour entraîneurs doit fonctionner sous pression, sur un écran de téléphone, dans une arène bruyante.</li>
+                        <li><strong>Confidentialité des données :</strong> Vos données appartiennent à vous et à votre club. C'est pourquoi toutes les statistiques sont stockées localement dans le navigateur de l'utilisateur.</li>
+                        <li><strong>Amélioration continue :</strong> Le hockey évolue, les analyses évoluent, et nos produits aussi.</li>
+                    </ul>
+                    <p>Nos applications sont utilisées par des entraîneurs et des équipes à travers l'Europe, l'Amérique du Nord et au-delà. Disponibles en anglais, allemand, français, suédois, finnois et russe.</p>
+                </span>
+                <span class="lang-sv">
+                    <p>På SmartHockey Products vägleds vi av fyra kärnprinciper:</p>
+                    <ul>
+                        <li><strong>Tillgänglighet först:</strong> Varje tränare ska kunna använda våra verktyg. Vår webbaserade metod innebär att inget behöver installeras och det finns ingen årlig licensavgift för grundläggande funktioner.</li>
+                        <li><strong>Verklig användbarhet:</strong> Programvara för tränare måste fungera under press, på en telefonskärm, i en bullrig arena.</li>
+                        <li><strong>Dataintegritet:</strong> Vi tror att din tränardata tillhör dig och din klubb. Därför lagras all statistik lokalt i användarens webbläsare.</li>
+                        <li><strong>Kontinuerlig förbättring:</strong> Hockey utvecklas, analytik utvecklas och så gör även våra produkter.</li>
+                    </ul>
+                    <p>Våra appar används av tränare och lag i hela Europa, Nordamerika och bortom. Tillgängliga på engelska, tyska, franska, svenska, finska och ryska.</p>
+                </span>
+                <span class="lang-fi">
+                    <p>SmartHockey Productsilla meitä ohjaavat neljä perusperiaatetta:</p>
+                    <ul>
+                        <li><strong>Saavutettavuus ensin:</strong> Jokaisen valmentajan pitäisi pystyä käyttämään työkalujamme. Verkkopohjainen lähestymistapamme tarkoittaa, että mitään ei tarvitse asentaa eikä ydintoiminnoista peritä vuosittaista lisenssimaksua.</li>
+                        <li><strong>Reaalimaailman käytettävyys:</strong> Valmentajille rakennetun ohjelmiston on toimittava paineessa, puhelimen näytöllä, meluisassa areenassa.</li>
+                        <li><strong>Tietosuoja:</strong> Uskomme, että valmennusdatasi kuuluu sinulle ja seurallesi. Siksi kaikki tilastot tallennetaan paikallisesti käyttäjän selaimeen.</li>
+                        <li><strong>Jatkuva parantaminen:</strong> Jääkiekko kehittyy, analytiikka kehittyy ja niin tekevät myös tuotteemme.</li>
+                    </ul>
+                    <p>Sovelluksiamme käyttävät valmentajat ja joukkueet eri puolilla Eurooppaa, Pohjois-Amerikkaa ja muualla. Saatavilla englanniksi, saksaksi, ranskaksi, ruotsiksi, suomeksi ja venäjäksi.</p>
+                </span>
+                <span class="lang-ru">
+                    <p>В SmartHockey Products нас направляют четыре основных принципа:</p>
+                    <ul>
+                        <li><strong>Доступность прежде всего:</strong> Каждый тренер должен иметь возможность использовать наши инструменты. Наш веб-подход означает, что ничего не нужно устанавливать и нет ежегодной лицензионной платы за основные функции.</li>
+                        <li><strong>Практичность:</strong> Программное обеспечение для тренеров должно работать под давлением, на экране телефона, в шумной арене.</li>
+                        <li><strong>Конфиденциальность данных:</strong> Ваши данные принадлежат вам и вашему клубу. Вся статистика хранится локально в браузере пользователя.</li>
+                        <li><strong>Постоянное улучшение:</strong> Хоккей развивается, аналитика развивается — и наши продукты тоже.</li>
+                    </ul>
+                    <p>Наши приложения используются тренерами и командами по всей Европе, Северной Америке и за их пределами. Доступны на английском, немецком, французском, шведском, финском и русском языках.</p>
+                </span>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-box">
+                <h2 style="margin-top:0; border-bottom-color: rgba(37,99,235,0.3);">
+                    <span data-lang-group="about-contact-title">
+                        <span class="lang-en active">📧 Contact Us</span>
+                        <span class="lang-de">📧 Kontakt</span>
+                        <span class="lang-fr">📧 Contactez-nous</span>
+                        <span class="lang-sv">📧 Kontakta oss</span>
+                        <span class="lang-fi">📧 Ota yhteyttä</span>
+                        <span class="lang-ru">📧 Свяжитесь с нами</span>
+                    </span>
+                </h2>
+                <div data-lang-group="about-contact-text">
+                    <span class="lang-en active">
+                        <p>We love hearing from the coaching community. Whether you have a feature request, a bug report, or want to share how SmartHockey Products has helped your team, please reach out:</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>You can also follow us on <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagram @smarthockeyproducts</a> for the latest updates, tips, and community content.</p>
+                    </span>
+                    <span class="lang-de">
+                        <p>Wir freuen uns immer über Nachrichten aus der Trainer-Community. Ob du ein Feature anfragen, einen Fehler melden oder einfach teilen möchtest, wie SmartHockey Products deinem Team geholfen hat – schreib uns:</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>Folge uns auch auf <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagram @smarthockeyproducts</a> für die neuesten Updates, Tipps und Community-Inhalte.</p>
+                    </span>
+                    <span class="lang-fr">
+                        <p>Nous aimons entendre la communauté des entraîneurs. Que vous ayez une demande de fonctionnalité, un rapport de bug ou que vous souhaitiez partager comment SmartHockey Products a aidé votre équipe, contactez-nous :</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>Suivez-nous également sur <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagram @smarthockeyproducts</a>.</p>
+                    </span>
+                    <span class="lang-sv">
+                        <p>Vi älskar att höra från tränargemenskapen. Oavsett om du har en funktionsbegäran, en buggrapport eller vill dela hur SmartHockey Products har hjälpt ditt lag, hör av dig:</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>Följ oss även på <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagram @smarthockeyproducts</a>.</p>
+                    </span>
+                    <span class="lang-fi">
+                        <p>Rakastamme kuulla valmentajayhteisöltä. Oli kyseessä sitten ominaisuuspyyntö, vikaraportti tai halu jakaa, miten SmartHockey Products on auttanut joukkuettasi — ota yhteyttä:</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>Seuraa meitä myös <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagramissa @smarthockeyproducts</a>.</p>
+                    </span>
+                    <span class="lang-ru">
+                        <p>Мы всегда рады слышать тренерское сообщество. Будь то запрос функции, сообщение об ошибке или желание поделиться тем, как SmartHockey Products помогло вашей команде — напишите нам:</p>
+                        <p>📧 <strong><a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></strong></p>
+                        <p>Также подписывайтесь на нас в <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">Instagram @smarthockeyproducts</a>.</p>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <footer>
-        <div class="container" style="max-width:1200px;">
-            <p>&copy; 2025 SmartHockey Products. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 SmartHockey Products.</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="impressum.html">Imprint</a>
-                <a href="datenschutz.html">Datenschutz</a>
+                <span data-lang-group="footer-links-about">
+                    <span class="lang-en active">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="impressum.html">Imprint</a>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </span>
+                    <span class="lang-de">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">Über uns</a>
+                        <a href="terms.html">Nutzungsbedingungen</a>
+                        <a href="privacy.html">Datenschutz</a>
+                        <a href="impressum.html">Impressum</a>
+                        <a href="datenschutz.html">Datenschutz (DE)</a>
+                    </span>
+                    <span class="lang-fr">
+                        <a href="index.html">Accueil</a>
+                        <a href="about.html">À propos</a>
+                        <a href="terms.html">Conditions d'utilisation</a>
+                        <a href="privacy.html">Politique de confidentialité</a>
+                        <a href="impressum.html">Mentions légales</a>
+                    </span>
+                    <span class="lang-sv">
+                        <a href="index.html">Hem</a>
+                        <a href="about.html">Om oss</a>
+                        <a href="terms.html">Användarvillkor</a>
+                        <a href="privacy.html">Integritetspolicy</a>
+                        <a href="impressum.html">Impressum</a>
+                    </span>
+                    <span class="lang-fi">
+                        <a href="index.html">Koti</a>
+                        <a href="about.html">Tietoja meistä</a>
+                        <a href="terms.html">Käyttöehdot</a>
+                        <a href="privacy.html">Tietosuojakäytäntö</a>
+                        <a href="impressum.html">Impressum</a>
+                    </span>
+                    <span class="lang-ru">
+                        <a href="index.html">Главная</a>
+                        <a href="about.html">О нас</a>
+                        <a href="terms.html">Условия использования</a>
+                        <a href="privacy.html">Политика конфиденциальности</a>
+                        <a href="impressum.html">Выходные данные</a>
+                    </span>
+                </span>
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
+
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) return saved;
+                return getBrowserLanguage();
+            }
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active'));
+                    const activeSpan = group.querySelector('.lang-' + lang);
+                    if (activeSpan) activeSpan.classList.add('active');
+                });
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) currentNameEl.textContent = langNames[lang];
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
+                });
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active');
+            });
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

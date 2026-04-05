@@ -108,18 +108,80 @@
         footer a:hover { color: #2563eb; }
         footer .footer-links { margin-top: 10px; }
         footer .footer-links a { margin: 0 10px; }
+        [data-lang-group] span[class^="lang-"] { display: none; }
+        [data-lang-group] span[class^="lang-"].active { display: inline; }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn {
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            color: #e0e0e0; padding: 8px 14px; border-radius: 8px; cursor: pointer;
+            font-size: 0.95rem; transition: background 0.3s;
+        }
+        .lang-dropdown-btn:hover { background: rgba(255,255,255,0.15); }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            display: none; position: absolute; top: 100%; right: 0; margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22,33,62,0.97) 0%, rgba(15,52,96,0.97) 100%);
+            border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            min-width: 180px; z-index: 1000; overflow: hidden;
+        }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 16px; width: 100%; border: none;
+            background: transparent; color: #e0e0e0; cursor: pointer;
+            font-size: 0.95rem; transition: background 0.2s;
+        }
+        .lang-option:hover { background: rgba(37,99,235,0.2); }
+        .lang-option.active { background: rgba(37,99,235,0.3); color: #fff; font-weight: 600; }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="title-logo.png" alt="SmartHockey Products" class="logo-img">
+                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                <span>SmartHockey Products</span>
             </a>
             <nav>
-                <a href="index.html" class="home-link">← Home</a>
-                <a href="/SmartHockey-Tracking-Team-Pro/">Launch App</a>
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-en active">🏠 Home</span>
+                        <span class="lang-de">🏠 Home</span>
+                        <span class="lang-fr">🏠 Accueil</span>
+                        <span class="lang-sv">🏠 Hem</span>
+                        <span class="lang-fi">🏠 Koti</span>
+                        <span class="lang-ru">🏠 Главная</span>
+                    </span>
+                </a>
+                <a href="about.html">
+                    <span data-lang-group="nav-about">
+                        <span class="lang-en active">ℹ️ About</span>
+                        <span class="lang-de">ℹ️ Über uns</span>
+                        <span class="lang-fr">ℹ️ À propos</span>
+                        <span class="lang-sv">ℹ️ Om oss</span>
+                        <span class="lang-fi">ℹ️ Tietoja</span>
+                        <span class="lang-ru">ℹ️ О нас</span>
+                    </span>
+                </a>
             </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span class="lang-current-name">English</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option active" data-lang="en"><span>🇬🇧</span><span>English</span></button>
+                    <button class="lang-option" data-lang="de"><span>🇩🇪</span><span>Deutsch</span></button>
+                    <button class="lang-option" data-lang="fr"><span>🇫🇷</span><span>Français</span></button>
+                    <button class="lang-option" data-lang="sv"><span>🇸🇪</span><span>Svenska</span></button>
+                    <button class="lang-option" data-lang="fi"><span>🇫🇮</span><span>Suomi</span></button>
+                    <button class="lang-option" data-lang="ru"><span>🇷🇺</span><span>Русский</span></button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -256,14 +318,107 @@
         <div class="container" style="max-width:1200px;">
             <p>&copy; 2025 SmartHockey Products. All rights reserved.</p>
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="impressum.html">Imprint</a>
-                <a href="datenschutz.html">Datenschutz</a>
+                <span data-lang-group="footer-links-privacy">
+                    <span class="lang-en active">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="impressum.html">Imprint</a>
+                        <a href="datenschutz.html">Datenschutz</a>
+                    </span>
+                    <span class="lang-de">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">Über uns</a>
+                        <a href="terms.html">Nutzungsbedingungen</a>
+                        <a href="privacy.html">Datenschutz</a>
+                        <a href="impressum.html">Impressum</a>
+                    </span>
+                    <span class="lang-fr">
+                        <a href="index.html">Accueil</a>
+                        <a href="about.html">À propos</a>
+                        <a href="terms.html">Conditions d'utilisation</a>
+                        <a href="privacy.html">Politique de confidentialité</a>
+                        <a href="impressum.html">Mentions légales</a>
+                    </span>
+                    <span class="lang-sv">
+                        <a href="index.html">Hem</a>
+                        <a href="about.html">Om oss</a>
+                        <a href="terms.html">Användarvillkor</a>
+                        <a href="privacy.html">Integritetspolicy</a>
+                        <a href="impressum.html">Impressum</a>
+                    </span>
+                    <span class="lang-fi">
+                        <a href="index.html">Koti</a>
+                        <a href="about.html">Tietoja meistä</a>
+                        <a href="terms.html">Käyttöehdot</a>
+                        <a href="privacy.html">Tietosuojakäytäntö</a>
+                        <a href="impressum.html">Impressum</a>
+                    </span>
+                    <span class="lang-ru">
+                        <a href="index.html">Главная</a>
+                        <a href="about.html">О нас</a>
+                        <a href="terms.html">Условия использования</a>
+                        <a href="privacy.html">Политика конфиденциальности</a>
+                        <a href="impressum.html">Выходные данные</a>
+                    </span>
+                </span>
             </div>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const defaultLang = 'en';
+            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
+            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
+            function getBrowserLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                const langCode = browserLang.split('-')[0].toLowerCase();
+                return supportedLangs.includes(langCode) ? langCode : defaultLang;
+            }
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                if (saved && supportedLangs.includes(saved)) return saved;
+                return getBrowserLanguage();
+            }
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+                document.querySelectorAll('[data-lang-group]').forEach(group => {
+                    group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active'));
+                    const activeSpan = group.querySelector('.lang-' + lang);
+                    if (activeSpan) activeSpan.classList.add('active');
+                });
+                const currentNameEl = document.querySelector('.lang-current-name');
+                if (currentNameEl) currentNameEl.textContent = langNames[lang];
+                document.querySelectorAll('.lang-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
+                });
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+            const langSwitcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle('active');
+                });
+            }
+            document.addEventListener('click', function(e) {
+                if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active');
+            });
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                    langSwitcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
