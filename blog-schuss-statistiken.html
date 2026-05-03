@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer – SmartHockey Blog</title>
+    <meta name="description" content="Schussqualität vs. Quantität, Shot-Maps, xG und Corsi erklärt – mit konkreten Zahlen und Trainingsimplikationen für Eishockey-Trainer.">
+    <meta name="keywords" content="Eishockey Schuss Statistiken, Shot Map, xG Eishockey, Corsi, Fenwick, High Danger Area, Schussqualität">
+    <meta property="og:title" content="Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer">
+    <meta property="og:description" content="Schussqualität vs. Quantität, Shot-Maps, xG und Corsi erklärt – mit konkreten Zahlen und Trainingsimplikationen für Eishockey-Trainer.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://smarthockeyproducts.com/blog-schuss-statistiken.html">
+    <meta property="og:image" content="https://smarthockeyproducts.com/logo.png">
+    <link rel="canonical" href="https://smarthockeyproducts.com/blog-schuss-statistiken.html">
+    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer",
+      "description": "Schussqualität vs. Quantität, Shot-Maps, xG und Corsi erklärt – mit konkreten Zahlen und Trainingsimplikationen für Eishockey-Trainer.",
+      "url": "https://smarthockeyproducts.com/blog-schuss-statistiken.html",
+      "image": "https://smarthockeyproducts.com/logo.png",
+      "author": {"@type": "Organization", "name": "SmartHockey Products"},
+      "publisher": {"@type": "Organization", "name": "SmartHockey Products", "logo": {"@type": "ImageObject", "url": "https://smarthockeyproducts.com/logo.png"}},
+      "datePublished": "2025-01-15",
+      "inLanguage": "de"
+    }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0a1628;
+            color: #e0e0e0;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: rgba(22, 33, 62, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #2a2a3e;
+        }
+        h1 { color: #ffffff; text-align: center; margin-bottom: 30px; font-size: 2.2rem; line-height: 1.3; }
+        h2 { color: #2563eb; margin-top: 40px; margin-bottom: 15px; font-size: 1.6rem; border-bottom: 1px solid #2a2a3e; padding-bottom: 8px; }
+        h3 { color: #93c5fd; margin-top: 25px; margin-bottom: 10px; font-size: 1.2rem; }
+        p { margin-bottom: 18px; font-size: 1.05rem; color: #c0c0c0; }
+        ul, ol { margin-left: 24px; margin-bottom: 18px; color: #c0c0c0; }
+        li { margin-bottom: 7px; font-size: 1.05rem; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        th { background: rgba(37, 99, 235, 0.3); color: #ffffff; padding: 10px 12px; text-align: left; border: 1px solid #2a2a3e; }
+        td { padding: 9px 12px; border: 1px solid #2a2a3e; color: #c0c0c0; }
+        tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+        .back-link { display: inline-block; margin-bottom: 10px; color: #2563eb; text-decoration: none; font-weight: bold; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        .weiterlesen { margin-top: 40px; padding: 20px; background: rgba(37,99,235,0.1); border-left: 3px solid #2563eb; border-radius: 6px; }
+        .weiterlesen h3 { color: #93c5fd; margin-top: 0; }
+        .weiterlesen ul { list-style: none; margin-left: 0; }
+        .weiterlesen ul li a { color: #2563eb; text-decoration: none; }
+        .weiterlesen ul li a:hover { text-decoration: underline; }
+        .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
+        .article-footer a { color: #6b7280; text-decoration: none; }
+        .article-footer a:hover { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
+        &nbsp;&nbsp;
+        <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+
+        <h1>Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</h1>
+
+        <p>Wer im Eishockey nur Tore und Siege zählt, sieht nur die Spitze des Eisbergs. Die wirklich nützlichen Informationen stecken in den Schuss-Daten: Woher kommen die Schüsse? Welche enden als Rebound? Welcher Spieler erzeugt Gefahr, auch wenn er keine Tore schießt? Dieser Leitfaden erklärt die wichtigsten Kennzahlen – von einfachen Schusszahlen bis zu Expected Goals – und zeigt, wie Trainer diese Daten sinnvoll nutzen können.</p>
+
+        <h2>Schussquantität: Mehr Schüsse, mehr Tore?</h2>
+        <p>Der naheliegendste Gedanke: Wer mehr schießt, trifft öfter. Das stimmt im Grundsatz, aber nur bedingt. Teams, die 35 Schüsse pro Spiel abgeben, gewinnen häufiger als Teams mit 25 Schüssen – das zeigen Daten aus der DEL über mehrere Saisons. Aber Teams mit 40 Schüssen von außen, aus schlechten Winkeln oder nach gescheitertem Positionsspiel, gewinnen trotzdem seltener als Teams mit 28 qualitativ hochwertigen Schüssen.</p>
+        <p>Ein typisches Verhältnis in gut organisierten Amateurteams: Etwa 28–32 Schüsse pro Spiel, davon 35–40 % aus dem Slot (dem sogenannten „Hochgefahrenbereich"). Liegt dieser Anteil unter 25 %, hat das Team ein strukturelles Angriffsproblem – nicht mangelnde Schussbereitschaft.</p>
+
+        <h2>High-Danger-Areas: Der Slot und die unteren Bullykreise</h2>
+        <p>Die Zone direkt vor dem Tor, zwischen den beiden Torstangen und etwa 6–8 Meter nach vorne, wird als Slot bezeichnet. Schüsse aus dem Slot haben eine Trefferwahrscheinlichkeit von 15–20 %, verglichen mit 4–6 % aus der blauen Linie. Das ist kein Zufall: Die Distanz ist kürzer, der Winkel günstiger, und der Torwart hat weniger Reaktionszeit.</p>
+        <p>Die unteren Bullykreise (Faceoff-Kreise in der Angriffszone) sind ebenfalls hochwertige Abschlusszonen. Pässe quer durch den Slot – von einem Bullykreis zum anderen – erzeugen die gefährlichsten Abschlüsse überhaupt, weil der Torwart quer bewegt werden muss. Teams, die diese Pässe systematisch trainieren, erzielen messbar mehr Tore pro Schuss.</p>
+
+        <h3>Einteilung der Schusszonen</h3>
+        <table>
+            <tr><th>Zone</th><th>Durchschnittliche Abschlussquote</th><th>Anteil an Gesamtschüssen</th></tr>
+            <tr><td>Slot (direkt vor dem Tor)</td><td>16–20 %</td><td>25–30 %</td></tr>
+            <tr><td>Untere Bullykreise</td><td>10–14 %</td><td>15–20 %</td></tr>
+            <tr><td>Obere Angriffszone</td><td>5–8 %</td><td>20–25 %</td></tr>
+            <tr><td>Blaue Linie</td><td>2–5 %</td><td>20–25 %</td></tr>
+            <tr><td>Enge Winkel (Banden)</td><td>2–4 %</td><td>10–15 %</td></tr>
+        </table>
+
+        <h2>Shot-Maps und Heatmaps praktisch nutzen</h2>
+        <p>Eine Shot-Map ist eine einfache Darstellung des Eisfelds, auf der jeder Schuss als Punkt markiert wird – unterschiedliche Farben für Tore, Treffer auf den Pfosten und geblockte Schüsse. Heatmaps verdichten diese Information zu einer farbigen Dichtedarstellung. Beide Formate machen sofort sichtbar, ob ein Team systematisch aus dem Slot abschließt oder ob die Schüsse vor allem von der blauen Linie und den Banden kommen.</p>
+        <p>Für Amateurtrainer ohne teure Analyse-Software: Eine einfache Shot-Map lässt sich mit einem ausgedruckten Eisfeld-Bild und verschiedenfarbigen Stiften führen. Ein Assistent markiert während des Spiels jeden Schussversuch. Nach drei bis vier Spielen entsteht ein klares Bild der Schussmuster. Das dauert pro Spiel etwa 15 Minuten Nachbereitungszeit.</p>
+
+        <h2>Rebounds: Die unterschätzte Kennzahl</h2>
+        <p>Rebounds entstehen, wenn ein Torwart den Puck nicht sicher hält oder nach einem Schuss aus den Fängen verliert. Statistiken aus der NHL zeigen: Etwa 25 % aller Tore entstehen direkt aus Rebounds – ohne dass der zweite Schuss besonders gut platziert sein muss. Die reine Anwesenheit von Stürmern vor dem Tor, die auf Rebounds warten, erhöht die Torchancen erheblich.</p>
+        <p>Für Trainer bedeutet das: Net-Front-Presence ist keine optionale Taktik, sondern eine Grundanforderung im Angriff. Trainiere explizit, wer bei Schüssen von der blauen Linie ins Slot geht und dort verbleibt – auch wenn der erste Schuss hält. Schüsse auf den Pfosten oder scharfe, tiefe Schüsse (Low Shots) erzeugen besonders häufig Rebounds.</p>
+
+        <h2>Expected Goals (xG): Schussqualität messen</h2>
+        <p>Expected Goals (xG) ist ein Modell, das jedem Schuss auf Basis von Schussort, Schusstyp, Vorangegangener Aktion und Spielsituation eine Wahrscheinlichkeit zuweist, ein Tor zu erzielen. Ein Schuss aus dem Slot nach direktem Querpass bekommt zum Beispiel einen xG-Wert von 0,18 (18 % Torwahrscheinlichkeit), ein Schuss aus spitzem Winkel vielleicht 0,03.</p>
+        <p>Der wichtigste Nutzen von xG für Trainer ist nicht die exakte Zahl, sondern das Prinzip: Schussqualität zählt mehr als Schussquantität. Ein Team mit einem xG-Wert von 2,8 pro Spiel greift strukturell besser an als eines mit xG 1,4 – unabhängig davon, ob Tore gefallen sind oder nicht. Über mehrere Spiele gleicht sich die Torausbeute an den xG-Wert an; kurzfristige Abweichungen sind oft Zufall (oder besondere Torhüterleistung).</p>
+
+        <h3>xG im Amateurbereich schätzen</h3>
+        <p>Professionelle xG-Modelle erfordern präzises Tracking. Für Amateure genügt eine vereinfachte Version: Schüsse aus dem Slot zählen doppelt, Schüsse nach Querpass zählen 1,5-fach, Schüsse aus spitzem Winkel zählen mit 0,5. Diese gewichtete Schusszahl korreliert gut mit der tatsächlichen Torqualität.</p>
+
+        <h2>Corsi und Fenwick: Schussdominanz messen</h2>
+        <p>Corsi (benannt nach dem ehemaligen NHL-Torwarttrainer Jim Corsi) zählt alle Schussversuche – also Schüsse aufs Tor plus geblockte Schüsse plus Schüsse neben/über das Tor. Fenwick schließt geblockte Schüsse aus. Beide Kennzahlen messen, welches Team das Spiel in der Angriffszone dominiert.</p>
+        <p>Corsi For % (CF%) = (eigene Schussversuche) / (eigene + gegnerische Schussversuche). Ein CF% von über 52 % bedeutet Schussdominanz. Teams mit dauerhaft hohem CF% gewinnen auf lange Sicht mehr Spiele als ihre direkte Torquote vermuten lässt – weil sie durch die schiere Dominanz mehr Zufall auf ihrer Seite erzwingen.</p>
+
+        <h3>Beispiel aus der Praxis</h3>
+        <p>Team A: 30 Schüsse aufs Tor, 10 geblockt, 8 daneben = 48 Schussversuche. Team B: 20 Schüsse aufs Tor, 6 geblockt, 5 daneben = 31 Schussversuche. CF% für Team A = 48 / (48+31) = 60,8 %. Team A dominiert klar – auch wenn das Ergebnis 1:1 steht und der Abend für Team A frustrierend war.</p>
+
+        <h2>Trainingsimplikationen: Was tun mit diesen Daten?</h2>
+        <p>Daten ohne Konsequenz sind wertlos. Konkrete Maßnahmen, die sich aus Schuss-Statistiken ableiten lassen:</p>
+        <ul>
+            <li><strong>Zu wenige Schüsse aus dem Slot:</strong> Trainingseinheit mit Fokus auf Net-Drive-Bewegungen, Verteidiger-Screens und Direktabnahmen aus dem Querpass.</li>
+            <li><strong>Zu viele Schüsse von außen:</strong> Übung „Kein Schuss von außerhalb des Hash-Marks" – zwingt Spieler, erst ins Slot zu kommen.</li>
+            <li><strong>Schlechte Rebound-Situation:</strong> Spezifisches Rebound-Drill: Schuss, zwei Stürmer sofort ins Tor-Vorfeld, Defensiv-Reaktion.</li>
+            <li><strong>Niedriger CF%:</strong> Auswertung der Zonen-Eintritte (controlled vs. dump-in) – fast immer liegt das Problem dort.</li>
+            <li><strong>Hoher xG gegen:</strong> Analyse, in welchen Situationen der Gegner die Hochgefahrenzonen erreicht – meist Breakdowns im Forechecking oder bei Linienwechseln.</li>
+        </ul>
+
+        <h2>Fazit: Mit einfachen Mitteln anfangen</h2>
+        <p>Vollständige Statistik-Systeme sind für Amateurteams nicht nötig. Schon drei Zahlen pro Spiel – Schüsse aus dem Slot, Rebounds zugelassen und Schussversuche insgesamt (Corsi) – geben einem Trainer über eine Saison hinweg genug Information, um strukturelle Schwächen und Stärken klar zu erkennen. Der erste Schritt ist immer der wichtigste: einfach anfangen, zu zählen.</p>
+
+        <div class="weiterlesen">
+            <h3>Weiterlesen</h3>
+            <ul>
+                <li><a href="blog-torwart-analyse.html">Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</a></li>
+                <li><a href="blog-zonen-eintritt.html">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</a></li>
+                <li><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a></li>
+            </ul>
+        </div>
+
+        <div class="article-footer">
+            <strong style="color:#a0a0a0;">Blog-Artikel:</strong>
+            <a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
+            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
+            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
+            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
+            <a href="blog-faceoffs.html">Faceoffs</a> ·
+            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
+            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
+            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
+            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
+            <a href="blog-mentaltraining.html">Mentaltraining</a>
+            <br>
+            <a href="coaching-tipps.html">Blog Übersicht</a> ·
+            <a href="impressum.html">Impressum</a> ·
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+    </div>
+</body>
+</html>
