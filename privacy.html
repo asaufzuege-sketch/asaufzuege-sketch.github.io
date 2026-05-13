@@ -391,30 +391,25 @@
     </script>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
-    <p style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-      🍪 Wir verwenden Cookies, um Google AdSense zu ermöglichen und Ihr Nutzererlebnis zu verbessern. Mehr Informationen finden Sie in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+  <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+    <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+      🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
     </p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button id="cookie-accept" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">Akzeptieren</button>
-      <button id="cookie-decline" style="background:transparent;color:#e0e0e0;border:1px solid #4a4a5e;padding:10px 24px;border-radius:6px;cursor:pointer;">Ablehnen</button>
+    <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
     </div>
   </div>
 </div>
 <script>
 (function(){
   try {
+    window.acceptCookies = function() {
+      localStorage.setItem('cookie-consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
     if (!localStorage.getItem('cookie-consent')) {
       document.getElementById('cookie-banner').style.display = 'block';
     }
-    document.getElementById('cookie-accept').addEventListener('click', function(){
-      localStorage.setItem('cookie-consent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-    });
-    document.getElementById('cookie-decline').addEventListener('click', function(){
-      localStorage.setItem('cookie-consent', 'declined');
-      document.getElementById('cookie-banner').style.display = 'none';
-    });
   } catch(e) {}
 })();
 </script>
