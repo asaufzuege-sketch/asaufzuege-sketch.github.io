@@ -289,7 +289,13 @@
 
         @media (max-width: 768px) {
             nav {
-                display: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
             }
 
             .logo {
@@ -317,8 +323,8 @@
             <nav>
                 <a href="index.html">
                     <span data-lang-group="nav-home">
-                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
-                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
                         <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
                         <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
                         <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
@@ -327,8 +333,8 @@
                 </a>
                 <a href="app-comparison.html">
                     <span data-lang-group="nav-apps">
-                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
-                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
+                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
+                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
                         <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
                         <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Appar</span>
                         <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Sovellukset</span>
@@ -337,8 +343,8 @@
                 </a>
                 <a href="shop.html">
                     <span data-lang-group="nav-shop">
-                        <span class="lang-en active">🛒 Shop</span>
-                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-en">🛒 Shop</span>
+                        <span class="lang-de active">🛒 Shop</span>
                         <span class="lang-fr">🛒 Boutique</span>
                         <span class="lang-sv">🛒 Butik</span>
                         <span class="lang-fi">🛒 Kauppa</span>
@@ -354,17 +360,17 @@
                         <line x1="2" y1="12" x2="22" y2="12"></line>
                         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                     </svg>
-                    <span class="lang-current-name">English</span>
+                    <span class="lang-current-name">Deutsch</span>
                     <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </button>
                 <div class="lang-dropdown-menu">
-                    <button class="lang-option active" data-lang="en">
+                    <button class="lang-option" data-lang="en">
                         <span class="lang-option-flag">🇬🇧</span>
                         <span class="lang-option-name">English</span>
                     </button>
-                    <button class="lang-option" data-lang="de">
+                    <button class="lang-option active" data-lang="de">
                         <span class="lang-option-flag">🇩🇪</span>
                         <span class="lang-option-name">Deutsch</span>
                     </button>
@@ -753,7 +759,7 @@
     <script>
         // Language switching functionality
         (function() {
-            const defaultLang = 'en';
+            const defaultLang = 'de';
             const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
             const langNames = {
                 en: 'English',
@@ -862,30 +868,25 @@
     </script>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
-    <p style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-      🍪 Wir verwenden Cookies, um Google AdSense zu ermöglichen und Ihr Nutzererlebnis zu verbessern. Mehr Informationen finden Sie in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+  <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+    <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+      🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
     </p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button id="cookie-accept" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">Akzeptieren</button>
-      <button id="cookie-decline" style="background:transparent;color:#e0e0e0;border:1px solid #4a4a5e;padding:10px 24px;border-radius:6px;cursor:pointer;">Ablehnen</button>
+    <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
     </div>
   </div>
 </div>
 <script>
 (function(){
   try {
+    window.acceptCookies = function() {
+      localStorage.setItem('cookie-consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
     if (!localStorage.getItem('cookie-consent')) {
       document.getElementById('cookie-banner').style.display = 'block';
     }
-    document.getElementById('cookie-accept').addEventListener('click', function(){
-      localStorage.setItem('cookie-consent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-    });
-    document.getElementById('cookie-decline').addEventListener('click', function(){
-      localStorage.setItem('cookie-consent', 'declined');
-      document.getElementById('cookie-banner').style.display = 'none';
-    });
   } catch(e) {}
 })();
 </script>
