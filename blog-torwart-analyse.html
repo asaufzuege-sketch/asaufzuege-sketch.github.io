@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</h1>
 
         <p>Die Fangquote (Save Percentage, SV%) ist die bekannteste Torwart-Statistik – und gleichzeitig eine der irreführendsten. Ein Torwart mit SV% .915, der nur Schüsse von außen abwehrt, leistet deutlich weniger als einer mit SV% .905, der ständig in High-Danger-Situationen gefordert wird. Wer Torhüter wirklich bewerten will, braucht mehr Perspektiven. Dieser Artikel stellt 12 Kennzahlen vor, erklärt ihren Nutzen und zeigt, welche auch ohne Profi-Software erfasst werden können.</p>
@@ -124,6 +134,61 @@
             <li>Cold-Start-Tendenz (erste 5 vs. Rest der Spielzeit auswerten)</li>
         </ol>
         <p>Selbst mit einem einfachen Notizbuch und einem aufmerksamen Assistenten lassen sich diese Daten zuverlässig erfassen. Die daraus entstehenden Erkenntnisse übersteigen den Nutzen jeder subjektiven Beurteilung nach dem Spiel.</p>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
+
+        <p>Save percentage (SV%) is the best-known goaltender statistic — and simultaneously one of the most misleading. A goalie with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a goaltender needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
+
+        <h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
+        <p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a goalie look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
+
+        <h2>2. Goals Saved Above Expected (GSAx)</h2>
+        <p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the goaltender saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual goaltender performance because it removes the influence of the team's defensive structure.</p>
+        <p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
+
+        <h2>3. High-Danger Save Percentage (HDSV%)</h2>
+        <p>HDSV% measures how many shots from the high-danger zone (slot and lower faceoff circles) the goaltender stops. On average, about 15–20% of these shots result in goals. A goalie with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
+
+        <h2>4. Low-Danger Save Percentage (LDSV%)</h2>
+        <p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
+
+        <h2>5. Rebound Control Rate</h2>
+        <p>How often does a goaltender cleanly secure the puck, rather than letting it rebound uncontrolled? Professional goalies control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
+
+        <h2>6. Lateral Movement Assessment</h2>
+        <p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
+
+        <h2>7. Depth Management (Crease Depth)</h2>
+        <p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior goalies stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
+
+        <h2>8. Screen Situations: SV% in Front of Screens</h2>
+        <p>Shots with a player in front are harder for every goaltender. The difference between elite goalies and average ones often lies here: good goaltenders communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
+
+        <h2>9. Five-Hole Tendency</h2>
+        <p>The five-hole — the area between the pads — is a weak spot for many goaltenders, particularly after quick lateral movements when the pads don't close completely. Shots that draw the goalie into motion and then finish on the five-hole are nearly impossible for many amateur goalies to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
+
+        <h2>10. Blocker/Glove Asymmetry</h2>
+        <p>Almost all goaltenders have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
+
+        <h2>11. Cold Start vs. Hot Goalie</h2>
+        <p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some goaltenders need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
+
+        <h2>12. Penalty Shot Performance</h2>
+        <p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A goalie who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
+
+        <h2>Tracking Methods for Amateur Coaches</h2>
+        <p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
+        <ol>
+            <li>SV% and HDSV% (achievable with a shot map + game log)</li>
+            <li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
+            <li>Crease depth (check once per training block with markers)</li>
+            <li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
+            <li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
+        </ol>
+        <p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -152,6 +217,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">

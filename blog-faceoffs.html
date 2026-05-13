@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Faceoff gewinnen: Technik, Taktik und Trainingsdrills</h1>
 
         <p>In einem typischen Eishockey-Spiel finden 50–70 Faceoffs statt. Teams, die über 55 % ihrer Bullys gewinnen, besitzen messbar mehr Puck-Possession in entscheidenden Phasen. Besonders in der eigenen Defensivzone, im Powerplay und in den letzten zwei Minuten enger Spiele ist der Faceoff-Gewinn direkt mit dem Spielausgang korreliert. Trotzdem wird das Bully-Spiel im Training kaum systematisch geübt. Dieser Artikel ändert das.</p>
@@ -139,6 +149,76 @@
         <p>Zwei Center, je 10 Faceoffs. Gewinner spielt im nächsten Übungsspiel; Verlierer nimmt sich eine Aufgabe (z.B. 10 Liegestütze). Wettkampfcharakter erhöht die Konzentration stark.</p>
         <h3>Drill 5: Positions-Faceoff (15 Min.)</h3>
         <p>Drei verschiedene Faceoff-Positionen (off-zone, def-zone, neutral) rotierend. Nach jedem gewonnenen Bully muss das Team den Set Play ausführen und das Spiel zu Ende spielen (3 Pässe oder Tor). Trainiert nicht nur das Bully selbst, sondern den Übergang danach.</p>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Winning Faceoffs: Technique, Tactics, and Training Drills</h1>
+
+        <p>In a typical hockey game, 50–70 faceoffs take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the power play, and in the final two minutes of close games, winning faceoffs correlates directly with the outcome. Yet systematic faceoff training is rarely part of practice. This article changes that.</p>
+
+        <h2>Body Position: The Foundation of Faceoff Play</h2>
+        <p>Good faceoff body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
+        <p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
+
+        <h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
+
+        <h3>Forehand Grip</h3>
+        <p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
+
+        <h3>Backhand Grip</h3>
+        <p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone faceoffs.</p>
+
+        <h3>Push Grip</h3>
+        <p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
+
+        <h2>Timing: The Critical Moment</h2>
+        <p>Faceoffs are not won by reacting to the puck drop — they're won through anticipation. The best faceoff specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
+        <p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
+
+        <h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
+        <p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
+        <p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
+
+        <h2>Eye Tricks: The Psychological Component</h2>
+        <p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
+
+        <h2>Set Plays After a Won Faceoff</h2>
+
+        <h3>Offensive Zone: Going Straight to the Finish</h3>
+        <p>After winning a draw in the offensive zone (upper faceoff circles), there are three clear set play options:</p>
+        <ol>
+            <li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
+            <li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
+            <li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the goalie isn't set.</li>
+        </ol>
+
+        <h3>Defensive Zone: Safety First</h3>
+        <p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
+
+        <h3>Neutral Zone: Creating Transition</h3>
+        <p>Neutral-zone faceoffs: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
+
+        <h2>Faceoff Statistics and Why They Matter</h2>
+        <table>
+            <tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
+            <tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
+            <tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
+            <tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
+            <tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
+        </table>
+
+        <h2>5 Training Drills for Better Faceoffs</h2>
+        <h3>Drill 1: Shadow Drop (10 min.)</h3>
+        <p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
+        <h3>Drill 2: Tie-Up Station (10 min.)</h3>
+        <p>In the faceoff circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
+        <h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
+        <p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
+        <h3>Drill 4: Faceoff Competition (10 min.)</h3>
+        <p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
+        <h3>Drill 5: Positional Faceoff (15 min.)</h3>
+        <p>Three different faceoff spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -167,6 +247,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
