@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Powerplay im Eishockey: Aufstellungen, Laufwege und Erfolgsmuster</h1>
 
         <p>Das Powerplay entscheidet Spiele. Teams mit einer PP-Quote über 22 % gewinnen deutlich häufiger als Teams unter 15 %. Doch viele Trainer beschränken sich auf ein einziges System, das sie im Training zwar oft üben, im Spiel aber nicht anpassen. Dieser Artikel beschreibt die drei wichtigsten Powerplay-Aufstellungen, erklärt, wann welche sinnvoll ist, und gibt konkrete Drill-Empfehlungen für die Trainingspraxis.</p>
@@ -130,6 +140,68 @@
 
         <h3>Drill 3: „Entry + Setup" (15 Minuten)</h3>
         <p>Start immer in neutraler Zone. PP muss erst Zonen-Eintritt schaffen (PK-Spieler blockieren aktiv), dann Setup aufbauen. Trainiert den entscheidenden Übergang zwischen Eintritt und Aufbau.</p>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Power Play in Hockey: Formations, Passing Lanes, and Patterns of Success</h1>
+
+        <p>The power play decides games. Teams with a PP percentage above 22% win significantly more often than teams below 15%. Yet many coaches stick with a single system that they practice often in training but never adjust in a game. This article describes the three most important power play formations, explains when each is appropriate, and provides concrete drill recommendations for practice.</p>
+
+        <h2>The Three Basic Systems at a Glance</h2>
+
+        <h3>1-3-1: The Most Versatile System</h3>
+        <p>In the 1-3-1, one defenseman stands at the blue line (the "point"), three players form a horizontal line at the top of the faceoff circles (a winger left, a bumper in the middle, a winger right), and one forward positions directly in front of the net as the net-front presence. This setup creates maximum passing options and can shift quickly: the point plays inside to the bumper, who shoots immediately or moves it across.</p>
+        <p>Strengths: flexibility, many passing options, difficult for a 4-man PK to disrupt. Weaknesses: requires technically strong players at all positions, especially at the point and bumper. Recommended for: teams with good passers and a strong point player (ideally a defenseman with a heavy shot).</p>
+
+        <h3>Umbrella: Shot-Oriented and Effective</h3>
+        <p>In the umbrella system, two defensemen stand at the blue line (left and right), one player at the half-wall (bumper), and two forwards in the slot area and at the net. The double blue-line presence creates many shooting opportunities. PK players must constantly choose between two blue-line shooters — opening up the middle bumper for one-timers.</p>
+        <p>Strengths: high shot volume, good counter-rush defense (two defensemen back). Weaknesses: less creativity, requires defensemen with a heavy and accurate shot. Recommended for: teams with two strong defensemen who can shoot from the outside.</p>
+
+        <h3>Overload: Flooding One Side</h3>
+        <p>The overload system positions three players on one side of the ice (usually left with right-hand dominant players), creating numerical superiority on that side. This forces the penalty killers to either open up the weak side or be unable to cover the loaded side. Particularly effective against passive, rigid box PK formations.</p>
+        <p>Strengths: unique shooting angles, breaks open box formations, surprising for unprepared opponents. Weaknesses: more vulnerable to counters, fewer variations. Recommended for: games against passive opponents, or as a secondary system for variety.</p>
+
+        <h2>Key Positions Explained</h2>
+
+        <h3>The Bumper</h3>
+        <p>The bumper is the most important position in the modern power play. Standing at the half-wall, 6–8 meters in front of the net, in the goaltender's direct line of sight. Responsibilities: one-timers from cross-ice passes, redirections into the slot, rebound retrieval, screen function. A good bumper must be able to shoot one-timers from both sides, stay composed under pressure, and immediately crash the net after every shot.</p>
+
+        <h3>Net-Front Presence (NFP)</h3>
+        <p>The NFP player stands directly in front of the goalie. Their primary role isn't to receive the puck, but to: screen the goalie (block the sightline), collect rebounds, and tie up defenders. A net-front player who draws two defenders creates open space for the bumper. Physically durable players are ideal here — you don't need technical acrobats, but maximum willingness to absorb contact.</p>
+
+        <h2>Zone Entry on the Power Play</h2>
+        <p>The power play doesn't start in the slot — it starts with the zone entry. A failed entry collapses the entire setup and wastes precious seconds. Two strategies:</p>
+        <ul>
+            <li><strong>Controlled entry:</strong> Skating in with the puck under control, all five players taking their positions in an organized manner. Requires the puck carrier to beat at least one defender. Higher success rate for setup.</li>
+            <li><strong>Forced entry:</strong> Chip-in or dump-in with immediate forecheck pressure from two players. Appropriate when the entry is blocked and time is running out. Risk: turnover directly after the dump.</li>
+        </ul>
+        <p>NHL data shows: controlled PP entries result in 68% zone possession compared to 41% for dump-ins. The power play is more than twice as effective when the entry is controlled.</p>
+
+        <h2>Quick-Pass Sequences and Rotation</h2>
+        <p>The most dangerous PP situations arise through rapid puck movement that forces the PK unit to rotate. Once a PK player is reacting, a gap opens somewhere. The principle: pass, move, receive back. No standing still. Concretely: point → left wing → bumper → right wing → point — and at each station, create immediate shooting threat, even if not shooting.</p>
+        <p>Rotation also means: NFP and bumper periodically swap. When the opponent focuses on the bumper, the NFP steps up briefly and shoots — while the bumper crashes the net.</p>
+
+        <h2>Common Mistakes and How to Avoid Them</h2>
+        <table>
+            <tr><th>Mistake</th><th>Impact</th><th>Solution</th></tr>
+            <tr><td>Holding the puck too long at the point</td><td>PK closes, pressure, turnover</td><td>Max. 2 seconds at the point, move it immediately</td></tr>
+            <tr><td>No screen in front of the net</td><td>Goalie sees every shot clearly</td><td>NFP always positioned in the crease area</td></tr>
+            <tr><td>All five players too deep</td><td>No shot pressure from above</td><td>Point stays at the blue line — always</td></tr>
+            <tr><td>Forced entry out of impatience</td><td>Turnover, opponent counter 4-on-3</td><td>Regroup in neutral zone instead of blind dump-in</td></tr>
+            <tr><td>Not moving after a shot</td><td>Rebound is lost</td><td>Two forwards crash after every shot</td></tr>
+        </table>
+
+        <h2>Three Drills for More Effective Power Play Training</h2>
+
+        <h3>Drill 1: "Shoot-Pass-Move" (15 minutes)</h3>
+        <p>5 players in PP formation, goalie in net. No opposing PK unit. Focus: pass movement by pattern (e.g., 1-3-1 rotation), immediate crashing after every shot. Goal: every finish comes from the slot or bumper position.</p>
+
+        <h3>Drill 2: "Box Breaker" (20 minutes)</h3>
+        <p>Full 5-on-4 situation. PK team plays a passive box. PP team must break the box through quick cross-ice passes and penetration. Coach stops play at every misalignment and explains.</p>
+
+        <h3>Drill 3: "Entry + Setup" (15 minutes)</h3>
+        <p>Always starts in the neutral zone. PP must first achieve zone entry (PK players actively block), then build the setup. Trains the critical transition between entry and setup.</p>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -158,6 +230,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">

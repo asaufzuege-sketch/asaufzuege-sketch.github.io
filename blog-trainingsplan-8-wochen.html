@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Saisonvorbereitung</h1>
 
         <p>Die Saisonvorbereitung entscheidet oft über die Entwicklung eines ganzen Jahres. Wer die acht Wochen zwischen Saisonende und Saisonbeginn unstrukturiert verbringt, startet mit einem Fitness-Defizit, das sich nur schwer aufholt. Eine gut geplante Periodisierung dagegen entwickelt Spieler systematisch – von der allgemeinen Ausdauer über Kraft und Schnellkraft bis hin zu eishockeyspezifischen Anforderungen. Dieser Plan richtet sich an Trainer und Spieler ab Regiona- bis Verbandsliga-Niveau.</p>
@@ -151,6 +161,88 @@
             <li>Hydration: 500 ml Wasser in der Stunde vor dem Training, Elektrolyte bei Einheiten über 90 Minuten</li>
             <li>Schlaf-Protein: Kaseinreiche Lebensmittel abends (Quark, Hüttenkäse) fördern nächtliche Muskelregeneration</li>
         </ul>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Hockey Training Plan: 8-Week Periodization for Pre-Season Preparation</h1>
+
+        <p>Pre-season preparation often determines the development trajectory for an entire year. Players who spend the eight weeks between the end of one season and the start of the next without structure begin with a fitness deficit that's difficult to make up. A well-planned periodization develops players systematically — from general aerobic base through strength and power to hockey-specific demands. This plan is designed for coaches and players from the regional to state league level.</p>
+
+        <h2>The Core Principle of Periodization</h2>
+        <p>Periodization means purposefully varying training load — not training at the same intensity every week, but managing stress and recovery so the body can adapt. The classic model for pre-season preparation divides the eight weeks into four phases: aerobic base (weeks 1–2), strength building (weeks 3–4), power development (weeks 5–6), and hockey-specific preparation (weeks 7–8).</p>
+        <p>Each phase builds on the previous one. Without an aerobic base, there's no foundation for strength. Without strength, there's no foundation for power. Starting directly with power training or intensive ice work increases injury risk and produces worse long-term results.</p>
+
+        <h2>Phase 1: Aerobic Base (Weeks 1–2)</h2>
+        <p>The goal of this phase is the aerobic foundation. The body learns to use oxygen efficiently — the prerequisite for all subsequent phases. Intensity: low to moderate (60–70% maximum heart rate). No intensive interval training in this phase.</p>
+        <table>
+            <tr><th>Day</th><th>Session</th><th>Duration / Content</th></tr>
+            <tr><td>Monday</td><td>Off-ice: Running (aerobic)</td><td>40–50 min., steady pace, HR 65%</td></tr>
+            <tr><td>Tuesday</td><td>Off-ice: Mobility + core</td><td>30 min. yoga/stretching, 20 min. core stability</td></tr>
+            <tr><td>Wednesday</td><td>On-ice: Technical session</td><td>60 min., skating technique, no tactics</td></tr>
+            <tr><td>Thursday</td><td>Off-ice: Cycling or swimming</td><td>45 min., alternative aerobic load</td></tr>
+            <tr><td>Friday</td><td>Off-ice: Core + lower extremity</td><td>Bodyweight exercises, 3x15 squats, lunges</td></tr>
+            <tr><td>Saturday</td><td>On-ice: Skating + small-area games</td><td>75 min., focus on fun, no pressure</td></tr>
+            <tr><td>Sunday</td><td>Active recovery or rest</td><td>Walk, foam rolling</td></tr>
+        </table>
+        <p>Off-ice share weeks 1–2: 70%. On-ice: 30%. This distribution builds aerobic capacity without overloading the skating apparatus after the summer break.</p>
+
+        <h2>Phase 2: Strength Building (Weeks 3–4)</h2>
+        <p>Now comes muscular foundation: leg press, squats, deadlifts, pull-ups, rows. Three strength sessions per week, progressive overload (5–10% more weight or reps each week). Off-ice intensity: moderate to high. On ice: continued technical focus, first simple tactical elements.</p>
+        <table>
+            <tr><th>Day</th><th>Session</th><th>Duration / Content</th></tr>
+            <tr><td>Monday</td><td>Off-ice: Lower body strength</td><td>Squats 4x6, leg press 3x10, lunges 3x12</td></tr>
+            <tr><td>Tuesday</td><td>On-ice: Technique + first systems</td><td>75 min., skating + basic positions</td></tr>
+            <tr><td>Wednesday</td><td>Off-ice: Upper body strength</td><td>Pull-ups 4x6, rows 3x10, shoulder press 3x10</td></tr>
+            <tr><td>Thursday</td><td>Off-ice: Aerobic intervals</td><td>5x4 min. at 80% HR, 3 min. rest</td></tr>
+            <tr><td>Friday</td><td>Off-ice: Full-body strength</td><td>Deadlift 4x5, Bulgarian split squats 3x8, farmer's carry</td></tr>
+            <tr><td>Saturday</td><td>On-ice: Full tactical session</td><td>90 min., zone entry, forechecking basics</td></tr>
+            <tr><td>Sunday</td><td>Rest</td><td>Complete recovery</td></tr>
+        </table>
+
+        <h2>Phase 3: Power Development (Weeks 5–6)</h2>
+        <p>Power = maximum force in minimum time. For hockey, this is the decisive factor: explosive starts, quick direction changes, slapshot power. Exercises: jump squats, box jumps, medicine ball throws, kettlebell swings. Reduce load (60–70% of maximum), maximize execution speed.</p>
+        <table>
+            <tr><th>Day</th><th>Session</th><th>Content</th></tr>
+            <tr><td>Monday</td><td>Off-ice: Lower body power</td><td>Box jumps 5x5, jump squats 4x6, lateral jumps 3x8</td></tr>
+            <tr><td>Tuesday</td><td>On-ice: Skating speed</td><td>Sprint drills, edge work, explosive starts</td></tr>
+            <tr><td>Wednesday</td><td>Off-ice: Upper body power</td><td>Med ball throws 4x8, explosive pull-ups 4x5, rotational throws</td></tr>
+            <tr><td>Thursday</td><td>On-ice: Systems + speed</td><td>90 min., full systems at speed</td></tr>
+            <tr><td>Friday</td><td>Off-ice: Agility + reaction</td><td>Hurdle runs, reaction drills with partner</td></tr>
+            <tr><td>Saturday</td><td>On-ice: Intensive scrimmage</td><td>Scrimmage under game conditions</td></tr>
+            <tr><td>Sunday</td><td>Active recovery</td><td>Foam rolling, stretching</td></tr>
+        </table>
+
+        <h2>Phase 4: Hockey-Specific (Weeks 7–8)</h2>
+        <p>In the final phase, the ice takes center stage. Off-ice training drops to 30%; strength volume decreases (maintenance, not building). On ice: complete tactical systems, PP/PK, pre-season games. Goal: achieve game readiness, avoid injury risk from overload.</p>
+        <p>Important: in week 8, deliberately reduce load (tapering). 20–30% less volume, same or slightly increased intensity. The body needs this relief to enter the season fresh and explosive.</p>
+
+        <h2>Load and Recovery Management</h2>
+        <p>One of the most common mistakes: too little sleep and recovery between intensive sessions. Adaptation doesn't happen during training — it happens during recovery. Concrete rules:</p>
+        <ul>
+            <li>After an intensive strength session: at least 48 hours before the next strength session targeting the same muscle groups</li>
+            <li>Sleep: 8–9 hours for players in intensive preparation (below 8 hours measurably increases injury risk)</li>
+            <li>Deload week: in weeks 4 and 8, deliberately reduce volume by 30%</li>
+            <li>Heart rate monitoring: if morning resting pulse is 5–8 beats above normal, overtraining is a risk</li>
+        </ul>
+
+        <h2>Common Mistakes in Preparation</h2>
+        <ul>
+            <li><strong>Too much ice, too early:</strong> Getting on the ice every day in weeks 1–2 without building an off-ice foundation</li>
+            <li><strong>No progression:</strong> Same load every week — the body adapts, progress stagnates</li>
+            <li><strong>Neglecting mobility:</strong> Stretching and mobility often cut when time is short — yet these are the primary injury prevention measures</li>
+            <li><strong>No tapering before the season start:</strong> Players enter the first league games already exhausted</li>
+            <li><strong>Overemphasis on endurance, neglect of strength:</strong> Hockey is a power-endurance sport — pure endurance training doesn't realize full potential</li>
+        </ul>
+
+        <h2>Nutrition Guidelines for Preparation</h2>
+        <p>Strength-building phases require adequate protein: 1.6–2.0 g per kilogram of body weight daily. Carbohydrates are the primary energy source for intensive sessions — don't reduce them in this phase. Concrete priorities:</p>
+        <ul>
+            <li>Pre-training (1–2 hours before): carbohydrate meal (oatmeal, rice, banana)</li>
+            <li>Post-training (within 30 min.): protein + carbohydrates (yogurt with fruit, or protein shake with banana)</li>
+            <li>Hydration: 500 ml water in the hour before training, electrolytes for sessions over 90 minutes</li>
+            <li>Sleep protein: casein-rich foods in the evening (cottage cheese, quark) support overnight muscle recovery</li>
+        </ul>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -179,6 +271,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">

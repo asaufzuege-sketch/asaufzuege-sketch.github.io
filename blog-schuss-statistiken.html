@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</h1>
 
         <p>Wer im Eishockey nur Tore und Siege zählt, sieht nur die Spitze des Eisbergs. Die wirklich nützlichen Informationen stecken in den Schuss-Daten: Woher kommen die Schüsse? Welche enden als Rebound? Welcher Spieler erzeugt Gefahr, auch wenn er keine Tore schießt? Dieser Leitfaden erklärt die wichtigsten Kennzahlen – von einfachen Schusszahlen bis zu Expected Goals – und zeigt, wie Trainer diese Daten sinnvoll nutzen können.</p>
@@ -129,6 +139,66 @@
 
         <h2>Fazit: Mit einfachen Mitteln anfangen</h2>
         <p>Vollständige Statistik-Systeme sind für Amateurteams nicht nötig. Schon drei Zahlen pro Spiel – Schüsse aus dem Slot, Rebounds zugelassen und Schussversuche insgesamt (Corsi) – geben einem Trainer über eine Saison hinweg genug Information, um strukturelle Schwächen und Stärken klar zu erkennen. Der erste Schritt ist immer der wichtigste: einfach anfangen, zu zählen.</p>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Shot Statistics in Hockey: The Complete Guide for Coaches</h1>
+
+        <p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
+
+        <h2>Shot Quantity: More Shots, More Goals?</h2>
+        <p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
+        <p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
+
+        <h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
+        <p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the goaltender has less reaction time.</p>
+        <p>The lower faceoff circles (faceoff dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one faceoff dot to the other — produce the most dangerous shot attempts of all, because the goaltender must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
+
+        <h3>Shot Zone Breakdown</h3>
+        <table>
+            <tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
+            <tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
+            <tr><td>Lower faceoff circles</td><td>10–14%</td><td>15–20%</td></tr>
+            <tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
+            <tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
+            <tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
+        </table>
+
+        <h2>Shot Maps and Heat Maps in Practice</h2>
+        <p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
+        <p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
+
+        <h2>Rebounds: The Underrated Metric</h2>
+        <p>Rebounds occur when a goaltender doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
+        <p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
+
+        <h2>Expected Goals (xG): Measuring Shot Quality</h2>
+        <p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
+        <p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
+
+        <h3>Estimating xG at the Amateur Level</h3>
+        <p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
+
+        <h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
+        <p>Corsi (named after former NHL goalie coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
+        <p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
+
+        <h3>A Practical Example</h3>
+        <p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
+
+        <h2>Training Implications: What to Do with This Data?</h2>
+        <p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
+        <ul>
+            <li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
+            <li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
+            <li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
+            <li><strong>Low CF%:</strong> Review zone entries (controlled vs. dump-in) — the problem is almost always there.</li>
+            <li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
+        </ul>
+
+        <h2>Conclusion: Start with Simple Tools</h2>
+        <p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -157,6 +227,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">

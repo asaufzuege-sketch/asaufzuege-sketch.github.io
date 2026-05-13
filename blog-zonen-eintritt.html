@@ -65,6 +65,11 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
+        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -72,7 +77,12 @@
         <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
         &nbsp;&nbsp;
         <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
+        <div class="lang-switcher-bar">
+            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
 
+        <div class="lang-content lang-de active">
         <h1>Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</h1>
 
         <p>Keine Phase im Eishockey wird so regelmäßig falsch entschieden wie der Zonen-Eintritt. Spieler dumpen den Puck rein, weil es sicher erscheint – und wundern sich, warum die Angriffsphase nie Fahrt aufnimmt. Die Statistik ist eindeutig: Kontrollierte Eintritte (Carry-In oder Pass-In mit Puck-Kontrolle) erzeugen im Schnitt 48–55 % mehr Torchancen pro Zone-Possession als Dump-Ins. Dieser Artikel erklärt, warum das so ist – und wie Spieler und Trainer die richtige Entscheidung systematisch trainieren können.</p>
@@ -133,6 +143,72 @@
 
         <h3>Übung 3: „Regroup Practice" (10 Min.)</h3>
         <p>Drei Stürmer spielen 3-on-2, aber Eintrittslinie ist defensiv besetzt. Bei Block: Regroup und Neustart. Ziel: Drei erfolgreiche Regroupes pro Linie, dann Anlaufen mit kontrolliertem Eintritt.</p>
+        </div>
+
+        <div class="lang-content lang-en">
+        <h1>Zone Entry: Carry-In vs. Dump-In — Data and Decision Logic</h1>
+
+        <p>No phase of hockey is misjudged as consistently as the zone entry. Players dump the puck in because it seems safe — then wonder why the offensive sequence never gains traction. The statistics are clear: controlled entries (carry-in or pass-in with puck control) generate on average 48–55% more scoring chances per zone possession than dump-ins. This article explains why — and how players and coaches can systematically train the right decision.</p>
+
+        <h2>What Does the Data Actually Show?</h2>
+        <p>Research from the NHL (including Corey Sznajder's manual tracking data) consistently shows: after a controlled entry, attacking teams maintain possession for an average of 28–32 seconds. After a dump-in, it's only 12–16 seconds, including the time lost battling for the puck in the corner. More time in the zone = more shots = more goals. The causality is direct.</p>
+        <p>Data also shows: after dump-ins, approximately 42% of possessions end with a direct counterattack by the defending team — essentially a turnover at your own blue line. After carry-ins, it's only 18%. The dump-in is therefore not just less effective — it's actively riskier than generally assumed.</p>
+
+        <h2>Criteria for the Carry-In: When Is It Worth It?</h2>
+        <p>A carry-in is worthwhile when the puck carrier:</p>
+        <ul>
+            <li>has more speed than the covering defenseman</li>
+            <li>has at least a one-step lead at the blue line</li>
+            <li>has a free teammate as a back-pass option (in case of being stopped)</li>
+            <li>there is no offside risk from teammates who have pushed too far ahead</li>
+        </ul>
+        <p>Important: the carry-in isn't a heroic individual effort. It doesn't require the puck carrier to beat the defender one-on-one. Often a simple burst of speed plus a change of direction is enough to cross the blue line.</p>
+
+        <h2>Dump-and-Chase: When It Makes Sense</h2>
+        <p>The dump-in isn't inherently bad — it's simply used too often as the default solution when a controlled entry would be possible. Situations where the dump makes sense:</p>
+        <ul>
+            <li>Two defensemen are sitting back wide — no path through the middle</li>
+            <li>Line change: a fresh line hitting the ice needs to get into position first — the dump buys time</li>
+            <li>Tired legs: team at the end of a long shift needs a breather — the dump forces icing or stops the clock</li>
+            <li>Opponent is very physical at the blue line — carry-ins regularly result in turnovers</li>
+        </ul>
+        <p>Dump-and-chase as a system requires immediate forecheck pressure from two players (not one!). If only one forward chases, the dump-in is almost always a gift to the opposition.</p>
+
+        <h2>Neutral Zone Regroup: The Underrated Option</h2>
+        <p>When entry isn't clearly achievable, the regroup in the neutral zone is the best decision. The puck carrier turns back, all teammates skate back to support, and the attack is restarted with more speed and better positioning. Many teams feel like they're retreating — when in fact a well-executed regroup is tactically smarter than a forced dump-in.</p>
+        <p>Train this explicitly: "There's no shame in regrouping." Teams that accept the regroup as a normal phase of attack average 12% more controlled entries per game.</p>
+
+        <h2>Stretch Pass vs. Chip-In</h2>
+
+        <h3>Stretch Pass</h3>
+        <p>A stretch pass bridges the neutral zone with a long pass to a forward waiting at the opponent's blue line. This is a controlled entry from distance. Requirements: the receiver must be onside, the passer must get the timing and angle right, and the forward must be able to receive the puck under pressure. When it works: immediate 1-on-1 or 2-on-1, maximum danger.</p>
+
+        <h3>Chip-In</h3>
+        <p>A chip-in is a short, controlled pass (not blind) to the boards of the offensive zone, which the forward retrieves himself. A compromise between carry-in and dump-in. Works well when a forward has enough speed to beat the defenseman to the puck. Difference from a blind dump: the chip has a plan — the forward already knows where the puck is going.</p>
+
+        <h2>Avoiding Offsides: Discipline at the Blue Line</h2>
+        <p>Offside on the zone entry is one of the most common turnover causes, especially at the amateur level. Causes: forwards push ahead too early, poor communication, timing errors on the pass. Consequence for training: the blue line is sacred. No player crosses the line ahead of the puck — ever. Train offside situations explicitly, with referee simulation when possible.</p>
+
+        <h2>Practical Decision Rules for Players</h2>
+        <p>A simple three-second decision model for zone entries:</p>
+        <ol>
+            <li><strong>Check: Can I get in?</strong> Do I have a step advantage or speed advantage? → Carry-in</li>
+            <li><strong>Check: Is there a partner?</strong> Is a teammate in carry-in position? → Pass-in</li>
+            <li><strong>Check: No way through?</strong> Defenseman has cut me off, no speed advantage? → Regroup or targeted chip-in</li>
+        </ol>
+        <p>Dump-in only as a last resort: if none of the three options above is available, the dump-in is the fallback solution — but always with an immediate two-player forecheck.</p>
+
+        <h2>Training Drills for Zone-Entry Situations</h2>
+
+        <h3>Drill 1: "Blue Line Decision" (15 min.)</h3>
+        <p>1-on-1 from the center line. Puck carrier decides at the blue line: carry-in, regroup, or chip-in. Coach provides feedback on decision quality, not just the outcome.</p>
+
+        <h3>Drill 2: "2-on-2 Entry Drill" (20 min.)</h3>
+        <p>Two forwards vs. two defensemen. Forwards must enter with control. Each instance of puck control after entry = 1 point. Dump-ins allowed, but only with immediate forecheck pressure from both forwards.</p>
+
+        <h3>Drill 3: "Regroup Practice" (10 min.)</h3>
+        <p>Three forwards play 3-on-2, but the entry line is defensively filled. On block: regroup and restart. Goal: three successful regroupings per line, then attack with a controlled entry.</p>
+        </div>
 
         <div class="weiterlesen">
             <h3>Weiterlesen</h3>
@@ -161,6 +237,29 @@
             <a href="datenschutz.html">Datenschutz</a>
         </div>
     </div>
+<script>
+(function(){
+    var defaultLang = 'de';
+    var supportedLangs = ['en', 'de'];
+    function applyLang(lang) {
+        if (!supportedLangs.includes(lang)) lang = defaultLang;
+        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
+        var active = document.querySelector('.lang-content.lang-' + lang);
+        if (active) active.classList.add('active');
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        document.documentElement.lang = lang;
+        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
+    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
+    });
+})();
+</script>
 <footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
     <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
         <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
