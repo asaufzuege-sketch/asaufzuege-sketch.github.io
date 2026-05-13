@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -283,22 +283,7 @@
             border-color: #2563eb;
         }
 
-        .app-card.coming-soon {
-            opacity: 0.7;
-            position: relative;
-        }
 
-        .coming-soon-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #2563eb;
-            color: #ffffff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
 
         .app-card h3 {
             font-size: 1.8rem;
@@ -358,15 +343,7 @@
             transform: scale(1.05);
         }
 
-        .btn.disabled {
-            background-color: #4a4a5e;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
 
-        .btn.disabled:hover {
-            transform: none;
-        }
 
         .app-buttons {
             display: flex;
@@ -738,9 +715,7 @@
                 font-size: 2rem;
             }
 
-            nav {
-                display: none;
-            }
+            /* nav hidden on mobile, shown via burger */
 
             .logo {
                 font-size: 1.4rem;
@@ -780,6 +755,35 @@
                 padding: 25px;
             }
         }
+
+        /* Burger Menu */
+        .burger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: #e0e0e0;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        @media (max-width: 768px) {
+            .burger-btn { display: block; }
+            nav.mobile-open {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, rgba(26,26,46,0.97) 0%, rgba(22,33,62,0.97) 100%);
+                padding: 20px;
+                gap: 18px;
+                z-index: 200;
+                border-top: 2px solid #2563eb;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            }
+        }
     </style>
 </head>
 <body>
@@ -790,11 +794,12 @@
                 <img src="logo.png" alt="SmartHockey Products" class="logo-img">
                 <span>SmartHockey Products</span>
             </div>
+            <button class="burger-btn" id="burger-btn" aria-label="Menü öffnen" onclick="document.querySelector('nav').classList.toggle('mobile-open')">☰</button>
             <nav>
                 <a href="index.html" class="active">
                     <span data-lang-group="nav-home">
-                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
-                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
+                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
                         <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
                         <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
                         <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align: middle; margin-right: 4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
@@ -803,18 +808,28 @@
                 </a>
                 <a href="app-comparison.html">
                     <span data-lang-group="nav-apps">
-                        <span class="lang-en active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
-                        <span class="lang-de"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
+                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
+                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
                         <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
                         <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Appar</span>
                         <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Sovellukset</span>
                         <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Приложения</span>
                     </span>
                 </a>
+                <a href="coaching-tipps.html">
+                    <span data-lang-group="nav-blog">
+                        <span class="lang-en">📝 Blog</span>
+                        <span class="lang-de active">📝 Blog</span>
+                        <span class="lang-fr">📝 Blog</span>
+                        <span class="lang-sv">📝 Blog</span>
+                        <span class="lang-fi">📝 Blogi</span>
+                        <span class="lang-ru">📝 Блог</span>
+                    </span>
+                </a>
                 <a href="shop.html">
                     <span data-lang-group="nav-shop">
-                        <span class="lang-en active">🛒 Shop</span>
-                        <span class="lang-de">🛒 Shop</span>
+                        <span class="lang-en">🛒 Shop</span>
+                        <span class="lang-de active">🛒 Shop</span>
                         <span class="lang-fr">🛒 Boutique</span>
                         <span class="lang-sv">🛒 Butik</span>
                         <span class="lang-fi">🛒 Kauppa</span>
@@ -830,17 +845,17 @@
                         <line x1="2" y1="12" x2="22" y2="12"></line>
                         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                     </svg>
-                    <span class="lang-current-name">English</span>
+                    <span class="lang-current-name">Deutsch</span>
                     <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </button>
                 <div class="lang-dropdown-menu">
-                    <button class="lang-option active" data-lang="en">
+                    <button class="lang-option" data-lang="en">
                         <span class="lang-option-flag">🇬🇧</span>
                         <span class="lang-option-name">English</span>
                     </button>
-                    <button class="lang-option" data-lang="de">
+                    <button class="lang-option active" data-lang="de">
                         <span class="lang-option-flag">🇩🇪</span>
                         <span class="lang-option-name">Deutsch</span>
                     </button>
@@ -871,8 +886,8 @@
             <img src="title-logo.png" alt="SmartHockey Products" class="hero-title-img">
             <h1>
                 <span data-lang-group="hero-title">
-                    <span class="lang-en active">Professional <span class="hero-accent">Hockey Statistics</span><br>for Players and Teams</span>
-                    <span class="lang-de">Professionelle <span class="hero-accent">Hockey-Statistik</span><br>für Spieler und Teams</span>
+                    <span class="lang-en">Professional <span class="hero-accent">Hockey Statistics</span><br>for Players and Teams</span>
+                    <span class="lang-de active">Professionelle <span class="hero-accent">Hockey-Statistik</span><br>für Spieler und Teams</span>
                     <span class="lang-fr">Statistiques <span class="hero-accent">Hockey Professionnelles</span><br>pour Joueurs et Équipes</span>
                     <span class="lang-sv">Professionell <span class="hero-accent">Hockey-Statistik</span><br>för Spelare och Lag</span>
                     <span class="lang-fi">Ammattitason <span class="hero-accent">Jääkiekkotilastot</span><br>Pelaajille ja Joukkueille</span>
@@ -881,8 +896,8 @@
             </h1>
             <p>
                 <span data-lang-group="hero-subtitle">
-                    <span class="lang-en active">Track your performance, analyze your games, and improve your play with our modern hockey tracking and statistics apps.</span>
-                    <span class="lang-de">Verfolge deine Leistung, analysiere deine Spiele und verbessere dein Spiel mit unseren modernen Tracking- und Statistik-Apps für Hockey.</span>
+                    <span class="lang-en">Track your performance, analyze your games, and improve your play with our modern hockey tracking and statistics apps.</span>
+                    <span class="lang-de active">Verfolge deine Leistung, analysiere deine Spiele und verbessere dein Spiel mit unseren modernen Tracking- und Statistik-Apps für Hockey.</span>
                     <span class="lang-fr">Suivez vos performances, analysez vos matchs et améliorez votre jeu avec nos applications modernes de suivi et statistiques hockey.</span>
                     <span class="lang-sv">Spåra din prestation, analysera dina matcher och förbättra ditt spel med våra moderna hockey-spårnings och statistik appar.</span>
                     <span class="lang-fi">Seuraa suorituskykyäsi, analysoi pelejäsi ja paranna peliäsi modernien jääkiekon seuranta- ja tilastosovellustemme avulla.</span>
@@ -891,8 +906,8 @@
             </p>
             <p>
                 <span data-lang-group="hero-intro">
-                    <span class="lang-en active">Welcome to SmartHockey Products – the ultimate tracking and statistics solution for hockey coaches and teams. Our web-based apps allow coaches to record real-time game statistics directly from their smartphone or tablet, without any additional hardware. Whether you are tracking shots on goal, analyzing season progress, or monitoring team momentum – SmartHockey Products gives you the data-driven insights you need to make smarter decisions on and off the ice. Trusted by coaches in amateur and professional leagues alike, our tools are designed to be fast, intuitive, and always available.</span>
-                    <span class="lang-de">Willkommen bei SmartHockey Products – der ultimativen Tracking- und Statistiklösung für Eishockey-Trainer und Teams. Unsere webbasierten Apps ermöglichen es Trainern, Spielstatistiken in Echtzeit direkt vom Smartphone oder Tablet zu erfassen, ganz ohne zusätzliche Hardware. Ob Sie Torschüsse verfolgen, den Saisonverlauf analysieren oder die Teamdynamik beobachten – SmartHockey Products liefert die datenbasierten Erkenntnisse für bessere Entscheidungen. Von Trainern in Amateur- und Profiligen gleichermaßen geschätzt, sind unsere Tools schnell, intuitiv und immer verfügbar.</span>
+                    <span class="lang-en">Welcome to SmartHockey Products – the ultimate tracking and statistics solution for hockey coaches and teams. Our web-based apps allow coaches to record real-time game statistics directly from their smartphone or tablet, without any additional hardware. Whether you are tracking shots on goal, analyzing season progress, or monitoring team momentum – SmartHockey Products gives you the data-driven insights you need to make smarter decisions on and off the ice. Trusted by coaches in amateur and professional leagues alike, our tools are designed to be fast, intuitive, and always available.</span>
+                    <span class="lang-de active">Willkommen bei SmartHockey Products – der ultimativen Tracking- und Statistiklösung für Eishockey-Trainer und Teams. Unsere webbasierten Apps ermöglichen es Trainern, Spielstatistiken in Echtzeit direkt vom Smartphone oder Tablet zu erfassen, ganz ohne zusätzliche Hardware. Ob Sie Torschüsse verfolgen, den Saisonverlauf analysieren oder die Teamdynamik beobachten – SmartHockey Products liefert die datenbasierten Erkenntnisse für bessere Entscheidungen. Von Trainern in Amateur- und Profiligen gleichermaßen geschätzt, sind unsere Tools schnell, intuitiv und immer verfügbar.</span>
                     <span class="lang-fr">Bienvenue chez SmartHockey Products – la solution ultime de suivi et statistiques pour entraîneurs et équipes de hockey. Nos applications web permettent aux entraîneurs d'enregistrer des statistiques de match en temps réel directement depuis leur smartphone ou tablette, sans matériel supplémentaire. Que vous suiviez les tirs au but, analysiez la progression de la saison ou surveilliez la dynamique d'équipe – SmartHockey Products vous fournit les informations basées sur les données pour prendre de meilleures décisions. Approuvées par les entraîneurs des ligues amateurs et professionnelles, nos applications sont rapides, intuitives et toujours disponibles.</span>
                     <span class="lang-sv">Välkommen till SmartHockey Products – den ultimata spårnings- och statistiklösningen för hockeytränare och lag. Våra webbaserade appar låter tränare registrera matstatistik i realtid direkt från sin smartphone eller surfplatta, utan extra hårdvara. Oavsett om du spårar skott, analyserar säsongens framsteg eller övervakar lagets momentum – SmartHockey Products ger dig de datadrivna insikter du behöver för smartare beslut. Betrodda av tränare i amatör- och proffsligor, är våra verktyg snabba, intuitiva och alltid tillgängliga.</span>
                     <span class="lang-fi">Tervetuloa SmartHockey Productsiin – jääkiekkovalmentajien ja joukkueiden parhaaseen seuranta- ja tilastoratkaisuun. Verkkosovelluksemme mahdollistavat valmentajille pelin tilastojen kirjaamisen reaaliajassa suoraan älypuhelimelta tai tabletilta ilman lisälaitteita. Halusitpa seurata laukauksia, analysoida kauden etenemistä tai tarkkailla joukkueen dynamiikkaa – SmartHockey Products tarjoaa datapohjaisia oivalluksia älykkäisiin päätöksiin. Amatööri- ja ammattilaisliigojen valmentajien luottama työkalu on nopea, intuitiivinen ja aina saatavilla.</span>
@@ -901,8 +916,8 @@
             </p>
             <a href="/SmartHockey-Tracking-Team-Pro/" class="cta-launch-btn" style="display:inline-block; margin-top:30px; padding:18px 48px; background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%); color:#fff; font-size:1.3rem; font-weight:700; border-radius:12px; text-decoration:none; box-shadow:0 4px 24px rgba(37,99,235,0.4); letter-spacing:0.02em; transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(37,99,235,0.6)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 24px rgba(37,99,235,0.4)'">
                 🏒 <span data-lang-group="hero-launch-btn">
-                    <span class="lang-en active">Launch SmartHockey Team Tracker Pro</span>
-                    <span class="lang-de">SmartHockey Team Tracker Pro starten</span>
+                    <span class="lang-en">Launch SmartHockey Team Tracker Pro</span>
+                    <span class="lang-de active">SmartHockey Team Tracker Pro starten</span>
                     <span class="lang-fr">Lancer SmartHockey Team Tracker Pro</span>
                     <span class="lang-sv">Starta SmartHockey Team Tracker Pro</span>
                     <span class="lang-fi">Avaa SmartHockey Team Tracker Pro</span>
@@ -913,12 +928,41 @@
     </section>
 
     <!-- Apps Section -->
+    <!-- Statischer DE-Content: Warum Statistiken -->
+    <section style="padding:60px 0;background:rgba(15,15,30,0.80);">
+        <div class="container">
+            <h2 class="section-title">Warum Hockey-Statistiken wichtig sind</h2>
+            <div style="max-width:860px;margin:0 auto;color:#c0c0c0;font-size:1.05rem;line-height:1.8;">
+                <p>Modernes Eishockey ist längst datengetrieben. Ob in der NHL, DEL oder im Schweizer Amateur-Hockey: Wer Entscheidungen auf Basis von Zahlen trifft, gewinnt einen messbaren Vorteil gegenüber Teams, die sich nur auf Bauchgefühl verlassen. Statistiken machen Leistung objektiv sichtbar – sie zeigen, welche Linien wirklich funktionieren, welche Spieler in bestimmten Situationen besonders effektiv sind, und wo ein Team systematische Schwächen hat.</p>
+                <p>Das Plus/Minus-Rating ist ein guter Ausgangspunkt, aber allein nicht aussagekräftig genug: Ein Stürmer kann ein positives Plus/Minus haben, weil er immer mit der stärksten Linie eingesetzt wird – nicht weil er persönlich einen großen Beitrag leistet. Erweiterte Metriken wie Corsi (alle Schussversuche) und Fenwick (alle nicht geblockten Schussversuche) geben ein vollständigeres Bild der Kontrolle über das Spiel.</p>
+                <p>Eiszeit-Verteilung (TOI) zeigt, welchen Spielern ein Trainer wirklich vertraut – und ob dieses Vertrauen durch die Leistungsdaten gestützt wird. Die Auswertung von Faceoff-Quoten, Schuss-Effizienz nach Zone, Penalty-Kill-Prozentsatz und Powerplay-Effizienz erlaubt es, Linien gezielt zu optimieren und Schwächen vor dem nächsten Spiel gezielt anzugehen.</p>
+                <p>Für Amateur-Trainer bedeutet das: Auch ohne professionelle Scouting-Abteilung kann man mit dem richtigen Tool fundierte Entscheidungen treffen. Welcher Spieler trifft im Powerplay am häufigsten? Wer verliert überdurchschnittlich viele Faceoffs in der eigenen Zone? Welche Linie kassiert die meisten Gegentreffer bei gleicher Eiszeit? Diese Fragen lassen sich mit SmartHockey-Apps direkt aus dem Spiel heraus beantworten – in Echtzeit, auf dem Tablet, ohne technisches Vorwissen.</p>
+                <p>Spielanalyse ist nicht mehr nur ein Profi-Werkzeug. Sie ist der entscheidende Unterschied zwischen einem Trainer, der reagiert, und einem Trainer, der plant.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statischer DE-Content: Für wen -->
+    <section style="padding:60px 0;background:rgba(22,33,62,0.75);">
+        <div class="container">
+            <h2 class="section-title">Für wen sind unsere Apps?</h2>
+            <div style="max-width:860px;margin:0 auto;color:#c0c0c0;font-size:1.05rem;line-height:1.8;">
+                <p>SmartHockey-Apps richten sich an alle, die ernsthaft Eishockey betreiben – auf jedem Niveau.</p>
+                <p><strong style="color:#ffffff;">Trainer &amp; Coaches:</strong> Du steuerst Linien, analysierst das Spiel in Echtzeit und generierst nach dem Abpfiff einen vollständigen Report. Mit der Pro-Version siehst du auf einen Blick, welche Linien-Kombination am produktivsten war, und kannst diese Erkenntnisse direkt in das nächste Training einbauen. Coaching-Entscheidungen werden nachvollziehbar, wiederholbar und datenbasiert.</p>
+                <p><strong style="color:#ffffff;">Spieler:</strong> Verfolge deine eigenen Statistiken über eine ganze Saison. Sieht man Verbesserungen in der Schusseffizienz? Werden Faceoffs nach intensivem Training tatsächlich besser gewonnen? Mit deinen persönlichen Daten im Blick wirst du zum aktiven Mitgestalter deiner eigenen Entwicklung – nicht nur Objekt der Trainerbeobachtung.</p>
+                <p><strong style="color:#ffffff;">Teammanager:</strong> Verwalte den kompletten Roster, erfasse Saisonstatistiken und behalte den Überblick über alle Spieler und Spiele. Exportiere Berichte für den Vereinsvorstand oder zum Saisonabschluss – alles in einem Tool.</p>
+                <p><strong style="color:#ffffff;">Eltern im Kinder- und Jugend-Hockey:</strong> Verfolge die Entwicklung deines Kindes über die gesamte Saison. Sieh, wie viele Tore, Assists und Eiszeit dein Nachwuchsspieler gesammelt hat – und erkenne frühzeitig Stärken und Entwicklungspotenzial.</p>
+                <p>Alle SmartHockey-Apps sind webbasiert, brauchen keine Installation, funktionieren offline in der Halle und laufen auf jedem modernen Gerät – vom Smartphone bis zum Tablet.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="apps" class="apps-section">
         <div class="container">
             <h2 class="section-title">
                 <span data-lang-group="apps-title">
-                    <span class="lang-en active">Our Apps</span>
-                    <span class="lang-de">Unsere Apps</span>
+                    <span class="lang-en">Our Apps</span>
+                    <span class="lang-de active">Unsere Apps</span>
                     <span class="lang-fr">Nos Applications</span>
                     <span class="lang-sv">Våra Appar</span>
                     <span class="lang-fi">Sovelluksemme</span>
@@ -927,8 +971,8 @@
             </h2>
             <p class="section-subtitle">
                 <span data-lang-group="apps-subtitle">
-                    <span class="lang-en active">Choose the perfect app for your needs</span>
-                    <span class="lang-de">Wähle die perfekte App für deine Bedürfnisse</span>
+                    <span class="lang-en">Choose the perfect app for your needs</span>
+                    <span class="lang-de active">Wähle die perfekte App für deine Bedürfnisse</span>
                     <span class="lang-fr">Choisissez l'application parfaite pour vos besoins</span>
                     <span class="lang-sv">Välj den perfekta appen för dina behov</span>
                     <span class="lang-fi">Valitse täydellinen sovellus tarpeisiisi</span>
@@ -943,8 +987,8 @@
                     <h3>SmartHockey Pro</h3>
                     <p>
                         <span data-lang-group="app3-desc">
-                            <span class="lang-en active">The ultimate professional solution for ambitious teams and coaches. Advanced analytics, comprehensive reports, and professional features.</span>
-                            <span class="lang-de">Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.</span>
+                            <span class="lang-en">The ultimate professional solution for ambitious teams and coaches. Advanced analytics, comprehensive reports, and professional features.</span>
+                            <span class="lang-de active">Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.</span>
                             <span class="lang-fr">La solution professionnelle ultime pour les équipes et entraîneurs ambitieux. Analyses avancées, rapports complets et fonctionnalités professionnelles.</span>
                             <span class="lang-sv">Den ultimata professionella lösningen för ambitiösa lag och tränare. Avancerad analys, omfattande rapporter och professionella funktioner.</span>
                             <span class="lang-fi">Lopullinen ammattiratkaisu kunnianhimoisille joukkueille ja valmentajille. Edistyneet analyysit, kattavat raportit ja ammattimaiset ominaisuudet.</span>
@@ -954,8 +998,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="app3-feat1">
-                                <span class="lang-en active">Advanced team analytics</span>
-                                <span class="lang-de">Erweiterte Team-Analysen</span>
+                                <span class="lang-en">Advanced team analytics</span>
+                                <span class="lang-de active">Erweiterte Team-Analysen</span>
                                 <span class="lang-fr">Analyses d'équipe avancées</span>
                                 <span class="lang-sv">Avancerad laganalys</span>
                                 <span class="lang-fi">Edistyneet joukkueanalyysit</span>
@@ -964,8 +1008,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app3-feat2">
-                                <span class="lang-en active">Professional reports</span>
-                                <span class="lang-de">Professionelle Reports</span>
+                                <span class="lang-en">Professional reports</span>
+                                <span class="lang-de active">Professionelle Reports</span>
                                 <span class="lang-fr">Rapports professionnels</span>
                                 <span class="lang-sv">Professionella rapporter</span>
                                 <span class="lang-fi">Ammattimaiset raportit</span>
@@ -974,8 +1018,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app3-feat4">
-                                <span class="lang-en active">Tactical board</span>
-                                <span class="lang-de">Taktik-Board</span>
+                                <span class="lang-en">Tactical board</span>
+                                <span class="lang-de active">Taktik-Board</span>
                                 <span class="lang-fr">Tableau tactique</span>
                                 <span class="lang-sv">Taktisk tavla</span>
                                 <span class="lang-fi">Taktiikkataulu</span>
@@ -984,8 +1028,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app3-feat5">
-                                <span class="lang-en active">Export functions</span>
-                                <span class="lang-de">Export-Funktionen</span>
+                                <span class="lang-en">Export functions</span>
+                                <span class="lang-de active">Export-Funktionen</span>
                                 <span class="lang-fr">Fonctions d'export</span>
                                 <span class="lang-sv">Exportfunktioner</span>
                                 <span class="lang-fi">Vientitoiminnot</span>
@@ -994,30 +1038,10 @@
                         </li>
                     </ul>
                     <div class="app-buttons">
-                        <span class="btn disabled">
-                            <span data-lang-group="btn-google-play">
-                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
-                            </span>
-                        </span>
-                        <span class="btn disabled">
-                            <span data-lang-group="btn-pro-web">
-                                <span class="lang-en active">Coming Soon – PC Version</span>
-                                <span class="lang-de">Bald verfügbar – PC Version</span>
-                                <span class="lang-fr">Bientôt disponible – Version PC</span>
-                                <span class="lang-sv">Kommer snart – PC-version</span>
-                                <span class="lang-fi">Tulossa pian – PC-versio</span>
-                                <span class="lang-ru">Скоро – ПК версия</span>
-                            </span>
-                        </span>
-                        <a href="app-pro.html" class="btn" style="background:rgba(37,99,235,0.2); border:1px solid #2563eb;">
+                                                                        <a href="app-pro.html" class="btn" style="background:rgba(37,99,235,0.2); border:1px solid #2563eb;">
                             <span data-lang-group="btn-pro-learn">
-                                <span class="lang-en active">Learn More</span>
-                                <span class="lang-de">Mehr erfahren</span>
+                                <span class="lang-en">Learn More</span>
+                                <span class="lang-de active">Mehr erfahren</span>
                                 <span class="lang-fr">En savoir plus</span>
                                 <span class="lang-sv">Läs mer</span>
                                 <span class="lang-fi">Lue lisää</span>
@@ -1033,8 +1057,8 @@
                     <h3>SmartHockey Light</h3>
                     <p>
                         <span data-lang-group="app2-desc">
-                            <span class="lang-en active">The lightweight team management solution. Perfect for smaller teams and hobby clubs who want to manage their statistics professionally.</span>
-                            <span class="lang-de">Die leichtgewichtige Team-Management-Lösung. Perfekt für kleinere Teams und Hobbymannschaften, die ihre Statistiken professionell verwalten möchten.</span>
+                            <span class="lang-en">The lightweight team management solution. Perfect for smaller teams and hobby clubs who want to manage their statistics professionally.</span>
+                            <span class="lang-de active">Die leichtgewichtige Team-Management-Lösung. Perfekt für kleinere Teams und Hobbymannschaften, die ihre Statistiken professionell verwalten möchten.</span>
                             <span class="lang-fr">La solution légère de gestion d'équipe. Parfait pour les petites équipes et clubs de loisir qui souhaitent gérer leurs statistiques professionnellement.</span>
                             <span class="lang-sv">Den lättviktiga laghanteringslösningen. Perfekt för mindre lag och hobbyföreningar som vill hantera sin statistik professionellt.</span>
                             <span class="lang-fi">Kevyt joukkueen hallintaratkaisu. Täydellinen pienemmille joukkueille ja harrasteseuroille, jotka haluavat hallita tilastojaan ammattimaisesti.</span>
@@ -1044,8 +1068,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="app2-feat1">
-                                <span class="lang-en active">Manage team statistics</span>
-                                <span class="lang-de">Team-Statistiken verwalten</span>
+                                <span class="lang-en">Manage team statistics</span>
+                                <span class="lang-de active">Team-Statistiken verwalten</span>
                                 <span class="lang-fr">Gérer les statistiques d'équipe</span>
                                 <span class="lang-sv">Hantera lagstatistik</span>
                                 <span class="lang-fi">Hallinnoi joukkueen tilastoja</span>
@@ -1054,8 +1078,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app2-feat2">
-                                <span class="lang-en active">Monitor player performance</span>
-                                <span class="lang-de">Spieler-Performance überwachen</span>
+                                <span class="lang-en">Monitor player performance</span>
+                                <span class="lang-de active">Spieler-Performance überwachen</span>
                                 <span class="lang-fr">Surveiller les performances des joueurs</span>
                                 <span class="lang-sv">Övervaka spelarprestanda</span>
                                 <span class="lang-fi">Seuraa pelaajien suorituskykyä</span>
@@ -1064,8 +1088,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app2-feat3">
-                                <span class="lang-en active">Simple team management</span>
-                                <span class="lang-de">Einfaches Team-Management</span>
+                                <span class="lang-en">Simple team management</span>
+                                <span class="lang-de active">Einfaches Team-Management</span>
                                 <span class="lang-fr">Gestion d'équipe simple</span>
                                 <span class="lang-sv">Enkel laghantering</span>
                                 <span class="lang-fi">Yksinkertainen joukkueen hallinta</span>
@@ -1074,8 +1098,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app2-feat4">
-                                <span class="lang-en active">Quick data entry</span>
-                                <span class="lang-de">Schnelle Datenerfassung</span>
+                                <span class="lang-en">Quick data entry</span>
+                                <span class="lang-de active">Schnelle Datenerfassung</span>
                                 <span class="lang-fr">Saisie rapide des données</span>
                                 <span class="lang-sv">Snabb datainmatning</span>
                                 <span class="lang-fi">Nopea tietojen syöttö</span>
@@ -1084,20 +1108,10 @@
                         </li>
                     </ul>
                     <div class="app-buttons">
-                        <span class="btn disabled">
-                            <span data-lang-group="btn-google-play">
-                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
-                            </span>
-                        </span>
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
+                                                <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn">
                             <span data-lang-group="btn-light-web">
-                                <span class="lang-en active">Web App</span>
-                                <span class="lang-de">Web App</span>
+                                <span class="lang-en">Web App</span>
+                                <span class="lang-de active">Web App</span>
                                 <span class="lang-fr">Web App</span>
                                 <span class="lang-sv">Web App</span>
                                 <span class="lang-fi">Web App</span>
@@ -1106,8 +1120,8 @@
                         </a>
                         <a href="app-light.html" class="btn" style="background:rgba(37,99,235,0.2); border:1px solid #2563eb;">
                             <span data-lang-group="btn-light-learn">
-                                <span class="lang-en active">Learn More</span>
-                                <span class="lang-de">Mehr erfahren</span>
+                                <span class="lang-en">Learn More</span>
+                                <span class="lang-de active">Mehr erfahren</span>
                                 <span class="lang-fr">En savoir plus</span>
                                 <span class="lang-sv">Läs mer</span>
                                 <span class="lang-fi">Lue lisää</span>
@@ -1123,8 +1137,8 @@
                     <h3>SmartHockey Inline</h3>
                     <p>
                         <span data-lang-group="app1-desc">
-                            <span class="lang-en active">The comprehensive solution for inline and roller hockey players. Track your personal statistics, analyze your development, and optimize your game.</span>
-                            <span class="lang-de">Die umfassende Lösung für Inline-Hockey-Spieler. Verfolge deine persönlichen Statistiken, analysiere deine Entwicklung und optimiere dein Spiel.</span>
+                            <span class="lang-en">The comprehensive solution for inline and roller hockey players. Track your personal statistics, analyze your development, and optimize your game.</span>
+                            <span class="lang-de active">Die umfassende Lösung für Inline-Hockey-Spieler. Verfolge deine persönlichen Statistiken, analysiere deine Entwicklung und optimiere dein Spiel.</span>
                             <span class="lang-fr">La solution complète pour les joueurs de hockey en ligne et roller. Suivez vos statistiques personnelles, analysez votre développement et optimisez votre jeu.</span>
                             <span class="lang-sv">Den kompletta lösningen för inline- och rullhockeyspelare. Spåra din personliga statistik, analysera din utveckling och optimera ditt spel.</span>
                             <span class="lang-fi">Kattava ratkaisu inline- ja rullaluistelijoille. Seuraa henkilökohtaisia tilastojasi, analysoi kehitystäsi ja optimoi peliäsi.</span>
@@ -1134,8 +1148,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="app1-feat1">
-                                <span class="lang-en active">Detailed player statistics</span>
-                                <span class="lang-de">Detaillierte Spielerstatistiken</span>
+                                <span class="lang-en">Detailed player statistics</span>
+                                <span class="lang-de active">Detaillierte Spielerstatistiken</span>
                                 <span class="lang-fr">Statistiques détaillées des joueurs</span>
                                 <span class="lang-sv">Detaljerad spelarstatistik</span>
                                 <span class="lang-fi">Yksityiskohtaiset pelaajatilastot</span>
@@ -1144,8 +1158,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app1-feat2">
-                                <span class="lang-en active">Individual performance analysis</span>
-                                <span class="lang-de">Individuelle Leistungsanalyse</span>
+                                <span class="lang-en">Individual performance analysis</span>
+                                <span class="lang-de active">Individuelle Leistungsanalyse</span>
                                 <span class="lang-fr">Analyse de performance individuelle</span>
                                 <span class="lang-sv">Individuell prestationsanalys</span>
                                 <span class="lang-fi">Yksilöllinen suorituskyvyn analyysi</span>
@@ -1154,8 +1168,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app1-feat3">
-                                <span class="lang-en active">Progress tracking</span>
-                                <span class="lang-de">Fortschritts-Tracking</span>
+                                <span class="lang-en">Progress tracking</span>
+                                <span class="lang-de active">Fortschritts-Tracking</span>
                                 <span class="lang-fr">Suivi des progrès</span>
                                 <span class="lang-sv">Framstegsspårning</span>
                                 <span class="lang-fi">Edistymisen seuranta</span>
@@ -1164,8 +1178,8 @@
                         </li>
                         <li>
                             <span data-lang-group="app1-feat4">
-                                <span class="lang-en active">Intuitive user interface</span>
-                                <span class="lang-de">Intuitive Benutzeroberfläche</span>
+                                <span class="lang-en">Intuitive user interface</span>
+                                <span class="lang-de active">Intuitive Benutzeroberfläche</span>
                                 <span class="lang-fr">Interface utilisateur intuitive</span>
                                 <span class="lang-sv">Intuitiv användargränssnitt</span>
                                 <span class="lang-fi">Intuitiivinen käyttöliittymä</span>
@@ -1174,20 +1188,10 @@
                         </li>
                     </ul>
                     <div class="app-buttons">
-                        <span class="btn disabled">
-                            <span data-lang-group="btn-google-play">
-                                <span class="lang-en active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Coming Soon</span></span>
-                                <span class="lang-de"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bald verfügbar</span></span>
-                                <span class="lang-fr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Bientôt disponible</span></span>
-                                <span class="lang-sv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Kommer snart</span></span>
-                                <span class="lang-fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Tulossa pian</span></span>
-                                <span class="lang-ru"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 8.99l-2.302 2.302L5.864 2.658z"/></svg>Google Play Store<span class="btn-subtitle">Скоро</span></span>
-                            </span>
-                        </span>
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
+                                                <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Inline/" class="btn">
                             <span data-lang-group="btn-inline-web">
-                                <span class="lang-en active">Web App</span>
-                                <span class="lang-de">Web App</span>
+                                <span class="lang-en">Web App</span>
+                                <span class="lang-de active">Web App</span>
                                 <span class="lang-fr">Web App</span>
                                 <span class="lang-sv">Web App</span>
                                 <span class="lang-fi">Web App</span>
@@ -1196,8 +1200,8 @@
                         </a>
                         <a href="app-inline.html" class="btn" style="background:rgba(37,99,235,0.2); border:1px solid #2563eb;">
                             <span data-lang-group="btn-inline-learn">
-                                <span class="lang-en active">Learn More</span>
-                                <span class="lang-de">Mehr erfahren</span>
+                                <span class="lang-en">Learn More</span>
+                                <span class="lang-de active">Mehr erfahren</span>
                                 <span class="lang-fr">En savoir plus</span>
                                 <span class="lang-sv">Läs mer</span>
                                 <span class="lang-fi">Lue lisää</span>
@@ -1213,8 +1217,8 @@
         <div style="text-align:center; padding:40px 0 20px;">
             <a href="about.html" style="display:inline-block; padding:16px 48px; background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%); color:#fff; font-size:1.15rem; font-weight:700; border-radius:10px; text-decoration:none; box-shadow:0 4px 20px rgba(37,99,235,0.4); transition:box-shadow 0.3s,transform 0.2s;" onmouseover="this.style.boxShadow='0 6px 28px rgba(37,99,235,0.6)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 4px 20px rgba(37,99,235,0.4)';this.style.transform='translateY(0)'">
                 <span data-lang-group="btn-learn-more-about">
-                    <span class="lang-en active">📖 Learn More About Our Apps</span>
-                    <span class="lang-de">📖 Mehr erfahren über unsere Apps</span>
+                    <span class="lang-en">📖 Learn More About Our Apps</span>
+                    <span class="lang-de active">📖 Mehr erfahren über unsere Apps</span>
                     <span class="lang-fr">📖 En savoir plus sur nos applications</span>
                     <span class="lang-sv">📖 Läs mer om våra appar</span>
                     <span class="lang-fi">📖 Lue lisää sovelluksistamme</span>
@@ -1229,8 +1233,8 @@
         <div class="container">
             <h2 class="section-title">
                 <span data-lang-group="products-title">
-                    <span class="lang-en active">Our Smart Products</span>
-                    <span class="lang-de">Unsere smarten Produkte</span>
+                    <span class="lang-en">Our Smart Products</span>
+                    <span class="lang-de active">Unsere smarten Produkte</span>
                     <span class="lang-fr">Nos Produits Intelligents</span>
                     <span class="lang-sv">Våra Smarta Produkter</span>
                     <span class="lang-fi">Älykkäät Tuotteemme</span>
@@ -1252,8 +1256,8 @@
                     <h3>SmartBoards</h3>
                     <p>
                         <span data-lang-group="product1-desc">
-                            <span class="lang-en active">SmartBoards are mini boards for field separation. Instead of unstable "Toblerones", the approximately 50cm high full boards stand firmly on the ice. The puck stays in the separated field and with the curve elements, no puck gets stuck in the corner anymore.</span>
-                            <span class="lang-de">Die SmartBoards sind Miniturbanden zur Spielfeldabtrennung. Anstelle der instabilen "Tobleronen" stehen die etwa 50cm hohen und vollwertigen Banden fest auf dem Eis. Der Puck bleibt im abgetrennten Spielfeld und durch die Kurven-Elemente bleibt kein Puck mehr in der Ecke stecken.</span>
+                            <span class="lang-en">SmartBoards are mini boards for field separation. Instead of unstable "Toblerones", the approximately 50cm high full boards stand firmly on the ice. The puck stays in the separated field and with the curve elements, no puck gets stuck in the corner anymore.</span>
+                            <span class="lang-de active">Die SmartBoards sind Miniturbanden zur Spielfeldabtrennung. Anstelle der instabilen "Tobleronen" stehen die etwa 50cm hohen und vollwertigen Banden fest auf dem Eis. Der Puck bleibt im abgetrennten Spielfeld und durch die Kurven-Elemente bleibt kein Puck mehr in der Ecke stecken.</span>
                             <span class="lang-fr">Les SmartBoards sont des mini-bandes pour la séparation du terrain. Au lieu des "Toblerones" instables, les bandes complètes d'environ 50 cm de haut se tiennent fermement sur la glace. Le palet reste dans le terrain séparé et avec les éléments de courbe, aucun palet ne reste coincé dans le coin.</span>
                             <span class="lang-sv">SmartBoards är minibrädor för fältavskiljning. Istället för instabila "Toblerones" står de cirka 50 cm höga fullständiga banden stadigt på isen. Pucken stannar i det avskilda fältet och med kurvelementen fastnar ingen puck i hörnet längre.</span>
                             <span class="lang-fi">SmartBoards ovat minilaitoja kentän erottamiseen. Epävakaiden "Tobleronien" sijaan noin 50 cm korkeat täydet laidat seisovat lujasti jäällä. Kiekko pysyy erotetussa kentässä ja kaarevien elementtien ansiosta mikään kiekko ei jää enää jumiin kulmaan.</span>
@@ -1263,8 +1267,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="product1-feat1">
-                                <span class="lang-en active">Customizable total length</span>
-                                <span class="lang-de">Gesamtlänge auf Wunsch anpassbar</span>
+                                <span class="lang-en">Customizable total length</span>
+                                <span class="lang-de active">Gesamtlänge auf Wunsch anpassbar</span>
                                 <span class="lang-fr">Longueur totale personnalisable</span>
                                 <span class="lang-sv">Anpassningsbar total längd</span>
                                 <span class="lang-fi">Mukautettava kokonaispituus</span>
@@ -1273,8 +1277,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product1-feat2">
-                                <span class="lang-en active">Divide field into thirds or halves</span>
-                                <span class="lang-de">Feld dritteln oder halbieren</span>
+                                <span class="lang-en">Divide field into thirds or halves</span>
+                                <span class="lang-de active">Feld dritteln oder halbieren</span>
                                 <span class="lang-fr">Diviser le terrain en tiers ou en moitiés</span>
                                 <span class="lang-sv">Dela fältet i tredjedelar eller halvor</span>
                                 <span class="lang-fi">Jaa kenttä kolmeen tai puoliksi</span>
@@ -1283,8 +1287,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product1-feat3">
-                                <span class="lang-en active">Curve elements available</span>
-                                <span class="lang-de">Kurven-Elemente verfügbar</span>
+                                <span class="lang-en">Curve elements available</span>
+                                <span class="lang-de active">Kurven-Elemente verfügbar</span>
                                 <span class="lang-fr">Éléments de courbe disponibles</span>
                                 <span class="lang-sv">Kurvelement tillgängliga</span>
                                 <span class="lang-fi">Kaarielementit saatavilla</span>
@@ -1293,8 +1297,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product1-feat4">
-                                <span class="lang-en active">Optional advertising space under plexiglass</span>
-                                <span class="lang-de">Werbefläche unter Plexischeibe optional</span>
+                                <span class="lang-en">Optional advertising space under plexiglass</span>
+                                <span class="lang-de active">Werbefläche unter Plexischeibe optional</span>
                                 <span class="lang-fr">Espace publicitaire sous plexiglas en option</span>
                                 <span class="lang-sv">Valfritt reklamutrymme under plexiglas</span>
                                 <span class="lang-fi">Valinnainen mainostila pleksilasin alla</span>
@@ -1305,8 +1309,8 @@
                     <div class="product-price-wrapper">
                         <div class="product-price">
                             <span data-lang-group="product1-price">
-                                <span class="lang-en active">Price on request</span>
-                                <span class="lang-de">Preis auf Anfrage</span>
+                                <span class="lang-en">Price on request</span>
+                                <span class="lang-de active">Preis auf Anfrage</span>
                                 <span class="lang-fr">Prix sur demande</span>
                                 <span class="lang-sv">Pris på förfrågan</span>
                                 <span class="lang-fi">Hinta pyynnöstä</span>
@@ -1315,8 +1319,8 @@
                         </div>
                         <a href="mailto:info@smarthockeyproducts.ch" class="btn">
                             <span data-lang-group="product1-btn">
-                                <span class="lang-en active">Contact</span>
-                                <span class="lang-de">Kontakt</span>
+                                <span class="lang-en">Contact</span>
+                                <span class="lang-de active">Kontakt</span>
                                 <span class="lang-fr">Contact</span>
                                 <span class="lang-sv">Kontakt</span>
                                 <span class="lang-fi">Ota yhteyttä</span>
@@ -1338,8 +1342,8 @@
                     <h3>SmartPen / IcePen</h3>
                     <p>
                         <span data-lang-group="product2-desc">
-                            <span class="lang-en active">The SmartHockey IcePen is a training aid for active and youth players and goalkeepers. Mark the exercises on ice. The directions of travel after a maneuver or show the goalkeeper where to move. Our formula guarantees a special color that covers excellently on ice.</span>
-                            <span class="lang-de">Der SmartHockey IcePen ist eine Trainingshilfe für Aktiv- und Nachwuchsspieler und Torhüter. Markiere damit die Übungen auf Eis. Die Fahrtrichtungen nach einem Manöver oder zeige dem Torhüter wohin er verschieben soll. Unsere Formel garantiert eine spezielle Farbe die hervorragend auf Eis deckt.</span>
+                            <span class="lang-en">The SmartHockey IcePen is a training aid for active and youth players and goalkeepers. Mark the exercises on ice. The directions of travel after a maneuver or show the goalkeeper where to move. Our formula guarantees a special color that covers excellently on ice.</span>
+                            <span class="lang-de active">Der SmartHockey IcePen ist eine Trainingshilfe für Aktiv- und Nachwuchsspieler und Torhüter. Markiere damit die Übungen auf Eis. Die Fahrtrichtungen nach einem Manöver oder zeige dem Torhüter wohin er verschieben soll. Unsere Formel garantiert eine spezielle Farbe die hervorragend auf Eis deckt.</span>
                             <span class="lang-fr">Le SmartHockey IcePen est une aide à l'entraînement pour les joueurs actifs et juniors et les gardiens de but. Marquez les exercices sur glace. Les directions de déplacement après une manœuvre ou montrez au gardien où se déplacer. Notre formule garantit une couleur spéciale qui couvre excellemment sur la glace.</span>
                             <span class="lang-sv">SmartHockey IcePen är ett träningshjälpmedel för aktiva och ungdomsspelare och målvakter. Markera övningarna på isen. Färdriktningarna efter en manöver eller visa målvakten vart han ska flytta sig. Vår formel garanterar en speciell färg som täcker utmärkt på is.</span>
                             <span class="lang-fi">SmartHockey IcePen on harjoitteluapu aktiivisille ja nuorille pelaajille sekä maalivahdille. Merkitse harjoitukset jäällä. Suunnat liikkeen jälkeen tai näytä maalivahdille minne siirtyä. Kaavamme takaa erikoisvärin, joka peittää erinomaisesti jäällä.</span>
@@ -1349,8 +1353,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="product2-feat1">
-                                <span class="lang-en active">Available in Black, Blue, Red</span>
-                                <span class="lang-de">Schwarz, Blau, Rot erhältlich</span>
+                                <span class="lang-en">Available in Black, Blue, Red</span>
+                                <span class="lang-de active">Schwarz, Blau, Rot erhältlich</span>
                                 <span class="lang-fr">Disponible en Noir, Bleu, Rouge</span>
                                 <span class="lang-sv">Tillgänglig i Svart, Blå, Röd</span>
                                 <span class="lang-fi">Saatavana Musta, Sininen, Punainen</span>
@@ -1359,8 +1363,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product2-feat2">
-                                <span class="lang-en active">Special color formula for ice</span>
-                                <span class="lang-de">Spezialfarbe für Eis</span>
+                                <span class="lang-en">Special color formula for ice</span>
+                                <span class="lang-de active">Spezialfarbe für Eis</span>
                                 <span class="lang-fr">Formule de couleur spéciale pour glace</span>
                                 <span class="lang-sv">Speciell färgformel för is</span>
                                 <span class="lang-fi">Erikoinen värikaava jäälle</span>
@@ -1372,8 +1376,8 @@
                         <div class="product-price">CHF 23.00</div>
                         <a href="shop.html" class="btn">
                             <span data-lang-group="product2-btn">
-                                <span class="lang-en active">Go to Shop</span>
-                                <span class="lang-de">Zum Shop</span>
+                                <span class="lang-en">Go to Shop</span>
+                                <span class="lang-de active">Zum Shop</span>
                                 <span class="lang-fr">Aller à la boutique</span>
                                 <span class="lang-sv">Gå till butiken</span>
                                 <span class="lang-fi">Siirry kauppaan</span>
@@ -1389,8 +1393,8 @@
                     <h3>SmartFresh</h3>
                     <p>
                         <span data-lang-group="product3-desc">
-                            <span class="lang-en active">Pro-biotic spray for ice hockey equipment. No chemical ingredients. Microorganisms sustainably eliminate odors and do not just mask them. Completely safe for health compared to alcohol-based sprays.</span>
-                            <span class="lang-de">Pro-Biotisches Spray für Eishockey-Ausrüstung. Keine chemischen Inhaltsstoffe. Mikroorganismen eliminieren Gerüche nachhaltig und überdecken sie nicht nur. Gesundheitlich absolut unbedenklich im Vergleich zu alkoholhaltigen Sprays.</span>
+                            <span class="lang-en">Pro-biotic spray for ice hockey equipment. No chemical ingredients. Microorganisms sustainably eliminate odors and do not just mask them. Completely safe for health compared to alcohol-based sprays.</span>
+                            <span class="lang-de active">Pro-Biotisches Spray für Eishockey-Ausrüstung. Keine chemischen Inhaltsstoffe. Mikroorganismen eliminieren Gerüche nachhaltig und überdecken sie nicht nur. Gesundheitlich absolut unbedenklich im Vergleich zu alkoholhaltigen Sprays.</span>
                             <span class="lang-fr">Spray pro-biotique pour équipement de hockey sur glace. Pas d'ingrédients chimiques. Les micro-organismes éliminent les odeurs de manière durable et ne les masquent pas seulement. Totalement sans danger pour la santé par rapport aux sprays à base d'alcool.</span>
                             <span class="lang-sv">Pro-biotisk spray för ishockeyutrustning. Inga kemiska ingredienser. Mikroorganismer eliminerar lukter hållbart och täcker inte bara över dem. Helt hälsosäker jämfört med alkoholbaserade sprayer.</span>
                             <span class="lang-fi">Probioottisuihke jääkiekkovarusteille. Ei kemiallisia ainesosia. Mikro-organismit poistavat hajut kestävästi eivätkä vain peitä niitä. Täysin turvallinen terveydelle verrattuna alkoholipohjaisiin suihkeisiin.</span>
@@ -1400,8 +1404,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="product3-feat1">
-                                <span class="lang-en active">Pro-biotic & natural</span>
-                                <span class="lang-de">Pro-Biotisch & natürlich</span>
+                                <span class="lang-en">Pro-biotic & natural</span>
+                                <span class="lang-de active">Pro-Biotisch & natürlich</span>
                                 <span class="lang-fr">Pro-biotique et naturel</span>
                                 <span class="lang-sv">Pro-biotisk & naturlig</span>
                                 <span class="lang-fi">Probioottiset & luonnolliset</span>
@@ -1410,8 +1414,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product3-feat2">
-                                <span class="lang-en active">No chemical ingredients</span>
-                                <span class="lang-de">Keine chemischen Inhaltsstoffe</span>
+                                <span class="lang-en">No chemical ingredients</span>
+                                <span class="lang-de active">Keine chemischen Inhaltsstoffe</span>
                                 <span class="lang-fr">Pas d'ingrédients chimiques</span>
                                 <span class="lang-sv">Inga kemiska ingredienser</span>
                                 <span class="lang-fi">Ei kemiallisia ainesosia</span>
@@ -1420,8 +1424,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product3-feat3">
-                                <span class="lang-en active">Pleasant natural scent</span>
-                                <span class="lang-de">Angenehmer natürlicher Duft</span>
+                                <span class="lang-en">Pleasant natural scent</span>
+                                <span class="lang-de active">Angenehmer natürlicher Duft</span>
                                 <span class="lang-fr">Parfum naturel agréable</span>
                                 <span class="lang-sv">Behaglig naturlig doft</span>
                                 <span class="lang-fi">Miellyttävä luonnollinen tuoksu</span>
@@ -1430,8 +1434,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product3-feat4">
-                                <span class="lang-en active">200ml content</span>
-                                <span class="lang-de">200ml Inhalt</span>
+                                <span class="lang-en">200ml content</span>
+                                <span class="lang-de active">200ml Inhalt</span>
                                 <span class="lang-fr">Contenu 200ml</span>
                                 <span class="lang-sv">200ml innehåll</span>
                                 <span class="lang-fi">200ml sisältö</span>
@@ -1443,8 +1447,8 @@
                         <div class="product-price">CHF 25.00</div>
                         <a href="shop.html" class="btn">
                             <span data-lang-group="product3-btn">
-                                <span class="lang-en active">Go to Shop</span>
-                                <span class="lang-de">Zum Shop</span>
+                                <span class="lang-en">Go to Shop</span>
+                                <span class="lang-de active">Zum Shop</span>
                                 <span class="lang-fr">Aller à la boutique</span>
                                 <span class="lang-sv">Gå till butiken</span>
                                 <span class="lang-fi">Siirry kauppaan</span>
@@ -1460,8 +1464,8 @@
                     <h3>SmartLightBall</h3>
                     <p>
                         <span data-lang-group="product4-desc">
-                            <span class="lang-en active">Natural wooden ball, 60mm diameter, 80g. Half puck weight. Perfect for off-ice speed stickhandling.</span>
-                            <span class="lang-de">Natürlicher Holzball, 60mm Durchmesser, 80g. Halbes Puck-Gewicht. Perfekt für Off-Ice Speedstickhandling.</span>
+                            <span class="lang-en">Natural wooden ball, 60mm diameter, 80g. Half puck weight. Perfect for off-ice speed stickhandling.</span>
+                            <span class="lang-de active">Natürlicher Holzball, 60mm Durchmesser, 80g. Halbes Puck-Gewicht. Perfekt für Off-Ice Speedstickhandling.</span>
                             <span class="lang-fr">Balle en bois naturel, diamètre 60mm, 80g. Moitié du poids d'un palet. Parfait pour le maniement rapide de la crosse hors glace.</span>
                             <span class="lang-sv">Naturlig träboll, 60mm diameter, 80g. Halva puckvikten. Perfekt för off-ice speed stickhandling.</span>
                             <span class="lang-fi">Luonnollinen puupallo, 60mm halkaisija, 80g. Puolet kiekon painosta. Täydellinen jään ulkopuoliseen nopeaan mailankäsittelyyn.</span>
@@ -1471,8 +1475,8 @@
                     <ul>
                         <li>
                             <span data-lang-group="product4-feat1">
-                                <span class="lang-en active">60mm diameter, 80g</span>
-                                <span class="lang-de">60mm Durchmesser, 80g</span>
+                                <span class="lang-en">60mm diameter, 80g</span>
+                                <span class="lang-de active">60mm Durchmesser, 80g</span>
                                 <span class="lang-fr">Diamètre 60mm, 80g</span>
                                 <span class="lang-sv">60mm diameter, 80g</span>
                                 <span class="lang-fi">60mm halkaisija, 80g</span>
@@ -1481,8 +1485,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product4-feat2">
-                                <span class="lang-en active">Half puck weight</span>
-                                <span class="lang-de">Halbes Puck-Gewicht</span>
+                                <span class="lang-en">Half puck weight</span>
+                                <span class="lang-de active">Halbes Puck-Gewicht</span>
                                 <span class="lang-fr">Moitié du poids d'un palet</span>
                                 <span class="lang-sv">Halva puckvikten</span>
                                 <span class="lang-fi">Puolet kiekon painosta</span>
@@ -1491,8 +1495,8 @@
                         </li>
                         <li>
                             <span data-lang-group="product4-feat3">
-                                <span class="lang-en active">Perfect for off-ice training</span>
-                                <span class="lang-de">Perfekt für Off-Ice Training</span>
+                                <span class="lang-en">Perfect for off-ice training</span>
+                                <span class="lang-de active">Perfekt für Off-Ice Training</span>
                                 <span class="lang-fr">Parfait pour l'entraînement hors glace</span>
                                 <span class="lang-sv">Perfekt för off-ice träning</span>
                                 <span class="lang-fi">Täydellinen jään ulkopuoliseen harjoitteluun</span>
@@ -1504,8 +1508,8 @@
                         <div class="product-price">CHF 5.00</div>
                         <a href="shop.html" class="btn">
                             <span data-lang-group="product4-btn">
-                                <span class="lang-en active">Go to Shop</span>
-                                <span class="lang-de">Zum Shop</span>
+                                <span class="lang-en">Go to Shop</span>
+                                <span class="lang-de active">Zum Shop</span>
                                 <span class="lang-fr">Aller à la boutique</span>
                                 <span class="lang-sv">Gå till butiken</span>
                                 <span class="lang-fi">Siirry kauppaan</span>
@@ -1523,8 +1527,8 @@
         <div class="container">
             <h2 class="section-title">
                 <span data-lang-group="features-title">
-                    <span class="lang-en active">Why SmartHockey?</span>
-                    <span class="lang-de">Warum SmartHockey?</span>
+                    <span class="lang-en">Why SmartHockey?</span>
+                    <span class="lang-de active">Warum SmartHockey?</span>
                     <span class="lang-fr">Pourquoi SmartHockey?</span>
                     <span class="lang-sv">Varför SmartHockey?</span>
                     <span class="lang-fi">Miksi SmartHockey?</span>
@@ -1533,8 +1537,8 @@
             </h2>
             <p class="section-subtitle">
                 <span data-lang-group="features-subtitle">
-                    <span class="lang-en active">Modern tools for ambitious hockey players and teams</span>
-                    <span class="lang-de">Moderne Tools für ambitionierte Hockeyspieler und Teams</span>
+                    <span class="lang-en">Modern tools for ambitious hockey players and teams</span>
+                    <span class="lang-de active">Moderne Tools für ambitionierte Hockeyspieler und Teams</span>
                     <span class="lang-fr">Outils modernes pour les joueurs et équipes de hockey ambitieux</span>
                     <span class="lang-sv">Moderna verktyg för ambitiösa hockeyspelare och lag</span>
                     <span class="lang-fi">Modernit työkalut kunnianhimoisille jääkiekkoilijoille ja joukkueille</span>
@@ -1547,8 +1551,8 @@
                     <div class="feature-icon">📊</div>
                     <h3>
                         <span data-lang-group="feat1-title">
-                            <span class="lang-en active">Detailed Statistics</span>
-                            <span class="lang-de">Detaillierte Statistiken</span>
+                            <span class="lang-en">Detailed Statistics</span>
+                            <span class="lang-de active">Detaillierte Statistiken</span>
                             <span class="lang-fr">Statistiques Détaillées</span>
                             <span class="lang-sv">Detaljerad Statistik</span>
                             <span class="lang-fi">Yksityiskohtaiset Tilastot</span>
@@ -1557,8 +1561,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat1-desc">
-                            <span class="lang-en active">Track goals, assists, penalties, and more. Keep an overview of all important metrics.</span>
-                            <span class="lang-de">Erfasse Tore, Assists, Strafen und vieles mehr. Behalte den Überblick über alle wichtigen Kennzahlen.</span>
+                            <span class="lang-en">Track goals, assists, penalties, and more. Keep an overview of all important metrics.</span>
+                            <span class="lang-de active">Erfasse Tore, Assists, Strafen und vieles mehr. Behalte den Überblick über alle wichtigen Kennzahlen.</span>
                             <span class="lang-fr">Enregistrez les buts, passes, pénalités et plus encore. Gardez une vue d'ensemble de toutes les métriques importantes.</span>
                             <span class="lang-sv">Spåra mål, assist, straff och mer. Håll översikt över alla viktiga mätvärden.</span>
                             <span class="lang-fi">Seuraa maaleja, syöttöjä, rangaistuksia ja paljon muuta. Pidä katsaus kaikkiin tärkeisiin mittareihin.</span>
@@ -1571,8 +1575,8 @@
                     <div class="feature-icon">📈</div>
                     <h3>
                         <span data-lang-group="feat2-title">
-                            <span class="lang-en active">Performance Analysis</span>
-                            <span class="lang-de">Leistungsanalyse</span>
+                            <span class="lang-en">Performance Analysis</span>
+                            <span class="lang-de active">Leistungsanalyse</span>
                             <span class="lang-fr">Analyse de Performance</span>
                             <span class="lang-sv">Prestationsanalys</span>
                             <span class="lang-fi">Suorituskyvyn Analyysi</span>
@@ -1581,8 +1585,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat2-desc">
-                            <span class="lang-en active">Analyze your development over time and identify strengths and areas for improvement. Visualize shot and goal data on interactive rink maps to understand where scoring opportunities arise during a game.</span>
-                            <span class="lang-de">Analysiere deine Entwicklung über Zeit und identifiziere Stärken und Verbesserungspotenziale. Visualisiere Schuss- und Tordaten auf interaktiven Eisfeldkarten und erkenne, wo Torgelegenheiten im Spiel entstehen.</span>
+                            <span class="lang-en">Analyze your development over time and identify strengths and areas for improvement. Visualize shot and goal data on interactive rink maps to understand where scoring opportunities arise during a game.</span>
+                            <span class="lang-de active">Analysiere deine Entwicklung über Zeit und identifiziere Stärken und Verbesserungspotenziale. Visualisiere Schuss- und Tordaten auf interaktiven Eisfeldkarten und erkenne, wo Torgelegenheiten im Spiel entstehen.</span>
                             <span class="lang-fr">Analysez votre développement au fil du temps et identifiez les forces et les domaines à améliorer. Visualisez les données de tirs et buts sur des plans de patinoire interactifs pour comprendre où se créent les occasions de marquer.</span>
                             <span class="lang-sv">Analysera din utveckling över tid och identifiera styrkor och förbättringsområden. Visualisera skott- och måldata på interaktiva rinkkartor för att förstå var målchanser uppstår under en match.</span>
                             <span class="lang-fi">Analysoi kehitystäsi ajan myötä ja tunnista vahvuudet ja parannuskohteet. Visualisoi laukaus- ja maalitiedot interaktiivisilla kenttäkartoilla ymmärtääksesi, mistä maalipaikat syntyvät pelin aikana.</span>
@@ -1595,8 +1599,8 @@
                     <div class="feature-icon">👥</div>
                     <h3>
                         <span data-lang-group="feat3-title">
-                            <span class="lang-en active">Team Management</span>
-                            <span class="lang-de">Team-Management</span>
+                            <span class="lang-en">Team Management</span>
+                            <span class="lang-de active">Team-Management</span>
                             <span class="lang-fr">Gestion d'Équipe</span>
                             <span class="lang-sv">Laghantering</span>
                             <span class="lang-fi">Joukkueen Hallinta</span>
@@ -1605,8 +1609,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat3-desc">
-                            <span class="lang-en active">Manage your team efficiently and keep track of all players' performance. Create comprehensive season reports and compare player statistics to find the perfect line combinations and rotation strategies.</span>
-                            <span class="lang-de">Verwalte dein Team effizient und behalte die Leistung aller Spieler im Blick. Erstelle umfassende Saisonberichte und vergleiche Spielerstatistiken, um die besten Linien-Kombinationen und Rotationsstrategien zu finden.</span>
+                            <span class="lang-en">Manage your team efficiently and keep track of all players' performance. Create comprehensive season reports and compare player statistics to find the perfect line combinations and rotation strategies.</span>
+                            <span class="lang-de active">Verwalte dein Team effizient und behalte die Leistung aller Spieler im Blick. Erstelle umfassende Saisonberichte und vergleiche Spielerstatistiken, um die besten Linien-Kombinationen und Rotationsstrategien zu finden.</span>
                             <span class="lang-fr">Gérez votre équipe efficacement et gardez un œil sur les performances de tous les joueurs. Créez des rapports de saison complets et comparez les statistiques des joueurs pour trouver les meilleures combinaisons de lignes.</span>
                             <span class="lang-sv">Hantera ditt lag effektivt och håll koll på alla spelares prestanda. Skapa heltäckande säsongsrapporter och jämför spelarstatistik för att hitta de bästa linjekombinationerna och rotationsstrategierna.</span>
                             <span class="lang-fi">Hallinnoi joukkuettasi tehokkaasti ja pidä silmällä kaikkien pelaajien suorituskykyä. Luo kattavia kausiraportteja ja vertaile pelaajatilastoja löytääksesi parhaat linjayhdistelmät ja rotaatiostrategiat.</span>
@@ -1619,8 +1623,8 @@
                     <div class="feature-icon">📱</div>
                     <h3>
                         <span data-lang-group="feat4-title">
-                            <span class="lang-en active">Responsive Design</span>
-                            <span class="lang-de">Responsive Design</span>
+                            <span class="lang-en">Responsive Design</span>
+                            <span class="lang-de active">Responsive Design</span>
                             <span class="lang-fr">Design Responsive</span>
                             <span class="lang-sv">Responsiv Design</span>
                             <span class="lang-fi">Responsiivinen Suunnittelu</span>
@@ -1629,8 +1633,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat4-desc">
-                            <span class="lang-en active">Use our apps on all devices - whether desktop, tablet, or smartphone. No installation required – simply open the app in your browser and start tracking within seconds, from any location at the rink or at home.</span>
-                            <span class="lang-de">Nutze unsere Apps auf allen Geräten - ob Desktop, Tablet oder Smartphone. Keine Installation nötig – öffne die App einfach im Browser und beginne innerhalb von Sekunden mit dem Tracking, egal ob am Eisfeld oder zu Hause.</span>
+                            <span class="lang-en">Use our apps on all devices - whether desktop, tablet, or smartphone. No installation required – simply open the app in your browser and start tracking within seconds, from any location at the rink or at home.</span>
+                            <span class="lang-de active">Nutze unsere Apps auf allen Geräten - ob Desktop, Tablet oder Smartphone. Keine Installation nötig – öffne die App einfach im Browser und beginne innerhalb von Sekunden mit dem Tracking, egal ob am Eisfeld oder zu Hause.</span>
                             <span class="lang-fr">Utilisez nos applications sur tous les appareils - ordinateur, tablette ou smartphone. Aucune installation requise – ouvrez simplement l'application dans votre navigateur et commencez le suivi en quelques secondes, depuis n'importe où.</span>
                             <span class="lang-sv">Använd våra appar på alla enheter - oavsett om det är stationär dator, surfplatta eller smartphone. Ingen installation krävs – öppna bara appen i din webbläsare och börja spåra inom sekunder, var du än befinner dig.</span>
                             <span class="lang-fi">Käytä sovelluksiamme kaikilla laitteilla - olipa kyseessä pöytäkone, tabletti tai älypuhelin. Asennusta ei tarvita – avaa vain sovellus selaimessa ja aloita seuranta sekunneissa missä tahansa, jäähallin tai kodin läheisyydessä.</span>
@@ -1643,8 +1647,8 @@
                     <div class="feature-icon">🎯</div>
                     <h3>
                         <span data-lang-group="feat5-title">
-                            <span class="lang-en active">User-Friendly</span>
-                            <span class="lang-de">Benutzerfreundlich</span>
+                            <span class="lang-en">User-Friendly</span>
+                            <span class="lang-de active">Benutzerfreundlich</span>
                             <span class="lang-fr">Facile à Utiliser</span>
                             <span class="lang-sv">Användarvänlig</span>
                             <span class="lang-fi">Käyttäjäystävällinen</span>
@@ -1653,8 +1657,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat5-desc">
-                            <span class="lang-en active">Intuitive operation allows quick data entry even during the game. Record penalties, power plays, goals, and shifts with just a few taps – so you never miss a critical moment and always have a complete picture of the match.</span>
-                            <span class="lang-de">Intuitive Bedienung ermöglicht schnelle Dateneingabe auch während des Spiels. Erfasse Strafen, Überzahlspiele, Tore und Schichten mit wenigen Klicks – so verpasst du keinen entscheidenden Moment und hast immer ein vollständiges Bild der Partie.</span>
+                            <span class="lang-en">Intuitive operation allows quick data entry even during the game. Record penalties, power plays, goals, and shifts with just a few taps – so you never miss a critical moment and always have a complete picture of the match.</span>
+                            <span class="lang-de active">Intuitive Bedienung ermöglicht schnelle Dateneingabe auch während des Spiels. Erfasse Strafen, Überzahlspiele, Tore und Schichten mit wenigen Klicks – so verpasst du keinen entscheidenden Moment und hast immer ein vollständiges Bild der Partie.</span>
                             <span class="lang-fr">L'utilisation intuitive permet une saisie rapide des données même pendant le jeu. Enregistrez pénalités, power plays, buts et changements en quelques clics – pour ne jamais manquer un moment crucial et toujours avoir une image complète du match.</span>
                             <span class="lang-sv">Intuitiv användning möjliggör snabb datainmatning även under matchen. Registrera utvisningar, powerplays, mål och byten med bara några klick – så att du aldrig missar ett avgörande ögonblick och alltid har en komplett bild av matchen.</span>
                             <span class="lang-fi">Intuitiivinen käyttö mahdollistaa nopean tietojen syötön jopa pelin aikana. Kirjaa rangaistukset, ylivoimatilanteet, maalit ja vaihdot muutamalla napautuksella – niin et koskaan menetä tärkeää hetkeä ja sinulla on aina täydellinen kuva pelistä.</span>
@@ -1667,8 +1671,8 @@
                     <div class="feature-icon">🔒</div>
                     <h3>
                         <span data-lang-group="feat6-title">
-                            <span class="lang-en active">Your Data</span>
-                            <span class="lang-de">Deine Daten</span>
+                            <span class="lang-en">Your Data</span>
+                            <span class="lang-de active">Deine Daten</span>
                             <span class="lang-fr">Vos Données</span>
                             <span class="lang-sv">Dina Data</span>
                             <span class="lang-fi">Sinun Tietosi</span>
@@ -1677,8 +1681,8 @@
                     </h3>
                     <p>
                         <span data-lang-group="feat6-desc">
-                            <span class="lang-en active">All data is stored locally in your browser. You maintain full control.</span>
-                            <span class="lang-de">Alle Daten werden lokal in deinem Browser gespeichert. Du behältst die volle Kontrolle.</span>
+                            <span class="lang-en">All data is stored locally in your browser. You maintain full control.</span>
+                            <span class="lang-de active">Alle Daten werden lokal in deinem Browser gespeichert. Du behältst die volle Kontrolle.</span>
                             <span class="lang-fr">Toutes les données sont stockées localement dans votre navigateur. Vous gardez le contrôle total.</span>
                             <span class="lang-sv">All data lagras lokalt i din webbläsare. Du behåller full kontroll.</span>
                             <span class="lang-fi">Kaikki tiedot tallennetaan paikallisesti selaimeesi. Säilytät täyden hallinnan.</span>
@@ -1695,8 +1699,8 @@
         <div class="container">
             <h2 class="section-title">
                 <span data-lang-group="about-title">
-                    <span class="lang-en active">About SmartHockey Products</span>
-                    <span class="lang-de">Über SmartHockey Products</span>
+                    <span class="lang-en">About SmartHockey Products</span>
+                    <span class="lang-de active">Über SmartHockey Products</span>
                     <span class="lang-fr">À Propos de SmartHockey Products</span>
                     <span class="lang-sv">Om SmartHockey Products</span>
                     <span class="lang-fi">Tietoa SmartHockey Productsista</span>
@@ -1706,8 +1710,8 @@
             <div class="about-content">
                 <p>
                     <span data-lang-group="about-p1">
-                        <span class="lang-en active">SmartHockey Products develops modern, web-based applications for hockey players, teams, coaches, and scouts. Our mission is to give everyone the opportunity to track and analyze their performance professionally.</span>
-                        <span class="lang-de">SmartHockey Products entwickelt moderne, webbasierte Anwendungen für Hockey-Spieler, Teams, Trainer und Scouts. Unsere Mission ist es, jedem die Möglichkeit zu geben, seine Leistung professionell zu verfolgen und zu analysieren.</span>
+                        <span class="lang-en">SmartHockey Products develops modern, web-based applications for hockey players, teams, coaches, and scouts. Our mission is to give everyone the opportunity to track and analyze their performance professionally.</span>
+                        <span class="lang-de active">SmartHockey Products entwickelt moderne, webbasierte Anwendungen für Hockey-Spieler, Teams, Trainer und Scouts. Unsere Mission ist es, jedem die Möglichkeit zu geben, seine Leistung professionell zu verfolgen und zu analysieren.</span>
                         <span class="lang-fr">SmartHockey Products développe des applications web modernes pour les joueurs de hockey, les équipes, les entraîneurs et les scouts. Notre mission est de donner à chacun la possibilité de suivre et d'analyser ses performances de manière professionnelle.</span>
                         <span class="lang-sv">SmartHockey Products utvecklar moderna, webbaserade applikationer för hockeyspelare, lag, tränare och scouts. Vårt uppdrag är att ge alla möjlighet att spåra och analysera sin prestation professionellt.</span>
                         <span class="lang-fi">SmartHockey Products kehittää moderneja, verkkopohjaisia sovelluksia jääkiekkoilijoille, joukkueille, valmentajille ja scouttaajille. Missiomme on antaa kaikille mahdollisuus seurata ja analysoida suorituskykyään ammattimaisesti.</span>
@@ -1716,8 +1720,8 @@
                 </p>
                 <p>
                     <span data-lang-group="about-p2">
-                        <span class="lang-en active">With years of experience in hockey sports and software development, we create tools that really help. Our apps combine ease of use with powerful features and are completely free to use.</span>
-                        <span class="lang-de">Mit jahrelanger Erfahrung im Hockey-Sport und der Software-Entwicklung schaffen wir Tools, die wirklich helfen. Unsere Apps kombinieren einfache Bedienung mit leistungsstarken Funktionen und sind dabei komplett kostenlos nutzbar.</span>
+                        <span class="lang-en">With years of experience in hockey sports and software development, we create tools that really help. Our apps combine ease of use with powerful features and are completely free to use.</span>
+                        <span class="lang-de active">Mit jahrelanger Erfahrung im Hockey-Sport und der Software-Entwicklung schaffen wir Tools, die wirklich helfen. Unsere Apps kombinieren einfache Bedienung mit leistungsstarken Funktionen und sind dabei komplett kostenlos nutzbar.</span>
                         <span class="lang-fr">Avec des années d'expérience dans le sport hockey et le développement logiciel, nous créons des outils qui aident vraiment. Nos applications combinent facilité d'utilisation et fonctionnalités puissantes et sont entièrement gratuites.</span>
                         <span class="lang-sv">Med många års erfarenhet inom hockeysport och mjukvaruutveckling skapar vi verktyg som verkligen hjälper. Våra appar kombinerar enkel användning med kraftfulla funktioner och är helt gratis att använda.</span>
                         <span class="lang-fi">Vuosien kokemuksella jääkiekkourheilusta ja ohjelmistokehityksestä luomme työkaluja, jotka todella auttavat. Sovelluksemme yhdistävät helpon käytön tehokkaiden ominaisuuksien kanssa ja ovat täysin ilmaisia käyttää.</span>
@@ -1726,8 +1730,8 @@
                 </p>
                 <p>
                     <span data-lang-group="about-p3">
-                        <span class="lang-en active">Whether you're a beginner or professional player, whether junior team or pro club - SmartHockey Products offers the right solutions for every need. Start now and take your game to the next level! Together with renowned professional coaches around the world, we develop and produce training products that are used in the NHL, KHL, NL and Extraliga, among others.</span>
-                        <span class="lang-de">Ob du Anfänger oder professioneller Spieler bist, ob Juniorenteam oder Pro-Mannschaft - SmartHockey Products bietet die passenden Lösungen für jeden Bedarf. Starte jetzt und bringe dein Spiel auf das nächste Level! Zusammen mit namhaften Profi-Trainer auf der ganzen Welt entwickeln und produzieren wir Trainings-Produkte, welche unter anderem in der NHL, KHL, NL und Extraliga zum Einsatz kommen.</span>
+                        <span class="lang-en">Whether you're a beginner or professional player, whether junior team or pro club - SmartHockey Products offers the right solutions for every need. Start now and take your game to the next level! Together with renowned professional coaches around the world, we develop and produce training products that are used in the NHL, KHL, NL and Extraliga, among others.</span>
+                        <span class="lang-de active">Ob du Anfänger oder professioneller Spieler bist, ob Juniorenteam oder Pro-Mannschaft - SmartHockey Products bietet die passenden Lösungen für jeden Bedarf. Starte jetzt und bringe dein Spiel auf das nächste Level! Zusammen mit namhaften Profi-Trainer auf der ganzen Welt entwickeln und produzieren wir Trainings-Produkte, welche unter anderem in der NHL, KHL, NL und Extraliga zum Einsatz kommen.</span>
                         <span class="lang-fr">Que vous soyez débutant ou joueur professionnel, équipe junior ou club pro - SmartHockey Products offre les bonnes solutions pour chaque besoin. Commencez maintenant et amenez votre jeu au niveau supérieur! En collaboration avec des entraîneurs professionnels renommés du monde entier, nous développons et produisons des produits d'entraînement utilisés notamment dans la NHL, KHL, NL et Extraliga.</span>
                         <span class="lang-sv">Oavsett om du är nybörjare eller professionell spelare, juniorlag eller proffsklubb - SmartHockey Products erbjuder rätt lösningar för varje behov. Starta nu och ta ditt spel till nästa nivå! Tillsammans med kända professionella tränare runt om i världen utvecklar och producerar vi träningsprodukter som bland annat används i NHL, KHL, NL och Extraliga.</span>
                         <span class="lang-fi">Oletpa aloittelija tai ammattilainen, juniorijoukkue tai ammattiseura - SmartHockey Products tarjoaa oikeat ratkaisut jokaiseen tarpeeseen. Aloita nyt ja vie pelisi seuraavalle tasolle! Yhdessä tunnustettujen ammattivalmentajien kanssa ympäri maailmaa kehitämme ja tuotamme harjoitustuotteita, joita käytetään muun muassa NHL:ssä, KHL:ssä, NL:ssä ja Ekstraligassa.</span>
@@ -1738,97 +1742,59 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Blog Teaser -->
+    <section style="padding:60px 0;background:rgba(15,15,30,0.80);">
+        <div class="container">
+            <h2 class="section-title">Aus unserem Blog</h2>
+            <p class="section-subtitle">Fundiertes Wissen für Trainer, Spieler und Eishockey-Fans</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;">
+                <div style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,52,96,0.85) 100%);border-radius:12px;padding:28px;border:1px solid #2a2a3e;display:flex;flex-direction:column;">
+                    <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:12px;">Faceoff gewinnen: Technik, Taktik und Trainingsdrills</h3>
+                    <p style="color:#b0b0b0;font-size:0.95rem;flex:1;margin-bottom:16px;">Körperhaltung, Griffvarianten, Timing und Set Plays: Alles über das Faceoff-Spiel im Eishockey mit 5 konkreten Trainingsdrills.</p>
+                    <a href="blog-faceoffs.html" style="color:#2563eb;text-decoration:none;font-weight:bold;font-size:0.95rem;">Weiterlesen →</a>
+                </div>
+                <div style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,52,96,0.85) 100%);border-radius:12px;padding:28px;border:1px solid #2a2a3e;display:flex;flex-direction:column;">
+                    <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:12px;">Powerplay-Strategien im Eishockey</h3>
+                    <p style="color:#b0b0b0;font-size:0.95rem;flex:1;margin-bottom:16px;">Überlegenheitsspiel, Aufstellungen, Laufwege und die entscheidenden Erfolgsmuster für mehr Powerplay-Tore.</p>
+                    <a href="blog-powerplay-strategien.html" style="color:#2563eb;text-decoration:none;font-weight:bold;font-size:0.95rem;">Weiterlesen →</a>
+                </div>
+                <div style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,52,96,0.85) 100%);border-radius:12px;padding:28px;border:1px solid #2a2a3e;display:flex;flex-direction:column;">
+                    <h3 style="color:#ffffff;font-size:1.2rem;margin-bottom:12px;">Spielanalyse mit modernen Statistiken</h3>
+                    <p style="color:#b0b0b0;font-size:0.95rem;flex:1;margin-bottom:16px;">Wie Amateurtrainer mit einfachen Tools professionelle Spielanalyse betreiben können – Schritt für Schritt erklärt.</p>
+                    <a href="blog-spielanalyse.html" style="color:#2563eb;text-decoration:none;font-weight:bold;font-size:0.95rem;">Weiterlesen →</a>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:30px;">
+                <a href="coaching-tipps.html" style="display:inline-block;padding:12px 32px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none;font-weight:bold;">Alle Blog-Artikel →</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>
-                <span data-lang-group="footer-copyright">
-                    <span class="lang-en active">&copy; 2025 SmartHockey Products. All rights reserved.</span>
-                    <span class="lang-de">&copy; 2025 SmartHockey Products. Alle Rechte vorbehalten.</span>
-                    <span class="lang-fr">&copy; 2025 SmartHockey Products. Tous droits réservés.</span>
-                    <span class="lang-sv">&copy; 2025 SmartHockey Products. Alla rättigheter förbehållna.</span>
-                    <span class="lang-fi">&copy; 2025 SmartHockey Products. Kaikki oikeudet pidätetään.</span>
-                    <span class="lang-ru">&copy; 2025 SmartHockey Products. Все права защищены.</span>
-                </span>
+            <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
+                <a href="index.html">Home</a>
+                <a href="app-comparison.html">Apps</a>
+                <a href="coaching-tipps.html">Blog</a>
+                <a href="shop.html">Shop</a>
+                <a href="hilfe.html">Hilfe</a>
+                <a href="faq.html">FAQ</a>
+                <a href="hockey-statistik-guide.html">Statistik-Guide</a>
+                <a href="about.html">Über uns</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="terms.html">AGB</a>
+            </nav>
+            <p>&copy; 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · 
+               <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
             </p>
-            <p style="margin-top: 10px;">
-                <span data-lang-group="footer-tagline">
-                    <span class="lang-en active">Developed with ❤️ for the Hockey Community</span>
-                    <span class="lang-de">Entwickelt mit ❤️ für die Hockey-Community</span>
-                    <span class="lang-fr">Développé avec ❤️ pour la Communauté Hockey</span>
-                    <span class="lang-sv">Utvecklad med ❤️ för Hockeygemenskapen</span>
-                    <span class="lang-fi">Kehitetty ❤️:lla Jääkiekkoyhteisölle</span>
-                    <span class="lang-ru">Разработано с ❤️ для Хоккейного Сообщества</span>
-                </span>
-            </p>
-            <div style="margin-top: 20px; text-align: center;">
-                <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer" class="instagram-link" style="display: inline-flex; align-items: center; gap: 10px; color: #a0a0a0; text-decoration: none; transition: color 0.3s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    <span data-lang-group="footer-instagram">
-                        <span class="lang-en active">Follow us on Instagram</span>
-                        <span class="lang-de">Folge uns auf Instagram</span>
-                        <span class="lang-fr">Suivez-nous sur Instagram</span>
-                        <span class="lang-sv">Följ oss på Instagram</span>
-                        <span class="lang-fi">Seuraa meitä Instagramissa</span>
-                        <span class="lang-ru">Подписывайтесь в Instagram</span>
-                    </span>
-                </a>
-            </div>
-            <div style="margin-top: 15px; text-align: center;">
-                <a href="https://www.instagram.com/smarthockeyproducts/" target="_blank" rel="noopener noreferrer">
-                    <img src="instagram-qr.png" alt="QR Code - Instagram SmartHockey Products" style="width: 150px; height: 150px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; background: white; padding: 5px;">
-                </a>
-                <p style="margin-top: 8px; font-size: 0.85rem; color: #808080;">
-                    <span data-lang-group="footer-qr">
-                        <span class="lang-en active">Scan to follow us</span>
-                        <span class="lang-de">Scannen um uns zu folgen</span>
-                        <span class="lang-fr">Scannez pour nous suivre</span>
-                        <span class="lang-sv">Skanna för att följa oss</span>
-                        <span class="lang-fi">Skannaa seurataksesi meitä</span>
-                        <span class="lang-ru">Сканируйте, чтобы подписаться</span>
-                    </span>
-                </p>
-            </div>
-            <div style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
-                <span data-lang-group="footer-legal">
-                    <span class="lang-en active"><a href="impressum.html">Imprint</a> &nbsp;·&nbsp; <a href="datenschutz.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                    <span class="lang-de"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutz</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                    <span class="lang-fr"><a href="impressum.html">Mentions légales</a> &nbsp;·&nbsp; <a href="datenschutz.html">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                    <span class="lang-sv"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Integritetspolicy</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                    <span class="lang-fi"><a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Tietosuojakäytäntö</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                    <span class="lang-ru"><a href="impressum.html">Выходные данные</a> &nbsp;·&nbsp; <a href="datenschutz.html">Политика конфиденциальности</a> &nbsp;·&nbsp; <a href="mailto:support@smarthockeyproducts.com">support@smarthockeyproducts.com</a></span>
-                </span>
-            </div>
-            <div style="margin-top: 12px; text-align: center; font-size: 0.9rem;">
-                <span data-lang-group="footer-extra-links">
-                    <span class="lang-en active"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">About Us</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Privacy Policy</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                    <span class="lang-de"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Über uns</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Nutzungsbedingungen</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Datenschutz</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                    <span class="lang-fr"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">À propos</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Conditions d'utilisation</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Politique de confidentialité</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                    <span class="lang-sv"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Om oss</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Användarvillkor</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Integritetspolicy</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                    <span class="lang-fi"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Tietoja meistä</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Käyttöehdot</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Tietosuojakäytäntö</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                    <span class="lang-ru"><a href="about.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">О нас</a> &nbsp;·&nbsp; <a href="terms.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Условия использования</a> &nbsp;·&nbsp; <a href="privacy.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Политика конфиденциальности</a> &nbsp;·&nbsp; <a href="coaching-tipps.html" style="color:#a0a0a0; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#a0a0a0'">Coaching Blog</a></span>
-                </span>
-            </div>
-            <div style="margin-top: 10px; text-align: center; font-size: 0.78rem; color: #606060; line-height: 2.2;">
-                <a href="coaching-tipps.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Blog</a> &nbsp;&middot;&nbsp;
-                <a href="blog-schuss-statistiken.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Schuss-Statistiken</a> &nbsp;&middot;&nbsp;
-                <a href="blog-torwart-analyse.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Torwart-Analyse</a> &nbsp;&middot;&nbsp;
-                <a href="blog-powerplay-strategien.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Powerplay</a> &nbsp;&middot;&nbsp;
-                <a href="blog-penalty-killing.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Penalty Killing</a> &nbsp;&middot;&nbsp;
-                <a href="blog-faceoffs.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Faceoffs</a> &nbsp;&middot;&nbsp;
-                <a href="blog-zonen-eintritt.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Zonen-Eintritt</a> &nbsp;&middot;&nbsp;
-                <a href="blog-trainingsplan-8-wochen.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Trainingsplan</a> &nbsp;&middot;&nbsp;
-                <a href="blog-kindereishockey.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Kindereishockey</a> &nbsp;&middot;&nbsp;
-                <a href="blog-spielanalyse.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Spielanalyse</a> &nbsp;&middot;&nbsp;
-                <a href="blog-mentaltraining.html" style="color:#6b7280;text-decoration:none;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#6b7280'">Mentaltraining</a>
-            </div>
         </div>
     </footer>
 
     <script>
         // Language switching functionality
         (function() {
-            const defaultLang = 'en';
+            const defaultLang = 'de';
             const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
             const langNames = {
                 en: 'English',
@@ -2009,5 +1975,34 @@
             });
         });
     </script>
+<!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+    <p style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+      🍪 Wir verwenden Cookies, um Google AdSense zu ermöglichen und Ihr Nutzererlebnis zu verbessern. Mehr Informationen finden Sie in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button id="cookie-accept" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">Akzeptieren</button>
+      <button id="cookie-decline" style="background:transparent;color:#e0e0e0;border:1px solid #4a4a5e;padding:10px 24px;border-radius:6px;cursor:pointer;">Ablehnen</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('cookie-consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem('cookie-consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(){
+      localStorage.setItem('cookie-consent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    });
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
