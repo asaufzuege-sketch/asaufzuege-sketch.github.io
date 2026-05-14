@@ -35,7 +35,7 @@
             background-color: #0a1628;
             color: #e0e0e0;
             line-height: 1.7;
-            padding: 20px;
+            padding: 0;
         }
         .container {
             max-width: 860px;
@@ -67,22 +67,243 @@
         .article-footer a:hover { color: #2563eb; }
         .lang-content { display: none; }
         .lang-content.active { display: block; }
-        .lang-switcher-bar { display: flex; justify-content: flex-end; margin-bottom: 15px; gap: 8px; }
-        .lang-switcher-bar button { background: transparent; border: 1px solid #2563eb; color: #e0e0e0; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
-        .lang-switcher-bar button.active { background: #2563eb; color: #fff; font-weight: bold; }
+    
+        .site-header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .logo-link { text-decoration: none; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-img {
+            height: 42px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .site-nav {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .site-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2563eb;
+        }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+        .lang-dropdown-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
+        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
+        .lang-option-flag { font-size: 1.3rem; }
+        .lang-option-name { font-size: 0.95rem; }
+        [data-lang-group] > .lang-de,
+        [data-lang-group] > .lang-en { display: none !important; }
+        [data-lang-group] > .lang-de.active,
+        [data-lang-group] > .lang-en.active { display: inline !important; }
+        .page-shell { padding: 20px; }
+        .page-links {
+            max-width: 860px;
+            margin: 0 auto 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .site-footer {
+            background: linear-gradient(135deg, rgba(22,33,62,0.85) 0%, rgba(15,15,30,0.85) 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .footer-nav a,
+        .site-footer p,
+        .site-footer a {
+            color: #a0a0a0;
+            text-decoration: none;
+        }
+        .footer-nav a:hover,
+        .site-footer a:hover {
+            color: #2563eb;
+        }
+        .site-footer p { font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            .header-container {
+                justify-content: center;
+                text-align: center;
+            }
+            .site-nav {
+                justify-content: center;
+                gap: 14px;
+            }
+            .page-shell { padding: 16px; }
+            .container { padding: 28px; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 22px; }
+            .footer-nav { gap: 12px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
-        &nbsp;&nbsp;
-        <a href="coaching-tipps.html" class="back-link">&larr; Zum Blog</a>
-        <div class="lang-switcher-bar">
-            <button class="lang-btn active" data-lang="de">🇩🇪 DE</button>
-            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                    <span>SmartHockey Products</span>
+                </div>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-de active">🏠 Home</span>
+                        <span class="lang-en">🏠 Home</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-de active">📱 Apps</span>
+                        <span class="lang-en">📱 Apps</span>
+                    </span>
+                </a>
+                <a href="coaching-tipps.html" class="active">
+                    <span data-lang-group="nav-blog">
+                        <span class="lang-de active">📝 Blog</span>
+                        <span class="lang-en">📝 Blog</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-de active">🛒 Shop</span>
+                        <span class="lang-en">🛒 Shop</span>
+                    </span>
+                </a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn" type="button" aria-label="Sprache wählen / Choose language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">Deutsch</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                </div>
+            </div>
         </div>
-
-        <div class="lang-content lang-de active">
+    </header>
+    <main class="page-shell">
+        <div class="page-links">
+            <a href="index.html" class="back-link">
+                <span data-lang-group="back-home">
+                    <span class="lang-de active">&larr; Zurück zur Startseite</span>
+                    <span class="lang-en">&larr; Back to home</span>
+                </span>
+            </a>
+            <a href="coaching-tipps.html" class="back-link">
+                <span data-lang-group="back-blog">
+                    <span class="lang-de active">&larr; Zum Blog</span>
+                    <span class="lang-en">&larr; Back to blog</span>
+                </span>
+            </a>
+        </div>
+        <div class="container">
+<div class="lang-content lang-de active">
         <h1>Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</h1>
 
         <p>Zwei Spieler mit gleicher körperlicher Fitness und gleicher Technik – der eine liefert unter Druck konstant ab, der andere bricht ein. Das ist keine Frage des Talents, sondern der mentalen Vorbereitung. Trotzdem wird Mentaltraining im Eishockey oft als „weiches" Thema abgetan. Dieser Artikel zeigt konkrete, praxiserprobte Techniken, die sofort anwendbar sind – ohne Sportwissenschaftsstudium und ohne Sportpsychologen.</p>
@@ -167,7 +388,7 @@
         </ul>
         </div>
 
-        <div class="lang-content lang-en">
+<div class="lang-content lang-en">
         <h1>Mental Training in Hockey: Routines, Visualization, and Pre-Game Preparation</h1>
 
         <p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
@@ -252,99 +473,146 @@
         </ul>
         </div>
 
-        <div class="weiterlesen">
-            <h3>Weiterlesen</h3>
-            <ul>
-                <li><a href="blog-trainingsplan-8-wochen.html">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Saisonvorbereitung</a></li>
-                <li><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a></li>
-                <li><a href="blog-kindereishockey.html">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</a></li>
-            </ul>
-        </div>
+            <div class="weiterlesen">
+                <h3><span data-lang-group="read-more-heading"><span class="lang-de active">Weiterlesen</span><span class="lang-en">Read more</span></span></h3>
+                <ul>
+                <li><a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="readmore-1"><span class="lang-de active">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Saisonvorbereitung</span><span class="lang-en">Hockey Training Plan: 8-Week Preseason Periodization</span></span></a></li>
+                <li><a href="blog-spielanalyse.html"><span data-lang-group="readmore-2"><span class="lang-de active">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</span><span class="lang-en">Game Analysis for Amateur Coaches: A Step-by-Step Guide</span></span></a></li>
+                <li><a href="blog-kindereishockey.html"><span data-lang-group="readmore-3"><span class="lang-de active">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</span><span class="lang-en">Youth Hockey U7–U13: Age-Appropriate Training Based on LTAD</span></span></a></li>
+                </ul>
+            </div>
 
-        <div class="article-footer">
-            <strong style="color:#a0a0a0;">Blog-Artikel:</strong>
-            <a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
-            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
-            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
-            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
-            <a href="blog-faceoffs.html">Faceoffs</a> ·
-            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
-            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
-            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
-            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
-            <a href="blog-mentaltraining.html">Mentaltraining</a>
-            <br>
-            <a href="coaching-tipps.html">Blog Übersicht</a> ·
-            <a href="impressum.html">Impressum</a> ·
-            <a href="datenschutz.html">Datenschutz</a>
+            <div class="article-footer">
+                <strong style="color:#a0a0a0;"><span data-lang-group="article-footer-label"><span class="lang-de active">Blog-Artikel:</span><span class="lang-en">Blog articles:</span></span></strong>
+            <a href="blog-schuss-statistiken.html"><span data-lang-group="article-link-1"><span class="lang-de active">Schuss-Statistiken</span><span class="lang-en">Shot Statistics</span></span></a> ·
+            <a href="blog-torwart-analyse.html"><span data-lang-group="article-link-2"><span class="lang-de active">Torwart-Analyse</span><span class="lang-en">Goalie Analysis</span></span></a> ·
+            <a href="blog-powerplay-strategien.html"><span data-lang-group="article-link-3"><span class="lang-de active">Powerplay</span><span class="lang-en">Power Play</span></span></a> ·
+            <a href="blog-penalty-killing.html"><span data-lang-group="article-link-4"><span class="lang-de active">Penalty Killing</span><span class="lang-en">Penalty Kill</span></span></a> ·
+            <a href="blog-faceoffs.html"><span data-lang-group="article-link-5"><span class="lang-de active">Faceoffs</span><span class="lang-en">Faceoffs</span></span></a> ·
+            <a href="blog-zonen-eintritt.html"><span data-lang-group="article-link-6"><span class="lang-de active">Zonen-Eintritt</span><span class="lang-en">Zone Entries</span></span></a> ·
+            <a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="article-link-7"><span class="lang-de active">Trainingsplan</span><span class="lang-en">Training Plan</span></span></a> ·
+            <a href="blog-kindereishockey.html"><span data-lang-group="article-link-8"><span class="lang-de active">Kindereishockey</span><span class="lang-en">Youth Hockey</span></span></a> ·
+            <a href="blog-spielanalyse.html"><span data-lang-group="article-link-9"><span class="lang-de active">Spielanalyse</span><span class="lang-en">Game Analysis</span></span></a> ·
+            <a href="blog-mentaltraining.html"><span data-lang-group="article-link-10"><span class="lang-de active">Mentaltraining</span><span class="lang-en">Mental Training</span></span></a>
+                <br>
+                <a href="coaching-tipps.html"><span data-lang-group="article-overview-link"><span class="lang-de active">Blog Übersicht</span><span class="lang-en">Blog overview</span></span></a> ·
+                <a href="impressum.html"><span data-lang-group="article-imprint-link"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span></span></a> ·
+                <a href="datenschutz.html"><span data-lang-group="article-privacy-link"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span></span></a>
+            </div>
         </div>
-    </div>
-<script>
-(function(){
-    var defaultLang = 'de';
-    var supportedLangs = ['en', 'de'];
-    function applyLang(lang) {
-        if (!supportedLangs.includes(lang)) lang = defaultLang;
-        document.querySelectorAll('.lang-content').forEach(function(el) { el.classList.remove('active'); });
-        var active = document.querySelector('.lang-content.lang-' + lang);
-        if (active) active.classList.add('active');
-        document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-        });
-        document.documentElement.lang = lang;
-        try { localStorage.setItem('smarthockey-lang', lang); } catch(e){}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem('smarthockey-lang'); } catch(e){}
-    applyLang(saved && supportedLangs.includes(saved) ? saved : defaultLang);
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() { applyLang(this.getAttribute('data-lang')); });
-    });
-})();
-</script>
-<footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
-    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
-            <a href="index.html" style="color:#a0a0a0;text-decoration:none;">Home</a>
-            <a href="app-comparison.html" style="color:#a0a0a0;text-decoration:none;">Apps</a>
-            <a href="coaching-tipps.html" style="color:#a0a0a0;text-decoration:none;">Blog</a>
-            <a href="shop.html" style="color:#a0a0a0;text-decoration:none;">Shop</a>
-            <a href="hilfe.html" style="color:#a0a0a0;text-decoration:none;">Hilfe</a>
-            <a href="faq.html" style="color:#a0a0a0;text-decoration:none;">FAQ</a>
-            <a href="hockey-statistik-guide.html" style="color:#a0a0a0;text-decoration:none;">Statistik-Guide</a>
-            <a href="about.html" style="color:#a0a0a0;text-decoration:none;">Über uns</a>
-            <a href="impressum.html" style="color:#a0a0a0;text-decoration:none;">Impressum</a>
-            <a href="datenschutz.html" style="color:#a0a0a0;text-decoration:none;">Datenschutz</a>
-            <a href="terms.html" style="color:#a0a0a0;text-decoration:none;">AGB</a>
-        </nav>
-        <p style="color:#808080;font-size:0.95rem;">&copy; 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · 
-           <a href="mailto:smarthockeyproducts@gmail.com" style="color:#2563eb;">smarthockeyproducts@gmail.com</a>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span></span></a>
+                <a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span></span></a>
+                <a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span></span></a>
+                <a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span></span></a>
+                <a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span></span></a>
+                <a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span></span></a>
+                <a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span></span></a>
+                <a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span></span></a>
+                <a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span></span></a>
+                <a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span></span></a>
+                <a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span></span></a>
+            </nav>
+            <p>&copy; 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+        </div>
+    </footer>
+    <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
+      <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+        <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+          <span data-lang-group="cookie-text">
+            <span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
+            <span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
+          </span>
         </p>
+        <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
+            <span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span></span>
+          </button>
+        </div>
+      </div>
     </div>
-</footer>
-<!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
-  <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
-    <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-      🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
-    </p>
-    <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  try {
-    window.acceptCookies = function() {
-      localStorage.setItem('cookie-consent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-    if (!localStorage.getItem('cookie-consent')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  } catch(e) {}
-})();
-</script>
+    <script>
+        (function() {
+            const defaultLang = 'de';
+            const supportedLangs = ['en', 'de'];
+            const langNames = { en: 'English', de: 'Deutsch' };
+
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                return saved && supportedLangs.includes(saved) ? saved : defaultLang;
+            }
+
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+
+                document.querySelectorAll('.lang-content').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
+                    el.classList.add('active');
+                });
+
+                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
+                    group.querySelectorAll('.lang-de, .lang-en').forEach(function(node) {
+                        node.classList.remove('active');
+                    });
+                    const activeNode = group.querySelector('.lang-' + lang);
+                    if (activeNode) activeNode.classList.add('active');
+                });
+
+                const currentName = document.querySelector('.lang-current-name');
+                if (currentName) currentName.textContent = langNames[lang];
+
+                document.querySelectorAll('.lang-option').forEach(function(option) {
+                    option.classList.toggle('active', option.getAttribute('data-lang') === lang);
+                });
+
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+
+            const switcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (switcher && dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    switcher.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!switcher.contains(event.target)) {
+                        switcher.classList.remove('active');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.lang-option').forEach(function(option) {
+                option.addEventListener('click', function() {
+                    switchLanguage(this.getAttribute('data-lang'));
+                    if (switcher) switcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+    <script>
+    (function(){
+      try {
+        window.acceptCookies = function() {
+          localStorage.setItem('cookie-consent', 'accepted');
+          document.getElementById('cookie-banner').style.display = 'none';
+        };
+        if (!localStorage.getItem('cookie-consent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+      } catch(e) {}
+    })();
+    </script>
 </body>
 </html>
