@@ -36,7 +36,7 @@
             background-color: #0a1628;
             color: #e0e0e0;
             line-height: 1.7;
-            padding: 20px;
+            padding: 0;
         }
         .container {
             max-width: 860px;
@@ -53,11 +53,7 @@
         p { margin-bottom: 18px; font-size: 1.05rem; color: #c0c0c0; }
         .back-link { display: inline-block; margin-bottom: 10px; color: #2563eb; text-decoration: none; font-weight: bold; font-size: 0.95rem; }
         .back-link:hover { text-decoration: underline; }
-
-        /* Featured content section */
         .featured-section { margin-bottom: 10px; }
-
-        /* Article grid */
         .article-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -94,132 +90,435 @@
             margin-bottom: 0;
             line-height: 1.5;
         }
-
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        .site-header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .logo-link { text-decoration: none; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-img {
+            height: 42px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .site-nav {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .site-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2563eb;
+        }
+        .language-switcher { position: relative; display: inline-block; }
+        .lang-dropdown-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+        .lang-dropdown-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+        .lang-dropdown-btn svg { width: 18px; height: 18px; }
+        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
+        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 8px;
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
+            border: 2px solid #2a2a3e;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            min-width: 180px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .language-switcher.active .lang-dropdown-menu { display: block; }
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: none;
+            background: transparent;
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+        }
+        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
+        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
+        .lang-option-flag { font-size: 1.3rem; }
+        .lang-option-name { font-size: 0.95rem; }
+        [data-lang-group] > .lang-de,
+        [data-lang-group] > .lang-en { display: none !important; }
+        [data-lang-group] > .lang-de.active,
+        [data-lang-group] > .lang-en.active { display: inline !important; }
+        .page-shell { padding: 20px; }
+        .page-links {
+            max-width: 860px;
+            margin: 0 auto 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .site-footer {
+            background: linear-gradient(135deg, rgba(22,33,62,0.85) 0%, rgba(15,15,30,0.85) 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid #2a2a3e;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .footer-nav a,
+        .site-footer p,
+        .site-footer a {
+            color: #a0a0a0;
+            text-decoration: none;
+        }
+        .footer-nav a:hover,
+        .site-footer a:hover {
+            color: #2563eb;
+        }
+        .site-footer p { font-size: 0.95rem; }
+        @media (max-width: 768px) {
+            .header-container {
+                justify-content: center;
+                text-align: center;
+            }
+            .site-nav {
+                justify-content: center;
+                gap: 14px;
+            }
+            .page-shell { padding: 16px; }
+            .container { padding: 28px; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 22px; }
+            .footer-nav { gap: 12px; }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
-
-        <h1>SmartHockey Blog</h1>
-        <p class="subtitle">Eishockey Coaching, Taktik &amp; Training – fundierte Artikel für Trainer, Analysten und Spieler</p>
-
-        <!-- Featured Content (preserved original sections) -->
-        <div class="featured-section">
-        <h2>Die Bedeutung von Schuss-Statistiken im modernen Eishockey</h2>
-        <p>Im modernen Eishockey reicht es längst nicht mehr aus, nur die Anzahl der Schüsse aufs Tor zu zählen. Trainer und Analysten müssen genau verstehen, von wo aus die Schüsse abgegeben werden. Die sogenannten „High-Danger Scoring Areas", also die Bereiche direkt vor dem Tor (der Slot) und im unteren Bullykreis, sind entscheidend für den Torerfolg. Ein Team, das 20 Schüsse aus dem Slot abgibt, hat eine deutlich höhere Gewinnwahrscheinlichkeit als ein Team mit 40 Schüssen von der blauen Linie.</p>
-        <p>Durch die systematische Erfassung der Schusspositionen können Trainer genau analysieren, ob ihr Team es schafft, in die gefährlichen Zonen vorzudringen. Genauso wichtig ist die defensive Auswertung: Lässt die eigene Abwehr zu viele Schüsse aus dem Slot zu? Durch Heatmaps und detaillierte Schussgrafiken wird sofort sichtbar, wo auf dem Eis die defensive Struktur Lücken aufweist. Dies ermöglicht es dem Trainerteam, im Training gezielt an der Positionierung in der eigenen Zone zu arbeiten.</p>
-        <p>Ein weiterer wichtiger Aspekt ist die Analyse von Rebounds (Abprallern). Schüsse, die absichtlich auf die Schoner des Torwarts platziert werden (sogenannte „Pads-Schüsse"), produzieren oft unkontrollierte Rebounds. Teams, die diese Rebounds systematisch erarbeiten und verwerten, steigern ihre offensiven Erfolgsaussichten massiv.</p>
-
-        <h2>Torwart-Analysen: Mehr als nur die Fangquote</h2>
-        <p>Die Save Percentage (Fangquote) ist die wohl bekannteste Statistik für Eishockey-Torhüter. Doch sie erzählt nur die halbe Wahrheit. Ein Torwart kann eine herausragende Fangquote haben, weil er viele harmlose Schüsse hält, aber trotzdem in entscheidenden Momenten Schwächen zeigen. Eine professionelle Goalie-Analyse geht daher viel tiefer und betrachtet die genaue Platzierung der Schüsse auf das Tornetz.</p>
-        <p>Wo hat der Torwart seine Stärken und Schwächen? Gehen überdurchschnittlich viele Gegentore auf der Stockhand-Seite (Blocker) rein? Hat der Goalie Probleme mit flachen Schüssen durch das „Five-Hole" (durch die Beine) oder fallen die Tore eher hoch auf der Fanghand-Seite? Wenn ein Trainer diese detaillierten Daten sammeln kann, lässt sich das Torwart-Training viel individueller und effektiver gestalten.</p>
-        <p>Zudem ist die Auswertung der Goalie-Performance bei verschiedenen Spielsituationen (5-gegen-5, Unterzahl, Powerplay) enorm wichtig. Durch eine visuelle Torwart-Heatmap können Tendenzen grafisch aufbereitet und sowohl dem Spieler als auch dem Trainerstab leicht verständlich präsentiert werden.</p>
-
-        <h2>Spiel-Momentum und Shift-Swings verstehen</h2>
-        <p>Eishockey ist ein extrem schnelles und dynamisches Spiel, bei dem sich das Momentum (der Schwung oder die Spielkontrolle) innerhalb von Sekundenbruchteilen komplett drehen kann. Ein starker Wechsel (Shift) der vierten Reihe, ein harter Check oder eine große Parade des Torwarts können ein ganzes Spiel kippen lassen. Für Trainer ist es entscheidend, dieses Momentum nicht nur intuitiv zu spüren, sondern objektiv messen und analysieren zu können.</p>
-        <p>Der Momentum-Graph ist ein mächtiges Werkzeug, um den Spielverlauf zu visualisieren. Er zeigt an, in welchen Spielminuten ein Team die absolute Kontrolle hatte (Puckbesitz, Schüsse, gewonnene Zweikämpfe) und wann der Gegner dominant war. Durch die Verknüpfung dieser Daten mit den eingesetzten Reihen können Trainer erkennen, welche Spieler in bestimmten Spielphasen besonders effektiv waren.</p>
-        <p>Darüber hinaus hilft die Momentum-Analyse bei der In-Game-Entscheidungsfindung. Wenn der Trainer sieht, dass das Momentum stetig abfällt und der Gegner sich festsetzt, ist das ein starker Indikator dafür, ein Timeout zu nehmen oder die Taktik umzustellen. Nach dem Spiel dient die Kurve als hervorragende Grundlage für Video-Sitzungen mit der Mannschaft.</p>
-        </div>
-
-        <!-- All Articles Section -->
-        <h2>Alle Artikel</h2>
-        <p style="color:#a0a0a0; font-size:0.95rem; margin-bottom:8px;">Vertiefende Leitfäden zu Coaching, Taktik, Analyse und Training:</p>
-        <div class="article-grid">
-            <div class="article-card">
-                <a href="blog-schuss-statistiken.html">Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</a>
-                <p>xG, Shot Maps, High-Danger-Areas, Corsi/Fenwick – mit konkreten Zahlen und Trainingsimplikationen.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-torwart-analyse.html">Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</a>
-                <p>GSAx, HDSV%, Rebound Control, Lateral Movement und weitere Metriken für eine präzise Goalie-Bewertung.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-powerplay-strategien.html">Powerplay im Eishockey: Aufstellungen, Laufwege und Erfolgsmuster</a>
-                <p>1-3-1, Umbrella, Overload, Bumper-Position – Taktik und Drills für effektive Überzahl-Situationen.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-penalty-killing.html">Penalty Killing: Defensive Systeme im Vergleich</a>
-                <p>Box, Diamond, Wedge+1 – wann welches System greift, Stick Lanes, Clearing-Optionen und PK-Drills.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-faceoffs.html">Faceoff gewinnen: Technik, Taktik und Trainingsdrills</a>
-                <p>Griffvarianten, Timing, Tie-Up-Techniken und fünf konkrete Set-Play-Drills für alle Bully-Zonen.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-zonen-eintritt.html">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</a>
-                <p>Controlled Entries führen zu ~50 % mehr Chancen. Klare Entscheidungsregeln für Spieler und Trainer.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-trainingsplan-8-wochen.html">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Vorbereitung</a>
-                <p>Off-Ice/On-Ice-Mix, Belastungssteuerung und konkrete Wochenpläne für die Saisonvorbereitung.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-kindereishockey.html">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</a>
-                <p>Cross-Ice, Spielformen statt Drilltraining – warum Spaß die Grundlage für späteren Erfolg ist.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a>
-                <p>Video-Setup, Notationsbögen, kostenlose Tools – so gelingt Spielanalyse auch ohne Profi-Budget.</p>
-            </div>
-            <div class="article-card">
-                <a href="blog-mentaltraining.html">Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</a>
-                <p>Pre-Game-Routinen, Box Breathing, Fehler-Reset und Goalie-spezifische Konzentrationstechniken.</p>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo">
+                    <img src="logo.png" alt="SmartHockey Products" class="logo-img">
+                    <span>SmartHockey Products</span>
+                </div>
+            </a>
+            <nav class="site-nav">
+                <a href="index.html">
+                    <span data-lang-group="nav-home">
+                        <span class="lang-de active">🏠 Home</span>
+                        <span class="lang-en">🏠 Home</span>
+                    </span>
+                </a>
+                <a href="app-comparison.html">
+                    <span data-lang-group="nav-apps">
+                        <span class="lang-de active">📱 Apps</span>
+                        <span class="lang-en">📱 Apps</span>
+                    </span>
+                </a>
+                <a href="coaching-tipps.html" class="active">
+                    <span data-lang-group="nav-blog">
+                        <span class="lang-de active">📝 Blog</span>
+                        <span class="lang-en">📝 Blog</span>
+                    </span>
+                </a>
+                <a href="shop.html">
+                    <span data-lang-group="nav-shop">
+                        <span class="lang-de active">🛒 Shop</span>
+                        <span class="lang-en">🛒 Shop</span>
+                    </span>
+                </a>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-dropdown-btn" type="button" aria-label="Sprache wählen / Choose language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-current-name">Deutsch</span>
+                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    <button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
+                    <button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
+                </div>
             </div>
         </div>
-
-        <div class="article-footer">
-            <a href="impressum.html">Impressum</a> ·
-            <a href="datenschutz.html">Datenschutz</a> ·
-            <a href="index.html">Startseite</a>
+    </header>
+    <main class="page-shell">
+        <div class="page-links">
+            <a href="index.html" class="back-link">
+                <span data-lang-group="back-home-overview">
+                    <span class="lang-de active">&larr; Zurück zur Startseite</span>
+                    <span class="lang-en">&larr; Back to home</span>
+                </span>
+            </a>
         </div>
-    </div>
-<footer style="background:linear-gradient(135deg,rgba(22,33,62,0.85) 0%,rgba(15,15,30,0.85) 100%);padding:40px 0;text-align:center;border-top:2px solid #2a2a3e;margin-top:0;">
-    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
-            <a href="index.html" style="color:#a0a0a0;text-decoration:none;">Home</a>
-            <a href="app-comparison.html" style="color:#a0a0a0;text-decoration:none;">Apps</a>
-            <a href="coaching-tipps.html" style="color:#a0a0a0;text-decoration:none;">Blog</a>
-            <a href="shop.html" style="color:#a0a0a0;text-decoration:none;">Shop</a>
-            <a href="hilfe.html" style="color:#a0a0a0;text-decoration:none;">Hilfe</a>
-            <a href="faq.html" style="color:#a0a0a0;text-decoration:none;">FAQ</a>
-            <a href="hockey-statistik-guide.html" style="color:#a0a0a0;text-decoration:none;">Statistik-Guide</a>
-            <a href="about.html" style="color:#a0a0a0;text-decoration:none;">Über uns</a>
-            <a href="impressum.html" style="color:#a0a0a0;text-decoration:none;">Impressum</a>
-            <a href="datenschutz.html" style="color:#a0a0a0;text-decoration:none;">Datenschutz</a>
-            <a href="terms.html" style="color:#a0a0a0;text-decoration:none;">AGB</a>
-        </nav>
-        <p style="color:#808080;font-size:0.95rem;">&copy; 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · 
-           <a href="mailto:smarthockeyproducts@gmail.com" style="color:#2563eb;">smarthockeyproducts@gmail.com</a>
+        <div class="container">
+            <div class="lang-content lang-de active">
+                <h1>SmartHockey Blog</h1>
+                <p class="subtitle">Eishockey Coaching, Taktik &amp; Training – fundierte Artikel für Trainer, Analysten und Spieler</p>
+
+                <div class="featured-section">
+                    <h2>Die Bedeutung von Schuss-Statistiken im modernen Eishockey</h2>
+                    <p>Im modernen Eishockey reicht es längst nicht mehr aus, nur die Anzahl der Schüsse aufs Tor zu zählen. Trainer und Analysten müssen genau verstehen, von wo aus die Schüsse abgegeben werden. Die sogenannten „High-Danger Scoring Areas", also die Bereiche direkt vor dem Tor (der Slot) und im unteren Bullykreis, sind entscheidend für den Torerfolg. Ein Team, das 20 Schüsse aus dem Slot abgibt, hat eine deutlich höhere Gewinnwahrscheinlichkeit als ein Team mit 40 Schüssen von der blauen Linie.</p>
+                    <p>Durch die systematische Erfassung der Schusspositionen können Trainer genau analysieren, ob ihr Team es schafft, in die gefährlichen Zonen vorzudringen. Genauso wichtig ist die defensive Auswertung: Lässt die eigene Abwehr zu viele Schüsse aus dem Slot zu? Durch Heatmaps und detaillierte Schussgrafiken wird sofort sichtbar, wo auf dem Eis die defensive Struktur Lücken aufweist. Dies ermöglicht es dem Trainerteam, im Training gezielt an der Positionierung in der eigenen Zone zu arbeiten.</p>
+                    <p>Ein weiterer wichtiger Aspekt ist die Analyse von Rebounds (Abprallern). Schüsse, die absichtlich auf die Schoner des Torwarts platziert werden (sogenannte „Pads-Schüsse"), produzieren oft unkontrollierte Rebounds. Teams, die diese Rebounds systematisch erarbeiten und verwerten, steigern ihre offensiven Erfolgsaussichten massiv.</p>
+
+                    <h2>Torwart-Analysen: Mehr als nur die Fangquote</h2>
+                    <p>Die Save Percentage (Fangquote) ist die wohl bekannteste Statistik für Eishockey-Torhüter. Doch sie erzählt nur die halbe Wahrheit. Ein Torwart kann eine herausragende Fangquote haben, weil er viele harmlose Schüsse hält, aber trotzdem in entscheidenden Momenten Schwächen zeigen. Eine professionelle Goalie-Analyse geht daher viel tiefer und betrachtet die genaue Platzierung der Schüsse auf das Tornetz.</p>
+                    <p>Wo hat der Torwart seine Stärken und Schwächen? Gehen überdurchschnittlich viele Gegentore auf der Stockhand-Seite (Blocker) rein? Hat der Goalie Probleme mit flachen Schüssen durch das „Five-Hole" (durch die Beine) oder fallen die Tore eher hoch auf der Fanghand-Seite? Wenn ein Trainer diese detaillierten Daten sammeln kann, lässt sich das Torwart-Training viel individueller und effektiver gestalten.</p>
+                    <p>Zudem ist die Auswertung der Goalie-Performance bei verschiedenen Spielsituationen (5-gegen-5, Unterzahl, Powerplay) enorm wichtig. Durch eine visuelle Torwart-Heatmap können Tendenzen grafisch aufbereitet und sowohl dem Spieler als auch dem Trainerstab leicht verständlich präsentiert werden.</p>
+
+                    <h2>Spiel-Momentum und Shift-Swings verstehen</h2>
+                    <p>Eishockey ist ein extrem schnelles und dynamisches Spiel, bei dem sich das Momentum (der Schwung oder die Spielkontrolle) innerhalb von Sekundenbruchteilen komplett drehen kann. Ein starker Wechsel (Shift) der vierten Reihe, ein harter Check oder eine große Parade des Torwarts können ein ganzes Spiel kippen lassen. Für Trainer ist es entscheidend, dieses Momentum nicht nur intuitiv zu spüren, sondern objektiv messen und analysieren zu können.</p>
+                    <p>Der Momentum-Graph ist ein mächtiges Werkzeug, um den Spielverlauf zu visualisieren. Er zeigt an, in welchen Spielminuten ein Team die absolute Kontrolle hatte (Puckbesitz, Schüsse, gewonnene Zweikämpfe) und wann der Gegner dominant war. Durch die Verknüpfung dieser Daten mit den eingesetzten Reihen können Trainer erkennen, welche Spieler in bestimmten Spielphasen besonders effektiv waren.</p>
+                    <p>Darüber hinaus hilft die Momentum-Analyse bei der In-Game-Entscheidungsfindung. Wenn der Trainer sieht, dass das Momentum stetig abfällt und der Gegner sich festsetzt, ist das ein starker Indikator dafür, ein Timeout zu nehmen oder die Taktik umzustellen. Nach dem Spiel dient die Kurve als hervorragende Grundlage für Video-Sitzungen mit der Mannschaft.</p>
+                </div>
+
+                <h2>Alle Artikel</h2>
+                <p style="color:#a0a0a0; font-size:0.95rem; margin-bottom:8px;">Vertiefende Leitfäden zu Coaching, Taktik, Analyse und Training:</p>
+                <div class="article-grid">
+                    <div class="article-card"><a href="blog-schuss-statistiken.html">Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</a><p>xG, Shot Maps, High-Danger-Areas, Corsi/Fenwick – mit konkreten Zahlen und Trainingsimplikationen.</p></div>
+                    <div class="article-card"><a href="blog-torwart-analyse.html">Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</a><p>GSAx, HDSV%, Rebound Control, Lateral Movement und weitere Metriken für eine präzise Goalie-Bewertung.</p></div>
+                    <div class="article-card"><a href="blog-powerplay-strategien.html">Powerplay im Eishockey: Aufstellungen, Laufwege und Erfolgsmuster</a><p>1-3-1, Umbrella, Overload, Bumper-Position – Taktik und Drills für effektive Überzahl-Situationen.</p></div>
+                    <div class="article-card"><a href="blog-penalty-killing.html">Penalty Killing: Defensive Systeme im Vergleich</a><p>Box, Diamond, Wedge+1 – wann welches System greift, Stick Lanes, Clearing-Optionen und PK-Drills.</p></div>
+                    <div class="article-card"><a href="blog-faceoffs.html">Faceoff gewinnen: Technik, Taktik und Trainingsdrills</a><p>Griffvarianten, Timing, Tie-Up-Techniken und fünf konkrete Set-Play-Drills für alle Bully-Zonen.</p></div>
+                    <div class="article-card"><a href="blog-zonen-eintritt.html">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</a><p>Controlled Entries führen zu ~50 % mehr Chancen. Klare Entscheidungsregeln für Spieler und Trainer.</p></div>
+                    <div class="article-card"><a href="blog-trainingsplan-8-wochen.html">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Vorbereitung</a><p>Off-Ice/On-Ice-Mix, Belastungssteuerung und konkrete Wochenpläne für die Saisonvorbereitung.</p></div>
+                    <div class="article-card"><a href="blog-kindereishockey.html">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</a><p>Cross-Ice, Spielformen statt Drilltraining – warum Spaß die Grundlage für späteren Erfolg ist.</p></div>
+                    <div class="article-card"><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a><p>Video-Setup, Notationsbögen, kostenlose Tools – so gelingt Spielanalyse auch ohne Profi-Budget.</p></div>
+                    <div class="article-card"><a href="blog-mentaltraining.html">Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</a><p>Pre-Game-Routinen, Box Breathing, Fehler-Reset und Goalie-spezifische Konzentrationstechniken.</p></div>
+                </div>
+            </div>
+
+            <div class="lang-content lang-en">
+                <h1>SmartHockey Blog</h1>
+                <p class="subtitle">Ice hockey coaching, tactics, and training – in-depth articles for coaches, analysts, and committed players</p>
+
+                <div class="featured-section">
+                    <h2>The Importance of Shot Statistics in Modern Hockey</h2>
+                    <p>In modern hockey, it is no longer enough to count shots on goal. Coaches and analysts need to understand exactly where those shots come from. The so-called high-danger scoring areas — directly in front of the net in the slot and around the lower faceoff circles — are decisive for scoring success. A team that generates 20 shots from the slot has a much higher probability of winning than a team that fires 40 shots from the blue line.</p>
+                    <p>By systematically tracking shot locations, coaches can analyze whether their team consistently gets into dangerous areas. The defensive perspective is just as important: is your own team allowing too many shots from the slot? Heat maps and detailed shot charts immediately show where the defensive structure is breaking down. That makes it possible for the coaching staff to work specifically on in-zone positioning during practice.</p>
+                    <p>Another crucial aspect is rebound analysis. Shots that are intentionally placed into the goaltender's pads often create uncontrolled rebounds. Teams that deliberately generate and finish those rebound situations dramatically increase their offensive ceiling.</p>
+
+                    <h2>Goalie Analysis: More Than Save Percentage</h2>
+                    <p>Save percentage is the best-known statistic for hockey goaltenders, but it tells only half the story. A goalie can post an excellent save percentage by stopping many harmless shots and still show weaknesses in decisive moments. A professional goalie analysis therefore goes much deeper and examines the precise placement of shots on the net.</p>
+                    <p>Where are the goaltender's strengths and weaknesses? Are an above-average number of goals being scored on the blocker side? Does the goalie struggle with low shots through the five-hole, or do most goals beat them high on the glove side? When coaches collect this level of detail, goalie training can become far more individual and effective.</p>
+                    <p>It is also essential to evaluate goalie performance in different game states such as 5-on-5, penalty kill, and power play. A visual goalie heat map can present those tendencies in a way that is easy for both the player and the coaching staff to understand.</p>
+
+                    <h2>Understanding Game Momentum and Shift Swings</h2>
+                    <p>Hockey is an extremely fast and dynamic game in which momentum can swing completely within seconds. A strong shift from the fourth line, a heavy hit, or a huge save can change the entire game. For coaches, it is vital not only to feel that momentum intuitively, but to measure and analyze it objectively.</p>
+                    <p>A momentum graph is a powerful tool for visualizing the flow of the game. It shows which stretches were controlled by one team through puck possession, shots, and won battles, and when the opponent was on top. By linking that data with the lines that were on the ice, coaches can identify which players were especially effective during specific phases of the game.</p>
+                    <p>Momentum analysis also helps with in-game decision-making. When a coach sees momentum steadily dropping while the opponent is establishing sustained pressure, that is a strong indicator to use a timeout or adjust tactics. After the game, the same curve becomes an excellent foundation for video sessions with the team.</p>
+                </div>
+
+                <h2>All articles</h2>
+                <p style="color:#a0a0a0; font-size:0.95rem; margin-bottom:8px;">In-depth guides on coaching, tactics, analysis, and training:</p>
+                <div class="article-grid">
+                    <div class="article-card"><a href="blog-schuss-statistiken.html">Shot Statistics in Hockey: The Complete Guide for Coaches</a><p>xG, shot maps, high-danger areas, and Corsi/Fenwick explained with practical numbers and training takeaways.</p></div>
+                    <div class="article-card"><a href="blog-torwart-analyse.html">Goalie Analysis: 12 Metrics Beyond Save Percentage</a><p>GSAx, HDSV%, rebound control, lateral movement, and more for a sharper goalie evaluation.</p></div>
+                    <div class="article-card"><a href="blog-powerplay-strategien.html">Power Play in Hockey: Formations, Rotations, and Winning Patterns</a><p>1-3-1, umbrella, overload, bumper positioning, and drills for effective man-advantage play.</p></div>
+                    <div class="article-card"><a href="blog-penalty-killing.html">Penalty Kill: Comparing Defensive Systems</a><p>Box, diamond, wedge+1, stick lanes, clears, and penalty-kill drills for different game situations.</p></div>
+                    <div class="article-card"><a href="blog-faceoffs.html">Winning Faceoffs: Technique, Tactics, and Training Drills</a><p>Grip variations, timing, tie-up techniques, and five concrete set-play drills for every faceoff zone.</p></div>
+                    <div class="article-card"><a href="blog-zonen-eintritt.html">Zone Entries: Carry-In vs. Dump-In – Data and Decision Logic</a><p>Controlled entries create about 50% more chances. Clear decision rules for players and coaches.</p></div>
+                    <div class="article-card"><a href="blog-trainingsplan-8-wochen.html">Hockey Training Plan: 8-Week Preseason Periodization</a><p>Off-ice/on-ice balance, workload management, and concrete weekly plans for pre-season preparation.</p></div>
+                    <div class="article-card"><a href="blog-kindereishockey.html">Youth Hockey U7–U13: Age-Appropriate Training Based on LTAD</a><p>Cross-ice play, game-based learning instead of drill overload, and why fun drives long-term development.</p></div>
+                    <div class="article-card"><a href="blog-spielanalyse.html">Game Analysis for Amateur Coaches: A Step-by-Step Guide</a><p>Video setup, notation sheets, and free tools that make structured analysis possible without a pro budget.</p></div>
+                    <div class="article-card"><a href="blog-mentaltraining.html">Mental Training in Hockey: Routines, Visualization, and Pre-Game Preparation</a><p>Pre-game routines, box breathing, reset habits after mistakes, and goalie-specific concentration techniques.</p></div>
+                </div>
+            </div>
+
+            <div class="article-footer">
+                <a href="impressum.html"><span data-lang-group="overview-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span></span></a> ·
+                <a href="datenschutz.html"><span data-lang-group="overview-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span></span></a> ·
+                <a href="index.html"><span data-lang-group="overview-home"><span class="lang-de active">Startseite</span><span class="lang-en">Home</span></span></a>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span></span></a>
+                <a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span></span></a>
+                <a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span></span></a>
+                <a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span></span></a>
+                <a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span></span></a>
+                <a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span></span></a>
+                <a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span></span></a>
+                <a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span></span></a>
+                <a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span></span></a>
+                <a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span></span></a>
+                <a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span></span></a>
+            </nav>
+            <p>&copy; 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+        </div>
+    </footer>
+    <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
+      <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+        <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+          <span data-lang-group="cookie-text">
+            <span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
+            <span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
+          </span>
         </p>
+        <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
+            <span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span></span>
+          </button>
+        </div>
+      </div>
     </div>
-</footer>
-<!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
-  <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
-    <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-      🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
-    </p>
-    <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  try {
-    window.acceptCookies = function() {
-      localStorage.setItem('cookie-consent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-    if (!localStorage.getItem('cookie-consent')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  } catch(e) {}
-})();
-</script>
+    <script>
+        (function() {
+            const defaultLang = 'de';
+            const supportedLangs = ['en', 'de'];
+            const langNames = { en: 'English', de: 'Deutsch' };
+
+            function getInitialLanguage() {
+                const saved = localStorage.getItem('smarthockey-lang');
+                return saved && supportedLangs.includes(saved) ? saved : defaultLang;
+            }
+
+            function switchLanguage(lang) {
+                if (!supportedLangs.includes(lang)) lang = defaultLang;
+
+                document.querySelectorAll('.lang-content').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
+                    el.classList.add('active');
+                });
+
+                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
+                    group.querySelectorAll('.lang-de, .lang-en').forEach(function(node) {
+                        node.classList.remove('active');
+                    });
+                    const activeNode = group.querySelector('.lang-' + lang);
+                    if (activeNode) activeNode.classList.add('active');
+                });
+
+                const currentName = document.querySelector('.lang-current-name');
+                if (currentName) currentName.textContent = langNames[lang];
+
+                document.querySelectorAll('.lang-option').forEach(function(option) {
+                    option.classList.toggle('active', option.getAttribute('data-lang') === lang);
+                });
+
+                document.documentElement.lang = lang;
+                localStorage.setItem('smarthockey-lang', lang);
+            }
+
+            const initialLang = getInitialLanguage();
+            switchLanguage(initialLang);
+
+            const switcher = document.querySelector('.language-switcher');
+            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
+            if (switcher && dropdownBtn) {
+                dropdownBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    switcher.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!switcher.contains(event.target)) {
+                        switcher.classList.remove('active');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.lang-option').forEach(function(option) {
+                option.addEventListener('click', function() {
+                    switchLanguage(this.getAttribute('data-lang'));
+                    if (switcher) switcher.classList.remove('active');
+                });
+            });
+        })();
+    </script>
+    <script>
+    (function(){
+      try {
+        window.acceptCookies = function() {
+          localStorage.setItem('cookie-consent', 'accepted');
+          document.getElementById('cookie-banner').style.display = 'none';
+        };
+        if (!localStorage.getItem('cookie-consent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+      } catch(e) {}
+    })();
+    </script>
 </body>
 </html>
