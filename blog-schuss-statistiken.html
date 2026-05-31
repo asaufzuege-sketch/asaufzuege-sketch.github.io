@@ -66,8 +66,6 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
     
         .site-header {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
@@ -117,65 +115,6 @@
         .site-nav a.active {
             color: #2563eb;
         }
-        .language-switcher { position: relative; display: inline-block; }
-        .lang-dropdown-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border: 2px solid #2563eb;
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-        .lang-dropdown-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
-        }
-        .lang-dropdown-btn svg { width: 18px; height: 18px; }
-        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
-        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
-        .lang-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 8px;
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
-            border: 2px solid #2a2a3e;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            min-width: 180px;
-            z-index: 1000;
-            overflow: hidden;
-        }
-        .language-switcher.active .lang-dropdown-menu { display: block; }
-        .lang-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            border: none;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-            font-size: 1rem;
-        }
-        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
-        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
-        .lang-option-flag { font-size: 1.3rem; }
-        .lang-option-name { font-size: 0.95rem; }
-        [data-lang-group] span[class^="lang-"] { display: none !important; }
-        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
         .page-shell { padding: 20px; }
         .page-links {
             max-width: 860px;
@@ -243,63 +182,50 @@
 </a>
 <nav class="site-nav">
 <a href="index.html">
-<span data-lang-group="nav-home">
-<span class="lang-de active">🏠 Home</span>
-<span class="lang-en">🏠 Home</span>
-<span class="lang-fr">🏠 Accueil</span><span class="lang-sv">🏠 Hem</span><span class="lang-fi">🏠 Etusivu</span><span class="lang-ru">🏠 Главная</span></span>
+
+🏠 Home
+
+
 </a>
 <a href="app-comparison.html">
-<span data-lang-group="nav-apps">
-<span class="lang-de active">📱 Apps</span>
-<span class="lang-en">📱 Apps</span>
-<span class="lang-fr">📱 Applications</span><span class="lang-sv">📱 Appar</span><span class="lang-fi">📱 Sovellukset</span><span class="lang-ru">📱 Приложения</span></span>
+
+📱 Apps
+
+
 </a>
 <a class="active" href="coaching-tipps.html">
-<span data-lang-group="nav-blog">
-<span class="lang-de active">📝 Blog</span>
-<span class="lang-en">📝 Blog</span>
-<span class="lang-fr">📝 Blog</span><span class="lang-sv">📝 Blog</span><span class="lang-fi">📝 Blog</span><span class="lang-ru">📝 Blog</span></span>
+
+📝 Blog
+
+
 </a>
 <a href="shop.html">
-<span data-lang-group="nav-shop">
-<span class="lang-de active">🛒 Shop</span>
-<span class="lang-en">🛒 Shop</span>
-<span class="lang-fr">🛒 Shop</span><span class="lang-sv">🛒 Shop</span><span class="lang-fi">🛒 Shop</span><span class="lang-ru">🛒 Shop</span></span>
+
+🛒 Shop
+
+
 </a>
 </nav>
-<div class="language-switcher">
-<button aria-label="Sprache wählen / Choose language" class="lang-dropdown-btn" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10"></circle>
-<line x1="2" x2="22" y1="12" y2="12"></line>
-<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-</svg>
-<span class="lang-current-name">Deutsch</span>
-<svg class="lang-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="6 9 12 15 18 9"></polyline>
-</svg>
-</button>
-<div class="lang-dropdown-menu"><button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button><button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button><button class="lang-option" data-lang="fr" type="button"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button><button class="lang-option" data-lang="sv" type="button"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button><button class="lang-option" data-lang="fi" type="button"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button><button class="lang-option" data-lang="ru" type="button"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button></div>
-</div>
+
 </div>
 </header>
 <main class="page-shell">
 <div class="page-links">
 <a class="back-link" href="index.html">
-<span data-lang-group="back-home">
-<span class="lang-de active">← Zurück zur Startseite</span>
-<span class="lang-en">← Back to home</span>
-<span class="lang-fr">← Back to home</span><span class="lang-sv">← Back to home</span><span class="lang-fi">← Back to home</span><span class="lang-ru">← Back to home</span></span>
+
+← Zurück zur Startseite
+
+
 </a>
 <a class="back-link" href="coaching-tipps.html">
-<span data-lang-group="back-blog">
-<span class="lang-de active">← Zum Blog</span>
-<span class="lang-en">← Back to blog</span>
-<span class="lang-fr">← Back to blog</span><span class="lang-sv">← Back to blog</span><span class="lang-fi">← Back to blog</span><span class="lang-ru">← Back to blog</span></span>
+
+← Zum Blog
+
+
 </a>
 </div>
 <div class="container">
-<div class="lang-content lang-de active">
+
 <h1>Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</h1>
 <p>Wer im Eishockey nur Tore und Siege zählt, sieht nur die Spitze des Eisbergs. Die wirklich nützlichen Informationen stecken in den Schuss-Daten: Woher kommen die Schüsse? Welche enden als Rebound? Welcher Spieler erzeugt Gefahr, auch wenn er keine Tore schießt? Dieser Leitfaden erklärt die wichtigsten Kennzahlen – von einfachen Schusszahlen bis zu Expected Goals – und zeigt, wie Trainer diese Daten sinnvoll nutzen können.</p>
 <h2>Schussquantität: Mehr Schüsse, mehr Tore?</h2>
@@ -344,347 +270,76 @@
 </ul>
 <h2>Fazit: Mit einfachen Mitteln anfangen</h2>
 <p>Vollständige Statistik-Systeme sind für Amateurteams nicht nötig. Schon drei Zahlen pro Spiel – Schüsse aus dem Slot, Rebounds zugelassen und Schussversuche insgesamt (Corsi) – geben einem Trainer über eine Saison hinweg genug Information, um strukturelle Schwächen und Stärken klar zu erkennen. Der erste Schritt ist immer der wichtigste: einfach anfangen, zu zählen.</p>
-</div>
-<div class="lang-content lang-en">
-<h1>Shot Statistics in Hockey: The Complete Guide for Coaches</h1>
-<p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
-<h2>Shot Quantity: More Shots, More Goals?</h2>
-<p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
-<p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
-<h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
-<p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the goaltender has less reaction time.</p>
-<p>The lower faceoff circles (faceoff dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one faceoff dot to the other — produce the most dangerous shot attempts of all, because the goaltender must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
-<h3>Shot Zone Breakdown</h3>
-<table>
-<tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
-<tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
-<tr><td>Lower faceoff circles</td><td>10–14%</td><td>15–20%</td></tr>
-<tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
-<tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
-<tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
-</table>
-<h2>Shot Maps and Heat Maps in Practice</h2>
-<p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
-<p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
-<h2>Rebounds: The Underrated Metric</h2>
-<p>Rebounds occur when a goaltender doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
-<p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
-<h2>Expected Goals (xG): Measuring Shot Quality</h2>
-<p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
-<p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
-<h3>Estimating xG at the Amateur Level</h3>
-<p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
-<h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
-<p>Corsi (named after former NHL goalie coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
-<p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
-<h3>A Practical Example</h3>
-<p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
-<h2>Training Implications: What to Do with This Data?</h2>
-<p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
-<ul>
-<li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
-<li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
-<li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
-<li><strong>Low CF%:</strong> Review zone entries (controlled vs. dump-in) — the problem is almost always there.</li>
-<li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
-</ul>
-<h2>Conclusion: Start with Simple Tools</h2>
-<p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
-</div><div class="lang-content lang-fr">
-<h1>Statistiques de tirs au hockey : le guide complet pour les entraîneurs</h1>
-<p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
-<h2>Shot Quantity: More Shots, More Goals?</h2>
-<p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
-<p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
-<h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
-<p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the gardien has less reaction time.</p>
-<p>The lower mise au jeu circles (mise au jeu dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one mise au jeu dot to the other — produce the most dangerous shot attempts of all, because the gardien must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
-<h3>Shot Zone Breakdown</h3>
-<table>
-<tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
-<tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
-<tr><td>Lower mise au jeu circles</td><td>10–14%</td><td>15–20%</td></tr>
-<tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
-<tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
-<tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
-</table>
-<h2>Shot Maps and Heat Maps in Practice</h2>
-<p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
-<p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
-<h2>Rebounds: The Underrated Metric</h2>
-<p>Rebounds occur when a gardien doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
-<p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
-<h2>Expected Goals (xG): Measuring Shot Quality</h2>
-<p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
-<p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
-<h3>Estimating xG at the Amateur Level</h3>
-<p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
-<h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
-<p>Corsi (named after former NHL gardien coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
-<p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
-<h3>A Practical Example</h3>
-<p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
-<h2>Training Implications: What to Do with This Data?</h2>
-<p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
-<ul>
-<li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
-<li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
-<li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
-<li><strong>Low CF%:</strong> Review entrées de zone (controlled vs. dump-in) — the problem is almost always there.</li>
-<li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
-</ul>
-<h2>Conclusion: Start with Simple Tools</h2>
-<p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
-</div><div class="lang-content lang-sv">
-<h1>Skottstatistik i hockey: den kompletta guiden för tränare</h1>
-<p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
-<h2>Shot Quantity: More Shots, More Goals?</h2>
-<p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
-<p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
-<h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
-<p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the målvakt has less reaction time.</p>
-<p>The lower tekning circles (tekning dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one tekning dot to the other — produce the most dangerous shot attempts of all, because the målvakt must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
-<h3>Shot Zone Breakdown</h3>
-<table>
-<tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
-<tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
-<tr><td>Lower tekning circles</td><td>10–14%</td><td>15–20%</td></tr>
-<tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
-<tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
-<tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
-</table>
-<h2>Shot Maps and Heat Maps in Practice</h2>
-<p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
-<p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
-<h2>Rebounds: The Underrated Metric</h2>
-<p>Rebounds occur when a målvakt doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
-<p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
-<h2>Expected Goals (xG): Measuring Shot Quality</h2>
-<p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
-<p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
-<h3>Estimating xG at the Amateur Level</h3>
-<p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
-<h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
-<p>Corsi (named after former NHL målvakt coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
-<p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
-<h3>A Practical Example</h3>
-<p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
-<h2>Training Implications: What to Do with This Data?</h2>
-<p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
-<ul>
-<li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
-<li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
-<li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
-<li><strong>Low CF%:</strong> Review zonintrång (controlled vs. dump-in) — the problem is almost always there.</li>
-<li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
-</ul>
-<h2>Conclusion: Start with Simple Tools</h2>
-<p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
-</div><div class="lang-content lang-fi">
-<h1>Laukaustilastot jääkiekossa: täydellinen opas valmentajille</h1>
-<p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
-<h2>Shot Quantity: More Shots, More Goals?</h2>
-<p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
-<p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
-<h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
-<p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the maalivahti has less reaction time.</p>
-<p>The lower aloitus circles (aloitus dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one aloitus dot to the other — produce the most dangerous shot attempts of all, because the maalivahti must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
-<h3>Shot Zone Breakdown</h3>
-<table>
-<tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
-<tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
-<tr><td>Lower aloitus circles</td><td>10–14%</td><td>15–20%</td></tr>
-<tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
-<tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
-<tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
-</table>
-<h2>Shot Maps and Heat Maps in Practice</h2>
-<p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
-<p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
-<h2>Rebounds: The Underrated Metric</h2>
-<p>Rebounds occur when a maalivahti doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
-<p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
-<h2>Expected Goals (xG): Measuring Shot Quality</h2>
-<p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
-<p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
-<h3>Estimating xG at the Amateur Level</h3>
-<p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
-<h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
-<p>Corsi (named after former NHL maalivahti coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
-<p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
-<h3>A Practical Example</h3>
-<p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
-<h2>Training Implications: What to Do with This Data?</h2>
-<p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
-<ul>
-<li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
-<li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
-<li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
-<li><strong>Low CF%:</strong> Review alueelle tulot (controlled vs. dump-in) — the problem is almost always there.</li>
-<li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
-</ul>
-<h2>Conclusion: Start with Simple Tools</h2>
-<p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
-</div><div class="lang-content lang-ru">
-<h1>Статистика бросков в хоккее: полный гид для тренеров</h1>
-<p>Coaches who only count goals and wins see just the tip of the iceberg. The truly useful information is in the shot data: where do the shots come from? Which ones produce rebounds? Which player creates danger, even when not scoring? This guide explains the most important metrics — from basic shot counts to Expected Goals — and shows how coaches can put this data to practical use.</p>
-<h2>Shot Quantity: More Shots, More Goals?</h2>
-<p>The obvious assumption: whoever shoots more scores more. That's broadly true, but only in part. Teams that put up 35 shots per game win more often than teams with 25 — DEL data over multiple seasons confirms this. But teams with 40 shots from the outside, at poor angles, or after failed positional play still win less often than teams with 28 high-quality shots.</p>
-<p>A typical ratio for well-organized amateur teams: roughly 28–32 shots per game, with 35–40% from the slot (the so-called "high-danger area"). If that share falls below 25%, the team has a structural offensive problem — not a lack of shooting willingness.</p>
-<h2>High-Danger Areas: The Slot and Lower Faceoff Circles</h2>
-<p>The zone directly in front of the net, between the goalposts and extending roughly 6–8 meters outward, is called the slot. Shots from the slot have a conversion rate of 15–20%, compared to 4–6% from the blue line. This is no coincidence: the distance is shorter, the angle is better, and the вратарь has less reaction time.</p>
-<p>The lower вбрасывание circles (вбрасывание dots in the offensive zone) are also premium scoring areas. Passes across the slot — from one вбрасывание dot to the other — produce the most dangerous shot attempts of all, because the вратарь must move laterally. Teams that systematically practice these passes measurably score more goals per shot.</p>
-<h3>Shot Zone Breakdown</h3>
-<table>
-<tr><th>Zone</th><th>Average Shooting %</th><th>Share of Total Shots</th></tr>
-<tr><td>Slot (directly in front of net)</td><td>16–20%</td><td>25–30%</td></tr>
-<tr><td>Lower вбрасывание circles</td><td>10–14%</td><td>15–20%</td></tr>
-<tr><td>Upper offensive zone</td><td>5–8%</td><td>20–25%</td></tr>
-<tr><td>Blue line</td><td>2–5%</td><td>20–25%</td></tr>
-<tr><td>Tight angles (boards)</td><td>2–4%</td><td>10–15%</td></tr>
-</table>
-<h2>Shot Maps and Heat Maps in Practice</h2>
-<p>A shot map is a simple representation of the ice surface on which each shot is marked as a dot — with different colors for goals, posts, and blocked shots. Heat maps condense this information into a color-coded density display. Both formats immediately reveal whether a team is consistently shooting from the slot, or whether their shots are coming mostly from the blue line and boards.</p>
-<p>For amateur coaches without expensive analysis software: a simple shot map can be maintained with a printed ice surface diagram and different colored pens. An assistant marks every shot attempt during the game. After three to four games, a clear picture of shot patterns emerges. This takes about 15 minutes of post-game preparation per game.</p>
-<h2>Rebounds: The Underrated Metric</h2>
-<p>Rebounds occur when a вратарь doesn't secure the puck cleanly or loses it after a save attempt. NHL data shows: approximately 25% of all goals come directly from rebounds — without the second shot needing to be particularly well-placed. Simply having forwards in front of the net waiting for rebounds significantly increases scoring chances.</p>
-<p>For coaches, this means: net-front presence is not an optional tactic, but a fundamental requirement of attacking play. Explicitly train who goes to the slot on shots from the blue line — and stays there, even if the first shot is stopped. Shots on the post or low, hard shots produce rebounds especially frequently.</p>
-<h2>Expected Goals (xG): Measuring Shot Quality</h2>
-<p>Expected Goals (xG) is a model that assigns each shot a probability of scoring, based on shot location, shot type, preceding action, and game situation. A shot from the slot after a direct cross-pass might receive an xG value of 0.18 (18% goal probability), while a shot from a tight angle might get 0.03.</p>
-<p>The most important benefit of xG for coaches isn't the precise number, but the principle: shot quality matters more than shot quantity. A team with an xG of 2.8 per game attacks structurally better than one with xG 1.4 — regardless of whether goals were scored. Over multiple games, actual goal output aligns with the xG value; short-term deviations are often luck (or exceptional goaltending).</p>
-<h3>Estimating xG at the Amateur Level</h3>
-<p>Professional xG models require precise tracking. For amateur coaches, a simplified version is sufficient: shots from the slot count double, shots after a cross-pass count 1.5x, shots from a tight angle count 0.5x. This weighted shot count correlates well with actual shot quality.</p>
-<h2>Corsi and Fenwick: Measuring Shot Dominance</h2>
-<p>Corsi (named after former NHL вратарь coach Jim Corsi) counts all shot attempts — shots on net plus blocked shots plus missed shots. Fenwick excludes blocked shots. Both metrics measure which team is dominating in the offensive zone.</p>
-<p>Corsi For % (CF%) = (own shot attempts) / (own + opponent's shot attempts). A CF% above 52% indicates shot dominance. Teams with consistently high CF% win more games over time than their direct goal totals suggest — because they force more favorable variance through sheer dominance.</p>
-<h3>A Practical Example</h3>
-<p>Team A: 30 shots on net, 10 blocked, 8 missed = 48 shot attempts. Team B: 20 shots on net, 6 blocked, 5 missed = 31 shot attempts. CF% for Team A = 48 / (48+31) = 60.8%. Team A clearly dominates — even if the score is 1:1 and the evening was frustrating for them.</p>
-<h2>Training Implications: What to Do with This Data?</h2>
-<p>Data without consequences is worthless. Concrete actions derived from shot statistics:</p>
-<ul>
-<li><strong>Too few shots from the slot:</strong> Training session focused on net-drive movements, defenseman screens, and one-timers from cross-ice passes.</li>
-<li><strong>Too many shots from outside:</strong> Drill "no shot from outside the hash marks" — forces players to get into the slot first.</li>
-<li><strong>Poor rebound situation:</strong> Specific rebound drill: shot, two forwards immediately crash the net area, defensive reaction.</li>
-<li><strong>Low CF%:</strong> Review входы в зону (controlled vs. dump-in) — the problem is almost always there.</li>
-<li><strong>High xG against:</strong> Analyze in which situations the opponent reaches high-danger zones — usually breakdowns in forechecking or on line changes.</li>
-</ul>
-<h2>Conclusion: Start with Simple Tools</h2>
-<p>Complete statistical systems aren't necessary for amateur teams. Just three numbers per game — shots from the slot, rebounds allowed, and total shot attempts (Corsi) — give a coach enough information over the course of a season to clearly identify structural weaknesses and strengths. The first step is always the most important: simply start counting.</p>
-</div>
+
+
 <div class="weiterlesen">
-<h3><span data-lang-group="read-more-heading"><span class="lang-de active">Weiterlesen</span><span class="lang-en">Read more</span><span class="lang-fr">En savoir plus</span><span class="lang-sv">Läs mer</span><span class="lang-fi">Lue lisää</span><span class="lang-ru">Читать далее</span></span></h3>
+<h3>Weiterlesen</h3>
 <ul>
-<li><a href="blog-torwart-analyse.html"><span data-lang-group="readmore-1"><span class="lang-de active">Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</span><span class="lang-en">Goalie Analysis: 12 Metrics Beyond Save Percentage</span><span class="lang-fr">Analyse du gardien : 12 indicateurs au-delà du pourcentage d’arrêts</span><span class="lang-sv">Målvaktsanalys: 12 nyckeltal bortom räddningsprocent</span><span class="lang-fi">Maalivahtianalyysi: 12 mittaria torjuntaprosentin lisäksi</span><span class="lang-ru">Анализ вратаря: 12 метрик помимо процента отражённых бросков</span></span></a></li>
-<li><a href="blog-zonen-eintritt.html"><span data-lang-group="readmore-2"><span class="lang-de active">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</span><span class="lang-en">Zone Entries: Carry-In vs. Dump-In – Data and Decision Logic</span><span class="lang-fr">Entrée de zone : carry-in vs dump-in — données et logique de décision</span><span class="lang-sv">Zonintrång: carry-in vs dump-in – data och beslutslogik</span><span class="lang-fi">Alueelle tulo: carry-in vs. dump-in – data ja päätöslogiikka</span><span class="lang-ru">Вход в зону: carry-in vs dump-in — данные и логика принятия решений</span></span></a></li>
-<li><a href="blog-spielanalyse.html"><span data-lang-group="readmore-3"><span class="lang-de active">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</span><span class="lang-en">Game Analysis for Amateur Coaches: A Step-by-Step Guide</span><span class="lang-fr">Analyse de match pour entraîneurs amateurs : guide pas à pas</span><span class="lang-sv">Matchanalys för amatörtränare: steg-för-steg-guide</span><span class="lang-fi">Pelianalyysi amatöörivalmentajille: vaiheittainen opas</span><span class="lang-ru">Анализ игры для тренеров-любителей: пошаговое руководство</span></span></a></li>
+<li><a href="blog-torwart-analyse.html">Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</a></li>
+<li><a href="blog-zonen-eintritt.html">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</a></li>
+<li><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a></li>
 </ul>
 </div>
 <div class="article-footer">
-<strong style="color:#a0a0a0;"><span data-lang-group="article-footer-label"><span class="lang-de active">Blog-Artikel:</span><span class="lang-en">Blog articles:</span><span class="lang-fr">Articles de blog :</span><span class="lang-sv">Bloggartiklar:</span><span class="lang-fi">Blogiartikkelit:</span><span class="lang-ru">Статьи блога:</span></span></strong>
-<a href="blog-schuss-statistiken.html"><span data-lang-group="article-link-1"><span class="lang-de active">Schuss-Statistiken</span><span class="lang-en">Shot Statistics</span><span class="lang-fr">Statistiques de tirs</span><span class="lang-sv">Skottstatistik</span><span class="lang-fi">Laukaustilastot</span><span class="lang-ru">Статистика бросков</span></span></a> ·
-            <a href="blog-torwart-analyse.html"><span data-lang-group="article-link-2"><span class="lang-de active">Torwart-Analyse</span><span class="lang-en">Goalie Analysis</span><span class="lang-fr">Analyse du gardien</span><span class="lang-sv">Målvaktsanalys</span><span class="lang-fi">Maalivahtianalyysi</span><span class="lang-ru">Анализ вратаря</span></span></a> ·
-            <a href="blog-powerplay-strategien.html"><span data-lang-group="article-link-3"><span class="lang-de active">Powerplay</span><span class="lang-en">Power Play</span><span class="lang-fr">supériorité numérique</span><span class="lang-sv">powerplay</span><span class="lang-fi">ylivoima</span><span class="lang-ru">большинство</span></span></a> ·
-            <a href="blog-penalty-killing.html"><span data-lang-group="article-link-4"><span class="lang-de active">Penalty Killing</span><span class="lang-en">Penalty Kill</span><span class="lang-fr">infériorité numérique</span><span class="lang-sv">boxplay</span><span class="lang-fi">alivoima</span><span class="lang-ru">меньшинство</span></span></a> ·
-            <a href="blog-faceoffs.html"><span data-lang-group="article-link-5"><span class="lang-de active">Faceoffs</span><span class="lang-en">Faceoffs</span><span class="lang-fr">Mises au jeu</span><span class="lang-sv">Tekningar</span><span class="lang-fi">Aloitukset</span><span class="lang-ru">Вбрасывания</span></span></a> ·
-            <a href="blog-zonen-eintritt.html"><span data-lang-group="article-link-6"><span class="lang-de active">Zonen-Eintritt</span><span class="lang-en">Zone Entries</span><span class="lang-fr">Zone Entries</span><span class="lang-sv">Zone Entries</span><span class="lang-fi">Zone Entries</span><span class="lang-ru">Zone Entries</span></span></a> ·
-            <a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="article-link-7"><span class="lang-de active">Trainingsplan</span><span class="lang-en">Training Plan</span><span class="lang-fr">Plan d’entraînement</span><span class="lang-sv">Träningsplan</span><span class="lang-fi">Harjoitussuunnitelma</span><span class="lang-ru">Тренировочный план</span></span></a> ·
-            <a href="blog-kindereishockey.html"><span data-lang-group="article-link-8"><span class="lang-de active">Kindereishockey</span><span class="lang-en">Youth Hockey</span><span class="lang-fr">Hockey des jeunes</span><span class="lang-sv">Ungdomshockey</span><span class="lang-fi">Juniorikiekko</span><span class="lang-ru">Детский хоккей</span></span></a> ·
-            <a href="blog-spielanalyse.html"><span data-lang-group="article-link-9"><span class="lang-de active">Spielanalyse</span><span class="lang-en">Game Analysis</span><span class="lang-fr">Analyse de match</span><span class="lang-sv">Matchanalys</span><span class="lang-fi">Pelianalyysi</span><span class="lang-ru">Анализ игры</span></span></a> ·
-            <a href="blog-mentaltraining.html"><span data-lang-group="article-link-10"><span class="lang-de active">Mentaltraining</span><span class="lang-en">Mental Training</span><span class="lang-fr">Préparation mentale</span><span class="lang-sv">Mental träning</span><span class="lang-fi">Mentaaliharjoittelu</span><span class="lang-ru">Ментальная подготовка</span></span></a>
+<strong style="color:#a0a0a0;">Blog-Artikel:</strong>
+<a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
+            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
+            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
+            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
+            <a href="blog-faceoffs.html">Faceoffs</a> ·
+            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
+            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
+            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
+            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
+            <a href="blog-mentaltraining.html">Mentaltraining</a>
 <br/>
-<a href="coaching-tipps.html"><span data-lang-group="article-overview-link"><span class="lang-de active">Blog Übersicht</span><span class="lang-en">Blog overview</span><span class="lang-fr">Aperçu du blog</span><span class="lang-sv">Bloggöversikt</span><span class="lang-fi">Blogin yleiskatsaus</span><span class="lang-ru">Обзор блога</span></span></a> ·
-                <a href="impressum.html"><span data-lang-group="article-imprint-link"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a> ·
-                <a href="datenschutz.html"><span data-lang-group="article-privacy-link"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
+<a href="coaching-tipps.html">Blog Übersicht</a> ·
+                <a href="impressum.html">Impressum</a> ·
+                <a href="datenschutz.html">Datenschutz</a>
 </div>
 </div>
 </main>
 <footer class="site-footer">
 <div class="footer-container">
 <nav class="footer-nav">
-<a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-sv">Hem</span><span class="lang-fi">Etusivu</span><span class="lang-ru">Главная</span></span></a>
-<a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span><span class="lang-fr">Applications</span><span class="lang-sv">Appar</span><span class="lang-fi">Sovellukset</span><span class="lang-ru">Приложения</span></span></a>
-<a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span><span class="lang-fr">Blog</span><span class="lang-sv">Blog</span><span class="lang-fi">Blog</span><span class="lang-ru">Blog</span></span></a>
-<a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span><span class="lang-fr">Shop</span><span class="lang-sv">Shop</span><span class="lang-fi">Shop</span><span class="lang-ru">Shop</span></span></a>
-<a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span><span class="lang-fr">Aide</span><span class="lang-sv">Hjälp</span><span class="lang-fi">Ohje</span><span class="lang-ru">Помощь</span></span></a>
-<a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span><span class="lang-sv">FAQ</span><span class="lang-fi">FAQ</span><span class="lang-ru">FAQ</span></span></a>
-<a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span><span class="lang-fr">Guide des statistiques</span><span class="lang-sv">Statistikguide</span><span class="lang-fi">Tilasto-opas</span><span class="lang-ru">Руководство по статистике</span></span></a>
-<a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span><span class="lang-fr">À propos de nous</span><span class="lang-sv">Om oss</span><span class="lang-fi">Tietoa meistä</span><span class="lang-ru">О нас</span></span></a>
-<a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a>
-<a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
-<a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span><span class="lang-fr">Conditions générales</span><span class="lang-sv">Villkor</span><span class="lang-fi">Käyttöehdot</span><span class="lang-ru">Условия</span></span></a>
+<a href="index.html">Home</a>
+<a href="app-comparison.html">Apps</a>
+<a href="coaching-tipps.html">Blog</a>
+<a href="shop.html">Shop</a>
+<a href="hilfe.html">Hilfe</a>
+<a href="faq.html">FAQ</a>
+<a href="hockey-statistik-guide.html">Statistik-Guide</a>
+<a href="about.html">Über uns</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="terms.html">AGB</a>
 </nav>
-<p>© 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span><span class="lang-fr">Suisse</span><span class="lang-sv">Schweiz</span><span class="lang-fi">Sveitsi</span><span class="lang-ru">Швейцария</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+<p>© 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
 </div>
 </footer>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
 <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
 <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-<span data-lang-group="cookie-text">
-<span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
-<span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
-<span class="lang-fr">🍪 Ce site utilise des cookies et des services tiers (comme Google AdSense) pour afficher du contenu et de la publicité. En savoir plus dans notre <a href="datenschutz.html" style="color:#2563eb;">politique de confidentialité</a>.</span><span class="lang-sv">🍪 Den här webbplatsen använder cookies och tredjepartstjänster (som Google AdSense) för att visa innehåll och annonser. Läs mer i vår <a href="datenschutz.html" style="color:#2563eb;">integritetspolicy</a>.</span><span class="lang-fi">🍪 Tämä sivusto käyttää evästeitä ja kolmannen osapuolen palveluita (kuten Google AdSensea) sisällön ja mainonnan näyttämiseen. Lue lisää <a href="datenschutz.html" style="color:#2563eb;">tietosuojakäytännöstämme</a>.</span><span class="lang-ru">🍪 Этот сайт использует файлы cookie и сторонние сервисы (например, Google AdSense) для показа контента и рекламы. Подробнее в нашей <a href="datenschutz.html" style="color:#2563eb;">политике конфиденциальности</a>.</span></span>
+
+🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+
+
 </p>
 <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
 <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
-<span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span><span class="lang-fr">OK / Compris</span><span class="lang-sv">OK / Förstått</span><span class="lang-fi">OK / Ymmärretty</span><span class="lang-ru">ОК / Понятно</span></span>
+OK / Verstanden
 </button>
 </div>
 </div>
 </div>
 <script>
         (function() {
-            const defaultLang = 'de';
-            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
-            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
 
-            function getBrowserLanguage() {
-                const browserLang = navigator.language || navigator.userLanguage;
-                const langCode = browserLang.split('-')[0].toLowerCase();
-                return supportedLangs.includes(langCode) ? langCode : defaultLang;
-            }
 
-            function getInitialLanguage() {
-                const saved = localStorage.getItem('smarthockey-lang');
-                if (saved && supportedLangs.includes(saved)) return saved;
-                return getBrowserLanguage();
-            }
 
-            function switchLanguage(lang) {
-                if (!supportedLangs.includes(lang)) lang = defaultLang;
 
-                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
-                    group.querySelectorAll('span[class^="lang-"]').forEach(function(node) {
-                        node.classList.remove('active');
-                    });
-                    const activeNode = group.querySelector('.lang-' + lang);
-                    if (activeNode) activeNode.classList.add('active');
-                });
 
-                document.querySelectorAll('.lang-content').forEach(function(el) {
-                    el.classList.remove('active');
-                });
-                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
-                    el.classList.add('active');
-                });
-
-                const currentName = document.querySelector('.lang-current-name');
-                if (currentName) currentName.textContent = langNames[lang];
-
-                document.querySelectorAll('.lang-option').forEach(function(option) {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
-                });
-
-                document.documentElement.lang = lang;
-                localStorage.setItem('smarthockey-lang', lang);
-            }
-
-            const initialLang = getInitialLanguage();
-            switchLanguage(initialLang);
-
-            const switcher = document.querySelector('.language-switcher');
-            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
             if (switcher && dropdownBtn) {
                 dropdownBtn.addEventListener('click', function(event) {
                     event.stopPropagation();
@@ -696,9 +351,7 @@
                 });
             }
 
-            document.querySelectorAll('.lang-option').forEach(function(option) {
                 option.addEventListener('click', function() {
-                    switchLanguage(this.getAttribute('data-lang'));
                     if (switcher) switcher.classList.remove('active');
                 });
             });

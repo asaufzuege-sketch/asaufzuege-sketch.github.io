@@ -66,8 +66,6 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
     
         .site-header {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
@@ -117,65 +115,6 @@
         .site-nav a.active {
             color: #2563eb;
         }
-        .language-switcher { position: relative; display: inline-block; }
-        .lang-dropdown-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border: 2px solid #2563eb;
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-        .lang-dropdown-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
-        }
-        .lang-dropdown-btn svg { width: 18px; height: 18px; }
-        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
-        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
-        .lang-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 8px;
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
-            border: 2px solid #2a2a3e;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            min-width: 180px;
-            z-index: 1000;
-            overflow: hidden;
-        }
-        .language-switcher.active .lang-dropdown-menu { display: block; }
-        .lang-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            border: none;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-            font-size: 1rem;
-        }
-        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
-        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
-        .lang-option-flag { font-size: 1.3rem; }
-        .lang-option-name { font-size: 0.95rem; }
-        [data-lang-group] span[class^="lang-"] { display: none !important; }
-        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
         .page-shell { padding: 20px; }
         .page-links {
             max-width: 860px;
@@ -243,63 +182,50 @@
 </a>
 <nav class="site-nav">
 <a href="index.html">
-<span data-lang-group="nav-home">
-<span class="lang-de active">🏠 Home</span>
-<span class="lang-en">🏠 Home</span>
-<span class="lang-fr">🏠 Accueil</span><span class="lang-sv">🏠 Hem</span><span class="lang-fi">🏠 Etusivu</span><span class="lang-ru">🏠 Главная</span></span>
+
+🏠 Home
+
+
 </a>
 <a href="app-comparison.html">
-<span data-lang-group="nav-apps">
-<span class="lang-de active">📱 Apps</span>
-<span class="lang-en">📱 Apps</span>
-<span class="lang-fr">📱 Applications</span><span class="lang-sv">📱 Appar</span><span class="lang-fi">📱 Sovellukset</span><span class="lang-ru">📱 Приложения</span></span>
+
+📱 Apps
+
+
 </a>
 <a class="active" href="coaching-tipps.html">
-<span data-lang-group="nav-blog">
-<span class="lang-de active">📝 Blog</span>
-<span class="lang-en">📝 Blog</span>
-<span class="lang-fr">📝 Blog</span><span class="lang-sv">📝 Blog</span><span class="lang-fi">📝 Blog</span><span class="lang-ru">📝 Blog</span></span>
+
+📝 Blog
+
+
 </a>
 <a href="shop.html">
-<span data-lang-group="nav-shop">
-<span class="lang-de active">🛒 Shop</span>
-<span class="lang-en">🛒 Shop</span>
-<span class="lang-fr">🛒 Shop</span><span class="lang-sv">🛒 Shop</span><span class="lang-fi">🛒 Shop</span><span class="lang-ru">🛒 Shop</span></span>
+
+🛒 Shop
+
+
 </a>
 </nav>
-<div class="language-switcher">
-<button aria-label="Sprache wählen / Choose language" class="lang-dropdown-btn" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10"></circle>
-<line x1="2" x2="22" y1="12" y2="12"></line>
-<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-</svg>
-<span class="lang-current-name">Deutsch</span>
-<svg class="lang-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="6 9 12 15 18 9"></polyline>
-</svg>
-</button>
-<div class="lang-dropdown-menu"><button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button><button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button><button class="lang-option" data-lang="fr" type="button"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button><button class="lang-option" data-lang="sv" type="button"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button><button class="lang-option" data-lang="fi" type="button"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button><button class="lang-option" data-lang="ru" type="button"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button></div>
-</div>
+
 </div>
 </header>
 <main class="page-shell">
 <div class="page-links">
 <a class="back-link" href="index.html">
-<span data-lang-group="back-home">
-<span class="lang-de active">← Zurück zur Startseite</span>
-<span class="lang-en">← Back to home</span>
-<span class="lang-fr">← Back to home</span><span class="lang-sv">← Back to home</span><span class="lang-fi">← Back to home</span><span class="lang-ru">← Back to home</span></span>
+
+← Zurück zur Startseite
+
+
 </a>
 <a class="back-link" href="coaching-tipps.html">
-<span data-lang-group="back-blog">
-<span class="lang-de active">← Zum Blog</span>
-<span class="lang-en">← Back to blog</span>
-<span class="lang-fr">← Back to blog</span><span class="lang-sv">← Back to blog</span><span class="lang-fi">← Back to blog</span><span class="lang-ru">← Back to blog</span></span>
+
+← Zum Blog
+
+
 </a>
 </div>
 <div class="container">
-<div class="lang-content lang-de active">
+
 <h1>Faceoff gewinnen: Technik, Taktik und Trainingsdrills</h1>
 <p>In einem typischen Eishockey-Spiel finden 50–70 Faceoffs statt. Teams, die über 55 % ihrer Bullys gewinnen, besitzen messbar mehr Puck-Possession in entscheidenden Phasen. Besonders in der eigenen Defensivzone, im Powerplay und in den letzten zwei Minuten enger Spiele ist der Faceoff-Gewinn direkt mit dem Spielausgang korreliert. Trotzdem wird das Bully-Spiel im Training kaum systematisch geübt. Dieser Artikel ändert das.</p>
 <h2>Körperhaltung: Die Basis des Faceoff-Spiels</h2>
@@ -351,382 +277,76 @@
 <p>Zwei Center, je 10 Faceoffs. Gewinner spielt im nächsten Übungsspiel; Verlierer nimmt sich eine Aufgabe (z.B. 10 Liegestütze). Wettkampfcharakter erhöht die Konzentration stark.</p>
 <h3>Drill 5: Positions-Faceoff (15 Min.)</h3>
 <p>Drei verschiedene Faceoff-Positionen (off-zone, def-zone, neutral) rotierend. Nach jedem gewonnenen Bully muss das Team den Set Play ausführen und das Spiel zu Ende spielen (3 Pässe oder Tor). Trainiert nicht nur das Bully selbst, sondern den Übergang danach.</p>
-</div>
-<div class="lang-content lang-en">
-<h1>Winning Faceoffs: Technique, Tactics, and Training Drills</h1>
-<p>In a typical hockey game, 50–70 faceoffs take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the power play, and in the final two minutes of close games, winning faceoffs correlates directly with the outcome. Yet systematic faceoff training is rarely part of practice. This article changes that.</p>
-<h2>Body Position: The Foundation of Faceoff Play</h2>
-<p>Good faceoff body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
-<p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
-<h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
-<h3>Forehand Grip</h3>
-<p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
-<h3>Backhand Grip</h3>
-<p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone faceoffs.</p>
-<h3>Push Grip</h3>
-<p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
-<h2>Timing: The Critical Moment</h2>
-<p>Faceoffs are not won by reacting to the puck drop — they're won through anticipation. The best faceoff specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
-<p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
-<h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
-<p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
-<p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
-<h2>Eye Tricks: The Psychological Component</h2>
-<p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
-<h2>Set Plays After a Won Faceoff</h2>
-<h3>Offensive Zone: Going Straight to the Finish</h3>
-<p>After winning a draw in the offensive zone (upper faceoff circles), there are three clear set play options:</p>
-<ol>
-<li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
-<li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
-<li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the goalie isn't set.</li>
-</ol>
-<h3>Defensive Zone: Safety First</h3>
-<p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
-<h3>Neutral Zone: Creating Transition</h3>
-<p>Neutral-zone faceoffs: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
-<h2>Faceoff Statistics and Why They Matter</h2>
-<table>
-<tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
-<tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
-<tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
-<tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
-<tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
-</table>
-<h2>5 Training Drills for Better Faceoffs</h2>
-<h3>Drill 1: Shadow Drop (10 min.)</h3>
-<p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
-<h3>Drill 2: Tie-Up Station (10 min.)</h3>
-<p>In the faceoff circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
-<h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
-<p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
-<h3>Drill 4: Faceoff Competition (10 min.)</h3>
-<p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
-<h3>Drill 5: Positional Faceoff (15 min.)</h3>
-<p>Three different faceoff spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
-</div><div class="lang-content lang-fr">
-<h1>Gagner les mises au jeu : technique, tactique et exercices d’entraînement</h1>
-<p>In a typical hockey game, 50–70 mises au jeu take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the supériorité numérique, and in the final two minutes of close games, winning mises au jeu correlates directly with the outcome. Yet systematic mise au jeu training is rarely part of practice. This article changes that.</p>
-<h2>Body Position: The Foundation of Faceoff Play</h2>
-<p>Good mise au jeu body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
-<p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
-<h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
-<h3>Forehand Grip</h3>
-<p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
-<h3>Backhand Grip</h3>
-<p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone mises au jeu.</p>
-<h3>Push Grip</h3>
-<p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
-<h2>Timing: The Critical Moment</h2>
-<p>Mises au jeu are not won by reacting to the puck drop — they're won through anticipation. The best mise au jeu specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
-<p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
-<h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
-<p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
-<p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
-<h2>Eye Tricks: The Psychological Component</h2>
-<p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
-<h2>Set Plays After a Won Faceoff</h2>
-<h3>Offensive Zone: Going Straight to the Finish</h3>
-<p>After winning a draw in the offensive zone (upper mise au jeu circles), there are three clear set play options:</p>
-<ol>
-<li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
-<li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
-<li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the gardien isn't set.</li>
-</ol>
-<h3>Defensive Zone: Safety First</h3>
-<p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
-<h3>Neutral Zone: Creating Transition</h3>
-<p>Neutral-zone mises au jeu: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
-<h2>Faceoff Statistics and Why They Matter</h2>
-<table>
-<tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
-<tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
-<tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
-<tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
-<tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
-</table>
-<h2>5 Training Drills for Better Mises au jeu</h2>
-<h3>Drill 1: Shadow Drop (10 min.)</h3>
-<p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
-<h3>Drill 2: Tie-Up Station (10 min.)</h3>
-<p>In the mise au jeu circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
-<h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
-<p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
-<h3>Drill 4: Faceoff Competition (10 min.)</h3>
-<p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
-<h3>Drill 5: Positional Faceoff (15 min.)</h3>
-<p>Three different mise au jeu spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
-</div><div class="lang-content lang-sv">
-<h1>Vinna tekningar: teknik, taktik och träningsövningar</h1>
-<p>In a typical hockey game, 50–70 tekningar take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the powerplay, and in the final two minutes of close games, winning tekningar correlates directly with the outcome. Yet systematic tekning training is rarely part of practice. This article changes that.</p>
-<h2>Body Position: The Foundation of Faceoff Play</h2>
-<p>Good tekning body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
-<p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
-<h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
-<h3>Forehand Grip</h3>
-<p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
-<h3>Backhand Grip</h3>
-<p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone tekningar.</p>
-<h3>Push Grip</h3>
-<p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
-<h2>Timing: The Critical Moment</h2>
-<p>Tekningar are not won by reacting to the puck drop — they're won through anticipation. The best tekning specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
-<p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
-<h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
-<p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
-<p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
-<h2>Eye Tricks: The Psychological Component</h2>
-<p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
-<h2>Set Plays After a Won Faceoff</h2>
-<h3>Offensive Zone: Going Straight to the Finish</h3>
-<p>After winning a draw in the offensive zone (upper tekning circles), there are three clear set play options:</p>
-<ol>
-<li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
-<li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
-<li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the målvakt isn't set.</li>
-</ol>
-<h3>Defensive Zone: Safety First</h3>
-<p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
-<h3>Neutral Zone: Creating Transition</h3>
-<p>Neutral-zone tekningar: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
-<h2>Faceoff Statistics and Why They Matter</h2>
-<table>
-<tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
-<tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
-<tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
-<tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
-<tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
-</table>
-<h2>5 Training Drills for Better Tekningar</h2>
-<h3>Drill 1: Shadow Drop (10 min.)</h3>
-<p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
-<h3>Drill 2: Tie-Up Station (10 min.)</h3>
-<p>In the tekning circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
-<h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
-<p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
-<h3>Drill 4: Faceoff Competition (10 min.)</h3>
-<p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
-<h3>Drill 5: Positional Faceoff (15 min.)</h3>
-<p>Three different tekning spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
-</div><div class="lang-content lang-fi">
-<h1>Aloitusten voittaminen: tekniikka, taktiikka ja harjoitteet</h1>
-<p>In a typical hockey game, 50–70 aloitukset take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the ylivoima, and in the final two minutes of close games, winning aloitukset correlates directly with the outcome. Yet systematic aloitus training is rarely part of practice. This article changes that.</p>
-<h2>Body Position: The Foundation of Faceoff Play</h2>
-<p>Good aloitus body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
-<p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
-<h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
-<h3>Forehand Grip</h3>
-<p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
-<h3>Backhand Grip</h3>
-<p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone aloitukset.</p>
-<h3>Push Grip</h3>
-<p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
-<h2>Timing: The Critical Moment</h2>
-<p>Aloitukset are not won by reacting to the puck drop — they're won through anticipation. The best aloitus specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
-<p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
-<h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
-<p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
-<p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
-<h2>Eye Tricks: The Psychological Component</h2>
-<p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
-<h2>Set Plays After a Won Faceoff</h2>
-<h3>Offensive Zone: Going Straight to the Finish</h3>
-<p>After winning a draw in the offensive zone (upper aloitus circles), there are three clear set play options:</p>
-<ol>
-<li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
-<li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
-<li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the maalivahti isn't set.</li>
-</ol>
-<h3>Defensive Zone: Safety First</h3>
-<p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
-<h3>Neutral Zone: Creating Transition</h3>
-<p>Neutral-zone aloitukset: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
-<h2>Faceoff Statistics and Why They Matter</h2>
-<table>
-<tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
-<tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
-<tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
-<tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
-<tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
-</table>
-<h2>5 Training Drills for Better Aloitukset</h2>
-<h3>Drill 1: Shadow Drop (10 min.)</h3>
-<p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
-<h3>Drill 2: Tie-Up Station (10 min.)</h3>
-<p>In the aloitus circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
-<h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
-<p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
-<h3>Drill 4: Faceoff Competition (10 min.)</h3>
-<p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
-<h3>Drill 5: Positional Faceoff (15 min.)</h3>
-<p>Three different aloitus spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
-</div><div class="lang-content lang-ru">
-<h1>Как выигрывать вбрасывания: техника, тактика и тренировочные упражнения</h1>
-<p>In a typical hockey game, 50–70 вбрасывания take place. Teams that win over 55% of their draws measurably control more puck possession during critical phases of play. Especially in the defensive zone, on the большинство, and in the final two minutes of close games, winning вбрасывания correlates directly with the outcome. Yet systematic вбрасывание training is rarely part of practice. This article changes that.</p>
-<h2>Body Position: The Foundation of Faceoff Play</h2>
-<p>Good вбрасывание body position is the first step toward winning more draws. The base position: knees slightly bent (not fully extended), body over the knees, weight on the balls of the feet, shoulder line parallel to the dot. The upper arm (facing the opponent) is loose; the lower arm (stick hand) is primed to pull.</p>
-<p>Common errors: standing too upright (too slow on the drop), stance too wide (poor lateral reaction), stick too far from the body (loss of leverage). Body position should be checked regularly in front of a mirror or on video.</p>
-<h2>Grip Variations: Forehand, Backhand, and Push Grip</h2>
-<h3>Forehand Grip</h3>
-<p>The upper hand grips the stick as in normal play, with the blade pointed toward the puck. Advantage: natural position, good pull-back. Disadvantage: the opponent can easily read where the puck will go.</p>
-<h3>Backhand Grip</h3>
-<p>The upper hand rotates so the blade faces toward your own net. Advantage: surprises the opponent, good for a quick puck behind your body line. Disadvantage: less power, harder to standardize. Best used on defensive-zone вбрасывания.</p>
-<h3>Push Grip</h3>
-<p>Both hands hold the stick close together; the blade is pushed forward rather than pulled. The goal is to sweep the opponent's stick out of position before it contacts the puck. Very effective for tie-ups because the opponent loses blade control.</p>
-<h2>Timing: The Critical Moment</h2>
-<p>Вбрасывания are not won by reacting to the puck drop — they're won through anticipation. The best вбрасывание specialists don't react to the falling puck; they initiate movement just before it, based on the referee's rhythm. Train this by reading the referee's timing, watching the hand movement before the drop, and practicing drops without an opponent to develop a feel for timing.</p>
-<p>In a game: don't watch the puck — watch the referee's hand. The puck drops when the hand opens. That moment, not the impact on the ice, is your cue.</p>
-<h2>Tie-Up Techniques: Neutralizing Your Opponent</h2>
-<p>When your timing isn't perfect or your opponent has the advantage, a tie-up is the safe alternative: cross your stick over the opponent's and control their blade. This prevents the opponent from making a clean play, giving your teammates more time to retrieve the loose puck.</p>
-<p>Effective tie-up sequence: cross over the opponent's blade from above, press inward, slide your blade between theirs and the puck. Simultaneously: apply body contact, transfer weight onto the opponent, take away their space. After the tie-up: immediately rely on your wingers to pick up the loose puck.</p>
-<h2>Eye Tricks: The Psychological Component</h2>
-<p>Pro centers confirm it: brief eye contact before the draw sends a signal to your opponent and creates doubt. Glance briefly in one direction, play the puck the other way. Or: lock your stare on the puck, then make a sudden change of direction. These are subtle tools — but in 50/50 situations, psychology tips the balance.</p>
-<h2>Set Plays After a Won Faceoff</h2>
-<h3>Offensive Zone: Going Straight to the Finish</h3>
-<p>After winning a draw in the offensive zone (upper вбрасывание circles), there are three clear set play options:</p>
-<ol>
-<li><strong>Directly behind the net:</strong> Center draws the puck back, winger retrieves and pivots. Defenders must rotate — opens the slot.</li>
-<li><strong>To the blue line:</strong> Puck immediately back to the point player who shoots directly or moves it across. Requires quick positioning from the defensemen.</li>
-<li><strong>Directly on net:</strong> Center wins the draw forward, winger shoots immediately from the circle. The element of surprise is the strength — the вратарь isn't set.</li>
-</ol>
-<h3>Defensive Zone: Safety First</h3>
-<p>In your own zone, deep left or right draws: the primary goal is to control the puck or get a clear — no risky maneuvers. Set plays here are simpler: puck back behind your own goal line, or an immediate clear along the boards. All five players must know who takes the puck and who screens.</p>
-<h3>Neutral Zone: Creating Transition</h3>
-<p>Neutral-zone вбрасывания: the goal is puck control and an immediate attack. Win it forward and you can create a 2-on-1 or 3-on-2 if your wingers hold their positions. Train this: after a neutral-zone win, immediate sprints into depth — the opponent is briefly out of position.</p>
-<h2>Faceoff Statistics and Why They Matter</h2>
-<table>
-<tr><th>Faceoff Win %</th><th>Impact on Puck Possession</th><th>Rating</th></tr>
-<tr><td>Above 58%</td><td>+15% more offensive zone possession</td><td>Elite</td></tr>
-<tr><td>52–58%</td><td>+6–10% more possession</td><td>Good</td></tr>
-<tr><td>48–52%</td><td>Even</td><td>Average</td></tr>
-<tr><td>Below 45%</td><td>Opponent starts 30%+ more attacks with puck control</td><td>Needs work</td></tr>
-</table>
-<h2>5 Training Drills for Better Вбрасывания</h2>
-<h3>Drill 1: Shadow Drop (10 min.)</h3>
-<p>Two players face each other, no puck. A coach simulates the drop motion. Players react to the hand movement, not the puck. Goal: develop timing.</p>
-<h3>Drill 2: Tie-Up Station (10 min.)</h3>
-<p>In the вбрасывание circle, focus exclusively on tie-up technique. No attempt to win the puck — only control the opponent's blade and position your body. Whoever maintains control longest wins.</p>
-<h3>Drill 3: Set-Play Faceoff (15 min.)</h3>
-<p>5-on-5, each draw has a pre-assigned set play. The center knows exactly where to play it. The team knows each player's assignment. No free play — execute the plan only.</p>
-<h3>Drill 4: Faceoff Competition (10 min.)</h3>
-<p>Two centers, 10 draws each. The winner plays in the next scrimmage; the loser does a task (e.g., 10 push-ups). The competitive element dramatically improves focus.</p>
-<h3>Drill 5: Positional Faceoff (15 min.)</h3>
-<p>Three different вбрасывание spots (offensive, defensive, neutral) in rotation. After each won draw, the team executes the set play and plays it out (3 passes or a shot). This trains not only the draw itself, but the transition that follows.</p>
-</div>
+
+
 <div class="weiterlesen">
-<h3><span data-lang-group="read-more-heading"><span class="lang-de active">Weiterlesen</span><span class="lang-en">Read more</span><span class="lang-fr">En savoir plus</span><span class="lang-sv">Läs mer</span><span class="lang-fi">Lue lisää</span><span class="lang-ru">Читать далее</span></span></h3>
+<h3>Weiterlesen</h3>
 <ul>
-<li><a href="blog-powerplay-strategien.html"><span data-lang-group="readmore-1"><span class="lang-de active">Powerplay im Eishockey: Aufstellungen, Laufwege und Erfolgsmuster</span><span class="lang-en">Power Play in Hockey: Formations, Rotations, and Winning Patterns</span><span class="lang-fr">Supériorité numérique au hockey : formations, rotations et schémas gagnants</span><span class="lang-sv">Powerplay i hockey: formationer, rotationer och vinnande mönster</span><span class="lang-fi">Ylivoima jääkiekossa: muodostelmat, rotaatiot ja voittavat mallit</span><span class="lang-ru">Большинство в хоккее: расстановки, ротации и выигрышные схемы</span></span></a></li>
-<li><a href="blog-penalty-killing.html"><span data-lang-group="readmore-2"><span class="lang-de active">Penalty Killing: Defensive Systeme im Vergleich</span><span class="lang-en">Penalty Kill: Comparing Defensive Systems</span><span class="lang-fr">Infériorité numérique : comparaison des systèmes défensifs</span><span class="lang-sv">Boxplay: jämförelse av defensiva system</span><span class="lang-fi">Alivoima: puolustusjärjestelmien vertailu</span><span class="lang-ru">Меньшинство: сравнение оборонительных систем</span></span></a></li>
-<li><a href="blog-zonen-eintritt.html"><span data-lang-group="readmore-3"><span class="lang-de active">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</span><span class="lang-en">Zone Entries: Carry-In vs. Dump-In – Data and Decision Logic</span><span class="lang-fr">Entrée de zone : carry-in vs dump-in — données et logique de décision</span><span class="lang-sv">Zonintrång: carry-in vs dump-in – data och beslutslogik</span><span class="lang-fi">Alueelle tulo: carry-in vs. dump-in – data ja päätöslogiikka</span><span class="lang-ru">Вход в зону: carry-in vs dump-in — данные и логика принятия решений</span></span></a></li>
+<li><a href="blog-powerplay-strategien.html">Powerplay im Eishockey: Aufstellungen, Laufwege und Erfolgsmuster</a></li>
+<li><a href="blog-penalty-killing.html">Penalty Killing: Defensive Systeme im Vergleich</a></li>
+<li><a href="blog-zonen-eintritt.html">Zonen-Eintritt: Carry-In vs. Dump-In – Daten und Entscheidungslogik</a></li>
 </ul>
 </div>
 <div class="article-footer">
-<strong style="color:#a0a0a0;"><span data-lang-group="article-footer-label"><span class="lang-de active">Blog-Artikel:</span><span class="lang-en">Blog articles:</span><span class="lang-fr">Articles de blog :</span><span class="lang-sv">Bloggartiklar:</span><span class="lang-fi">Blogiartikkelit:</span><span class="lang-ru">Статьи блога:</span></span></strong>
-<a href="blog-schuss-statistiken.html"><span data-lang-group="article-link-1"><span class="lang-de active">Schuss-Statistiken</span><span class="lang-en">Shot Statistics</span><span class="lang-fr">Statistiques de tirs</span><span class="lang-sv">Skottstatistik</span><span class="lang-fi">Laukaustilastot</span><span class="lang-ru">Статистика бросков</span></span></a> ·
-            <a href="blog-torwart-analyse.html"><span data-lang-group="article-link-2"><span class="lang-de active">Torwart-Analyse</span><span class="lang-en">Goalie Analysis</span><span class="lang-fr">Analyse du gardien</span><span class="lang-sv">Målvaktsanalys</span><span class="lang-fi">Maalivahtianalyysi</span><span class="lang-ru">Анализ вратаря</span></span></a> ·
-            <a href="blog-powerplay-strategien.html"><span data-lang-group="article-link-3"><span class="lang-de active">Powerplay</span><span class="lang-en">Power Play</span><span class="lang-fr">supériorité numérique</span><span class="lang-sv">powerplay</span><span class="lang-fi">ylivoima</span><span class="lang-ru">большинство</span></span></a> ·
-            <a href="blog-penalty-killing.html"><span data-lang-group="article-link-4"><span class="lang-de active">Penalty Killing</span><span class="lang-en">Penalty Kill</span><span class="lang-fr">infériorité numérique</span><span class="lang-sv">boxplay</span><span class="lang-fi">alivoima</span><span class="lang-ru">меньшинство</span></span></a> ·
-            <a href="blog-faceoffs.html"><span data-lang-group="article-link-5"><span class="lang-de active">Faceoffs</span><span class="lang-en">Faceoffs</span><span class="lang-fr">Mises au jeu</span><span class="lang-sv">Tekningar</span><span class="lang-fi">Aloitukset</span><span class="lang-ru">Вбрасывания</span></span></a> ·
-            <a href="blog-zonen-eintritt.html"><span data-lang-group="article-link-6"><span class="lang-de active">Zonen-Eintritt</span><span class="lang-en">Zone Entries</span><span class="lang-fr">Zone Entries</span><span class="lang-sv">Zone Entries</span><span class="lang-fi">Zone Entries</span><span class="lang-ru">Zone Entries</span></span></a> ·
-            <a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="article-link-7"><span class="lang-de active">Trainingsplan</span><span class="lang-en">Training Plan</span><span class="lang-fr">Plan d’entraînement</span><span class="lang-sv">Träningsplan</span><span class="lang-fi">Harjoitussuunnitelma</span><span class="lang-ru">Тренировочный план</span></span></a> ·
-            <a href="blog-kindereishockey.html"><span data-lang-group="article-link-8"><span class="lang-de active">Kindereishockey</span><span class="lang-en">Youth Hockey</span><span class="lang-fr">Hockey des jeunes</span><span class="lang-sv">Ungdomshockey</span><span class="lang-fi">Juniorikiekko</span><span class="lang-ru">Детский хоккей</span></span></a> ·
-            <a href="blog-spielanalyse.html"><span data-lang-group="article-link-9"><span class="lang-de active">Spielanalyse</span><span class="lang-en">Game Analysis</span><span class="lang-fr">Analyse de match</span><span class="lang-sv">Matchanalys</span><span class="lang-fi">Pelianalyysi</span><span class="lang-ru">Анализ игры</span></span></a> ·
-            <a href="blog-mentaltraining.html"><span data-lang-group="article-link-10"><span class="lang-de active">Mentaltraining</span><span class="lang-en">Mental Training</span><span class="lang-fr">Préparation mentale</span><span class="lang-sv">Mental träning</span><span class="lang-fi">Mentaaliharjoittelu</span><span class="lang-ru">Ментальная подготовка</span></span></a>
+<strong style="color:#a0a0a0;">Blog-Artikel:</strong>
+<a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
+            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
+            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
+            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
+            <a href="blog-faceoffs.html">Faceoffs</a> ·
+            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
+            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
+            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
+            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
+            <a href="blog-mentaltraining.html">Mentaltraining</a>
 <br/>
-<a href="coaching-tipps.html"><span data-lang-group="article-overview-link"><span class="lang-de active">Blog Übersicht</span><span class="lang-en">Blog overview</span><span class="lang-fr">Aperçu du blog</span><span class="lang-sv">Bloggöversikt</span><span class="lang-fi">Blogin yleiskatsaus</span><span class="lang-ru">Обзор блога</span></span></a> ·
-                <a href="impressum.html"><span data-lang-group="article-imprint-link"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a> ·
-                <a href="datenschutz.html"><span data-lang-group="article-privacy-link"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
+<a href="coaching-tipps.html">Blog Übersicht</a> ·
+                <a href="impressum.html">Impressum</a> ·
+                <a href="datenschutz.html">Datenschutz</a>
 </div>
 </div>
 </main>
 <footer class="site-footer">
 <div class="footer-container">
 <nav class="footer-nav">
-<a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-sv">Hem</span><span class="lang-fi">Etusivu</span><span class="lang-ru">Главная</span></span></a>
-<a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span><span class="lang-fr">Applications</span><span class="lang-sv">Appar</span><span class="lang-fi">Sovellukset</span><span class="lang-ru">Приложения</span></span></a>
-<a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span><span class="lang-fr">Blog</span><span class="lang-sv">Blog</span><span class="lang-fi">Blog</span><span class="lang-ru">Blog</span></span></a>
-<a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span><span class="lang-fr">Shop</span><span class="lang-sv">Shop</span><span class="lang-fi">Shop</span><span class="lang-ru">Shop</span></span></a>
-<a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span><span class="lang-fr">Aide</span><span class="lang-sv">Hjälp</span><span class="lang-fi">Ohje</span><span class="lang-ru">Помощь</span></span></a>
-<a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span><span class="lang-sv">FAQ</span><span class="lang-fi">FAQ</span><span class="lang-ru">FAQ</span></span></a>
-<a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span><span class="lang-fr">Guide des statistiques</span><span class="lang-sv">Statistikguide</span><span class="lang-fi">Tilasto-opas</span><span class="lang-ru">Руководство по статистике</span></span></a>
-<a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span><span class="lang-fr">À propos de nous</span><span class="lang-sv">Om oss</span><span class="lang-fi">Tietoa meistä</span><span class="lang-ru">О нас</span></span></a>
-<a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a>
-<a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
-<a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span><span class="lang-fr">Conditions générales</span><span class="lang-sv">Villkor</span><span class="lang-fi">Käyttöehdot</span><span class="lang-ru">Условия</span></span></a>
+<a href="index.html">Home</a>
+<a href="app-comparison.html">Apps</a>
+<a href="coaching-tipps.html">Blog</a>
+<a href="shop.html">Shop</a>
+<a href="hilfe.html">Hilfe</a>
+<a href="faq.html">FAQ</a>
+<a href="hockey-statistik-guide.html">Statistik-Guide</a>
+<a href="about.html">Über uns</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="terms.html">AGB</a>
 </nav>
-<p>© 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span><span class="lang-fr">Suisse</span><span class="lang-sv">Schweiz</span><span class="lang-fi">Sveitsi</span><span class="lang-ru">Швейцария</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+<p>© 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
 </div>
 </footer>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
 <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
 <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-<span data-lang-group="cookie-text">
-<span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
-<span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
-<span class="lang-fr">🍪 Ce site utilise des cookies et des services tiers (comme Google AdSense) pour afficher du contenu et de la publicité. En savoir plus dans notre <a href="datenschutz.html" style="color:#2563eb;">politique de confidentialité</a>.</span><span class="lang-sv">🍪 Den här webbplatsen använder cookies och tredjepartstjänster (som Google AdSense) för att visa innehåll och annonser. Läs mer i vår <a href="datenschutz.html" style="color:#2563eb;">integritetspolicy</a>.</span><span class="lang-fi">🍪 Tämä sivusto käyttää evästeitä ja kolmannen osapuolen palveluita (kuten Google AdSensea) sisällön ja mainonnan näyttämiseen. Lue lisää <a href="datenschutz.html" style="color:#2563eb;">tietosuojakäytännöstämme</a>.</span><span class="lang-ru">🍪 Этот сайт использует файлы cookie и сторонние сервисы (например, Google AdSense) для показа контента и рекламы. Подробнее в нашей <a href="datenschutz.html" style="color:#2563eb;">политике конфиденциальности</a>.</span></span>
+
+🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+
+
 </p>
 <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
 <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
-<span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span><span class="lang-fr">OK / Compris</span><span class="lang-sv">OK / Förstått</span><span class="lang-fi">OK / Ymmärretty</span><span class="lang-ru">ОК / Понятно</span></span>
+OK / Verstanden
 </button>
 </div>
 </div>
 </div>
 <script>
         (function() {
-            const defaultLang = 'de';
-            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
-            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
 
-            function getBrowserLanguage() {
-                const browserLang = navigator.language || navigator.userLanguage;
-                const langCode = browserLang.split('-')[0].toLowerCase();
-                return supportedLangs.includes(langCode) ? langCode : defaultLang;
-            }
 
-            function getInitialLanguage() {
-                const saved = localStorage.getItem('smarthockey-lang');
-                if (saved && supportedLangs.includes(saved)) return saved;
-                return getBrowserLanguage();
-            }
 
-            function switchLanguage(lang) {
-                if (!supportedLangs.includes(lang)) lang = defaultLang;
 
-                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
-                    group.querySelectorAll('span[class^="lang-"]').forEach(function(node) {
-                        node.classList.remove('active');
-                    });
-                    const activeNode = group.querySelector('.lang-' + lang);
-                    if (activeNode) activeNode.classList.add('active');
-                });
 
-                document.querySelectorAll('.lang-content').forEach(function(el) {
-                    el.classList.remove('active');
-                });
-                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
-                    el.classList.add('active');
-                });
-
-                const currentName = document.querySelector('.lang-current-name');
-                if (currentName) currentName.textContent = langNames[lang];
-
-                document.querySelectorAll('.lang-option').forEach(function(option) {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
-                });
-
-                document.documentElement.lang = lang;
-                localStorage.setItem('smarthockey-lang', lang);
-            }
-
-            const initialLang = getInitialLanguage();
-            switchLanguage(initialLang);
-
-            const switcher = document.querySelector('.language-switcher');
-            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
             if (switcher && dropdownBtn) {
                 dropdownBtn.addEventListener('click', function(event) {
                     event.stopPropagation();
@@ -738,9 +358,7 @@
                 });
             }
 
-            document.querySelectorAll('.lang-option').forEach(function(option) {
                 option.addEventListener('click', function() {
-                    switchLanguage(this.getAttribute('data-lang'));
                     if (switcher) switcher.classList.remove('active');
                 });
             });
