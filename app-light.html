@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SmartHockey Light - The perfect entry-level hockey statistics app for individual players and small teams. Available now as a web app.">
-    <meta name="author" content="SmartHockey Products">
-    <title>SmartHockey Light – Hockey Statistics Web App</title>
-    <link rel="icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="Favicon%20Website%20Tatze.ico">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405" crossorigin="anonymous"></script>
-    <style>
+<meta charset="utf-8"/>
+<meta content="index, follow" name="robots"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SmartHockey Light - The perfect entry-level hockey statistics app for individual players and small teams. Available now as a web app." name="description"/>
+<meta content="SmartHockey Products" name="author"/>
+<title>SmartHockey Light – Hockey-Statistiken einfach erfassen</title>
+<link href="Favicon%20Website%20Tatze.ico" rel="icon" type="image/x-icon"/>
+<link href="Favicon%20Website%20Tatze.ico" rel="shortcut icon" type="image/x-icon"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5732672425319405"></script>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: url('ice-bg.jpg') center center / cover no-repeat fixed; background-color: #0a1628; color: #e0e0e0; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -22,23 +23,6 @@
         nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1.1rem; }
         nav a:hover { color: #2563eb; }
         nav a.active { color: #2563eb; }
-        .language-switcher { position: relative; display: inline-block; }
-        .lang-dropdown-btn { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border: 2px solid #2563eb; color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(37,99,235,0.3); }
-        .lang-dropdown-btn:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); box-shadow: 0 4px 12px rgba(37,99,235,0.5); transform: translateY(-1px); }
-        .lang-dropdown-btn svg { width: 18px; height: 18px; }
-        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
-        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
-        .lang-dropdown-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: linear-gradient(135deg, rgba(22,33,62,0.95) 0%, rgba(15,52,96,0.95) 100%); border: 2px solid #2a2a3e; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); min-width: 180px; z-index: 1000; overflow: hidden; }
-        .language-switcher.active .lang-dropdown-menu { display: block; }
-        .lang-option { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #e0e0e0; cursor: pointer; transition: background-color 0.2s; border: none; background: transparent; width: 100%; text-align: left; font-size: 1rem; }
-        .lang-option:hover { background-color: rgba(37,99,235,0.2); }
-        .lang-option.active { background-color: rgba(37,99,235,0.3); color: #2563eb; font-weight: 600; }
-        .lang-option-flag { font-size: 1.3rem; }
-        .lang-option-name { font-size: 0.95rem; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        [data-lang-group] span[class^="lang-"] { display: none !important; }
-        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
         .hero { background: linear-gradient(135deg, rgba(10,22,40,0.9) 0%, rgba(15,52,96,0.85) 100%); padding: 60px 0 40px; text-align: center; }
         .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
         .hero .app-hero-icon { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
@@ -76,442 +60,168 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="SmartHockey Products" class="logo-img">
-                <span>SmartHockey Products</span>
-            </div>
-            <nav>
-                <a href="index.html">
-                    <span data-lang-group="nav-home">
-                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
-                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Home</span>
-                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Accueil</span>
-                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Hem</span>
-                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Koti</span>
-                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"/></svg>Главная</span>
-                    </span>
-                </a>
-                <a href="app-comparison.html" class="active">
-                    <span data-lang-group="nav-apps">
-                        <span class="lang-en"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
-                        <span class="lang-de active"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
-                        <span class="lang-fr"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Apps</span>
-                        <span class="lang-sv"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Appar</span>
-                        <span class="lang-fi"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Sovellukset</span>
-                        <span class="lang-ru"><svg width="16" height="16" viewBox="0 0 16 16" fill="white" style="vertical-align:middle;margin-right:4px;"><path fill-rule="evenodd" d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>Приложения</span>
-                    </span>
-                </a>
-                <a href="shop.html">
-                    <span data-lang-group="nav-shop">
-                        <span class="lang-en">🛒 Shop</span>
-                        <span class="lang-de active">🛒 Shop</span>
-                        <span class="lang-fr">🛒 Boutique</span>
-                        <span class="lang-sv">🛒 Butik</span>
-                        <span class="lang-fi">🛒 Kauppa</span>
-                        <span class="lang-ru">🛒 Магазин</span>
-                    </span>
-                </a>
-            </nav>
-            <div class="language-switcher">
-                <button class="lang-dropdown-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                    <span class="lang-current-name">Deutsch</span>
-                    <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="lang-dropdown-menu">
-                    <button class="lang-option" data-lang="en"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button>
-                    <button class="lang-option active" data-lang="de"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button>
-                    <button class="lang-option" data-lang="fr"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button>
-                    <button class="lang-option" data-lang="sv"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button>
-                    <button class="lang-option" data-lang="fi"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button>
-                    <button class="lang-option" data-lang="ru"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button>
-                </div>
-            </div>
-        </div>
-    </header>
+<header>
+<div class="container">
+<div class="logo">
+<img alt="SmartHockey Products" class="logo-img" src="logo.png"/>
+<span>SmartHockey Products</span>
+</div>
+<nav>
+<a href="index.html">
 
-    <div class="hero">
-        <div class="container">
-            <img src="app-icon-light.png" alt="SmartHockey Light" class="app-hero-icon">
-            <h1>SmartHockey Light</h1>
-            <p>
-                <span data-lang-group="light-hero-sub">
-                    <span class="lang-en">The perfect entry-level solution for individual players and small teams</span>
-                    <span class="lang-de active">Die perfekte Einstiegslösung für Einzelspieler und kleine Teams</span>
-                    <span class="lang-fr">La solution d'entrée de gamme parfaite pour les joueurs individuels et les petites équipes</span>
-                    <span class="lang-sv">Den perfekta nybörjarlösningen för enskilda spelare och små lag</span>
-                    <span class="lang-fi">Täydellinen aloittelijan ratkaisu yksittäisille pelaajille ja pienille joukkueille</span>
-                    <span class="lang-ru">Идеальное решение для начинающих – для отдельных игроков и небольших команд</span>
-                </span>
-            </p>
-        </div>
-    </div>
 
-    <section class="content-section">
-        <div class="container">
+<svg fill="white" height="16" style="vertical-align:middle;margin-right:4px;" viewbox="0 0 16 16" width="16"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"></path></svg>Home
 
-            <!-- English -->
-            <div class="lang-content lang-en">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Smart Hockey Statistics for Every Player</h2>
-                    <p>SmartHockey Light is the perfect entry-level solution for youth teams, individual players, and amateur teams who want to track their hockey performance without being overwhelmed by complexity. With an intuitive user interface and all the essential features, SmartHockey Light makes tracking statistics accessible to everyone.</p>
-                    <p>Whether you're a team manager, a youth coach for younger players, or a recreational player who wants to keep track of personal performance throughout the season and needs a simple and effective tool for team statistics – SmartHockey Light has everything you need to start your journey to data-driven hockey improvement.</p>
-                    <p>Unlike more complex solutions, SmartHockey Light focuses on the most important features and provides a streamlined experience that requires no technical expertise whatsoever. You can get started in minutes and immediately begin capturing your first game data.</p>
 
-                    <h2>Key Features</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Player Statistics Tracking</h4>
-                            <p>Track goals, assists, penalties, and other key performance indicators for all your players. Build a comprehensive statistical picture over the course of the season and identify trends in individual performance over time.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>�� Goal Map</h4>
-                            <p>Visualize where your team's goals are scored and conceded using an intuitive goal map. Understanding scoring patterns helps you identify strengths and weaknesses in your team's play, enabling targeted improvement.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Season Overview</h4>
-                            <p>Monitor your team's performance across the entire season with a clear and comprehensive season overview. Track results, goal differences, and standings. See how your team has improved over time and identify key turning points in the season.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Quick Data Entry</h4>
-                            <p>Enter game data quickly and efficiently with our optimized data entry interface. Record goals, assists, and penalties in seconds, allowing you to focus on coaching rather than administration during and after games.</p>
-                        </div>
-                    </div>
 
-                    <h2>How SmartHockey Light Works</h2>
-                    <p>SmartHockey Light is designed to be as simple as possible while still providing powerful statistics tracking. The app is available as a web application, meaning you can access it directly from your browser without needing to download or install anything.</p>
-                    <p>Getting started takes just a few minutes. Create your team by entering player names, then start recording game data. The interface is clean and intuitive, with large buttons and clear labels that make it easy to find what you need even in the heat of the moment.</p>
-                    <p>During a game, you can quickly log goals and assists by selecting the player and type of statistic. The app updates your statistics in real time, so you always have an up-to-date picture of your team's performance. After the game, you can review the statistics, check the goal map, and export reports if needed.</p>
-                    <p>At the end of the season, the season overview feature gives you a complete picture of your team's performance, showing how you've improved over time and providing data for planning next season. The export function allows you to save all your data and share it with players and club officials.</p>
 
-                    <h2>Web App – Available Now</h2>
-                    <p>SmartHockey Light is available right now as a fully functional web application. No download required – just open your browser and start tracking. The web app works on all devices including smartphones, tablets, and computers, so you can access your statistics wherever you are.</p>
-                    <p>The web app is regularly updated with new features and improvements based on user feedback. As a web-based solution, updates happen automatically without you needing to do anything – you always have access to the latest version.</p>
 
-                    <h2>Who Is SmartHockey Light For?</h2>
-                    <p>SmartHockey Light is perfect for recreational hockey players who want to start tracking their statistics, small teams and hobby clubs looking for an affordable and easy-to-use solution, youth coaches who want a simple tool without a steep learning curve, players who want to monitor their own development over time, and anyone who is new to hockey statistics and wants to start with the basics before moving to a more comprehensive solution.</p>
+</a>
+<a class="active" href="app-comparison.html">
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> is available now as a web app! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Launch Web App →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Open Web App</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Compare All Apps</a>
-                    </p>
-                </div>
-            </div>
 
-            <!-- German -->
-            <div class="lang-content lang-de active">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Smarte Hockey-Statistiken für jeden Spieler</h2>
-                    <p>SmartHockey Light ist die perfekte Einstiegslösung für Nachwuchsteams, Einzelspieler und Amateur Teams, die ihre Hockey-Leistung verfolgen möchten, ohne von Komplexität überwältigt zu werden. Mit einer intuitiven Benutzeroberfläche und allen wesentlichen Funktionen macht SmartHockey Light das Verfolgen von Statistiken für jeden zugänglich.</p>
-                    <p>Ob du ein Teammanager, Nachwuchs-Coach für die jüngeren Spieler oder selbst ein Freizeitspieler bist, der seine persönliche Leistung über die Saison im Blick behalten möchte und ein einfaches und effektives Werkzeug für Teamstatistiken benötigt – SmartHockey Light hat alles, was du brauchst, um deine Reise zur datengesteuerten Hockey-Verbesserung zu beginnen.</p>
-                    <p>Im Gegensatz zu komplexeren Lösungen konzentriert sich SmartHockey Light auf die wichtigsten Funktionen und bietet ein optimiertes Erlebnis, das keinerlei technisches Fachwissen erfordert. Du kannst in wenigen Minuten loslegen und sofort die ersten Spieldaten erfassen.</p>
+<svg fill="white" height="16" style="vertical-align:middle;margin-right:4px;" viewbox="0 0 16 16" width="16"><path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill-rule="evenodd"></path></svg>Apps
 
-                    <h2>Hauptfunktionen</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Spielerstatistiken</h4>
-                            <p>Verfolge Tore, Assists, Strafen und andere wichtige Leistungsindikatoren für alle deine Spieler. Erstelle über den Verlauf der Saison ein umfassendes statistisches Bild und erkenne Trends in der individuellen Leistung im Zeitverlauf.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>🎯 Torschuss-Karte</h4>
-                            <p>Visualisiere, wo die Tore deines Teams erzielt und kassiert werden. Das Verstehen von Tormustern hilft dir, Stärken und Schwächen im Spiel deines Teams zu erkennen und gezielte Verbesserungen zu ermöglichen.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Saison-Übersicht</h4>
-                            <p>Überwache die Leistung deines Teams über die gesamte Saison mit einer klaren Saisonübersicht. Verfolge Ergebnisse, Tordifferenzen und Tabellenstände. Sieh, wie sich dein Team im Laufe der Zeit verbessert hat.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Schnelle Dateneingabe</h4>
-                            <p>Gib Spieldaten schnell und effizient mit unserer optimierten Dateneingabeoberfläche ein. Erfasse Tore, Assists und Strafen in Sekunden, damit du dich während und nach den Spielen auf das Coaching konzentrieren kannst.</p>
-                        </div>
-                    </div>
 
-                    <h2>So funktioniert SmartHockey Light</h2>
-                    <p>SmartHockey Light ist so einfach wie möglich gestaltet und bietet dennoch leistungsstarkes Statistik-Tracking. Die App ist als Web-Applikation verfügbar, was bedeutet, dass du direkt von deinem Browser aus darauf zugreifen kannst, ohne etwas herunterladen oder installieren zu müssen.</p>
-                    <p>Der Einstieg dauert nur wenige Minuten. Erstelle dein Team durch Eingabe von Spielernamen und beginne dann, Spieldaten zu erfassen. Die Benutzeroberfläche ist übersichtlich und intuitiv, mit großen Schaltflächen und klaren Beschriftungen.</p>
-                    <p>Während eines Spiels kannst du schnell Tore und Assists protokollieren, indem du den Spieler und die Statistikart auswählst. Die App aktualisiert deine Statistiken in Echtzeit. Nach dem Spiel kannst du die Statistiken überprüfen, die Torschuss-Karte ansehen und bei Bedarf Berichte exportieren.</p>
-                    <p>Am Ende der Saison gibt dir die Saison-Übersicht ein vollständiges Bild der Leistung deines Teams und liefert Daten für die Planung der nächsten Saison.</p>
 
-                    <h2>Web App – Jetzt verfügbar</h2>
-                    <p>SmartHockey Light ist jetzt als voll funktionsfähige Web-App verfügbar. Kein Download erforderlich – öffne einfach deinen Browser und starte das Tracking. Die Web-App funktioniert auf allen Geräten, einschließlich Smartphones, Tablets und Computern.</p>
-                    <p>Die Web-App wird regelmäßig mit neuen Funktionen und Verbesserungen basierend auf Nutzerfeedback aktualisiert. Als webbasierte Lösung erfolgen Updates automatisch, ohne dass du etwas tun musst – du hast immer Zugriff auf die neueste Version.</p>
 
-                    <h2>Für wen ist SmartHockey Light?</h2>
-                    <p>SmartHockey Light ist perfekt für Freizeithockeyspieler, die ihre Statistiken verfolgen möchten, kleine Teams und Hobbyvereine, die nach einer erschwinglichen und einfach zu bedienenden Lösung suchen, Jugendtrainer, die ein einfaches Werkzeug ohne steile Lernkurve suchen, Spieler, die ihre eigene Entwicklung über die Zeit beobachten möchten, und alle, die neu in der Hockey-Statistik sind und mit den Grundlagen beginnen möchten.</p>
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> ist jetzt als Web-App verfügbar! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Web-App starten →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Web-App öffnen</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Alle Apps vergleichen</a>
-                    </p>
-                </div>
-            </div>
+</a>
+<a href="shop.html">
 
-            <!-- French -->
-            <div class="lang-content lang-fr">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Statistiques Hockey Intelligentes pour Chaque Joueur</h2>
-                    <p>SmartHockey Light est la solution d'entrée de gamme parfaite pour les équipes de jeunes, les joueurs individuels et les équipes amateurs qui souhaitent suivre leurs performances au hockey sans être submergés par la complexité.</p>
-                    <p>Que vous soyez un directeur d'équipe, un entraîneur de jeunes ou un joueur récréatif souhaitant suivre ses performances personnelles tout au long de la saison – SmartHockey Light a tout ce qu'il vous faut pour commencer.</p>
 
-                    <h2>Fonctionnalités Principales</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Statistiques des Joueurs</h4>
-                            <p>Suivez les buts, assistances, pénalités et autres indicateurs de performance clés pour tous vos joueurs sur toute la saison.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>🎯 Carte des Buts</h4>
-                            <p>Visualisez où les buts de votre équipe sont marqués et encaissés grâce à une carte des buts intuitive pour identifier les forces et faiblesses.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Vue d'ensemble de la Saison</h4>
-                            <p>Surveillez les performances de votre équipe tout au long de la saison avec une vue d'ensemble claire. Suivez les résultats, les différences de buts et le classement.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Saisie Rapide des Données</h4>
-                            <p>Saisissez les données de jeu rapidement et efficacement. Enregistrez les buts, assistances et pénalités en quelques secondes.</p>
-                        </div>
-                    </div>
+🛒 Shop
 
-                    <h2>Comment fonctionne SmartHockey Light</h2>
-                    <p>SmartHockey Light est conçu pour être aussi simple que possible tout en offrant un suivi statistique puissant. L'application est disponible en tant qu'application web, accessible directement depuis votre navigateur sans rien télécharger.</p>
-                    <p>Démarrer prend quelques minutes. Créez votre équipe en saisissant les noms des joueurs, puis commencez à enregistrer les données de match. L'interface est claire et intuitive.</p>
 
-                    <h2>Application Web – Disponible Maintenant</h2>
-                    <p>SmartHockey Light est disponible dès maintenant en tant qu'application web entièrement fonctionnelle. Aucun téléchargement requis – ouvrez simplement votre navigateur et commencez le suivi. L'application fonctionne sur tous les appareils.</p>
 
-                    <h2>Pour qui est SmartHockey Light ?</h2>
-                    <p>SmartHockey Light est parfait pour les joueurs de hockey récréatifs, les petites équipes, les entraîneurs de jeunes et tous ceux qui découvrent les statistiques hockey.</p>
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> est disponible maintenant comme application web! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Lancer l'App Web →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Ouvrir l'App Web</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Comparer toutes les Apps</a>
-                    </p>
-                </div>
-            </div>
 
-            <!-- Swedish -->
-            <div class="lang-content lang-sv">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Smart Hockeystatistik för Varje Spelare</h2>
-                    <p>SmartHockey Light är den perfekta nybörjarlösningen för ungdomslag, enskilda spelare och amatörlag som vill följa sina hockeyprestationer utan att överväldigas av komplexitet.</p>
-                    <p>Oavsett om du är en lagledare, ungdomstränare eller en fritidsspelare som vill hålla koll på sina personliga prestationer under säsongen – SmartHockey Light har allt du behöver.</p>
+</a>
+</nav>
 
-                    <h2>Nyckelfunktioner</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Spelarstatistik</h4>
-                            <p>Följ mål, assist, utvisningar och andra nyckeltal för alla dina spelare under hela säsongen.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>🎯 Målkarta</h4>
-                            <p>Visualisera var ditt lags mål görs och släpps in med en intuitiv målkarta för att identifiera styrkor och svagheter.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Säsongsöversikt</h4>
-                            <p>Övervaka ditt lags prestationer under hela säsongen med en tydlig och heltäckande säsongsöversikt. Följ resultat, målskillnader och tabellpositioner.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Snabb Datainmatning</h4>
-                            <p>Ange speldata snabbt och effektivt. Registrera mål, assist och utvisningar på sekunder.</p>
-                        </div>
-                    </div>
+</div>
+</header>
+<div class="hero">
+<div class="container">
+<img alt="SmartHockey Light" class="app-hero-icon" src="app-icon-light.png"/>
+<h1>SmartHockey Light</h1>
+<p>
 
-                    <h2>Hur SmartHockey Light fungerar</h2>
-                    <p>SmartHockey Light är utformad för att vara så enkel som möjligt och ändå erbjuda kraftfull statistikspårning. Appen är tillgänglig som en webbapplikation, så du kan komma åt den direkt från din webbläsare utan att behöva ladda ner något.</p>
-                    <p>Att komma igång tar bara några minuter. Skapa ditt lag genom att ange spelarnamn och börja sedan registrera matchdata.</p>
 
-                    <h2>Webb-App – Tillgänglig Nu</h2>
-                    <p>SmartHockey Light är tillgänglig nu som en fullt fungerande webbapp. Ingen nedladdning krävs – öppna bara din webbläsare och börja spåra. Fungerar på alla enheter.</p>
+Die perfekte Einstiegslösung für Einzelspieler und kleine Teams
 
-                    <h2>Vem är SmartHockey Light för?</h2>
-                    <p>SmartHockey Light är perfekt för fritidshockeyspelare, små lag, ungdomstränare och alla som är nya inom hockeystatistik.</p>
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> är tillgänglig nu som en webbapp! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Starta Webb-Appen →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Öppna Webb-Appen</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Jämför alla appar</a>
-                    </p>
-                </div>
-            </div>
 
-            <!-- Finnish -->
-            <div class="lang-content lang-fi">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Älykästä Jääkiekkotilastoa Jokaiselle Pelaajalle</h2>
-                    <p>SmartHockey Light on täydellinen aloittelijan ratkaisu nuorisojoukkueille, yksittäisille pelaajille ja harrastusjoukkueille, jotka haluavat seurata jääkiekkosuorituksiaan ilman monimutkaisuutta.</p>
-                    <p>Olitpa joukkueenjohtaja, nuorisovalmentaja tai harrastuspelaaja, joka haluaa seurata omia suorituksiaan kauden aikana – SmartHockey Light tarjoaa kaiken tarvittavan.</p>
 
-                    <h2>Pääominaisuudet</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Pelaajastatistiikka</h4>
-                            <p>Seuraa maaleja, syöttöpisteitä, jäähyjä ja muita keskeisiä suoritusindikaattoreita kaikille pelaajillesi koko kauden ajan.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>🎯 Maalikartta</h4>
-                            <p>Visualisoi missä joukkueesi tekee ja päästää maaleja intuitiivisen maalikartan avulla vahvuuksien ja heikkouksien tunnistamiseksi.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Kausiyhteenveto</h4>
-                            <p>Seuraa joukkueesi suoritusta koko kauden ajan selkeällä kausiyhteenvedolla. Seuraa tuloksia, maalieroja ja sarjataulukkoa.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Nopea Tiedonsyöttö</h4>
-                            <p>Syötä pelitiedot nopeasti ja tehokkaasti. Kirjaa maalit, syötöt ja jäähyt sekunneissa.</p>
-                        </div>
-                    </div>
 
-                    <h2>Kuinka SmartHockey Light toimii</h2>
-                    <p>SmartHockey Light on suunniteltu mahdollisimman yksinkertaiseksi tarjoten silti tehokasta tilastoseurantaa. Sovellus on saatavilla verkkosovelluksena, joten voit käyttää sitä suoraan selaimestasi ilman mitään lataamista.</p>
-                    <p>Aloittaminen kestää vain muutaman minuutin. Luo joukkueesi syöttämällä pelaajien nimet ja ala sitten kirjaamaan pelitietoja.</p>
+</p>
+</div>
+</div>
+<section class="content-section">
+<div class="container">
 
-                    <h2>Verkkosovellus – Saatavilla Nyt</h2>
-                    <p>SmartHockey Light on nyt saatavilla täysin toimivana verkkosovelluksena. Ei latausta tarvita – avaa vain selaimesi ja ala seuraamaan. Toimii kaikilla laitteilla.</p>
 
-                    <h2>Kenelle SmartHockey Light on tarkoitettu?</h2>
-                    <p>SmartHockey Light sopii harrastuspelaajille, pienille joukkueille, nuorisovalmentajille ja kaikille, jotka ovat uusia jääkiekkotilastoissa.</p>
+<div class="content-card">
+<h2>SmartHockey Light – Smarte Hockey-Statistiken für jeden Spieler</h2>
+<p>SmartHockey Light ist die perfekte Einstiegslösung für Nachwuchsteams, Einzelspieler und Amateur Teams, die ihre Hockey-Leistung verfolgen möchten, ohne von Komplexität überwältigt zu werden. Mit einer intuitiven Benutzeroberfläche und allen wesentlichen Funktionen macht SmartHockey Light das Verfolgen von Statistiken für jeden zugänglich.</p>
+<p>Ob du ein Teammanager, Nachwuchs-Coach für die jüngeren Spieler oder selbst ein Freizeitspieler bist, der seine persönliche Leistung über die Saison im Blick behalten möchte und ein einfaches und effektives Werkzeug für Teamstatistiken benötigt – SmartHockey Light hat alles, was du brauchst, um deine Reise zur datengesteuerten Hockey-Verbesserung zu beginnen.</p>
+<p>Im Gegensatz zu komplexeren Lösungen konzentriert sich SmartHockey Light auf die wichtigsten Funktionen und bietet ein optimiertes Erlebnis, das keinerlei technisches Fachwissen erfordert. Du kannst in wenigen Minuten loslegen und sofort die ersten Spieldaten erfassen.</p>
+<h2>Hauptfunktionen</h2>
+<div class="feature-grid">
+<div class="feature-item">
+<h4>📊 Spielerstatistiken</h4>
+<p>Verfolge Tore, Assists, Strafen und andere wichtige Leistungsindikatoren für alle deine Spieler. Erstelle über den Verlauf der Saison ein umfassendes statistisches Bild und erkenne Trends in der individuellen Leistung im Zeitverlauf.</p>
+</div>
+<div class="feature-item">
+<h4>🎯 Torschuss-Karte</h4>
+<p>Visualisiere, wo die Tore deines Teams erzielt und kassiert werden. Das Verstehen von Tormustern hilft dir, Stärken und Schwächen im Spiel deines Teams zu erkennen und gezielte Verbesserungen zu ermöglichen.</p>
+</div>
+<div class="feature-item">
+<h4>📅 Saison-Übersicht</h4>
+<p>Überwache die Leistung deines Teams über die gesamte Saison mit einer klaren Saisonübersicht. Verfolge Ergebnisse, Tordifferenzen und Tabellenstände. Sieh, wie sich dein Team im Laufe der Zeit verbessert hat.</p>
+</div>
+<div class="feature-item">
+<h4>⚡ Schnelle Dateneingabe</h4>
+<p>Gib Spieldaten schnell und effizient mit unserer optimierten Dateneingabeoberfläche ein. Erfasse Tore, Assists und Strafen in Sekunden, damit du dich während und nach den Spielen auf das Coaching konzentrieren kannst.</p>
+</div>
+</div>
+<h2>So funktioniert SmartHockey Light</h2>
+<p>SmartHockey Light ist so einfach wie möglich gestaltet und bietet dennoch leistungsstarkes Statistik-Tracking. Die App ist als Web-Applikation verfügbar, was bedeutet, dass du direkt von deinem Browser aus darauf zugreifen kannst, ohne etwas herunterladen oder installieren zu müssen.</p>
+<p>Der Einstieg dauert nur wenige Minuten. Erstelle dein Team durch Eingabe von Spielernamen und beginne dann, Spieldaten zu erfassen. Die Benutzeroberfläche ist übersichtlich und intuitiv, mit großen Schaltflächen und klaren Beschriftungen.</p>
+<p>Während eines Spiels kannst du schnell Tore und Assists protokollieren, indem du den Spieler und die Statistikart auswählst. Die App aktualisiert deine Statistiken in Echtzeit. Nach dem Spiel kannst du die Statistiken überprüfen, die Torschuss-Karte ansehen und bei Bedarf Berichte exportieren.</p>
+<p>Am Ende der Saison gibt dir die Saison-Übersicht ein vollständiges Bild der Leistung deines Teams und liefert Daten für die Planung der nächsten Saison.</p>
+<h2>Web App – Jetzt verfügbar</h2>
+<p>SmartHockey Light ist jetzt als voll funktionsfähige Web-App verfügbar. Kein Download erforderlich – öffne einfach deinen Browser und starte das Tracking. Die Web-App funktioniert auf allen Geräten, einschließlich Smartphones, Tablets und Computern.</p>
+<p>Die Web-App wird regelmäßig mit neuen Funktionen und Verbesserungen basierend auf Nutzerfeedback aktualisiert. Als webbasierte Lösung erfolgen Updates automatisch, ohne dass du etwas tun musst – du hast immer Zugriff auf die neueste Version.</p>
+<h2>Für wen ist SmartHockey Light?</h2>
+<p>SmartHockey Light ist perfekt für Freizeithockeyspieler, die ihre Statistiken verfolgen möchten, kleine Teams und Hobbyvereine, die nach einer erschwinglichen und einfach zu bedienenden Lösung suchen, Jugendtrainer, die ein einfaches Werkzeug ohne steile Lernkurve suchen, Spieler, die ihre eigene Entwicklung über die Zeit beobachten möchten, und alle, die neu in der Hockey-Statistik sind und mit den Grundlagen beginnen möchten.</p>
+<h2>Typischer Ablauf am Spieltag</h2>
+<p>Vor dem Spiel öffnet der Trainer SmartHockey Light im Browser – kein Login, kein Download. Er wählt sein Team und legt das Spiel an. Während der Partie erfasst er Tore und Assists mit wenigen Taps. Nach dem Spiel zeigt die Torschuss-Karte, aus welchen Zonen die Tore gefallen sind. Am Saisonende liefert die Übersicht eine klare Bilanz für das Trainerteam.</p>
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> on nyt saatavilla verkkosovelluksena! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Käynnistä verkkosovellus →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Avaa verkkosovellus</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Vertaile kaikkia sovelluksia</a>
-                    </p>
-                </div>
-            </div>
+<h2>Welche Daten werden erfasst?</h2>
+<p>SmartHockey Light trackt die wichtigsten Spielstatistiken: Tore und Torschützen, Assists, Strafminuten, Torschuss-Positionen sowie Saison-Ergebnisse. Die Dateneingabe ist bewusst einfach gehalten, damit sich Trainer auch während des Spiels voll auf das Geschehen konzentrieren können.</p>
 
-            <!-- Russian -->
-            <div class="lang-content lang-ru">
-                <div class="content-card">
-                    <h2>SmartHockey Light – Умная Хоккейная Статистика для Каждого Игрока</h2>
-                    <p>SmartHockey Light — идеальное решение для начинающих, подходящее для юношеских команд, отдельных игроков и любительских команд, желающих отслеживать свои хоккейные показатели без лишней сложности.</p>
-                    <p>Будь то менеджер команды, тренер молодёжи или игрок-любитель, желающий следить за своими показателями в течение сезона – SmartHockey Light предоставит всё необходимое.</p>
+<h2>Datenspeicherung im Browser</h2>
+<p>Alle Teamdaten und Spielstatistiken werden lokal im Browser des Geräts gespeichert. Es werden keine Daten an externe Server übertragen. Die Daten sind nach jedem Neustart des Browsers wieder verfügbar, solange der Browser-Cache nicht gelöscht wird.</p>
 
-                    <h2>Основные функции</h2>
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>📊 Статистика игроков</h4>
-                            <p>Отслеживайте голы, передачи, штрафы и другие ключевые показатели для всех ваших игроков на протяжении всего сезона.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>🎯 Карта бросков</h4>
-                            <p>Визуализируйте, откуда ваша команда забивает и пропускает голы, с помощью интуитивной карты для выявления сильных и слабых сторон.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>📅 Обзор сезона</h4>
-                            <p>Отслеживайте выступления команды на протяжении всего сезона с чётким обзором. Следите за результатами, разницей голов и турнирной таблицей.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>⚡ Быстрый ввод данных</h4>
-                            <p>Вводите игровые данные быстро и эффективно. Записывайте голы, передачи и штрафы за секунды.</p>
-                        </div>
-                    </div>
+<p style="text-align:center; margin-top:20px;">
+<a class="btn" href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" rel="noopener noreferrer" target="_blank">Web-App öffnen</a>
+&nbsp;&nbsp;
+<a class="btn" href="app-comparison.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Alle Apps vergleichen</a>
+</p>
+</div>
 
-                    <h2>Как работает SmartHockey Light</h2>
-                    <p>SmartHockey Light разработан максимально простым, обеспечивая при этом мощное отслеживание статистики. Приложение доступно как веб-приложение – открывайте его прямо из браузера без загрузки.</p>
-                    <p>Начать работу займёт несколько минут. Создайте команду, введя имена игроков, и начните записывать игровые данные.</p>
 
-                    <h2>Веб-приложение – Доступно Сейчас</h2>
-                    <p>SmartHockey Light доступен прямо сейчас как полнофункциональное веб-приложение. Загрузка не требуется – просто откройте браузер и начните. Работает на всех устройствах.</p>
 
-                    <h2>Для кого SmartHockey Light?</h2>
-                    <p>SmartHockey Light идеально подходит для любителей хоккея, небольших команд, тренеров молодёжи и всех, кто только начинает знакомиться со статистикой хоккея.</p>
 
-                    <div class="status-notice">
-                        <p>🌐 <strong>SmartHockey Light</strong> доступен сейчас как веб-приложение! <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;">Запустить веб-приложение →</a></p>
-                    </div>
-                    <p style="text-align:center; margin-top:20px;">
-                        <a href="https://asaufzuege-sketch.github.io/SmartHockey-Tracking-Team-Light/" class="btn" target="_blank" rel="noopener noreferrer">Открыть веб-приложение</a>
-                        &nbsp;&nbsp;
-                        <a href="app-comparison.html" class="btn" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Сравнить все приложения</a>
-                    </p>
-                </div>
-            </div>
 
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
-                <a href="index.html">Home</a>
-                <a href="app-comparison.html">Apps</a>
-                <a href="coaching-tipps.html">Blog</a>
-                <a href="shop.html">Shop</a>
-                <a href="hilfe.html">Hilfe</a>
-                <a href="faq.html">FAQ</a>
-                <a href="hockey-statistik-guide.html">Statistik-Guide</a>
-                <a href="about.html">Über uns</a>
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="terms.html">AGB</a>
-            </nav>
-            <p>&copy; 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · 
+</div>
+<section style="padding:40px 0;text-align:center;background:rgba(15,52,96,0.7);">
+  <div class="container">
+    <h2 style="color:#fff;font-size:1.6rem;margin-bottom:15px;">Jetzt direkt im Browser nutzen</h2>
+    <p style="color:#c0ccd8;max-width:680px;margin:0 auto 25px;font-size:1.05rem;">
+      Kostenlos, ohne Installation, funktioniert offline in der Halle und läuft auf Smartphone, Tablet und PC.
+    </p>
+    <a href="/SmartHockey-Tracking-Team-Light/" class="btn" style="font-size:1.2rem;padding:16px 40px;">
+      🏒 SmartHockey Light Web-App starten
+    </a>
+  </div>
+</section>
+</section>
+<footer>
+<div class="container">
+<nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-bottom:20px;font-size:0.95rem;">
+<a href="index.html">Home</a>
+<a href="app-comparison.html">Apps</a>
+<a href="coaching-tipps.html">Blog</a>
+<a href="shop.html">Shop</a>
+<a href="hilfe.html">Hilfe</a>
+<a href="faq.html">FAQ</a>
+<a href="hockey-statistik-guide.html">Statistik-Guide</a>
+<a href="about.html">Über uns</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="terms.html">AGB</a>
+</nav>
+<p>© 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · 
                <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
+</p>
+</div>
+</footer>
+<script>
         (function() {
-            const defaultLang = 'de';
-            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
-            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
-            function getBrowserLanguage() { const browserLang = navigator.language || navigator.userLanguage; const langCode = browserLang.split('-')[0].toLowerCase(); return supportedLangs.includes(langCode) ? langCode : defaultLang; }
-            function getInitialLanguage() { const saved = localStorage.getItem('smarthockey-lang'); if (saved && supportedLangs.includes(saved)) return saved; return getBrowserLanguage(); }
-            function switchLanguage(lang) {
-                if (!supportedLangs.includes(lang)) lang = defaultLang;
-                document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-                const activeContent = document.querySelector('.lang-content.lang-' + lang);
-                if (activeContent) activeContent.classList.add('active');
-                document.querySelectorAll('[data-lang-group]').forEach(group => { group.querySelectorAll('span[class^="lang-"]').forEach(span => span.classList.remove('active')); const activeSpan = group.querySelector('.lang-' + lang); if (activeSpan) activeSpan.classList.add('active'); });
-                const currentNameEl = document.querySelector('.lang-current-name');
-                if (currentNameEl) currentNameEl.textContent = langNames[lang];
-                document.querySelectorAll('.lang-option').forEach(option => { option.classList.remove('active'); if (option.getAttribute('data-lang') === lang) option.classList.add('active'); });
-                const titles = { en: 'SmartHockey Light – Hockey Statistics Web App', de: 'SmartHockey Light – Hockey Statistik Web-App', fr: 'SmartHockey Light – Application Web de Statistiques Hockey', sv: 'SmartHockey Light – Hockeystatistik Webb-App', fi: 'SmartHockey Light – Jääkiekkotilasto Verkkosovellus', ru: 'SmartHockey Light – Веб-приложение для хоккейной статистики' };
-                document.title = titles[lang] || titles[defaultLang];
-                document.documentElement.lang = lang;
-                localStorage.setItem('smarthockey-lang', lang);
-            }
-            const initialLang = getInitialLanguage();
-            switchLanguage(initialLang);
-            const langSwitcher = document.querySelector('.language-switcher');
-            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
-            if (dropdownBtn) { dropdownBtn.addEventListener('click', function(e) { e.stopPropagation(); langSwitcher.classList.toggle('active'); }); }
-            document.addEventListener('click', function(e) { if (!langSwitcher.contains(e.target)) langSwitcher.classList.remove('active'); });
-            document.querySelectorAll('.lang-option').forEach(option => { option.addEventListener('click', function() { const lang = this.getAttribute('data-lang'); switchLanguage(lang); langSwitcher.classList.remove('active'); }); });
         })();
     </script>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
-  <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
-    <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
+<div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
+<p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
       🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
     </p>
-    <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
-      <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
-    </div>
-  </div>
+<div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
+<button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">OK / Verstanden</button>
+</div>
+</div>
 </div>
 <script>
 (function(){

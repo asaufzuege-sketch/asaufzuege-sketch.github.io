@@ -66,8 +66,6 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
     
         .site-header {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
@@ -117,65 +115,6 @@
         .site-nav a.active {
             color: #2563eb;
         }
-        .language-switcher { position: relative; display: inline-block; }
-        .lang-dropdown-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border: 2px solid #2563eb;
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-        .lang-dropdown-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
-        }
-        .lang-dropdown-btn svg { width: 18px; height: 18px; }
-        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
-        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
-        .lang-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 8px;
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
-            border: 2px solid #2a2a3e;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            min-width: 180px;
-            z-index: 1000;
-            overflow: hidden;
-        }
-        .language-switcher.active .lang-dropdown-menu { display: block; }
-        .lang-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            border: none;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-            font-size: 1rem;
-        }
-        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
-        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
-        .lang-option-flag { font-size: 1.3rem; }
-        .lang-option-name { font-size: 0.95rem; }
-        [data-lang-group] span[class^="lang-"] { display: none !important; }
-        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
         .page-shell { padding: 20px; }
         .page-links {
             max-width: 860px;
@@ -243,63 +182,50 @@
 </a>
 <nav class="site-nav">
 <a href="index.html">
-<span data-lang-group="nav-home">
-<span class="lang-de active">🏠 Home</span>
-<span class="lang-en">🏠 Home</span>
-<span class="lang-fr">🏠 Accueil</span><span class="lang-sv">🏠 Hem</span><span class="lang-fi">🏠 Etusivu</span><span class="lang-ru">🏠 Главная</span></span>
+
+🏠 Home
+
+
 </a>
 <a href="app-comparison.html">
-<span data-lang-group="nav-apps">
-<span class="lang-de active">📱 Apps</span>
-<span class="lang-en">📱 Apps</span>
-<span class="lang-fr">📱 Applications</span><span class="lang-sv">📱 Appar</span><span class="lang-fi">📱 Sovellukset</span><span class="lang-ru">📱 Приложения</span></span>
+
+📱 Apps
+
+
 </a>
 <a class="active" href="coaching-tipps.html">
-<span data-lang-group="nav-blog">
-<span class="lang-de active">📝 Blog</span>
-<span class="lang-en">📝 Blog</span>
-<span class="lang-fr">📝 Blog</span><span class="lang-sv">📝 Blog</span><span class="lang-fi">📝 Blog</span><span class="lang-ru">📝 Blog</span></span>
+
+📝 Blog
+
+
 </a>
 <a href="shop.html">
-<span data-lang-group="nav-shop">
-<span class="lang-de active">🛒 Shop</span>
-<span class="lang-en">🛒 Shop</span>
-<span class="lang-fr">🛒 Shop</span><span class="lang-sv">🛒 Shop</span><span class="lang-fi">🛒 Shop</span><span class="lang-ru">🛒 Shop</span></span>
+
+🛒 Shop
+
+
 </a>
 </nav>
-<div class="language-switcher">
-<button aria-label="Sprache wählen / Choose language" class="lang-dropdown-btn" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10"></circle>
-<line x1="2" x2="22" y1="12" y2="12"></line>
-<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-</svg>
-<span class="lang-current-name">Deutsch</span>
-<svg class="lang-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="6 9 12 15 18 9"></polyline>
-</svg>
-</button>
-<div class="lang-dropdown-menu"><button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button><button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button><button class="lang-option" data-lang="fr" type="button"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button><button class="lang-option" data-lang="sv" type="button"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button><button class="lang-option" data-lang="fi" type="button"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button><button class="lang-option" data-lang="ru" type="button"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button></div>
-</div>
+
 </div>
 </header>
 <main class="page-shell">
 <div class="page-links">
 <a class="back-link" href="index.html">
-<span data-lang-group="back-home">
-<span class="lang-de active">← Zurück zur Startseite</span>
-<span class="lang-en">← Back to home</span>
-<span class="lang-fr">← Back to home</span><span class="lang-sv">← Back to home</span><span class="lang-fi">← Back to home</span><span class="lang-ru">← Back to home</span></span>
+
+← Zurück zur Startseite
+
+
 </a>
 <a class="back-link" href="coaching-tipps.html">
-<span data-lang-group="back-blog">
-<span class="lang-de active">← Zum Blog</span>
-<span class="lang-en">← Back to blog</span>
-<span class="lang-fr">← Back to blog</span><span class="lang-sv">← Back to blog</span><span class="lang-fi">← Back to blog</span><span class="lang-ru">← Back to blog</span></span>
+
+← Zum Blog
+
+
 </a>
 </div>
 <div class="container">
-<div class="lang-content lang-de active">
+
 <h1>Torwart-Analyse: 12 Kennzahlen jenseits der Fangquote</h1>
 <p>Die Fangquote (Save Percentage, SV%) ist die bekannteste Torwart-Statistik – und gleichzeitig eine der irreführendsten. Ein Torwart mit SV% .915, der nur Schüsse von außen abwehrt, leistet deutlich weniger als einer mit SV% .905, der ständig in High-Danger-Situationen gefordert wird. Wer Torhüter wirklich bewerten will, braucht mehr Perspektiven. Dieser Artikel stellt 12 Kennzahlen vor, erklärt ihren Nutzen und zeigt, welche auch ohne Profi-Software erfasst werden können.</p>
 <h2>1. Save Percentage (SV%) – Basis und Grenzen</h2>
@@ -337,312 +263,76 @@
 <li>Cold-Start-Tendenz (erste 5 vs. Rest der Spielzeit auswerten)</li>
 </ol>
 <p>Selbst mit einem einfachen Notizbuch und einem aufmerksamen Assistenten lassen sich diese Daten zuverlässig erfassen. Die daraus entstehenden Erkenntnisse übersteigen den Nutzen jeder subjektiven Beurteilung nach dem Spiel.</p>
-</div>
-<div class="lang-content lang-en">
-<h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
-<p>Save percentage (SV%) is the best-known goaltender statistic — and simultaneously one of the most misleading. A goalie with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a goaltender needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
-<h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
-<p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a goalie look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
-<h2>2. Goals Saved Above Expected (GSAx)</h2>
-<p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the goaltender saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual goaltender performance because it removes the influence of the team's defensive structure.</p>
-<p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
-<h2>3. High-Danger Save Percentage (HDSV%)</h2>
-<p>HDSV% measures how many shots from the high-danger zone (slot and lower faceoff circles) the goaltender stops. On average, about 15–20% of these shots result in goals. A goalie with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
-<h2>4. Low-Danger Save Percentage (LDSV%)</h2>
-<p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
-<h2>5. Rebound Control Rate</h2>
-<p>How often does a goaltender cleanly secure the puck, rather than letting it rebound uncontrolled? Professional goalies control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
-<h2>6. Lateral Movement Assessment</h2>
-<p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
-<h2>7. Depth Management (Crease Depth)</h2>
-<p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior goalies stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
-<h2>8. Screen Situations: SV% in Front of Screens</h2>
-<p>Shots with a player in front are harder for every goaltender. The difference between elite goalies and average ones often lies here: good goaltenders communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
-<h2>9. Five-Hole Tendency</h2>
-<p>The five-hole — the area between the pads — is a weak spot for many goaltenders, particularly after quick lateral movements when the pads don't close completely. Shots that draw the goalie into motion and then finish on the five-hole are nearly impossible for many amateur goalies to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
-<h2>10. Blocker/Glove Asymmetry</h2>
-<p>Almost all goaltenders have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
-<h2>11. Cold Start vs. Hot Goalie</h2>
-<p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some goaltenders need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
-<h2>12. Penalty Shot Performance</h2>
-<p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A goalie who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
-<h2>Tracking Methods for Amateur Coaches</h2>
-<p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
-<ol>
-<li>SV% and HDSV% (achievable with a shot map + game log)</li>
-<li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
-<li>Crease depth (check once per training block with markers)</li>
-<li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
-<li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
-</ol>
-<p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
-</div><div class="lang-content lang-fr">
-<h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
-<p>Save percentage (SV%) is the best-known gardien statistic — and simultaneously one of the most misleading. A gardien with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a gardien needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
-<h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
-<p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a gardien look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
-<h2>2. Goals Saved Above Expected (GSAx)</h2>
-<p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the gardien saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual gardien performance because it removes the influence of the team's defensive structure.</p>
-<p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
-<h2>3. High-Danger Save Percentage (HDSV%)</h2>
-<p>HDSV% measures how many shots from the high-danger zone (slot and lower mise au jeu circles) the gardien stops. On average, about 15–20% of these shots result in goals. A gardien with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
-<h2>4. Low-Danger Save Percentage (LDSV%)</h2>
-<p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
-<h2>5. Rebound Control Rate</h2>
-<p>How often does a gardien cleanly secure the puck, rather than letting it rebound uncontrolled? Professional gardiens control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
-<h2>6. Lateral Movement Assessment</h2>
-<p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
-<h2>7. Depth Management (Crease Depth)</h2>
-<p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior gardiens stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
-<h2>8. Screen Situations: SV% in Front of Screens</h2>
-<p>Shots with a player in front are harder for every gardien. The difference between elite gardiens and average ones often lies here: good gardiens communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
-<h2>9. Five-Hole Tendency</h2>
-<p>The five-hole — the area between the pads — is a weak spot for many gardiens, particularly after quick lateral movements when the pads don't close completely. Shots that draw the gardien into motion and then finish on the five-hole are nearly impossible for many amateur gardiens to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
-<h2>10. Blocker/Glove Asymmetry</h2>
-<p>Almost all gardiens have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
-<h2>11. Cold Start vs. Hot Goalie</h2>
-<p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some gardiens need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
-<h2>12. Penalty Shot Performance</h2>
-<p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A gardien who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
-<h2>Tracking Methods for Amateur Coaches</h2>
-<p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
-<ol>
-<li>SV% and HDSV% (achievable with a shot map + game log)</li>
-<li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
-<li>Crease depth (check once per training block with markers)</li>
-<li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
-<li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
-</ol>
-<p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
-</div><div class="lang-content lang-sv">
-<h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
-<p>Save percentage (SV%) is the best-known målvakt statistic — and simultaneously one of the most misleading. A målvakt with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a målvakt needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
-<h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
-<p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a målvakt look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
-<h2>2. Goals Saved Above Expected (GSAx)</h2>
-<p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the målvakt saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual målvakt performance because it removes the influence of the team's defensive structure.</p>
-<p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
-<h2>3. High-Danger Save Percentage (HDSV%)</h2>
-<p>HDSV% measures how many shots from the high-danger zone (slot and lower tekning circles) the målvakt stops. On average, about 15–20% of these shots result in goals. A målvakt with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
-<h2>4. Low-Danger Save Percentage (LDSV%)</h2>
-<p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
-<h2>5. Rebound Control Rate</h2>
-<p>How often does a målvakt cleanly secure the puck, rather than letting it rebound uncontrolled? Professional målvakts control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
-<h2>6. Lateral Movement Assessment</h2>
-<p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
-<h2>7. Depth Management (Crease Depth)</h2>
-<p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior målvakts stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
-<h2>8. Screen Situations: SV% in Front of Screens</h2>
-<p>Shots with a player in front are harder for every målvakt. The difference between elite målvakts and average ones often lies here: good målvakts communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
-<h2>9. Five-Hole Tendency</h2>
-<p>The five-hole — the area between the pads — is a weak spot for many målvakts, particularly after quick lateral movements when the pads don't close completely. Shots that draw the målvakt into motion and then finish on the five-hole are nearly impossible for many amateur målvakts to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
-<h2>10. Blocker/Glove Asymmetry</h2>
-<p>Almost all målvakts have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
-<h2>11. Cold Start vs. Hot Goalie</h2>
-<p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some målvakts need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
-<h2>12. Penalty Shot Performance</h2>
-<p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A målvakt who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
-<h2>Tracking Methods for Amateur Coaches</h2>
-<p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
-<ol>
-<li>SV% and HDSV% (achievable with a shot map + game log)</li>
-<li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
-<li>Crease depth (check once per training block with markers)</li>
-<li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
-<li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
-</ol>
-<p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
-</div><div class="lang-content lang-fi">
-<h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
-<p>Save percentage (SV%) is the best-known maalivahti statistic — and simultaneously one of the most misleading. A maalivahti with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a maalivahti needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
-<h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
-<p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a maalivahti look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
-<h2>2. Goals Saved Above Expected (GSAx)</h2>
-<p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the maalivahti saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual maalivahti performance because it removes the influence of the team's defensive structure.</p>
-<p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
-<h2>3. High-Danger Save Percentage (HDSV%)</h2>
-<p>HDSV% measures how many shots from the high-danger zone (slot and lower aloitus circles) the maalivahti stops. On average, about 15–20% of these shots result in goals. A maalivahti with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
-<h2>4. Low-Danger Save Percentage (LDSV%)</h2>
-<p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
-<h2>5. Rebound Control Rate</h2>
-<p>How often does a maalivahti cleanly secure the puck, rather than letting it rebound uncontrolled? Professional maalivahtis control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
-<h2>6. Lateral Movement Assessment</h2>
-<p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
-<h2>7. Depth Management (Crease Depth)</h2>
-<p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior maalivahtis stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
-<h2>8. Screen Situations: SV% in Front of Screens</h2>
-<p>Shots with a player in front are harder for every maalivahti. The difference between elite maalivahtis and average ones often lies here: good maalivahtis communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
-<h2>9. Five-Hole Tendency</h2>
-<p>The five-hole — the area between the pads — is a weak spot for many maalivahtis, particularly after quick lateral movements when the pads don't close completely. Shots that draw the maalivahti into motion and then finish on the five-hole are nearly impossible for many amateur maalivahtis to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
-<h2>10. Blocker/Glove Asymmetry</h2>
-<p>Almost all maalivahtis have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
-<h2>11. Cold Start vs. Hot Goalie</h2>
-<p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some maalivahtis need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
-<h2>12. Penalty Shot Performance</h2>
-<p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A maalivahti who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
-<h2>Tracking Methods for Amateur Coaches</h2>
-<p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
-<ol>
-<li>SV% and HDSV% (achievable with a shot map + game log)</li>
-<li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
-<li>Crease depth (check once per training block with markers)</li>
-<li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
-<li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
-</ol>
-<p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
-</div><div class="lang-content lang-ru">
-<h1>Goaltender Analysis: 12 Metrics Beyond Save Percentage</h1>
-<p>Save percentage (SV%) is the best-known вратарь statistic — and simultaneously one of the most misleading. A вратарь with a .915 SV% who only faces outside shots delivers far less than one with a .905 SV% who is constantly tested in high-danger situations. Anyone who wants to truly evaluate a вратарь needs more perspectives. This article introduces 12 metrics, explains their value, and shows which can be tracked even without professional software.</p>
-<h2>1. Save Percentage (SV%) — Foundation and Limitations</h2>
-<p>SV% = saves / total shots. League average in the DEL: approximately .910–.915. The number is easy to calculate but team-dependent: a weak defensive unit generating many slot shots against makes a вратарь look worse than he is. SV% must always be viewed in the context of shot quality against.</p>
-<h2>2. Goals Saved Above Expected (GSAx)</h2>
-<p>GSAx = expected goals allowed (based on xG) minus actual goals allowed. A GSAx of +5.0 means the вратарь saved five more goals than statistically expected. A GSAx of -3.0 means he allowed three more goals than expected. This is the most precise metric for individual вратарь performance because it removes the influence of the team's defensive structure.</p>
-<p>At the amateur level, GSAx can be estimated in simplified form: shots from the slot against count as "expected goals" at 0.17, shots from the blue line at 0.04. The sum gives the expected goals allowed; the difference from reality = simplified GSAx.</p>
-<h2>3. High-Danger Save Percentage (HDSV%)</h2>
-<p>HDSV% measures how many shots from the high-danger zone (slot and lower вбрасывание circles) the вратарь stops. On average, about 15–20% of these shots result in goals. A вратарь with HDSV% .820 is in the middle of the pack; .850+ is elite. This number tells far more than the overall result because it specifically evaluates the most critical segment.</p>
-<h2>4. Low-Danger Save Percentage (LDSV%)</h2>
-<p>Shots from outside, from the blue line, from tight angles. A league average of .975–.985 is normal; anyone notably below this may have concentration issues in seemingly routine situations. For coaches: analyze whether goals from low-danger zones point to inattention or poor positioning.</p>
-<h2>5. Rebound Control Rate</h2>
-<p>How often does a вратарь cleanly secure the puck, rather than letting it rebound uncontrolled? Professional вратарьs control approximately 60–70% of their shots cleanly (no rebound). Rebounds lead directly to the most dangerous follow-up situations. Poor rebound control is often a technical problem: too-shallow pad angle, incorrect hand position, or insufficient "puck absorption" with the glove.</p>
-<h2>6. Lateral Movement Assessment</h2>
-<p>The ability to scramble across — quickly changing position on cross-slot passes. Measured in practice through the "post-to-post" drill: time from one post to the other in full save position. A good result for amateurs: under 1.2 seconds with correct technique. Deficiencies here often stem from weak hip flexors and insufficient T-push training.</p>
-<h2>7. Depth Management (Crease Depth)</h2>
-<p>Standing too deep in the crease gives the shooter wider angles. Standing too far out means poor reaction time and vulnerability to chips over the shoulder. Optimal depth varies by shot angle. Coaches can measure this easily: cord markings in practice, video analysis from the side angle. Many junior вратарьs stand 15–20 cm too deep, which significantly worsens angle coverage.</p>
-<h2>8. Screen Situations: SV% in Front of Screens</h2>
-<p>Shots with a player in front are harder for every вратарь. The difference between elite вратарьs and average ones often lies here: good вратарьs communicate early with their defensemen, actively look for the puck around the screen, and adjust their starting position when screen runs are recognizable. Coaches should explicitly practice screen situations — at least once per week during preparation.</p>
-<h2>9. Five-Hole Tendency</h2>
-<p>The five-hole — the area between the pads — is a weak spot for many вратарьs, particularly after quick lateral movements when the pads don't close completely. Shots that draw the вратарь into motion and then finish on the five-hole are nearly impossible for many amateur вратарьs to stop. Analysis: what percentage of goals allowed go through the five-hole? If it's above 25%, targeted pad-closing training is needed.</p>
-<h2>10. Blocker/Glove Asymmetry</h2>
-<p>Almost all вратарьs have a weaker side. An asymmetry of more than 8 percentage points between glove-side SV% and blocker-side SV% is a clear training signal. Opponents at higher levels quickly identify such tendencies. Concrete drill: shot series exclusively to the weaker side, with increasing shot speed and variation.</p>
-<h2>11. Cold Start vs. Hot Goalie</h2>
-<p>How does performance in the first five minutes of a game compare to the 30-minute mark? Some вратарьs need 8–10 minutes to reach operating temperature — statistically evident in a higher goals-allowed rate in the early minutes. This can be addressed through a specific warm-up routine: more intensive shot series, more lateral movements, explicit mental activation before puck drop.</p>
-<h2>12. Penalty Shot Performance</h2>
-<p>Penalty shots result in goals approximately 32% of the time in the NHL — in amateur hockey, this rate varies considerably (20–45%). A вратарь who stops three of five penalty shots has often contributed more to season success than ten extra SV% points in regular play. Training for penalty shots: analyze shooter tendencies (forehand/backhand, speed variations), individual reaction drills, reading hips rather than watching the puck.</p>
-<h2>Tracking Methods for Amateur Coaches</h2>
-<p>Not all 12 metrics can be captured simultaneously. Recommended priority for amateur teams:</p>
-<ol>
-<li>SV% and HDSV% (achievable with a shot map + game log)</li>
-<li>Rebound control rate (can be estimated visually, video analysis helpful)</li>
-<li>Crease depth (check once per training block with markers)</li>
-<li>Blocker/glove asymmetry (assessable after 5–6 games)</li>
-<li>Cold-start tendency (compare first 5 minutes vs. rest of game)</li>
-</ol>
-<p>Even with a simple notebook and an attentive assistant, this data can be reliably captured. The insights it produces exceed the value of any subjective post-game assessment.</p>
-</div>
+
+
 <div class="weiterlesen">
-<h3><span data-lang-group="read-more-heading"><span class="lang-de active">Weiterlesen</span><span class="lang-en">Read more</span><span class="lang-fr">En savoir plus</span><span class="lang-sv">Läs mer</span><span class="lang-fi">Lue lisää</span><span class="lang-ru">Читать далее</span></span></h3>
+<h3>Weiterlesen</h3>
 <ul>
-<li><a href="blog-schuss-statistiken.html"><span data-lang-group="readmore-1"><span class="lang-de active">Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</span><span class="lang-en">Shot Statistics in Hockey: The Complete Guide for Coaches</span><span class="lang-fr">Statistiques de tirs au hockey : le guide complet pour les entraîneurs</span><span class="lang-sv">Skottstatistik i hockey: den kompletta guiden för tränare</span><span class="lang-fi">Laukaustilastot jääkiekossa: täydellinen opas valmentajille</span><span class="lang-ru">Статистика бросков в хоккее: полный гид для тренеров</span></span></a></li>
-<li><a href="blog-mentaltraining.html"><span data-lang-group="readmore-2"><span class="lang-de active">Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</span><span class="lang-en">Mental Training in Hockey: Routines, Visualization, and Pre-Game Preparation</span><span class="lang-fr">Préparation mentale au hockey : routines, visualisation et préparation d’avant-match</span><span class="lang-sv">Mental träning i hockey: rutiner, visualisering och förmatchförberedelser</span><span class="lang-fi">Mentaaliharjoittelu jääkiekossa: rutiinit, visualisointi ja valmistautuminen ennen peliä</span><span class="lang-ru">Ментальная подготовка в хоккее: рутины, визуализация и предматчевая подготовка</span></span></a></li>
-<li><a href="blog-spielanalyse.html"><span data-lang-group="readmore-3"><span class="lang-de active">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</span><span class="lang-en">Game Analysis for Amateur Coaches: A Step-by-Step Guide</span><span class="lang-fr">Analyse de match pour entraîneurs amateurs : guide pas à pas</span><span class="lang-sv">Matchanalys för amatörtränare: steg-för-steg-guide</span><span class="lang-fi">Pelianalyysi amatöörivalmentajille: vaiheittainen opas</span><span class="lang-ru">Анализ игры для тренеров-любителей: пошаговое руководство</span></span></a></li>
+<li><a href="blog-schuss-statistiken.html">Schuss-Statistiken im Eishockey: Der vollständige Leitfaden für Trainer</a></li>
+<li><a href="blog-mentaltraining.html">Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</a></li>
+<li><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a></li>
 </ul>
 </div>
 <div class="article-footer">
-<strong style="color:#a0a0a0;"><span data-lang-group="article-footer-label"><span class="lang-de active">Blog-Artikel:</span><span class="lang-en">Blog articles:</span><span class="lang-fr">Articles de blog :</span><span class="lang-sv">Bloggartiklar:</span><span class="lang-fi">Blogiartikkelit:</span><span class="lang-ru">Статьи блога:</span></span></strong>
-<a href="blog-schuss-statistiken.html"><span data-lang-group="article-link-1"><span class="lang-de active">Schuss-Statistiken</span><span class="lang-en">Shot Statistics</span><span class="lang-fr">Statistiques de tirs</span><span class="lang-sv">Skottstatistik</span><span class="lang-fi">Laukaustilastot</span><span class="lang-ru">Статистика бросков</span></span></a> ·
-            <a href="blog-torwart-analyse.html"><span data-lang-group="article-link-2"><span class="lang-de active">Torwart-Analyse</span><span class="lang-en">Goalie Analysis</span><span class="lang-fr">Analyse du gardien</span><span class="lang-sv">Målvaktsanalys</span><span class="lang-fi">Maalivahtianalyysi</span><span class="lang-ru">Анализ вратаря</span></span></a> ·
-            <a href="blog-powerplay-strategien.html"><span data-lang-group="article-link-3"><span class="lang-de active">Powerplay</span><span class="lang-en">Power Play</span><span class="lang-fr">supériorité numérique</span><span class="lang-sv">powerplay</span><span class="lang-fi">ylivoima</span><span class="lang-ru">большинство</span></span></a> ·
-            <a href="blog-penalty-killing.html"><span data-lang-group="article-link-4"><span class="lang-de active">Penalty Killing</span><span class="lang-en">Penalty Kill</span><span class="lang-fr">infériorité numérique</span><span class="lang-sv">boxplay</span><span class="lang-fi">alivoima</span><span class="lang-ru">меньшинство</span></span></a> ·
-            <a href="blog-faceoffs.html"><span data-lang-group="article-link-5"><span class="lang-de active">Faceoffs</span><span class="lang-en">Faceoffs</span><span class="lang-fr">Mises au jeu</span><span class="lang-sv">Tekningar</span><span class="lang-fi">Aloitukset</span><span class="lang-ru">Вбрасывания</span></span></a> ·
-            <a href="blog-zonen-eintritt.html"><span data-lang-group="article-link-6"><span class="lang-de active">Zonen-Eintritt</span><span class="lang-en">Zone Entries</span><span class="lang-fr">Zone Entries</span><span class="lang-sv">Zone Entries</span><span class="lang-fi">Zone Entries</span><span class="lang-ru">Zone Entries</span></span></a> ·
-            <a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="article-link-7"><span class="lang-de active">Trainingsplan</span><span class="lang-en">Training Plan</span><span class="lang-fr">Plan d’entraînement</span><span class="lang-sv">Träningsplan</span><span class="lang-fi">Harjoitussuunnitelma</span><span class="lang-ru">Тренировочный план</span></span></a> ·
-            <a href="blog-kindereishockey.html"><span data-lang-group="article-link-8"><span class="lang-de active">Kindereishockey</span><span class="lang-en">Youth Hockey</span><span class="lang-fr">Hockey des jeunes</span><span class="lang-sv">Ungdomshockey</span><span class="lang-fi">Juniorikiekko</span><span class="lang-ru">Детский хоккей</span></span></a> ·
-            <a href="blog-spielanalyse.html"><span data-lang-group="article-link-9"><span class="lang-de active">Spielanalyse</span><span class="lang-en">Game Analysis</span><span class="lang-fr">Analyse de match</span><span class="lang-sv">Matchanalys</span><span class="lang-fi">Pelianalyysi</span><span class="lang-ru">Анализ игры</span></span></a> ·
-            <a href="blog-mentaltraining.html"><span data-lang-group="article-link-10"><span class="lang-de active">Mentaltraining</span><span class="lang-en">Mental Training</span><span class="lang-fr">Préparation mentale</span><span class="lang-sv">Mental träning</span><span class="lang-fi">Mentaaliharjoittelu</span><span class="lang-ru">Ментальная подготовка</span></span></a>
+<strong style="color:#a0a0a0;">Blog-Artikel:</strong>
+<a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
+            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
+            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
+            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
+            <a href="blog-faceoffs.html">Faceoffs</a> ·
+            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
+            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
+            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
+            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
+            <a href="blog-mentaltraining.html">Mentaltraining</a>
 <br/>
-<a href="coaching-tipps.html"><span data-lang-group="article-overview-link"><span class="lang-de active">Blog Übersicht</span><span class="lang-en">Blog overview</span><span class="lang-fr">Aperçu du blog</span><span class="lang-sv">Bloggöversikt</span><span class="lang-fi">Blogin yleiskatsaus</span><span class="lang-ru">Обзор блога</span></span></a> ·
-                <a href="impressum.html"><span data-lang-group="article-imprint-link"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a> ·
-                <a href="datenschutz.html"><span data-lang-group="article-privacy-link"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
+<a href="coaching-tipps.html">Blog Übersicht</a> ·
+                <a href="impressum.html">Impressum</a> ·
+                <a href="datenschutz.html">Datenschutz</a>
 </div>
 </div>
 </main>
 <footer class="site-footer">
 <div class="footer-container">
 <nav class="footer-nav">
-<a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-sv">Hem</span><span class="lang-fi">Etusivu</span><span class="lang-ru">Главная</span></span></a>
-<a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span><span class="lang-fr">Applications</span><span class="lang-sv">Appar</span><span class="lang-fi">Sovellukset</span><span class="lang-ru">Приложения</span></span></a>
-<a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span><span class="lang-fr">Blog</span><span class="lang-sv">Blog</span><span class="lang-fi">Blog</span><span class="lang-ru">Blog</span></span></a>
-<a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span><span class="lang-fr">Shop</span><span class="lang-sv">Shop</span><span class="lang-fi">Shop</span><span class="lang-ru">Shop</span></span></a>
-<a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span><span class="lang-fr">Aide</span><span class="lang-sv">Hjälp</span><span class="lang-fi">Ohje</span><span class="lang-ru">Помощь</span></span></a>
-<a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span><span class="lang-sv">FAQ</span><span class="lang-fi">FAQ</span><span class="lang-ru">FAQ</span></span></a>
-<a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span><span class="lang-fr">Guide des statistiques</span><span class="lang-sv">Statistikguide</span><span class="lang-fi">Tilasto-opas</span><span class="lang-ru">Руководство по статистике</span></span></a>
-<a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span><span class="lang-fr">À propos de nous</span><span class="lang-sv">Om oss</span><span class="lang-fi">Tietoa meistä</span><span class="lang-ru">О нас</span></span></a>
-<a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a>
-<a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
-<a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span><span class="lang-fr">Conditions générales</span><span class="lang-sv">Villkor</span><span class="lang-fi">Käyttöehdot</span><span class="lang-ru">Условия</span></span></a>
+<a href="index.html">Home</a>
+<a href="app-comparison.html">Apps</a>
+<a href="coaching-tipps.html">Blog</a>
+<a href="shop.html">Shop</a>
+<a href="hilfe.html">Hilfe</a>
+<a href="faq.html">FAQ</a>
+<a href="hockey-statistik-guide.html">Statistik-Guide</a>
+<a href="about.html">Über uns</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="terms.html">AGB</a>
 </nav>
-<p>© 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span><span class="lang-fr">Suisse</span><span class="lang-sv">Schweiz</span><span class="lang-fi">Sveitsi</span><span class="lang-ru">Швейцария</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+<p>© 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
 </div>
 </footer>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
 <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
 <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-<span data-lang-group="cookie-text">
-<span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
-<span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
-<span class="lang-fr">🍪 Ce site utilise des cookies et des services tiers (comme Google AdSense) pour afficher du contenu et de la publicité. En savoir plus dans notre <a href="datenschutz.html" style="color:#2563eb;">politique de confidentialité</a>.</span><span class="lang-sv">🍪 Den här webbplatsen använder cookies och tredjepartstjänster (som Google AdSense) för att visa innehåll och annonser. Läs mer i vår <a href="datenschutz.html" style="color:#2563eb;">integritetspolicy</a>.</span><span class="lang-fi">🍪 Tämä sivusto käyttää evästeitä ja kolmannen osapuolen palveluita (kuten Google AdSensea) sisällön ja mainonnan näyttämiseen. Lue lisää <a href="datenschutz.html" style="color:#2563eb;">tietosuojakäytännöstämme</a>.</span><span class="lang-ru">🍪 Этот сайт использует файлы cookie и сторонние сервисы (например, Google AdSense) для показа контента и рекламы. Подробнее в нашей <a href="datenschutz.html" style="color:#2563eb;">политике конфиденциальности</a>.</span></span>
+
+🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+
+
 </p>
 <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
 <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
-<span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span><span class="lang-fr">OK / Compris</span><span class="lang-sv">OK / Förstått</span><span class="lang-fi">OK / Ymmärretty</span><span class="lang-ru">ОК / Понятно</span></span>
+OK / Verstanden
 </button>
 </div>
 </div>
 </div>
 <script>
         (function() {
-            const defaultLang = 'de';
-            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
-            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
 
-            function getBrowserLanguage() {
-                const browserLang = navigator.language || navigator.userLanguage;
-                const langCode = browserLang.split('-')[0].toLowerCase();
-                return supportedLangs.includes(langCode) ? langCode : defaultLang;
-            }
 
-            function getInitialLanguage() {
-                const saved = localStorage.getItem('smarthockey-lang');
-                if (saved && supportedLangs.includes(saved)) return saved;
-                return getBrowserLanguage();
-            }
 
-            function switchLanguage(lang) {
-                if (!supportedLangs.includes(lang)) lang = defaultLang;
 
-                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
-                    group.querySelectorAll('span[class^="lang-"]').forEach(function(node) {
-                        node.classList.remove('active');
-                    });
-                    const activeNode = group.querySelector('.lang-' + lang);
-                    if (activeNode) activeNode.classList.add('active');
-                });
 
-                document.querySelectorAll('.lang-content').forEach(function(el) {
-                    el.classList.remove('active');
-                });
-                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
-                    el.classList.add('active');
-                });
-
-                const currentName = document.querySelector('.lang-current-name');
-                if (currentName) currentName.textContent = langNames[lang];
-
-                document.querySelectorAll('.lang-option').forEach(function(option) {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
-                });
-
-                document.documentElement.lang = lang;
-                localStorage.setItem('smarthockey-lang', lang);
-            }
-
-            const initialLang = getInitialLanguage();
-            switchLanguage(initialLang);
-
-            const switcher = document.querySelector('.language-switcher');
-            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
             if (switcher && dropdownBtn) {
                 dropdownBtn.addEventListener('click', function(event) {
                     event.stopPropagation();
@@ -654,9 +344,7 @@
                 });
             }
 
-            document.querySelectorAll('.lang-option').forEach(function(option) {
                 option.addEventListener('click', function() {
-                    switchLanguage(this.getAttribute('data-lang'));
                     if (switcher) switcher.classList.remove('active');
                 });
             });

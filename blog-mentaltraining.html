@@ -66,8 +66,6 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
     
         .site-header {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 100%);
@@ -117,65 +115,6 @@
         .site-nav a.active {
             color: #2563eb;
         }
-        .language-switcher { position: relative; display: inline-block; }
-        .lang-dropdown-btn {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            border: 2px solid #2563eb;
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-        }
-        .lang-dropdown-btn:hover {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
-        }
-        .lang-dropdown-btn svg { width: 18px; height: 18px; }
-        .lang-chevron { width: 14px; height: 14px; transition: transform 0.3s; }
-        .language-switcher.active .lang-chevron { transform: rotate(180deg); }
-        .lang-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 8px;
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
-            border: 2px solid #2a2a3e;
-            border-radius: 8px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            min-width: 180px;
-            z-index: 1000;
-            overflow: hidden;
-        }
-        .language-switcher.active .lang-dropdown-menu { display: block; }
-        .lang-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 16px;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            border: none;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-            font-size: 1rem;
-        }
-        .lang-option:hover { background-color: rgba(37, 99, 235, 0.2); }
-        .lang-option.active { background-color: rgba(37, 99, 235, 0.3); color: #2563eb; font-weight: 600; }
-        .lang-option-flag { font-size: 1.3rem; }
-        .lang-option-name { font-size: 0.95rem; }
-        [data-lang-group] span[class^="lang-"] { display: none !important; }
-        [data-lang-group] span[class^="lang-"].active { display: inline !important; }
         .page-shell { padding: 20px; }
         .page-links {
             max-width: 860px;
@@ -243,63 +182,50 @@
 </a>
 <nav class="site-nav">
 <a href="index.html">
-<span data-lang-group="nav-home">
-<span class="lang-de active">🏠 Home</span>
-<span class="lang-en">🏠 Home</span>
-<span class="lang-fr">🏠 Accueil</span><span class="lang-sv">🏠 Hem</span><span class="lang-fi">🏠 Etusivu</span><span class="lang-ru">🏠 Главная</span></span>
+
+🏠 Home
+
+
 </a>
 <a href="app-comparison.html">
-<span data-lang-group="nav-apps">
-<span class="lang-de active">📱 Apps</span>
-<span class="lang-en">📱 Apps</span>
-<span class="lang-fr">📱 Applications</span><span class="lang-sv">📱 Appar</span><span class="lang-fi">📱 Sovellukset</span><span class="lang-ru">📱 Приложения</span></span>
+
+📱 Apps
+
+
 </a>
 <a class="active" href="coaching-tipps.html">
-<span data-lang-group="nav-blog">
-<span class="lang-de active">📝 Blog</span>
-<span class="lang-en">📝 Blog</span>
-<span class="lang-fr">📝 Blog</span><span class="lang-sv">📝 Blog</span><span class="lang-fi">📝 Blog</span><span class="lang-ru">📝 Blog</span></span>
+
+📝 Blog
+
+
 </a>
 <a href="shop.html">
-<span data-lang-group="nav-shop">
-<span class="lang-de active">🛒 Shop</span>
-<span class="lang-en">🛒 Shop</span>
-<span class="lang-fr">🛒 Shop</span><span class="lang-sv">🛒 Shop</span><span class="lang-fi">🛒 Shop</span><span class="lang-ru">🛒 Shop</span></span>
+
+🛒 Shop
+
+
 </a>
 </nav>
-<div class="language-switcher">
-<button aria-label="Sprache wählen / Choose language" class="lang-dropdown-btn" type="button">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12" cy="12" r="10"></circle>
-<line x1="2" x2="22" y1="12" y2="12"></line>
-<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-</svg>
-<span class="lang-current-name">Deutsch</span>
-<svg class="lang-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="6 9 12 15 18 9"></polyline>
-</svg>
-</button>
-<div class="lang-dropdown-menu"><button class="lang-option" data-lang="en" type="button"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span></button><button class="lang-option active" data-lang="de" type="button"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span></button><button class="lang-option" data-lang="fr" type="button"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span></button><button class="lang-option" data-lang="sv" type="button"><span class="lang-option-flag">🇸🇪</span><span class="lang-option-name">Svenska</span></button><button class="lang-option" data-lang="fi" type="button"><span class="lang-option-flag">🇫🇮</span><span class="lang-option-name">Suomi</span></button><button class="lang-option" data-lang="ru" type="button"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span></button></div>
-</div>
+
 </div>
 </header>
 <main class="page-shell">
 <div class="page-links">
 <a class="back-link" href="index.html">
-<span data-lang-group="back-home">
-<span class="lang-de active">← Zurück zur Startseite</span>
-<span class="lang-en">← Back to home</span>
-<span class="lang-fr">← Back to home</span><span class="lang-sv">← Back to home</span><span class="lang-fi">← Back to home</span><span class="lang-ru">← Back to home</span></span>
+
+← Zurück zur Startseite
+
+
 </a>
 <a class="back-link" href="coaching-tipps.html">
-<span data-lang-group="back-blog">
-<span class="lang-de active">← Zum Blog</span>
-<span class="lang-en">← Back to blog</span>
-<span class="lang-fr">← Back to blog</span><span class="lang-sv">← Back to blog</span><span class="lang-fi">← Back to blog</span><span class="lang-ru">← Back to blog</span></span>
+
+← Zum Blog
+
+
 </a>
 </div>
 <div class="container">
-<div class="lang-content lang-de active">
+
 <h1>Mentaltraining im Eishockey: Routinen, Visualisierung und Pre-Game-Prep</h1>
 <p>Zwei Spieler mit gleicher körperlicher Fitness und gleicher Technik – der eine liefert unter Druck konstant ab, der andere bricht ein. Das ist keine Frage des Talents, sondern der mentalen Vorbereitung. Trotzdem wird Mentaltraining im Eishockey oft als „weiches" Thema abgetan. Dieser Artikel zeigt konkrete, praxiserprobte Techniken, die sofort anwendbar sind – ohne Sportwissenschaftsstudium und ohne Sportpsychologen.</p>
 <h2>Warum Mentaltraining im Eishockey oft vernachlässigt wird</h2>
@@ -369,472 +295,76 @@
 <li><strong>Linien-Cue:</strong> Beim Überspringen der Bande ins Eis beginnt der Fokus. Alles davor (Coaching-Kommentare, Fehler, Spielstand) bleibt draußen</li>
 <li><strong>Schlüsselwörter als Anker:</strong> Ein individuelles Wort, das einen Aspekt der eigenen Spielweise repräsentiert (z.B. „Tempo", „Stick", „Kommunikation") – daran erinnern kurz vor kritischen Situationen</li>
 </ul>
-</div>
-<div class="lang-content lang-en">
-<h1>Mental Training in Hockey: Routines, Visualization, and Pre-Game Preparation</h1>
-<p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
-<h2>Why Mental Training Is Often Neglected in Hockey</h2>
-<p>Hockey is physically and technically demanding. Coaches have limited practice time and focus on the obvious: skating, shooting, tactics. Mental training is harder to observe and harder to measure. When a player misses a crucial shot, it's immediately noticeable. That he was stuck in negative self-talk for three minutes beforehand — nobody sees that.</p>
-<p>Sports psychology research shows: mentally well-prepared athletes perform 8–12% above their baseline in pressure situations. For poorly prepared athletes, performance under pressure drops by the same margin. That's the difference between winning and losing a deciding game.</p>
-<h2>Pre-Game Routine: Three Time Frames</h2>
-<p>A good pre-game routine doesn't start an hour before the game — it's divided into three layers:</p>
-<h3>1 Week Before the Game</h3>
-<p>Mental preparation at the strategic level. Players should concretely visualize the upcoming challenge: What are the opponent's strengths? Which of my roles will be especially important? What situations do I expect, and how will I respond? Visualization at this level is calm and analytical — no adrenaline, just planning.</p>
-<h3>24 Hours Before the Game</h3>
-<p>Sleep, nutrition, and emotional regulation. No intensive physical training. At least 8 hours of sleep. A short visualization session of 10–15 minutes: run through your own game in the desired form. Social contact with teammates builds team cohesion — but avoid long, agitating discussions about the game.</p>
-<h3>1 Hour Before the Game</h3>
-<p>Activation routine in the locker room. Each player has their own optimal arousal level. Some need silence and focus; others need music and movement. Coaches should respect these individual differences and not rely solely on a one-size-fits-all team talk. Specific elements:</p>
-<ul>
-<li>Personal music (headphones) for focused players</li>
-<li>Brief team gathering (5 min.) for shared focus</li>
-<li>Personal warm-up movements (stretching ritual, stick grip check)</li>
-<li>Breathing exercise (Box Breathing, see below) for over-activated players</li>
-</ul>
-<h2>Visualization Techniques in Practice</h2>
-<p>Visualization isn't fantasy — it's mental simulation. The brain activates the same neural patterns during vivid imagination as during actual execution. Studies show: players who visualize regularly improve their execution quality in familiar situations by 15–20%, even without additional physical training.</p>
-<h3>How Effective Visualization Works</h3>
-<ol>
-<li><strong>Quiet environment:</strong> Sit down, close your eyes, take three deep breaths</li>
-<li><strong>First-person perspective:</strong> See the game through your own eyes — not as a spectator, but as yourself on the ice</li>
-<li><strong>Engage all senses:</strong> Hear the ice crunch, feel the stick in your hands, smell the rink air</li>
-<li><strong>Visualize success:</strong> Don't visualize avoiding mistakes — see the correct execution</li>
-<li><strong>Real-time speed:</strong> Run through the sequence at actual game speed, not in slow motion</li>
-</ol>
-<p>Recommendation: 10 minutes per day, three to four times per week. Choose specific scenarios: your own rush with the puck, a successful faceoff, a breakout situation, a shot on goal. The more specific, the more effective.</p>
-<h2>Box Breathing: A Technique for Pressure Situations</h2>
-<p>Box breathing (also called 4-4-4-4 breathing) is a technique that regulates the autonomic nervous system. It's used by Navy SEALs, surgeons, and elite athletes to maintain control under extreme pressure.</p>
-<p>The technique: inhale for 4 seconds — hold for 4 seconds — exhale for 4 seconds — hold for 4 seconds. Repeat this cycle 4–6 times. The physiological effect: heart rate drops, cortisol decreases, focus sharpens. Time to take effect: 90–120 seconds.</p>
-<p>Application in hockey: in the locker room before taking the ice, during a stoppage after a difficult start, or as a reset after a personal mistake. Players who practice box breathing regularly can activate it in 30 seconds — without it being visible from the outside.</p>
-<h2>Self-Talk: Positive vs. Negative</h2>
-<p>What a player says to themselves directly affects performance. Negative self-talk — "I never hit this," "I'm so slow today" — activates avoidance behavior and increases anxiety. Positive self-talk isn't blind optimism; it's functional self-dialogue.</p>
-<p>Concrete examples:</p>
-<table>
-<tr><th>Negative Self-Talk</th><th>Functional Self-Talk</th></tr>
-<tr><td>"I'm going to miss this shot again"</td><td>"Weight forward, calm release"</td></tr>
-<tr><td>"I'm so slow today"</td><td>"Next shift: short shifts, max speed"</td></tr>
-<tr><td>"Why do I always make the same mistake"</td><td>"Next situation: react earlier"</td></tr>
-<tr><td>"The ice is bad today"</td><td>"Everyone has the same conditions — I'll adapt"</td></tr>
-</table>
-<p>Coaches can incorporate self-talk training into drill series: players verbalize their action plan out loud during a drill. This trains both decision clarity and positive self-dialogue as a habit.</p>
-<h2>Handling Mistakes: The Error-Reset Technique</h2>
-<p>Mistakes are inevitable in hockey. The question isn't whether they happen, but how quickly a player is back in the game afterward. Players who dwell on mistakes make follow-up errors more often — because attention and reaction time are compromised.</p>
-<p>The error-reset technique in three steps:</p>
-<ol>
-<li><strong>Acknowledge (3 seconds):</strong> Internally name the mistake, briefly tap the stick on the ice or use another physical gesture as a "closing signal"</li>
-<li><strong>Release (5 seconds):</strong> Consciously decide: "That mistake is over — I can't undo it"</li>
-<li><strong>Refocus (immediately):</strong> Name a concrete next step: "Now: back into the system, cover the left flank"</li>
-</ol>
-<p>This process takes under ten seconds and can be executed mid-game. Train it explicitly in practice — deliberately put players in mistake situations and observe how they respond.</p>
-<h2>Goalie-Specific Routines</h2>
-<p>Goalies have a unique role: mistakes are immediately visible and result directly in goals. This makes mental stability even more important for goaltenders than for skaters. Goalie-specific recommendations:</p>
-<ul>
-<li><strong>Post-goal routine:</strong> A fixed sequence of movements after allowing a goal (e.g., go to the boards, take a water break, brief breathing exercise, return to position) — gives the body a signal that the sequence is closed</li>
-<li><strong>Tunnel vision technique:</strong> Before each rush, focus only on the puck — consciously block out everything else</li>
-<li><strong>Set-point gesture:</strong> A personal gesture (stick on the post, a quick snap of the catching glove) that signals a mental reset</li>
-<li><strong>No in-game stats:</strong> Don't track your own SV% during the game. Focus only on the current situation, not the overall tally</li>
-</ul>
-<h2>Concentration Techniques for Forwards and Defensemen</h2>
-<p>Skaters face the problem of over-activation: too much adrenaline, too-quick decisions, uncontrolled actions. Countermeasures:</p>
-<ul>
-<li><strong>"Next play" focus:</strong> After each shift: think only about the next action, not the previous one. Simple mantra: "Next shift, next chance"</li>
-<li><strong>Boards cue:</strong> When jumping over the boards, focus begins. Everything before that (coaching comments, mistakes, score) stays outside</li>
-<li><strong>Keyword anchors:</strong> One personal word representing a key aspect of your own game (e.g., "speed," "stick," "communication") — remind yourself just before critical situations</li>
-</ul>
-</div><div class="lang-content lang-fr">
-<h1>Préparation mentale au hockey : routines, visualisation et préparation d’avant-match</h1>
-<p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
-<h2>Why Préparation mentale Is Often Neglected in Hockey</h2>
-<p>Hockey is physically and technically demanding. Coaches have limited practice time and focus on the obvious: skating, shooting, tactics. Mental training is harder to observe and harder to measure. When a player misses a crucial shot, it's immediately noticeable. That he was stuck in negative self-talk for three minutes beforehand — nobody sees that.</p>
-<p>Sports psychology research shows: mentally well-prepared athletes perform 8–12% above their baseline in pressure situations. For poorly prepared athletes, performance under pressure drops by the same margin. That's the difference between winning and losing a deciding game.</p>
-<h2>Pre-Game Routine: Three Time Frames</h2>
-<p>A good pre-game routine doesn't start an hour before the game — it's divided into three layers:</p>
-<h3>1 Week Before the Game</h3>
-<p>Mental preparation at the strategic level. Players should concretely visualize the upcoming challenge: What are the opponent's strengths? Which of my roles will be especially important? What situations do I expect, and how will I respond? Visualization at this level is calm and analytical — no adrenaline, just planning.</p>
-<h3>24 Hours Before the Game</h3>
-<p>Sleep, nutrition, and emotional regulation. No intensive physical training. At least 8 hours of sleep. A short visualization session of 10–15 minutes: run through your own game in the desired form. Social contact with teammates builds team cohesion — but avoid long, agitating discussions about the game.</p>
-<h3>1 Hour Before the Game</h3>
-<p>Activation routine in the locker room. Each player has their own optimal arousal level. Some need silence and focus; others need music and movement. Coaches should respect these individual differences and not rely solely on a one-size-fits-all team talk. Specific elements:</p>
-<ul>
-<li>Personal music (headphones) for focused players</li>
-<li>Brief team gathering (5 min.) for shared focus</li>
-<li>Personal warm-up movements (stretching ritual, stick grip check)</li>
-<li>Breathing exercise (Box Breathing, see below) for over-activated players</li>
-</ul>
-<h2>Visualization Techniques in Practice</h2>
-<p>Visualization isn't fantasy — it's mental simulation. The brain activates the same neural patterns during vivid imagination as during actual execution. Studies show: players who visualize regularly improve their execution quality in familiar situations by 15–20%, even without additional physical training.</p>
-<h3>How Effective Visualization Works</h3>
-<ol>
-<li><strong>Quiet environment:</strong> Sit down, close your eyes, take three deep breaths</li>
-<li><strong>First-person perspective:</strong> See the game through your own eyes — not as a spectator, but as yourself on the ice</li>
-<li><strong>Engage all senses:</strong> Hear the ice crunch, feel the stick in your hands, smell the rink air</li>
-<li><strong>Visualize success:</strong> Don't visualize avoiding mistakes — see the correct execution</li>
-<li><strong>Real-time speed:</strong> Run through the sequence at actual game speed, not in slow motion</li>
-</ol>
-<p>Recommendation: 10 minutes per day, three to four times per week. Choose specific scenarios: your own rush with the puck, a successful mise au jeu, a breakout situation, a shot on goal. The more specific, the more effective.</p>
-<h2>Box Breathing: A Technique for Pressure Situations</h2>
-<p>Box breathing (also called 4-4-4-4 breathing) is a technique that regulates the autonomic nervous system. It's used by Navy SEALs, surgeons, and elite athletes to maintain control under extreme pressure.</p>
-<p>The technique: inhale for 4 seconds — hold for 4 seconds — exhale for 4 seconds — hold for 4 seconds. Repeat this cycle 4–6 times. The physiological effect: heart rate drops, cortisol decreases, focus sharpens. Time to take effect: 90–120 seconds.</p>
-<p>Application in hockey: in the locker room before taking the ice, during a stoppage after a difficult start, or as a reset after a personal mistake. Players who practice box breathing regularly can activate it in 30 seconds — without it being visible from the outside.</p>
-<h2>Self-Talk: Positive vs. Negative</h2>
-<p>What a player says to themselves directly affects performance. Negative self-talk — "I never hit this," "I'm so slow today" — activates avoidance behavior and increases anxiety. Positive self-talk isn't blind optimism; it's functional self-dialogue.</p>
-<p>Concrete examples:</p>
-<table>
-<tr><th>Negative Self-Talk</th><th>Functional Self-Talk</th></tr>
-<tr><td>"I'm going to miss this shot again"</td><td>"Weight forward, calm release"</td></tr>
-<tr><td>"I'm so slow today"</td><td>"Next shift: short shifts, max speed"</td></tr>
-<tr><td>"Why do I always make the same mistake"</td><td>"Next situation: react earlier"</td></tr>
-<tr><td>"The ice is bad today"</td><td>"Everyone has the same conditions — I'll adapt"</td></tr>
-</table>
-<p>Coaches can incorporate self-talk training into drill series: players verbalize their action plan out loud during a drill. This trains both decision clarity and positive self-dialogue as a habit.</p>
-<h2>Handling Mistakes: The Error-Reset Technique</h2>
-<p>Mistakes are inevitable in hockey. The question isn't whether they happen, but how quickly a player is back in the game afterward. Players who dwell on mistakes make follow-up errors more often — because attention and reaction time are compromised.</p>
-<p>The error-reset technique in three steps:</p>
-<ol>
-<li><strong>Acknowledge (3 seconds):</strong> Internally name the mistake, briefly tap the stick on the ice or use another physical gesture as a "closing signal"</li>
-<li><strong>Release (5 seconds):</strong> Consciously decide: "That mistake is over — I can't undo it"</li>
-<li><strong>Refocus (immediately):</strong> Name a concrete next step: "Now: back into the system, cover the left flank"</li>
-</ol>
-<p>This process takes under ten seconds and can be executed mid-game. Train it explicitly in practice — deliberately put players in mistake situations and observe how they respond.</p>
-<h2>Goalie-Specific Routines</h2>
-<p>Goalies have a unique role: mistakes are immediately visible and result directly in goals. This makes mental stability even more important for gardiens than for skaters. Goalie-specific recommendations:</p>
-<ul>
-<li><strong>Post-goal routine:</strong> A fixed sequence of movements after allowing a goal (e.g., go to the boards, take a water break, brief breathing exercise, return to position) — gives the body a signal that the sequence is closed</li>
-<li><strong>Tunnel vision technique:</strong> Before each rush, focus only on the puck — consciously block out everything else</li>
-<li><strong>Set-point gesture:</strong> A personal gesture (stick on the post, a quick snap of the catching glove) that signals a mental reset</li>
-<li><strong>No in-game stats:</strong> Don't track your own SV% during the game. Focus only on the current situation, not the overall tally</li>
-</ul>
-<h2>Concentration Techniques for Forwards and Defensemen</h2>
-<p>Skaters face the problem of over-activation: too much adrenaline, too-quick decisions, uncontrolled actions. Countermeasures:</p>
-<ul>
-<li><strong>"Next play" focus:</strong> After each shift: think only about the next action, not the previous one. Simple mantra: "Next shift, next chance"</li>
-<li><strong>Boards cue:</strong> When jumping over the boards, focus begins. Everything before that (coaching comments, mistakes, score) stays outside</li>
-<li><strong>Keyword anchors:</strong> One personal word representing a key aspect of your own game (e.g., "speed," "stick," "communication") — remind yourself just before critical situations</li>
-</ul>
-</div><div class="lang-content lang-sv">
-<h1>Mental träning i hockey: rutiner, visualisering och förmatchförberedelser</h1>
-<p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
-<h2>Why Mental träning Is Often Neglected in Hockey</h2>
-<p>Hockey is physically and technically demanding. Coaches have limited practice time and focus on the obvious: skating, shooting, tactics. Mental training is harder to observe and harder to measure. When a player misses a crucial shot, it's immediately noticeable. That he was stuck in negative self-talk for three minutes beforehand — nobody sees that.</p>
-<p>Sports psychology research shows: mentally well-prepared athletes perform 8–12% above their baseline in pressure situations. For poorly prepared athletes, performance under pressure drops by the same margin. That's the difference between winning and losing a deciding game.</p>
-<h2>Pre-Game Routine: Three Time Frames</h2>
-<p>A good pre-game routine doesn't start an hour before the game — it's divided into three layers:</p>
-<h3>1 Week Before the Game</h3>
-<p>Mental preparation at the strategic level. Players should concretely visualize the upcoming challenge: What are the opponent's strengths? Which of my roles will be especially important? What situations do I expect, and how will I respond? Visualization at this level is calm and analytical — no adrenaline, just planning.</p>
-<h3>24 Hours Before the Game</h3>
-<p>Sleep, nutrition, and emotional regulation. No intensive physical training. At least 8 hours of sleep. A short visualization session of 10–15 minutes: run through your own game in the desired form. Social contact with teammates builds team cohesion — but avoid long, agitating discussions about the game.</p>
-<h3>1 Hour Before the Game</h3>
-<p>Activation routine in the locker room. Each player has their own optimal arousal level. Some need silence and focus; others need music and movement. Coaches should respect these individual differences and not rely solely on a one-size-fits-all team talk. Specific elements:</p>
-<ul>
-<li>Personal music (headphones) for focused players</li>
-<li>Brief team gathering (5 min.) for shared focus</li>
-<li>Personal warm-up movements (stretching ritual, stick grip check)</li>
-<li>Breathing exercise (Box Breathing, see below) for over-activated players</li>
-</ul>
-<h2>Visualization Techniques in Practice</h2>
-<p>Visualization isn't fantasy — it's mental simulation. The brain activates the same neural patterns during vivid imagination as during actual execution. Studies show: players who visualize regularly improve their execution quality in familiar situations by 15–20%, even without additional physical training.</p>
-<h3>How Effective Visualization Works</h3>
-<ol>
-<li><strong>Quiet environment:</strong> Sit down, close your eyes, take three deep breaths</li>
-<li><strong>First-person perspective:</strong> See the game through your own eyes — not as a spectator, but as yourself on the ice</li>
-<li><strong>Engage all senses:</strong> Hear the ice crunch, feel the stick in your hands, smell the rink air</li>
-<li><strong>Visualize success:</strong> Don't visualize avoiding mistakes — see the correct execution</li>
-<li><strong>Real-time speed:</strong> Run through the sequence at actual game speed, not in slow motion</li>
-</ol>
-<p>Recommendation: 10 minutes per day, three to four times per week. Choose specific scenarios: your own rush with the puck, a successful tekning, a breakout situation, a shot on goal. The more specific, the more effective.</p>
-<h2>Box Breathing: A Technique for Pressure Situations</h2>
-<p>Box breathing (also called 4-4-4-4 breathing) is a technique that regulates the autonomic nervous system. It's used by Navy SEALs, surgeons, and elite athletes to maintain control under extreme pressure.</p>
-<p>The technique: inhale for 4 seconds — hold for 4 seconds — exhale for 4 seconds — hold for 4 seconds. Repeat this cycle 4–6 times. The physiological effect: heart rate drops, cortisol decreases, focus sharpens. Time to take effect: 90–120 seconds.</p>
-<p>Application in hockey: in the locker room before taking the ice, during a stoppage after a difficult start, or as a reset after a personal mistake. Players who practice box breathing regularly can activate it in 30 seconds — without it being visible from the outside.</p>
-<h2>Self-Talk: Positive vs. Negative</h2>
-<p>What a player says to themselves directly affects performance. Negative self-talk — "I never hit this," "I'm so slow today" — activates avoidance behavior and increases anxiety. Positive self-talk isn't blind optimism; it's functional self-dialogue.</p>
-<p>Concrete examples:</p>
-<table>
-<tr><th>Negative Self-Talk</th><th>Functional Self-Talk</th></tr>
-<tr><td>"I'm going to miss this shot again"</td><td>"Weight forward, calm release"</td></tr>
-<tr><td>"I'm so slow today"</td><td>"Next shift: short shifts, max speed"</td></tr>
-<tr><td>"Why do I always make the same mistake"</td><td>"Next situation: react earlier"</td></tr>
-<tr><td>"The ice is bad today"</td><td>"Everyone has the same conditions — I'll adapt"</td></tr>
-</table>
-<p>Coaches can incorporate self-talk training into drill series: players verbalize their action plan out loud during a drill. This trains both decision clarity and positive self-dialogue as a habit.</p>
-<h2>Handling Mistakes: The Error-Reset Technique</h2>
-<p>Mistakes are inevitable in hockey. The question isn't whether they happen, but how quickly a player is back in the game afterward. Players who dwell on mistakes make follow-up errors more often — because attention and reaction time are compromised.</p>
-<p>The error-reset technique in three steps:</p>
-<ol>
-<li><strong>Acknowledge (3 seconds):</strong> Internally name the mistake, briefly tap the stick on the ice or use another physical gesture as a "closing signal"</li>
-<li><strong>Release (5 seconds):</strong> Consciously decide: "That mistake is over — I can't undo it"</li>
-<li><strong>Refocus (immediately):</strong> Name a concrete next step: "Now: back into the system, cover the left flank"</li>
-</ol>
-<p>This process takes under ten seconds and can be executed mid-game. Train it explicitly in practice — deliberately put players in mistake situations and observe how they respond.</p>
-<h2>Goalie-Specific Routines</h2>
-<p>Goalies have a unique role: mistakes are immediately visible and result directly in goals. This makes mental stability even more important for målvakts than for skaters. Goalie-specific recommendations:</p>
-<ul>
-<li><strong>Post-goal routine:</strong> A fixed sequence of movements after allowing a goal (e.g., go to the boards, take a water break, brief breathing exercise, return to position) — gives the body a signal that the sequence is closed</li>
-<li><strong>Tunnel vision technique:</strong> Before each rush, focus only on the puck — consciously block out everything else</li>
-<li><strong>Set-point gesture:</strong> A personal gesture (stick on the post, a quick snap of the catching glove) that signals a mental reset</li>
-<li><strong>No in-game stats:</strong> Don't track your own SV% during the game. Focus only on the current situation, not the overall tally</li>
-</ul>
-<h2>Concentration Techniques for Forwards and Defensemen</h2>
-<p>Skaters face the problem of over-activation: too much adrenaline, too-quick decisions, uncontrolled actions. Countermeasures:</p>
-<ul>
-<li><strong>"Next play" focus:</strong> After each shift: think only about the next action, not the previous one. Simple mantra: "Next shift, next chance"</li>
-<li><strong>Boards cue:</strong> When jumping over the boards, focus begins. Everything before that (coaching comments, mistakes, score) stays outside</li>
-<li><strong>Keyword anchors:</strong> One personal word representing a key aspect of your own game (e.g., "speed," "stick," "communication") — remind yourself just before critical situations</li>
-</ul>
-</div><div class="lang-content lang-fi">
-<h1>Mentaaliharjoittelu jääkiekossa: rutiinit, visualisointi ja valmistautuminen ennen peliä</h1>
-<p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
-<h2>Why Mentaaliharjoittelu Is Often Neglected in Hockey</h2>
-<p>Hockey is physically and technically demanding. Coaches have limited practice time and focus on the obvious: skating, shooting, tactics. Mental training is harder to observe and harder to measure. When a player misses a crucial shot, it's immediately noticeable. That he was stuck in negative self-talk for three minutes beforehand — nobody sees that.</p>
-<p>Sports psychology research shows: mentally well-prepared athletes perform 8–12% above their baseline in pressure situations. For poorly prepared athletes, performance under pressure drops by the same margin. That's the difference between winning and losing a deciding game.</p>
-<h2>Pre-Game Routine: Three Time Frames</h2>
-<p>A good pre-game routine doesn't start an hour before the game — it's divided into three layers:</p>
-<h3>1 Week Before the Game</h3>
-<p>Mental preparation at the strategic level. Players should concretely visualize the upcoming challenge: What are the opponent's strengths? Which of my roles will be especially important? What situations do I expect, and how will I respond? Visualization at this level is calm and analytical — no adrenaline, just planning.</p>
-<h3>24 Hours Before the Game</h3>
-<p>Sleep, nutrition, and emotional regulation. No intensive physical training. At least 8 hours of sleep. A short visualization session of 10–15 minutes: run through your own game in the desired form. Social contact with teammates builds team cohesion — but avoid long, agitating discussions about the game.</p>
-<h3>1 Hour Before the Game</h3>
-<p>Activation routine in the locker room. Each player has their own optimal arousal level. Some need silence and focus; others need music and movement. Coaches should respect these individual differences and not rely solely on a one-size-fits-all team talk. Specific elements:</p>
-<ul>
-<li>Personal music (headphones) for focused players</li>
-<li>Brief team gathering (5 min.) for shared focus</li>
-<li>Personal warm-up movements (stretching ritual, stick grip check)</li>
-<li>Breathing exercise (Box Breathing, see below) for over-activated players</li>
-</ul>
-<h2>Visualization Techniques in Practice</h2>
-<p>Visualization isn't fantasy — it's mental simulation. The brain activates the same neural patterns during vivid imagination as during actual execution. Studies show: players who visualize regularly improve their execution quality in familiar situations by 15–20%, even without additional physical training.</p>
-<h3>How Effective Visualization Works</h3>
-<ol>
-<li><strong>Quiet environment:</strong> Sit down, close your eyes, take three deep breaths</li>
-<li><strong>First-person perspective:</strong> See the game through your own eyes — not as a spectator, but as yourself on the ice</li>
-<li><strong>Engage all senses:</strong> Hear the ice crunch, feel the stick in your hands, smell the rink air</li>
-<li><strong>Visualize success:</strong> Don't visualize avoiding mistakes — see the correct execution</li>
-<li><strong>Real-time speed:</strong> Run through the sequence at actual game speed, not in slow motion</li>
-</ol>
-<p>Recommendation: 10 minutes per day, three to four times per week. Choose specific scenarios: your own rush with the puck, a successful aloitus, a breakout situation, a shot on goal. The more specific, the more effective.</p>
-<h2>Box Breathing: A Technique for Pressure Situations</h2>
-<p>Box breathing (also called 4-4-4-4 breathing) is a technique that regulates the autonomic nervous system. It's used by Navy SEALs, surgeons, and elite athletes to maintain control under extreme pressure.</p>
-<p>The technique: inhale for 4 seconds — hold for 4 seconds — exhale for 4 seconds — hold for 4 seconds. Repeat this cycle 4–6 times. The physiological effect: heart rate drops, cortisol decreases, focus sharpens. Time to take effect: 90–120 seconds.</p>
-<p>Application in hockey: in the locker room before taking the ice, during a stoppage after a difficult start, or as a reset after a personal mistake. Players who practice box breathing regularly can activate it in 30 seconds — without it being visible from the outside.</p>
-<h2>Self-Talk: Positive vs. Negative</h2>
-<p>What a player says to themselves directly affects performance. Negative self-talk — "I never hit this," "I'm so slow today" — activates avoidance behavior and increases anxiety. Positive self-talk isn't blind optimism; it's functional self-dialogue.</p>
-<p>Concrete examples:</p>
-<table>
-<tr><th>Negative Self-Talk</th><th>Functional Self-Talk</th></tr>
-<tr><td>"I'm going to miss this shot again"</td><td>"Weight forward, calm release"</td></tr>
-<tr><td>"I'm so slow today"</td><td>"Next shift: short shifts, max speed"</td></tr>
-<tr><td>"Why do I always make the same mistake"</td><td>"Next situation: react earlier"</td></tr>
-<tr><td>"The ice is bad today"</td><td>"Everyone has the same conditions — I'll adapt"</td></tr>
-</table>
-<p>Coaches can incorporate self-talk training into drill series: players verbalize their action plan out loud during a drill. This trains both decision clarity and positive self-dialogue as a habit.</p>
-<h2>Handling Mistakes: The Error-Reset Technique</h2>
-<p>Mistakes are inevitable in hockey. The question isn't whether they happen, but how quickly a player is back in the game afterward. Players who dwell on mistakes make follow-up errors more often — because attention and reaction time are compromised.</p>
-<p>The error-reset technique in three steps:</p>
-<ol>
-<li><strong>Acknowledge (3 seconds):</strong> Internally name the mistake, briefly tap the stick on the ice or use another physical gesture as a "closing signal"</li>
-<li><strong>Release (5 seconds):</strong> Consciously decide: "That mistake is over — I can't undo it"</li>
-<li><strong>Refocus (immediately):</strong> Name a concrete next step: "Now: back into the system, cover the left flank"</li>
-</ol>
-<p>This process takes under ten seconds and can be executed mid-game. Train it explicitly in practice — deliberately put players in mistake situations and observe how they respond.</p>
-<h2>Goalie-Specific Routines</h2>
-<p>Goalies have a unique role: mistakes are immediately visible and result directly in goals. This makes mental stability even more important for maalivahtis than for skaters. Goalie-specific recommendations:</p>
-<ul>
-<li><strong>Post-goal routine:</strong> A fixed sequence of movements after allowing a goal (e.g., go to the boards, take a water break, brief breathing exercise, return to position) — gives the body a signal that the sequence is closed</li>
-<li><strong>Tunnel vision technique:</strong> Before each rush, focus only on the puck — consciously block out everything else</li>
-<li><strong>Set-point gesture:</strong> A personal gesture (stick on the post, a quick snap of the catching glove) that signals a mental reset</li>
-<li><strong>No in-game stats:</strong> Don't track your own SV% during the game. Focus only on the current situation, not the overall tally</li>
-</ul>
-<h2>Concentration Techniques for Forwards and Defensemen</h2>
-<p>Skaters face the problem of over-activation: too much adrenaline, too-quick decisions, uncontrolled actions. Countermeasures:</p>
-<ul>
-<li><strong>"Next play" focus:</strong> After each shift: think only about the next action, not the previous one. Simple mantra: "Next shift, next chance"</li>
-<li><strong>Boards cue:</strong> When jumping over the boards, focus begins. Everything before that (coaching comments, mistakes, score) stays outside</li>
-<li><strong>Keyword anchors:</strong> One personal word representing a key aspect of your own game (e.g., "speed," "stick," "communication") — remind yourself just before critical situations</li>
-</ul>
-</div><div class="lang-content lang-ru">
-<h1>Ментальная подготовка в хоккее: рутины, визуализация и предматчевая подготовка</h1>
-<p>Two players with identical physical fitness and technique — one delivers consistently under pressure, the other falls apart. That's not a question of talent; it's a question of mental preparation. Yet mental training in hockey is often dismissed as a "soft" topic. This article presents concrete, field-tested techniques that can be applied immediately — no sports science degree required, no sports psychologist needed.</p>
-<h2>Why Ментальная подготовка Is Often Neglected in Hockey</h2>
-<p>Hockey is physically and technically demanding. Coaches have limited practice time and focus on the obvious: skating, shooting, tactics. Mental training is harder to observe and harder to measure. When a player misses a crucial shot, it's immediately noticeable. That he was stuck in negative self-talk for three minutes beforehand — nobody sees that.</p>
-<p>Sports psychology research shows: mentally well-prepared athletes perform 8–12% above their baseline in pressure situations. For poorly prepared athletes, performance under pressure drops by the same margin. That's the difference between winning and losing a deciding game.</p>
-<h2>Pre-Game Routine: Three Time Frames</h2>
-<p>A good pre-game routine doesn't start an hour before the game — it's divided into three layers:</p>
-<h3>1 Week Before the Game</h3>
-<p>Mental preparation at the strategic level. Players should concretely visualize the upcoming challenge: What are the opponent's strengths? Which of my roles will be especially important? What situations do I expect, and how will I respond? Visualization at this level is calm and analytical — no adrenaline, just planning.</p>
-<h3>24 Hours Before the Game</h3>
-<p>Sleep, nutrition, and emotional regulation. No intensive physical training. At least 8 hours of sleep. A short visualization session of 10–15 minutes: run through your own game in the desired form. Social contact with teammates builds team cohesion — but avoid long, agitating discussions about the game.</p>
-<h3>1 Hour Before the Game</h3>
-<p>Activation routine in the locker room. Each player has their own optimal arousal level. Some need silence and focus; others need music and movement. Coaches should respect these individual differences and not rely solely on a one-size-fits-all team talk. Specific elements:</p>
-<ul>
-<li>Personal music (headphones) for focused players</li>
-<li>Brief team gathering (5 min.) for shared focus</li>
-<li>Personal warm-up movements (stretching ritual, stick grip check)</li>
-<li>Breathing exercise (Box Breathing, see below) for over-activated players</li>
-</ul>
-<h2>Visualization Techniques in Practice</h2>
-<p>Visualization isn't fantasy — it's mental simulation. The brain activates the same neural patterns during vivid imagination as during actual execution. Studies show: players who visualize regularly improve their execution quality in familiar situations by 15–20%, even without additional physical training.</p>
-<h3>How Effective Visualization Works</h3>
-<ol>
-<li><strong>Quiet environment:</strong> Sit down, close your eyes, take three deep breaths</li>
-<li><strong>First-person perspective:</strong> See the game through your own eyes — not as a spectator, but as yourself on the ice</li>
-<li><strong>Engage all senses:</strong> Hear the ice crunch, feel the stick in your hands, smell the rink air</li>
-<li><strong>Visualize success:</strong> Don't visualize avoiding mistakes — see the correct execution</li>
-<li><strong>Real-time speed:</strong> Run through the sequence at actual game speed, not in slow motion</li>
-</ol>
-<p>Recommendation: 10 minutes per day, three to four times per week. Choose specific scenarios: your own rush with the puck, a successful вбрасывание, a breakout situation, a shot on goal. The more specific, the more effective.</p>
-<h2>Box Breathing: A Technique for Pressure Situations</h2>
-<p>Box breathing (also called 4-4-4-4 breathing) is a technique that regulates the autonomic nervous system. It's used by Navy SEALs, surgeons, and elite athletes to maintain control under extreme pressure.</p>
-<p>The technique: inhale for 4 seconds — hold for 4 seconds — exhale for 4 seconds — hold for 4 seconds. Repeat this cycle 4–6 times. The physiological effect: heart rate drops, cortisol decreases, focus sharpens. Time to take effect: 90–120 seconds.</p>
-<p>Application in hockey: in the locker room before taking the ice, during a stoppage after a difficult start, or as a reset after a personal mistake. Players who practice box breathing regularly can activate it in 30 seconds — without it being visible from the outside.</p>
-<h2>Self-Talk: Positive vs. Negative</h2>
-<p>What a player says to themselves directly affects performance. Negative self-talk — "I never hit this," "I'm so slow today" — activates avoidance behavior and increases anxiety. Positive self-talk isn't blind optimism; it's functional self-dialogue.</p>
-<p>Concrete examples:</p>
-<table>
-<tr><th>Negative Self-Talk</th><th>Functional Self-Talk</th></tr>
-<tr><td>"I'm going to miss this shot again"</td><td>"Weight forward, calm release"</td></tr>
-<tr><td>"I'm so slow today"</td><td>"Next shift: short shifts, max speed"</td></tr>
-<tr><td>"Why do I always make the same mistake"</td><td>"Next situation: react earlier"</td></tr>
-<tr><td>"The ice is bad today"</td><td>"Everyone has the same conditions — I'll adapt"</td></tr>
-</table>
-<p>Coaches can incorporate self-talk training into drill series: players verbalize their action plan out loud during a drill. This trains both decision clarity and positive self-dialogue as a habit.</p>
-<h2>Handling Mistakes: The Error-Reset Technique</h2>
-<p>Mistakes are inevitable in hockey. The question isn't whether they happen, but how quickly a player is back in the game afterward. Players who dwell on mistakes make follow-up errors more often — because attention and reaction time are compromised.</p>
-<p>The error-reset technique in three steps:</p>
-<ol>
-<li><strong>Acknowledge (3 seconds):</strong> Internally name the mistake, briefly tap the stick on the ice or use another physical gesture as a "closing signal"</li>
-<li><strong>Release (5 seconds):</strong> Consciously decide: "That mistake is over — I can't undo it"</li>
-<li><strong>Refocus (immediately):</strong> Name a concrete next step: "Now: back into the system, cover the left flank"</li>
-</ol>
-<p>This process takes under ten seconds and can be executed mid-game. Train it explicitly in practice — deliberately put players in mistake situations and observe how they respond.</p>
-<h2>Goalie-Specific Routines</h2>
-<p>Goalies have a unique role: mistakes are immediately visible and result directly in goals. This makes mental stability even more important for вратарьs than for skaters. Goalie-specific recommendations:</p>
-<ul>
-<li><strong>Post-goal routine:</strong> A fixed sequence of movements after allowing a goal (e.g., go to the boards, take a water break, brief breathing exercise, return to position) — gives the body a signal that the sequence is closed</li>
-<li><strong>Tunnel vision technique:</strong> Before each rush, focus only on the puck — consciously block out everything else</li>
-<li><strong>Set-point gesture:</strong> A personal gesture (stick on the post, a quick snap of the catching glove) that signals a mental reset</li>
-<li><strong>No in-game stats:</strong> Don't track your own SV% during the game. Focus only on the current situation, not the overall tally</li>
-</ul>
-<h2>Concentration Techniques for Forwards and Defensemen</h2>
-<p>Skaters face the problem of over-activation: too much adrenaline, too-quick decisions, uncontrolled actions. Countermeasures:</p>
-<ul>
-<li><strong>"Next play" focus:</strong> After each shift: think only about the next action, not the previous one. Simple mantra: "Next shift, next chance"</li>
-<li><strong>Boards cue:</strong> When jumping over the boards, focus begins. Everything before that (coaching comments, mistakes, score) stays outside</li>
-<li><strong>Keyword anchors:</strong> One personal word representing a key aspect of your own game (e.g., "speed," "stick," "communication") — remind yourself just before critical situations</li>
-</ul>
-</div>
+
+
 <div class="weiterlesen">
-<h3><span data-lang-group="read-more-heading"><span class="lang-de active">Weiterlesen</span><span class="lang-en">Read more</span><span class="lang-fr">En savoir plus</span><span class="lang-sv">Läs mer</span><span class="lang-fi">Lue lisää</span><span class="lang-ru">Читать далее</span></span></h3>
+<h3>Weiterlesen</h3>
 <ul>
-<li><a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="readmore-1"><span class="lang-de active">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Saisonvorbereitung</span><span class="lang-en">Hockey Training Plan: 8-Week Preseason Periodization</span><span class="lang-fr">Plan d’entraînement hockey : périodisation de 8 semaines de présaison</span><span class="lang-sv">Hockeyträningsplan: 8 veckors periodisering inför säsongen</span><span class="lang-fi">Jääkiekon harjoitussuunnitelma: 8 viikon kauteen valmistava jaksotus</span><span class="lang-ru">Тренировочный план по хоккею: 8-недельная предсезонная периодизация</span></span></a></li>
-<li><a href="blog-spielanalyse.html"><span data-lang-group="readmore-2"><span class="lang-de active">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</span><span class="lang-en">Game Analysis for Amateur Coaches: A Step-by-Step Guide</span><span class="lang-fr">Analyse de match pour entraîneurs amateurs : guide pas à pas</span><span class="lang-sv">Matchanalys för amatörtränare: steg-för-steg-guide</span><span class="lang-fi">Pelianalyysi amatöörivalmentajille: vaiheittainen opas</span><span class="lang-ru">Анализ игры для тренеров-любителей: пошаговое руководство</span></span></a></li>
-<li><a href="blog-kindereishockey.html"><span data-lang-group="readmore-3"><span class="lang-de active">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</span><span class="lang-en">Youth Hockey U7–U13: Age-Appropriate Training Based on LTAD</span><span class="lang-fr">Hockey des jeunes U7–U13 : entraînement adapté à l’âge selon le modèle LTAD</span><span class="lang-sv">Ungdomshockey U7–U13: åldersanpassad träning enligt LTAD</span><span class="lang-fi">Juniorikiekko U7–U13: ikätasoinen harjoittelu LTAD-mallin mukaan</span><span class="lang-ru">Детский хоккей U7–U13: возрастная подготовка по модели LTAD</span></span></a></li>
+<li><a href="blog-trainingsplan-8-wochen.html">Eishockey-Trainingsplan: 8-Wochen-Periodisierung für die Saisonvorbereitung</a></li>
+<li><a href="blog-spielanalyse.html">Spielanalyse für Amateurtrainer: Schritt-für-Schritt-Anleitung</a></li>
+<li><a href="blog-kindereishockey.html">Kindereishockey U7–U13: Altersgerechtes Training nach dem LTAD-Modell</a></li>
 </ul>
 </div>
 <div class="article-footer">
-<strong style="color:#a0a0a0;"><span data-lang-group="article-footer-label"><span class="lang-de active">Blog-Artikel:</span><span class="lang-en">Blog articles:</span><span class="lang-fr">Articles de blog :</span><span class="lang-sv">Bloggartiklar:</span><span class="lang-fi">Blogiartikkelit:</span><span class="lang-ru">Статьи блога:</span></span></strong>
-<a href="blog-schuss-statistiken.html"><span data-lang-group="article-link-1"><span class="lang-de active">Schuss-Statistiken</span><span class="lang-en">Shot Statistics</span><span class="lang-fr">Statistiques de tirs</span><span class="lang-sv">Skottstatistik</span><span class="lang-fi">Laukaustilastot</span><span class="lang-ru">Статистика бросков</span></span></a> ·
-            <a href="blog-torwart-analyse.html"><span data-lang-group="article-link-2"><span class="lang-de active">Torwart-Analyse</span><span class="lang-en">Goalie Analysis</span><span class="lang-fr">Analyse du gardien</span><span class="lang-sv">Målvaktsanalys</span><span class="lang-fi">Maalivahtianalyysi</span><span class="lang-ru">Анализ вратаря</span></span></a> ·
-            <a href="blog-powerplay-strategien.html"><span data-lang-group="article-link-3"><span class="lang-de active">Powerplay</span><span class="lang-en">Power Play</span><span class="lang-fr">supériorité numérique</span><span class="lang-sv">powerplay</span><span class="lang-fi">ylivoima</span><span class="lang-ru">большинство</span></span></a> ·
-            <a href="blog-penalty-killing.html"><span data-lang-group="article-link-4"><span class="lang-de active">Penalty Killing</span><span class="lang-en">Penalty Kill</span><span class="lang-fr">infériorité numérique</span><span class="lang-sv">boxplay</span><span class="lang-fi">alivoima</span><span class="lang-ru">меньшинство</span></span></a> ·
-            <a href="blog-faceoffs.html"><span data-lang-group="article-link-5"><span class="lang-de active">Faceoffs</span><span class="lang-en">Faceoffs</span><span class="lang-fr">Mises au jeu</span><span class="lang-sv">Tekningar</span><span class="lang-fi">Aloitukset</span><span class="lang-ru">Вбрасывания</span></span></a> ·
-            <a href="blog-zonen-eintritt.html"><span data-lang-group="article-link-6"><span class="lang-de active">Zonen-Eintritt</span><span class="lang-en">Zone Entries</span><span class="lang-fr">Zone Entries</span><span class="lang-sv">Zone Entries</span><span class="lang-fi">Zone Entries</span><span class="lang-ru">Zone Entries</span></span></a> ·
-            <a href="blog-trainingsplan-8-wochen.html"><span data-lang-group="article-link-7"><span class="lang-de active">Trainingsplan</span><span class="lang-en">Training Plan</span><span class="lang-fr">Plan d’entraînement</span><span class="lang-sv">Träningsplan</span><span class="lang-fi">Harjoitussuunnitelma</span><span class="lang-ru">Тренировочный план</span></span></a> ·
-            <a href="blog-kindereishockey.html"><span data-lang-group="article-link-8"><span class="lang-de active">Kindereishockey</span><span class="lang-en">Youth Hockey</span><span class="lang-fr">Hockey des jeunes</span><span class="lang-sv">Ungdomshockey</span><span class="lang-fi">Juniorikiekko</span><span class="lang-ru">Детский хоккей</span></span></a> ·
-            <a href="blog-spielanalyse.html"><span data-lang-group="article-link-9"><span class="lang-de active">Spielanalyse</span><span class="lang-en">Game Analysis</span><span class="lang-fr">Analyse de match</span><span class="lang-sv">Matchanalys</span><span class="lang-fi">Pelianalyysi</span><span class="lang-ru">Анализ игры</span></span></a> ·
-            <a href="blog-mentaltraining.html"><span data-lang-group="article-link-10"><span class="lang-de active">Mentaltraining</span><span class="lang-en">Mental Training</span><span class="lang-fr">Préparation mentale</span><span class="lang-sv">Mental träning</span><span class="lang-fi">Mentaaliharjoittelu</span><span class="lang-ru">Ментальная подготовка</span></span></a>
+<strong style="color:#a0a0a0;">Blog-Artikel:</strong>
+<a href="blog-schuss-statistiken.html">Schuss-Statistiken</a> ·
+            <a href="blog-torwart-analyse.html">Torwart-Analyse</a> ·
+            <a href="blog-powerplay-strategien.html">Powerplay</a> ·
+            <a href="blog-penalty-killing.html">Penalty Killing</a> ·
+            <a href="blog-faceoffs.html">Faceoffs</a> ·
+            <a href="blog-zonen-eintritt.html">Zonen-Eintritt</a> ·
+            <a href="blog-trainingsplan-8-wochen.html">Trainingsplan</a> ·
+            <a href="blog-kindereishockey.html">Kindereishockey</a> ·
+            <a href="blog-spielanalyse.html">Spielanalyse</a> ·
+            <a href="blog-mentaltraining.html">Mentaltraining</a>
 <br/>
-<a href="coaching-tipps.html"><span data-lang-group="article-overview-link"><span class="lang-de active">Blog Übersicht</span><span class="lang-en">Blog overview</span><span class="lang-fr">Aperçu du blog</span><span class="lang-sv">Bloggöversikt</span><span class="lang-fi">Blogin yleiskatsaus</span><span class="lang-ru">Обзор блога</span></span></a> ·
-                <a href="impressum.html"><span data-lang-group="article-imprint-link"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a> ·
-                <a href="datenschutz.html"><span data-lang-group="article-privacy-link"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
+<a href="coaching-tipps.html">Blog Übersicht</a> ·
+                <a href="impressum.html">Impressum</a> ·
+                <a href="datenschutz.html">Datenschutz</a>
 </div>
 </div>
 </main>
 <footer class="site-footer">
 <div class="footer-container">
 <nav class="footer-nav">
-<a href="index.html"><span data-lang-group="footer-home"><span class="lang-de active">Home</span><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-sv">Hem</span><span class="lang-fi">Etusivu</span><span class="lang-ru">Главная</span></span></a>
-<a href="app-comparison.html"><span data-lang-group="footer-apps"><span class="lang-de active">Apps</span><span class="lang-en">Apps</span><span class="lang-fr">Applications</span><span class="lang-sv">Appar</span><span class="lang-fi">Sovellukset</span><span class="lang-ru">Приложения</span></span></a>
-<a href="coaching-tipps.html"><span data-lang-group="footer-blog"><span class="lang-de active">Blog</span><span class="lang-en">Blog</span><span class="lang-fr">Blog</span><span class="lang-sv">Blog</span><span class="lang-fi">Blog</span><span class="lang-ru">Blog</span></span></a>
-<a href="shop.html"><span data-lang-group="footer-shop"><span class="lang-de active">Shop</span><span class="lang-en">Shop</span><span class="lang-fr">Shop</span><span class="lang-sv">Shop</span><span class="lang-fi">Shop</span><span class="lang-ru">Shop</span></span></a>
-<a href="hilfe.html"><span data-lang-group="footer-help"><span class="lang-de active">Hilfe</span><span class="lang-en">Help</span><span class="lang-fr">Aide</span><span class="lang-sv">Hjälp</span><span class="lang-fi">Ohje</span><span class="lang-ru">Помощь</span></span></a>
-<a href="faq.html"><span data-lang-group="footer-faq"><span class="lang-de active">FAQ</span><span class="lang-en">FAQ</span><span class="lang-fr">FAQ</span><span class="lang-sv">FAQ</span><span class="lang-fi">FAQ</span><span class="lang-ru">FAQ</span></span></a>
-<a href="hockey-statistik-guide.html"><span data-lang-group="footer-guide"><span class="lang-de active">Statistik-Guide</span><span class="lang-en">Statistics Guide</span><span class="lang-fr">Guide des statistiques</span><span class="lang-sv">Statistikguide</span><span class="lang-fi">Tilasto-opas</span><span class="lang-ru">Руководство по статистике</span></span></a>
-<a href="about.html"><span data-lang-group="footer-about"><span class="lang-de active">Über uns</span><span class="lang-en">About us</span><span class="lang-fr">À propos de nous</span><span class="lang-sv">Om oss</span><span class="lang-fi">Tietoa meistä</span><span class="lang-ru">О нас</span></span></a>
-<a href="impressum.html"><span data-lang-group="footer-imprint"><span class="lang-de active">Impressum</span><span class="lang-en">Imprint</span><span class="lang-fr">Mentions légales</span><span class="lang-sv">Impressum</span><span class="lang-fi">Julkaisutiedot</span><span class="lang-ru">Выходные данные</span></span></a>
-<a href="datenschutz.html"><span data-lang-group="footer-privacy"><span class="lang-de active">Datenschutz</span><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-sv">Integritetspolicy</span><span class="lang-fi">Tietosuojakäytäntö</span><span class="lang-ru">Политика конфиденциальности</span></span></a>
-<a href="terms.html"><span data-lang-group="footer-terms"><span class="lang-de active">AGB</span><span class="lang-en">Terms</span><span class="lang-fr">Conditions générales</span><span class="lang-sv">Villkor</span><span class="lang-fi">Käyttöehdot</span><span class="lang-ru">Условия</span></span></a>
+<a href="index.html">Home</a>
+<a href="app-comparison.html">Apps</a>
+<a href="coaching-tipps.html">Blog</a>
+<a href="shop.html">Shop</a>
+<a href="hilfe.html">Hilfe</a>
+<a href="faq.html">FAQ</a>
+<a href="hockey-statistik-guide.html">Statistik-Guide</a>
+<a href="about.html">Über uns</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="terms.html">AGB</a>
 </nav>
-<p>© 2026 SmartHockey Products · 8200 Schaffhausen, <span data-lang-group="footer-country"><span class="lang-de active">Schweiz</span><span class="lang-en">Switzerland</span><span class="lang-fr">Suisse</span><span class="lang-sv">Schweiz</span><span class="lang-fi">Sveitsi</span><span class="lang-ru">Швейцария</span></span> · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
+<p>© 2026 SmartHockey Products · 8200 Schaffhausen, Schweiz · <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a></p>
 </div>
 </footer>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
 <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
 <p class="cookie-text" style="margin:0;flex:1;min-width:280px;font-size:0.95rem;">
-<span data-lang-group="cookie-text">
-<span class="lang-de active">🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.</span>
-<span class="lang-en">🍪 This website uses cookies and third-party services (such as Google AdSense) to display content and advertising. Learn more in our <a href="datenschutz.html" style="color:#2563eb;">privacy policy</a>.</span>
-<span class="lang-fr">🍪 Ce site utilise des cookies et des services tiers (comme Google AdSense) pour afficher du contenu et de la publicité. En savoir plus dans notre <a href="datenschutz.html" style="color:#2563eb;">politique de confidentialité</a>.</span><span class="lang-sv">🍪 Den här webbplatsen använder cookies och tredjepartstjänster (som Google AdSense) för att visa innehåll och annonser. Läs mer i vår <a href="datenschutz.html" style="color:#2563eb;">integritetspolicy</a>.</span><span class="lang-fi">🍪 Tämä sivusto käyttää evästeitä ja kolmannen osapuolen palveluita (kuten Google AdSensea) sisällön ja mainonnan näyttämiseen. Lue lisää <a href="datenschutz.html" style="color:#2563eb;">tietosuojakäytännöstämme</a>.</span><span class="lang-ru">🍪 Этот сайт использует файлы cookie и сторонние сервисы (например, Google AdSense) для показа контента и рекламы. Подробнее в нашей <a href="datenschutz.html" style="color:#2563eb;">политике конфиденциальности</a>.</span></span>
+
+🍪 Diese Website verwendet Cookies und Drittanbieter-Dienste (z. B. Google AdSense), um Inhalte und Werbung anzuzeigen. Mehr in unserer <a href="datenschutz.html" style="color:#2563eb;">Datenschutzerklärung</a>.
+
+
 </p>
 <div class="cookie-btns" style="display:flex;gap:10px;flex-wrap:wrap;">
 <button class="cookie-btn btn-accept" onclick="acceptCookies()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:6px;font-weight:bold;cursor:pointer;">
-<span data-lang-group="cookie-button"><span class="lang-de active">OK / Verstanden</span><span class="lang-en">OK / Understood</span><span class="lang-fr">OK / Compris</span><span class="lang-sv">OK / Förstått</span><span class="lang-fi">OK / Ymmärretty</span><span class="lang-ru">ОК / Понятно</span></span>
+OK / Verstanden
 </button>
 </div>
 </div>
 </div>
 <script>
         (function() {
-            const defaultLang = 'de';
-            const supportedLangs = ['en', 'de', 'fr', 'sv', 'fi', 'ru'];
-            const langNames = { en: 'English', de: 'Deutsch', fr: 'Français', sv: 'Svenska', fi: 'Suomi', ru: 'Русский' };
 
-            function getBrowserLanguage() {
-                const browserLang = navigator.language || navigator.userLanguage;
-                const langCode = browserLang.split('-')[0].toLowerCase();
-                return supportedLangs.includes(langCode) ? langCode : defaultLang;
-            }
 
-            function getInitialLanguage() {
-                const saved = localStorage.getItem('smarthockey-lang');
-                if (saved && supportedLangs.includes(saved)) return saved;
-                return getBrowserLanguage();
-            }
 
-            function switchLanguage(lang) {
-                if (!supportedLangs.includes(lang)) lang = defaultLang;
 
-                document.querySelectorAll('[data-lang-group]').forEach(function(group) {
-                    group.querySelectorAll('span[class^="lang-"]').forEach(function(node) {
-                        node.classList.remove('active');
-                    });
-                    const activeNode = group.querySelector('.lang-' + lang);
-                    if (activeNode) activeNode.classList.add('active');
-                });
 
-                document.querySelectorAll('.lang-content').forEach(function(el) {
-                    el.classList.remove('active');
-                });
-                document.querySelectorAll('.lang-content.lang-' + lang).forEach(function(el) {
-                    el.classList.add('active');
-                });
-
-                const currentName = document.querySelector('.lang-current-name');
-                if (currentName) currentName.textContent = langNames[lang];
-
-                document.querySelectorAll('.lang-option').forEach(function(option) {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === lang) option.classList.add('active');
-                });
-
-                document.documentElement.lang = lang;
-                localStorage.setItem('smarthockey-lang', lang);
-            }
-
-            const initialLang = getInitialLanguage();
-            switchLanguage(initialLang);
-
-            const switcher = document.querySelector('.language-switcher');
-            const dropdownBtn = document.querySelector('.lang-dropdown-btn');
             if (switcher && dropdownBtn) {
                 dropdownBtn.addEventListener('click', function(event) {
                     event.stopPropagation();
@@ -846,9 +376,7 @@
                 });
             }
 
-            document.querySelectorAll('.lang-option').forEach(function(option) {
                 option.addEventListener('click', function() {
-                    switchLanguage(this.getAttribute('data-lang'));
                     if (switcher) switcher.classList.remove('active');
                 });
             });
