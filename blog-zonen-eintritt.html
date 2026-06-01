@@ -337,30 +337,7 @@ OK / Verstanden
 </div>
 </div>
 </div>
-<script>
-        (function() {
 
-
-
-
-
-            if (switcher && dropdownBtn) {
-                dropdownBtn.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                    switcher.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(event) {
-                    if (!switcher.contains(event.target)) switcher.classList.remove('active');
-                });
-            }
-
-                option.addEventListener('click', function() {
-                    if (switcher) switcher.classList.remove('active');
-                });
-            });
-        })();
-</script>
 <script>
     (function(){
       try {
