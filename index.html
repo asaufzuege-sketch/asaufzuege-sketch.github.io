@@ -900,16 +900,7 @@ Wähle die perfekte App für deine Bedürfnisse
 <div class="app-card">
 <img alt="SmartHockey Pro Icon" class="app-icon" src="app-icon-pro.png"/>
 <h3>SmartHockey Pro</h3>
-<p>
-
-
-Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.
-
-
-
-
-
-</p>
+<p>Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte Analysen, umfassende Reports und professionelle Funktionen.</p>
 <ul>
 <li>Erweiterte Team-Analysen</li>
 <li>Professionelle Reports</li>
@@ -917,7 +908,37 @@ Die ultimative Profi-Lösung für ambitionierte Teams und Trainer. Erweiterte An
 <li>Export-Funktionen</li>
 </ul>
 <div class="app-buttons">
-<a class="btn" href="/SmartHockey-Tracking-Team-Pro/">Launch Web App</a>
+<a class="btn" href="/SmartHockey-Tracking-Team-Pro/">Web-App starten</a>
+</div>
+</div>
+<!-- App 2: SmartHockey Light -->
+<div class="app-card">
+<img alt="SmartHockey Light Icon" class="app-icon" src="app-icon-light.png"/>
+<h3>SmartHockey Light</h3>
+<p>Die einfache Einstiegslösung für Nachwuchsteams, Einzelspieler und Amateurteams. Alle wichtigen Statistiken ohne Komplexität.</p>
+<ul>
+<li>Tore &amp; Assists erfassen</li>
+<li>Torschuss-Karte</li>
+<li>Saison-Ergebnisse</li>
+<li>Kein Login nötig</li>
+</ul>
+<div class="app-buttons">
+<a class="btn" href="/SmartHockey-Tracking-Team-Light/">Web-App starten</a>
+</div>
+</div>
+<!-- App 3: SmartHockey Inline -->
+<div class="app-card">
+<img alt="SmartHockey Inline Icon" class="app-icon" src="app-icon-inline.png"/>
+<h3>SmartHockey Inline</h3>
+<p>Die spezialisierte Statistik-App für Inline- und Rollerhockey-Teams. Entwickelt für die einzigartigen Anforderungen des Inline-Hockeys.</p>
+<ul>
+<li>Inline-Hockey-Spielfeld</li>
+<li>Plus/Minus-Wertungen</li>
+<li>Torwart-Saves</li>
+<li>Turnier-Übersicht</li>
+</ul>
+<div class="app-buttons">
+<a class="btn" href="/SmartHockey-Tracking-Inline/">Web-App starten</a>
 </div>
 </div>
 </div>
@@ -959,21 +980,17 @@ Wir nutzen Cookies, um Google AdSense zu ermöglichen und Ihr Erlebnis zu verbes
 </div>
 </div>
 <script>
-        (function() {
-                option.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                });
-            });
-
-            // Cookie Banner Logic
-            window.acceptCookies = function() {
-                localStorage.setItem('cookie-consent', 'accepted');
-                document.getElementById('cookie-banner').style.display = 'none';
-            };
-            if (!localStorage.getItem('cookie-consent')) {
-                document.getElementById('cookie-banner').style.display = 'block';
-            }
-        })();
-    </script>
+(function(){
+  try {
+    window.acceptCookies = function() {
+      localStorage.setItem('cookie-consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    };
+    if (!localStorage.getItem('cookie-consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
