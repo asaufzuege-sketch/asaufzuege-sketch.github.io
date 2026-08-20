@@ -9,5 +9,15 @@
         "64:00:09:7E:BE:D1:D7:66:1E:4D:E0:FF:4E:8B:DB:68:EB:37:06:B4:AD:F1:40:94:29:3B:F6:AE:4C:40:8F:DE"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.asaufzuege_sketch.smarthockey_inline",
+      "sha256_cert_fingerprints": [
+        "07:2E:76:4A:5E:02:F2:8E:A3:14:45:6E:92:7B:6E:8A:1B:0F:B6:6C:9C:58:41:7C:DF:C3:1B:A6:CE:D3:D7:7C"
+      ]
+    }
   }
 ]
