@@ -47,9 +47,31 @@
         .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; font-size: 0.82rem; color: #707070; line-height: 2; }
         .article-footer a { color: #6b7280; text-decoration: none; }
         .article-footer a:hover { color: #2563eb; }
-    </style>
+            /* Google Translate – banner ausblenden */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0 !important; position: static !important; }
+        #google_translate_element { display: flex; align-items: center; }
+        #google_translate_element select { background: rgba(22,33,62,0.9); color: #e0e0e0; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 4px 8px; font-size: 0.85rem; cursor: pointer; }
+        .goog-te-gadget-simple { background: transparent !important; border: none !important; }
+        .goog-te-menu-value { color: white !important; }
+        .goog-te-menu-value span { color: white !important; }
+        </style>
 </head>
 <body>
+<div style="text-align:right;padding:8px 16px;background:rgba(22,33,62,0.9);border-bottom:1px solid rgba(255,255,255,0.1);">
+<div id="google_translate_element" style="display:inline-block;"></div>
+</div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'de',
+    includedLanguages:'de,en,fr,ru,cs,sv,fi',
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay:false
+  },'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <div class="container">
 <a class="back-link" href="index.html">← Zurück zur Startseite</a>
 <h1>Häufige Fragen – SmartHockey Products</h1>
@@ -81,11 +103,10 @@
 <p>Light und Inline bieten keine vergleichbare saisonale Goalie-Analyse. Die Season-Goalie-Statistik ist ein exklusives Pro-Feature.</p>
 <h2>8. Gibt es Support bei Problemen?</h2>
 <p>Ja. Bei technischen Problemen, Fragen zur Bedienung oder Feedback erreichst du uns per E-Mail unter <a href="mailto:smarthockeyproducts@gmail.com">smarthockeyproducts@gmail.com</a>. Wir antworten in der Regel innerhalb von 1–2 Werktagen (Montag bis Freitag).</p>
-<p>Für häufige Bedienfragen empfehlen wir auch unsere <a href="hilfe.html">Hilfe-Seite</a> mit einer vollständigen Schritt-für-Schritt-Anleitung.</p>
+<p>Für häufige Bedienfragen empfehlen wir auch unseren <a href="app-comparison.html">App-Vergleich</a> und die <a href="ressourcen.html">Ressourcen-Seite</a>.</p>
 <div class="weiterlesen">
 <h3>Weiterführende Seiten</h3>
 <ul>
-<li><a href="hilfe.html">Hilfe &amp; erste Schritte – vollständige Anleitung</a></li>
 <li><a href="app-comparison.html">Apps im Vergleich: Light vs. Pro vs. Inline</a></li>
 <li><a href="hockey-statistik-guide.html">Der ultimative Guide für Eishockey-Statistiken</a></li>
 <li><a href="coaching-tipps.html">Blog: Coaching-Tipps und Taktik-Artikel</a></li>
@@ -96,7 +117,7 @@
             <a href="ressourcen.html">Ressourcen</a> ·
             <a href="app-comparison.html">Apps</a> ·
             <a href="shop.html">Shop</a> ·
-            <a href="hilfe.html">Hilfe</a> ·
+             ·
             <a href="hockey-statistik-guide.html">Statistik-Guide</a> ·
             <a href="impressum.html">Impressum</a> ·
             <a href="datenschutz.html">Datenschutz</a>
@@ -110,7 +131,6 @@
 <a href="shop.html">Shop</a>
 <a href="ressourcen.html">Ressourcen</a>
 <a href="coaching-tipps.html">Blog</a>
-<a href="hilfe.html">Hilfe</a>
 <a href="faq.html">FAQ</a>
 <a href="hockey-statistik-guide.html">Statistik-Guide</a>
 <a href="about.html">Über uns</a>
