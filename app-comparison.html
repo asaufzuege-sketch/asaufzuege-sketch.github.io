@@ -52,14 +52,22 @@
         .app-card-mini { background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 10px; padding: 25px; text-align: center; display: flex; flex-direction: column; }
         .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin: 0 auto 15px auto; display: block; }
         .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
-        .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; }
+        .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; flex: 1; }
         .app-card-mini .btn { margin-top: auto; }
         footer { background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%); padding: 30px 0; text-align: center; color: #a0a0a0; border-top: 1px solid #2a2a3e; margin-top: 40px; }
         footer p { margin-bottom: 8px; }
         footer a { color: #a0a0a0; text-decoration: none; }
         footer a:hover { color: #2563eb; }
         @media (max-width: 768px) { nav { gap: 15px; } .hero h1 { font-size: 1.8rem; } .content-card { padding: 25px; } .comparison-table { font-size: 0.85rem; } .comparison-table th, .comparison-table td { padding: 8px; } }
-    </style>
+            /* Google Translate – banner ausblenden */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0 !important; position: static !important; }
+        #google_translate_element { display: flex; align-items: center; }
+        #google_translate_element select { background: rgba(22,33,62,0.9); color: #e0e0e0; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 4px 8px; font-size: 0.85rem; cursor: pointer; }
+        .goog-te-gadget-simple { background: transparent !important; border: none !important; }
+        .goog-te-menu-value { color: white !important; }
+        .goog-te-menu-value span { color: white !important; }
+        </style>
 </head>
 <body>
 <header>
@@ -71,12 +79,23 @@
 <nav>
 <a href="index.html"><svg fill="white" height="16" style="vertical-align:middle;margin-right:4px;" viewbox="0 0 16 16" width="16"><path d="M8 0L0 6v10h6v-6h4v6h6V6L8 0z"></path></svg>Home</a>
 <a class="active" href="app-comparison.html"><svg fill="white" height="16" style="vertical-align:middle;margin-right:4px;" viewbox="0 0 16 16" width="16"><path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill-rule="evenodd"></path></svg>Apps</a>
-<a href="shop.html">🛒 Shop</a>
-<a href="ressourcen.html">📚 Ressourcen</a>
-<a href="coaching-tipps.html">📝 Blog</a>
-<a href="hilfe.html">🆘 Hilfe</a>
+<a href="shop.html"><svg fill="white" height="16" width="16" viewbox="0 0 16 16" style="vertical-align:middle;margin-right:4px;"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H13.5a.5.5 0 0 1 .491.592l-1.5 7A.5.5 0 0 1 12 12H5a.5.5 0 0 1-.491-.408L3.01 4H.5a.5.5 0 0 1-.5-.5zM3.325 5l1.2 6h7.95l1.286-6zM5 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm7 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>Shop</a>
+<a href="ressourcen.html"><svg fill="white" height="16" width="16" viewbox="0 0 16 16" style="vertical-align:middle;margin-right:4px;"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>Ressourcen</a>
+<a href="coaching-tipps.html"><svg fill="white" height="16" width="16" viewbox="0 0 16 16" style="vertical-align:middle;margin-right:4px;"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814zm-9.44 9.604a1.5 1.5 0 0 0 1.5-1.5V11h-1.5A1.5 1.5 0 0 0 2.812 12.5v1.5h1.5z"/></svg>Blog</a>
 </nav>
-
+<!-- Google Translate Widget -->
+<div id="google_translate_element" style="margin-left:auto;padding-left:12px;"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'de',
+    includedLanguages:'de,en,fr,ru,cs,sv,fi',
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay:false
+  },'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
 </header>
 <div class="hero">
@@ -145,8 +164,8 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <img alt="SmartHockey Pro" src="app-icon-pro.png"/>
 <h3>SmartHockey Pro</h3>
 <p>Die ultimative Profi-Lösung für ambitionierte Eishockey-Teams und Trainer. Multi-Team-Management, umfassende Exportfunktionen und exklusive Season-Goalie-Statistik.</p>
-<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(37,99,235,0.18);color:#fff;font-weight:700;margin-bottom:14px;">5 USD / Jahr</div>
-<img alt="QR-Code zu SmartHockey Pro im Google Play Store" src="qr-pro.svg" style="width:min(100%,150px);height:auto;margin:0 auto 16px;display:block;border-radius:18px;"/>
+<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(37,99,235,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">5 USD / Jahr</div>
+<div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Pro im Google Play Store" src="qr-pro.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
 <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener">Im Play Store laden</a>
 <a class="btn" href="app-pro.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
@@ -154,8 +173,8 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <img alt="SmartHockey Light" src="app-icon-light.png"/>
 <h3>SmartHockey Light</h3>
 <p>Die perfekte Einstiegslösung für Einzelspieler und kleine Eishockey-Teams. Einfach, effektiv und mit Fokus auf schnelle Datenerfassung.</p>
-<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(125,211,252,0.18);color:#fff;font-weight:700;margin-bottom:14px;">Kostenlos</div>
-<img alt="QR-Code zu SmartHockey Light im Google Play Store" src="qr-light.svg" style="width:min(100%,150px);height:auto;margin:0 auto 16px;display:block;border-radius:18px;"/>
+<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(125,211,252,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">Kostenlos</div>
+<div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Light im Google Play Store" src="qr-light.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
 <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener">Im Play Store laden</a>
 <a class="btn" href="app-light.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
@@ -163,8 +182,8 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <img alt="SmartHockey Inline" src="app-icon-inline.png"/>
 <h3>SmartHockey Inline</h3>
 <p>Die umfassende Lösung für Inline- und Rollerhockey-Spieler. Verfolge persönliche Statistiken, analysiere deine Entwicklung und optimiere dein Spiel im Turnier- und Saisonalltag.</p>
-<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(34,197,94,0.18);color:#fff;font-weight:700;margin-bottom:14px;">1 USD</div>
-<img alt="QR-Code zu SmartHockey Inline im Google Play Store" src="qr-inline.svg" style="width:min(100%,150px);height:auto;margin:0 auto 16px;display:block;border-radius:18px;"/>
+<div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(34,197,94,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">1 USD</div>
+<div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Inline im Google Play Store" src="qr-inline.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
 <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener">Im Play Store laden</a>
 <a class="btn" href="app-inline.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
@@ -196,7 +215,7 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <h2>Unsere Empfehlung</h2>
 <p>Wenn du neu im Hockey-Statistik-Tracking bist, empfehlen wir dir, zunächst die Beschreibungen von <strong>SmartHockey Light</strong> (für Eishockey) und <strong>SmartHockey Inline</strong> (für Inline-Hockey) zu lesen. Beide Varianten eignen sich gut für Teams, die einen einfachen Einstieg in die digitale Datenerfassung suchen.</p>
 <p>Wenn du ein ernsthafter Trainer oder Teammanager bist, der die leistungsstärksten verfügbaren Funktionen möchte, ist <strong>SmartHockey Pro</strong> die richtige Wahl. Die erweiterten Analysen, das Multi-Team-Management, die Export-Funktionen und die exklusive <strong>Season-Goalie-Statistik</strong> machen es zum idealen Werkzeug für professionelles Coaching. Die Pro-Version ist jetzt regulär im Google Play Store verfügbar und kostet 5 USD pro Jahr.</p>
-<p>Alle drei Apps sind von SmartHockey Products entwickelt worden und ergänzen unsere Ratgeberinhalte für Statistik, Training und Spielanalyse. Spieldaten werden lokal im Browser gespeichert; weiterführende Inhalte findest du auch im <a href="ressourcen.html">Ressourcen-Hub</a>, in der <a href="hilfe.html">Hilfe</a> und in den <a href="faq.html">FAQ</a>.</p>
+<p>Alle drei Apps sind von SmartHockey Products entwickelt worden und ergänzen unsere Ratgeberinhalte für Statistik, Training und Spielanalyse. Spieldaten werden lokal im Browser gespeichert; weiterführende Inhalte findest du auch im <a href="ressourcen.html">Ressourcen-Hub</a>, in der  und in den <a href="faq.html">FAQ</a>.</p>
 </div>
 
 
@@ -226,7 +245,6 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <a href="shop.html">Shop</a>
 <a href="ressourcen.html">Ressourcen</a>
 <a href="coaching-tipps.html">Blog</a>
-<a href="hilfe.html">Hilfe</a>
 <a href="faq.html">FAQ</a>
 <a href="hockey-statistik-guide.html">Statistik-Guide</a>
 <a href="about.html">Über uns</a>
