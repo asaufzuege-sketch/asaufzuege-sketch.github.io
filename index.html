@@ -72,6 +72,9 @@
             display: flex;
             gap: 30px;
             align-items: center;
+            margin-left: auto;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         nav a {
@@ -237,11 +240,39 @@
             gap: 12px;
             flex-wrap: wrap;
             margin-top: auto;
+            justify-content: center;
+            align-items: center;
         }
 
         .app-buttons .btn {
             flex: 1;
             min-width: 140px;
+        }
+
+        .app-price {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            color: #fff;
+            font-weight: 700;
+            margin: 0 auto 16px;
+            text-align: center;
+        }
+
+        .play-badge-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .play-badge {
+            height: 52px;
+            width: auto;
+            display: block;
         }
 
         .btn-subtitle {
@@ -475,6 +506,11 @@
 
         .product-card .btn {
             width: 100%;
+            margin-top: auto;
+        }
+
+        .product-copy {
+            flex: 1;
         }
 
         .paypal-btn {
@@ -711,7 +747,7 @@
         body { top: 0 !important; position: static !important; }
         /* Language Switcher */
         #google_translate_element { position: absolute; left: -9999px; top: -9999px; visibility: hidden; }
-        .lang-switcher { position: relative; margin-left: auto; padding-left: 12px; }
+        .lang-switcher { position: relative; padding-left: 12px; flex-shrink: 0; }
         .lang-icon-btn { background: none; border: none; cursor: pointer; color: #e0e0e0; display: flex; align-items: center; padding: 6px; border-radius: 8px; transition: background 0.2s; }
         .lang-icon-btn:hover { background: rgba(255,255,255,0.1); }
         .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 8px); background: rgba(15,25,50,0.97); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; min-width: 150px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); z-index: 9999; overflow: hidden; }
@@ -800,7 +836,7 @@ document.head.appendChild(s);
 <img alt="SmartHockey Products" class="hero-title-img" src="title-logo.png"/>
 <h1>Apps jetzt im Play Store &amp; Hockey-Produkte direkt im Fokus</h1>
 <p>Hol dir SmartHockey Pro, Light und Inline jetzt direkt über den Google Play Store – inklusive QR-Code für den schnellen Download auf dein Smartphone.</p>
-<p>Dazu findest du im Shop sofort verfügbare Produkte für Training, Teamalltag und Off-Ice-Einsatz. Blog und Ressourcen bleiben erreichbar, stehen aber klar hinter Apps und Shop.</p>
+<p>Dazu findest du im Shop sofort verfügbare Produkte für Training, Coaching und Off-Ice-Einsatz. Blog und Ressourcen bleiben erreichbar, stehen aber klar hinter Apps und Shop.</p>
 <div style="margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px;">
   <a class="cta-launch-btn" href="app-comparison.html" style="display:inline-block; padding:18px 32px; background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%); color:white; text-decoration:none; border-radius:12px; font-weight:bold; font-size:1.15rem; box-shadow:0 4px 15px rgba(37, 99, 235, 0.4); transition:all 0.3s;">📱 Apps im Play Store ansehen</a>
   <a class="cta-launch-btn" href="shop.html" style="display:inline-block; padding:18px 32px; background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%); color:white; text-decoration:none; border-radius:12px; font-weight:bold; font-size:1.15rem; box-shadow:0 4px 15px rgba(37, 99, 235, 0.4); transition:all 0.3s;">🛒 Zum Shop</a>
@@ -812,21 +848,22 @@ document.head.appendChild(s);
 <h2 class="section-title">Apps jetzt im Google Play Store</h2>
 <p class="section-subtitle">Direkter Download für Android inklusive QR-Code und klarer Preisübersicht für jede SmartHockey App.</p>
 <div class="apps-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
-<div class="app-card"><img alt="SmartHockey Pro Icon" class="app-icon" src="app-icon-pro.png"/><h3>SmartHockey Pro</h3><p>Die Profi-App für ambitionierte Teams mit Season-Goalie-Statistiken, Exporten und Multi-Team-Management.</p><div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(37,99,235,0.18);color:#fff;font-weight:700;margin-bottom:16px;">5 USD / Jahr</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-pro.svg" alt="QR-Code zu SmartHockey Pro im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a><a class="btn" href="app-pro.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
-<div class="app-card"><img alt="SmartHockey Light Icon" class="app-icon" src="app-icon-light.png"/><h3>SmartHockey Light</h3><p>Der kostenlose Einstieg für Eishockey-Teams mit schneller Erfassung, Saisonübersicht und Torschuss-Karte.</p><div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(125,211,252,0.18);color:#fff;font-weight:700;margin-bottom:16px;">Kostenlos</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-light.svg" alt="QR-Code zu SmartHockey Light im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a><a class="btn" href="app-light.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
-<div class="app-card"><img alt="SmartHockey Inline Icon" class="app-icon" src="app-icon-inline.png"/><h3>SmartHockey Inline</h3><p>Die spezialisierte Inline-App mit Saisontracking, Plus/Minus-Werten und optimierter Erfassung für Turniere.</p><div style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(34,197,94,0.18);color:#fff;font-weight:700;margin-bottom:16px;">1 USD</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-inline.svg" alt="QR-Code zu SmartHockey Inline im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a><a class="btn" href="app-inline.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
+<div class="app-card"><img alt="SmartHockey Pro Icon" class="app-icon" src="app-icon-pro.png"/><h3>SmartHockey Pro</h3><p>Die Profi-App für ambitionierte Teams mit Season-Goalie-Statistiken, Exporten und Multi-Team-Management.</p><div class="app-price" style="background:rgba(37,99,235,0.18);">5 USD / Jahr</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-pro.svg" alt="QR-Code zu SmartHockey Pro im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a><a class="btn" href="app-pro.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
+<div class="app-card"><img alt="SmartHockey Light Icon" class="app-icon" src="app-icon-light.png"/><h3>SmartHockey Light</h3><p>Der kostenlose Einstieg für Eishockey-Teams mit schneller Erfassung, Saisonübersicht und Torschuss-Karte.</p><div class="app-price" style="background:rgba(125,211,252,0.18);">Kostenlos</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-light.svg" alt="QR-Code zu SmartHockey Light im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a><a class="btn" href="app-light.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
+<div class="app-card"><img alt="SmartHockey Inline Icon" class="app-icon" src="app-icon-inline.png"/><h3>SmartHockey Inline</h3><p>Die spezialisierte Inline-App mit Saisontracking, Plus/Minus-Werten und optimierter Erfassung für Turniere.</p><div class="app-price" style="background:rgba(34,197,94,0.18);">1 USD</div><div style="text-align:center;margin-bottom:18px;height:195px;display:flex;align-items:center;justify-content:center;"><img src="qr-inline.svg" alt="QR-Code zu SmartHockey Inline im Google Play Store" style="width:min(100%,170px);height:auto;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.28);"/></div><div class="app-buttons"><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a><a class="btn" href="app-inline.html" style="background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Details</a></div></div>
 </div>
 </div>
 </section>
 <!-- Statischer DE-Content -->
 <section style="padding:60px 0;background:rgba(15,15,30,0.80);">
 <div class="container">
-<h2 class="section-title">Shop für Training, Coaching und Teamalltag</h2>
+<h2 class="section-title">Shop für Training und Coaching</h2>
 <p class="section-subtitle">Produkte für Eis, Off-Ice und Hallenorganisation – direkt erreichbar, ohne erst durch Blogartikel zu navigieren.</p>
-<div class="apps-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr));">
-<div class="app-card"><h3>SmartBoards</h3><p>Stabile Mini-Banden für Spielfeldabtrennung, Drittelung und flexible Hallenszenarien im Training.</p><a class="btn" href="shop.html">SmartBoards im Shop</a></div>
-<div class="app-card"><h3>SmartPen / IcePen</h3><p>Trainingshilfe für Taktik, Verschiebungen und Übungen auf dem Eis – sofort im Shop verfügbar.</p><a class="btn" href="shop.html">IcePen ansehen</a></div>
-<div class="app-card"><h3>SmartFresh &amp; LightBall</h3><p>Geruchskontrolle für Ausrüstung und Off-Ice-Training mit natürlichem Holzball – ideal für den Teamalltag.</p><a class="btn" href="shop.html">Zum gesamten Shop</a></div>
+<div class="products-grid">
+<div class="product-card"><img alt="SmartBoards Mini-Banden" class="product-image" src="smartboard-1.png"/><h3>SmartBoards</h3><p class="product-copy">Stabile Mini-Banden für Spielfeldabtrennung, Drittelung und flexible Hallenszenarien im Training.</p><a class="btn" href="shop.html">Im Shop ansehen</a></div>
+<div class="product-card"><img alt="SmartPen beziehungsweise IcePen" class="product-image" src="icepen-black.png"/><h3>SmartPen / IcePen</h3><p class="product-copy">Trainingshilfe für Taktik, Verschiebungen und Übungen auf dem Eis.</p><a class="btn" href="shop.html">Im Shop ansehen</a></div>
+<div class="product-card"><img alt="SmartFresh für Hockey-Ausrüstung" class="product-image" src="smartfresh.png"/><h3>SmartFresh</h3><p class="product-copy">Pro-biotische Geruchskontrolle für Eishockey-Ausrüstung, ohne chemische Inhaltsstoffe.</p><a class="btn" href="shop.html">Im Shop ansehen</a></div>
+<div class="product-card"><img alt="SmartLightBall für Off-Ice-Training" class="product-image" src="smartlightball.png"/><h3>SmartLightBall</h3><p class="product-copy">Natürlicher Holzball für Off-Ice-Training, nahe am Puck-Gefühl.</p><a class="btn" href="shop.html">Im Shop ansehen</a></div>
 </div>
 </div>
 </section>
@@ -919,7 +956,7 @@ Alle drei Apps sind jetzt im Google Play Store verfügbar – hier findest du De
 </ul>
 <div class="app-buttons">
 <a class="btn" href="app-pro.html">Mehr erfahren</a>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 </div>
 </div>
 <!-- App 2: SmartHockey Light -->
@@ -935,7 +972,7 @@ Alle drei Apps sind jetzt im Google Play Store verfügbar – hier findest du De
 </ul>
 <div class="app-buttons">
 <a class="btn" href="app-light.html">Mehr zu Light</a>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 </div>
 </div>
 <!-- App 3: SmartHockey Inline -->
@@ -951,7 +988,7 @@ Alle drei Apps sind jetzt im Google Play Store verfügbar – hier findest du De
 </ul>
 <div class="app-buttons">
 <a class="btn" href="app-inline.html">Mehr zu Inline</a>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 </div>
 </div>
 </div>

@@ -17,10 +17,10 @@
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: url('ice-bg.jpg') center center / cover no-repeat fixed; background-color: #0a1628; color: #e0e0e0; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         header { background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.85) 100%); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 100; }
-        header .container { display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 15px; }
+        header .container { display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; gap: 20px; }
         .logo { font-size: 1.8rem; font-weight: bold; color: #fff; display: flex; align-items: center; gap: 10px; }
         .logo-img { height: 45px; width: auto; filter: brightness(0) invert(1); }
-        nav { display: flex; gap: 30px; align-items: center; }
+        nav { display: flex; gap: 30px; align-items: center; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; }
         nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1.1rem; }
         nav a:hover { color: #2563eb; }
         nav a.active { color: #2563eb; }
@@ -53,7 +53,11 @@
         .app-card-mini img { width: 70px; height: 70px; border-radius: 14px; margin: 0 auto 15px auto; display: block; }
         .app-card-mini h3 { color: #fff; margin-bottom: 10px; }
         .app-card-mini p { font-size: 0.95rem; color: #a0b0c0; margin-bottom: 15px; flex: 1; }
-        .app-card-mini .btn { margin-top: auto; }
+        .app-card-mini .btn { margin-top: 10px; }
+        .app-price { padding: 6px 12px; border-radius: 999px; color: #fff; font-weight: 700; margin: 0 auto 14px; min-height: 34px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+        .play-badge-link { display: inline-flex; align-items: center; justify-content: center; margin: 0 auto; }
+        .play-badge { height: 52px; width: auto; display: block; }
+        .comparison-table .play-badge-link { margin: 0 auto; }
         footer { background: linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(22,33,62,0.95) 100%); padding: 30px 0; text-align: center; color: #a0a0a0; border-top: 1px solid #2a2a3e; margin-top: 40px; }
         footer p { margin-bottom: 8px; }
         footer a { color: #a0a0a0; text-decoration: none; }
@@ -64,7 +68,7 @@
         body { top: 0 !important; position: static !important; }
         /* Language Switcher */
         #google_translate_element { position: absolute; left: -9999px; top: -9999px; visibility: hidden; }
-        .lang-switcher { position: relative; margin-left: auto; padding-left: 12px; }
+        .lang-switcher { position: relative; padding-left: 12px; flex-shrink: 0; }
         .lang-icon-btn { background: none; border: none; cursor: pointer; color: #e0e0e0; display: flex; align-items: center; padding: 6px; border-radius: 8px; transition: background 0.2s; }
         .lang-icon-btn:hover { background: rgba(255,255,255,0.1); }
         .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 8px); background: rgba(15,25,50,0.97); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; min-width: 150px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); z-index: 9999; overflow: hidden; }
@@ -201,7 +205,7 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <tr><td>Sportart</td><td>Eishockey</td><td>Eishockey</td><td>Inline-Hockey</td></tr>
 <tr><td>Preis</td><td>5 USD / Jahr</td><td>Kostenlos</td><td>1 USD</td></tr>
 <tr><td>Ideal für</td><td>Scouts, Teammanager und Trainer</td><td>Trainer und Spieler</td><td>Teammanager, Trainer und Spieler</td></tr>
-<tr><td><strong>Im Play Store laden</strong></td><td><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a></td><td><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a></td><td><a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a></td></tr><tr><td><strong>Details</strong></td><td><a href="app-pro.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Pro kennenlernen</a></td><td><a href="app-light.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Light ansehen</a></td><td><a href="app-inline.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Inline ansehen</a></td></tr>
+<tr><td><strong>Im Play Store laden</strong></td><td><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a></td><td><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a></td><td><a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a></td></tr><tr><td><strong>Details</strong></td><td><a href="app-pro.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Pro kennenlernen</a></td><td><a href="app-light.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Light ansehen</a></td><td><a href="app-inline.html" class="btn" style="padding:8px 18px;font-size:0.9rem;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Inline ansehen</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -211,27 +215,27 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 <img alt="SmartHockey Pro" src="app-icon-pro.png"/>
 <h3>SmartHockey Pro</h3>
 <p>Die ultimative Profi-Lösung für ambitionierte Eishockey-Teams und Trainer. Multi-Team-Management, umfassende Exportfunktionen und exklusive Season-Goalie-Statistik.</p>
-<div style="padding:6px 12px;border-radius:999px;background:rgba(37,99,235,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">5 USD / Jahr</div>
+<div class="app-price" style="background:rgba(37,99,235,0.18);">5 USD / Jahr</div>
 <div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Pro im Google Play Store" src="qr-pro.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 <a class="btn" href="app-pro.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
 <div class="app-card-mini">
 <img alt="SmartHockey Light" src="app-icon-light.png"/>
 <h3>SmartHockey Light</h3>
 <p>Die perfekte Einstiegslösung für Einzelspieler und kleine Eishockey-Teams. Einfach, effektiv und mit Fokus auf schnelle Datenerfassung.</p>
-<div style="padding:6px 12px;border-radius:999px;background:rgba(125,211,252,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">Kostenlos</div>
+<div class="app-price" style="background:rgba(125,211,252,0.18);">Kostenlos</div>
 <div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Light im Google Play Store" src="qr-light.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 <a class="btn" href="app-light.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
 <div class="app-card-mini">
 <img alt="SmartHockey Inline" src="app-icon-inline.png"/>
 <h3>SmartHockey Inline</h3>
 <p>Die umfassende Lösung für Inline- und Rollerhockey-Spieler. Verfolge persönliche Statistiken, analysiere deine Entwicklung und optimiere dein Spiel im Turnier- und Saisonalltag.</p>
-<div style="padding:6px 12px;border-radius:999px;background:rgba(34,197,94,0.18);color:#fff;font-weight:700;margin-bottom:14px;min-height:34px;display:flex;align-items:center;justify-content:center;">1 USD</div>
+<div class="app-price" style="background:rgba(34,197,94,0.18);">1 USD</div>
 <div style="height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><img alt="QR-Code zu SmartHockey Inline im Google Play Store" src="qr-inline.svg" style="width:min(100%,150px);height:auto;margin:0 auto;display:block;border-radius:18px;"/></div>
-<a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+<a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
 <a class="btn" href="app-inline.html" style="margin-top:10px;background:rgba(37,99,235,0.2);border:1px solid #2563eb;">Mehr erfahren</a>
 </div>
 </div>
@@ -277,9 +281,9 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
       Lade jede App direkt im Google Play Store herunter oder lies vorher die Detailseiten für Funktionen, Zielgruppen und Einsatzszenarien.
     </p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
-      <a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
-      <a href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener" style="display:inline-block;"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" style="height:52px;width:auto;display:block;"></a>
+      <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.twa" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
+      <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_light" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
+      <a class="play-badge-link" href="https://play.google.com/store/apps/details?id=io.github.asaufzuege_sketch.smarthockey_inline" target="_blank" rel="noopener"><img src="google-play-badge.svg" alt="Jetzt bei Google Play" class="play-badge"></a>
     </div>
   </div>
 </section>
