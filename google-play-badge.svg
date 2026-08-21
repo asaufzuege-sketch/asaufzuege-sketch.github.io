@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="59" viewBox="0 0 200 59">
+  <rect width="200" height="59" rx="7" fill="#000"/>
+  <rect x="0.5" y="0.5" width="199" height="58" rx="6.5" fill="none" stroke="#a2a2a2" stroke-width="1"/>
+  <!-- Play icon: 4 colored triangular segments -->
+  <g transform="translate(12,10)">
+    <path d="M0,0 L0,19 L16,9.5 Z" fill="#34a853"/>
+    <path d="M0,19 L0,38 L16,28.5 Z" fill="#ea4335"/>
+    <path d="M16,9.5 L22,19 L16,28.5 Z" fill="#fbbc04"/>
+    <path d="M0,19 L16,9.5 L16,28.5 L0,19 Z" fill="#4285f4"/>
+  </g>
+  <text x="46" y="24" font-family="Roboto, Arial, sans-serif" font-size="10" fill="#ffffff" letter-spacing="1">GET IT ON</text>
+  <text x="44" y="44" font-family="Roboto, Arial, sans-serif" font-size="19" font-weight="500" fill="#ffffff" letter-spacing="-0.3">Google Play</text>
+</svg>
