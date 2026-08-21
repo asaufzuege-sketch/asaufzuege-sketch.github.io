@@ -559,7 +559,7 @@ function setLang(lang){
     sel.dispatchEvent(new Event('change'));
   } else {
     // fallback: use cookie approach
-    document.cookie='googtrans=/de/'+lang+';path=/;domain=.'+window.location.hostname;
+    document.cookie='googtrans=/auto/'+lang+';path=/;domain=.'+window.location.hostname;
     location.reload();
   }
   document.getElementById('lang-dropdown').classList.remove('open');

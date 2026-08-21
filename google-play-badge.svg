@@ -1,37 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="59" viewBox="0 0 200 59">
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="59" viewBox="0 0 200 59">
   <rect width="200" height="59" rx="7" fill="#000"/>
   <rect x="0.5" y="0.5" width="199" height="58" rx="6.5" fill="none" stroke="#a2a2a2" stroke-width="1"/>
-  <!-- Play triangle with 4 colors -->
-  <path d="M13.5 10.5 L13.5 48.5 L34.5 29.5 Z" fill="#fff" opacity="0"/>
-  <!-- Colored segments of play icon -->
-  <path d="M14 11 L14 29.5 L31.5 20.25 Z" fill="#34a853"/>
-  <path d="M14 29.5 L14 48 L31.5 38.75 Z" fill="#ea4335"/>
-  <path d="M14 11 L31.5 20.25 L31.5 38.75 L14 48" fill="none"/>
-  <path d="M31.5 20.25 L38 24 L31.5 27.75 Z" fill="#fbbc04"/>
-  <path d="M31.5 27.75 L38 24 L31.5 30.75 Z" fill="#fbbc04" opacity="0"/>
-  <!-- Better: use gradient or 4-path approach -->
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#34a853"/>
-      <stop offset="50%" stop-color="#34a853"/>
-      <stop offset="50%" stop-color="#ea4335"/>
-      <stop offset="100%" stop-color="#ea4335"/>
-    </linearGradient>
-  </defs>
-  <!-- Simpler clean play icon: left vertical bar, right triangles -->
-  <!-- Top-left to tip-right: green then yellow; bottom-left: red, bottom: blue -->
-  <!-- Official approach: 4 triangular paths -->
+  <!-- Play icon: 4 colored triangular segments -->
   <g transform="translate(12,10)">
-    <!-- scale to ~38px height play arrow -->
-    <path d="M0,0 L16,9.5 L0,19 Z" fill="#34a853" transform="translate(0,0)"/>
-    <path d="M0,19 L16,9.5 L16,28.5 Z" fill="#fbbc04" transform="translate(0,0)"/>
-    <path d="M0,0 L0,19 L9,9.5 Z" fill="#4285f4" transform="translate(0,0)"/>
-    <path d="M0,19 L0,38 L9,28.5 L9,9.5 L0,19 Z" fill="#ea4335" transform="translate(0,0)"/>
-    <!-- Cover overlaps -->
-    <path d="M0,0 L0,38 L16,28.5 L22,19 L16,9.5 Z" fill="none"/>
-    <!-- Correct: 4 solid colored segments -->
+    <path d="M0,0 L0,19 L16,9.5 Z" fill="#34a853"/>
+    <path d="M0,19 L0,38 L16,28.5 Z" fill="#ea4335"/>
+    <path d="M16,9.5 L22,19 L16,28.5 Z" fill="#fbbc04"/>
+    <path d="M0,19 L16,9.5 L16,28.5 L0,19 Z" fill="#4285f4"/>
   </g>
-  <!-- Text -->
   <text x="46" y="24" font-family="Roboto, Arial, sans-serif" font-size="10" fill="#ffffff" letter-spacing="1">GET IT ON</text>
   <text x="44" y="44" font-family="Roboto, Arial, sans-serif" font-size="19" font-weight="500" fill="#ffffff" letter-spacing="-0.3">Google Play</text>
 </svg>
