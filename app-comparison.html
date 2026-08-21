@@ -79,6 +79,22 @@
         .goog-te-gadget-simple { background: transparent !important; border: none !important; }
         .goog-te-menu-value { color: white !important; }
         .goog-te-menu-value span { color: white !important; }
+        /* Accordion / Aufklappbar */
+        .accordion { border: 1px solid rgba(37,99,235,0.35); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+        .accordion-header { width: 100%; background: rgba(37,99,235,0.12); border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; color: #e0e0e0; font-size: 1.05rem; font-weight: 600; text-align: left; transition: background 0.2s; }
+        .accordion-header:hover { background: rgba(37,99,235,0.22); }
+        .accordion-header .acc-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(37,99,235,0.25); display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+        .accordion-header.open .acc-icon { transform: rotate(180deg); }
+        .accordion-body { display: none; padding: 24px 22px; border-top: 1px solid rgba(37,99,235,0.2); }
+        .accordion-body.open { display: block; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .stats-col h4 { color: #60a0e0; font-size: 1rem; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid rgba(37,99,235,0.25); }
+        .stats-col ul { list-style: none; margin: 0; padding: 0; }
+        .stats-col ul li { display: flex; flex-direction: column; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .stats-col ul li:last-child { border-bottom: none; }
+        .stat-name { color: #c0ccd8; font-weight: 500; font-size: 0.95rem; }
+        .stat-desc { color: #7a90a8; font-size: 0.82rem; margin-top: 2px; }
+        .acc-section-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #2563eb; font-weight: 700; margin: 18px 0 8px; }
         </style>
 </head>
 <body>
@@ -209,6 +225,81 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
 </tbody>
 </table>
 </div>
+
+<!-- Accordion: Erfasste Statistiken in der Saison-Übersicht -->
+<div class="accordion" id="acc-season-stats">
+  <button class="accordion-header" id="acc-season-stats-header" aria-expanded="false" aria-controls="acc-season-stats-body" onclick="toggleAccordion(this)">
+    <span>📊 Erfasste Statistiken in der Saison-Übersicht</span>
+    <span class="acc-icon" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="#60a0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </button>
+  <div class="accordion-body" id="acc-season-stats-body" role="region" aria-labelledby="acc-season-stats-header">
+    <p style="color:#a0b0c0;margin-bottom:20px;font-size:0.95rem;">Die Saison-Übersicht fasst für jedes Saisonspiel die wichtigsten Daten zusammen und zeigt sie kumuliert über die gesamte Saison. Hier siehst du, welche Statistiken jede App dabei erfasst:</p>
+    <div class="stats-grid">
+
+      <!-- Pro -->
+      <div class="stats-col">
+        <h4>SmartHockey Pro</h4>
+        <p class="acc-section-label">Spieler-Statistiken</p>
+        <ul>
+          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
+          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
+          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
+          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners (Shots on Goal)</span></li>
+          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
+          <li><span class="stat-name">Plus/Minus (+/-)</span><span class="stat-desc">Torverhältnis, wenn Spieler auf dem Eis ist</span></li>
+          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+        </ul>
+        <p class="acc-section-label">Goalie-Statistiken (exklusiv Pro)</p>
+        <ul>
+          <li><span class="stat-name">Gehaltene Schüsse (SV)</span><span class="stat-desc">Gesamtzahl der abgewehrten Schüsse in der Saison</span></li>
+          <li><span class="stat-name">Gegentor (GA)</span><span class="stat-desc">Summe der kassierten Tore</span></li>
+          <li><span class="stat-name">Abwehrquote (SV%)</span><span class="stat-desc">Anteil gehaltener Schüsse an allen Schüssen (SV / (SV + GA))</span></li>
+          <li><span class="stat-name">Gegentorschnitt (GAA)</span><span class="stat-desc">Durchschnittliche Gegentore pro 60 Spielminuten</span></li>
+          <li><span class="stat-name">Shutouts (SO)</span><span class="stat-desc">Spiele ohne Gegentor</span></li>
+          <li><span class="stat-name">Gespielte Minuten (TOI)</span><span class="stat-desc">Eiszeit des Goalies über alle Saisonspiele</span></li>
+          <li><span class="stat-name">Siege / Niederlagen / OT</span><span class="stat-desc">Bilanz des Goalies: reguläre Siege, Niederlagen und Overtime-Ergebnisse</span></li>
+        </ul>
+      </div>
+
+      <!-- Light -->
+      <div class="stats-col">
+        <h4>SmartHockey Light</h4>
+        <p class="acc-section-label">Spieler-Statistiken</p>
+        <ul>
+          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
+          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
+          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
+          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners</span></li>
+          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
+          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+        </ul>
+        <p class="acc-section-label" style="color:#7a90a8;">Goalie-Statistiken</p>
+        <p style="color:#7a90a8;font-size:0.88rem;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
+      </div>
+
+      <!-- Inline -->
+      <div class="stats-col">
+        <h4>SmartHockey Inline</h4>
+        <p class="acc-section-label">Spieler-Statistiken</p>
+        <ul>
+          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
+          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
+          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
+          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners</span></li>
+          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
+          <li><span class="stat-name">Plus/Minus (+/-)</span><span class="stat-desc">Torverhältnis, wenn Spieler auf dem Eis ist</span></li>
+          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+        </ul>
+        <p class="acc-section-label" style="color:#7a90a8;">Goalie-Statistiken</p>
+        <p style="color:#7a90a8;font-size:0.88rem;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <h2>Detaillierte App-Profile</h2>
 <div class="apps-mini-grid">
 <div class="app-card-mini">
@@ -312,6 +403,15 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
         (function() {
         })();
     </script>
+<script>
+function toggleAccordion(btn) {
+  var body = document.getElementById(btn.getAttribute('aria-controls'));
+  var isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+}
+</script>
 <!-- Hinweis: Für volle EWR/UK/IAB-TCF-2.2-Konformität sollte langfristig eine Google-zertifizierte CMP (iubenda, Cookiebot, Didomi, Termly) eingebunden werden. Diese einfache Lösung ist eine Übergangslösung. -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,30,0.97);color:#e0e0e0;padding:20px;z-index:9999;border-top:2px solid #2563eb;box-shadow:0 -4px 20px rgba(0,0,0,0.5);">
 <div class="cookie-content" style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;">
