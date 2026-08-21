@@ -173,8 +173,16 @@
             /* Google Translate – banner ausblenden */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0 !important; position: static !important; }
-        #google_translate_element { display: flex; align-items: center; }
-        #google_translate_element select { background: rgba(22,33,62,0.9); color: #e0e0e0; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 4px 8px; font-size: 0.85rem; cursor: pointer; }
+        /* Language Switcher */
+        #google_translate_element { position: absolute; left: -9999px; top: -9999px; visibility: hidden; }
+        .lang-switcher { position: relative; margin-left: auto; padding-left: 12px; }
+        .lang-icon-btn { background: none; border: none; cursor: pointer; color: #e0e0e0; display: flex; align-items: center; padding: 6px; border-radius: 8px; transition: background 0.2s; }
+        .lang-icon-btn:hover { background: rgba(255,255,255,0.1); }
+        .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 8px); background: rgba(15,25,50,0.97); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; min-width: 150px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); z-index: 9999; overflow: hidden; }
+        .lang-dropdown.open { display: block; }
+        .lang-dropdown a { display: block; padding: 10px 18px; color: #e0e0e0; text-decoration: none; font-size: 0.92rem; transition: background 0.15s, color 0.15s; }
+        .lang-dropdown a:hover { background: rgba(37,99,235,0.25); color: #fff; }
+        .lang-dropdown a.active-lang { color: #2563eb; font-weight: 600; }
         .goog-te-gadget-simple { background: transparent !important; border: none !important; }
         .goog-te-menu-value { color: white !important; }
         .goog-te-menu-value span { color: white !important; }
@@ -197,7 +205,26 @@
 <a class="active" href="coaching-tipps.html"><svg fill="white" height="16" width="16" viewbox="0 0 16 16" style="vertical-align:middle;margin-right:4px;"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814zm-9.44 9.604a1.5 1.5 0 0 0 1.5-1.5V11h-1.5A1.5 1.5 0 0 0 2.812 12.5v1.5h1.5z"/></svg>Blog</a>
 </nav>
 <!-- Google Translate Widget -->
-<div id="google_translate_element" style="margin-left:auto;padding-left:12px;"></div>
+<div class="lang-switcher" id="lang-switcher">
+  <button class="lang-icon-btn" id="lang-icon-btn" aria-label="Sprache wählen" title="Sprache wählen" onclick="document.getElementById('lang-dropdown').classList.toggle('open');event.stopPropagation();">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+  </button>
+  <div class="lang-dropdown" id="lang-dropdown">
+    <a href="#" onclick="setLang('de');return false;">🇩🇪 Deutsch</a>
+    <a href="#" onclick="setLang('en');return false;">🇬🇧 English</a>
+    <a href="#" onclick="setLang('fr');return false;">🇫🇷 Français</a>
+    <a href="#" onclick="setLang('ru');return false;">🇷🇺 Русский</a>
+    <a href="#" onclick="setLang('cs');return false;">🇨🇿 Čeština</a>
+    <a href="#" onclick="setLang('sv');return false;">🇸🇪 Svenska</a>
+    <a href="#" onclick="setLang('fi');return false;">🇫🇮 Suomi</a>
+  </div>
+</div>
+<!-- Google Translate (hidden engine) -->
+<div id="google_translate_element" style="position:absolute;left:-9999px;top:-9999px;visibility:hidden;"></div>
 <script>
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({
@@ -207,6 +234,26 @@ function googleTranslateElementInit(){
     autoDisplay:false
   },'google_translate_element');
 }
+function setLang(lang){
+  var sel=document.querySelector('#google_translate_element select');
+  if(sel){
+    sel.value=lang;
+    sel.dispatchEvent(new Event('change'));
+  } else {
+    // fallback: use cookie approach
+    document.cookie='googtrans=/de/'+lang+';path=/;domain=.'+window.location.hostname;
+    location.reload();
+  }
+  document.getElementById('lang-dropdown').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  var d=document.getElementById('lang-dropdown');
+  if(d && !document.getElementById('lang-switcher').contains(e.target)) d.classList.remove('open');
+});
+// Hide Google top bar
+var s=document.createElement('style');
+s.textContent='.goog-te-banner-frame{display:none!important;}body{top:0!important;}';
+document.head.appendChild(s);
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
