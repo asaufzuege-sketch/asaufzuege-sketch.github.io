@@ -88,13 +88,14 @@
         .accordion-body { display: none; padding: 24px 22px; border-top: 1px solid rgba(37,99,235,0.2); }
         .accordion-body.open { display: block; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .stats-col h4 { color: #60a0e0; font-size: 1rem; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid rgba(37,99,235,0.25); }
+        .stats-col { text-align: center; }
+        .stats-col h4 { color: #60a0e0; font-size: 1rem; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid rgba(37,99,235,0.25); text-align: center; }
         .stats-col ul { list-style: none; margin: 0; padding: 0; }
-        .stats-col ul li { display: flex; flex-direction: column; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .stats-col ul li { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .stats-col ul li:last-child { border-bottom: none; }
-        .stat-name { color: #c0ccd8; font-weight: 500; font-size: 0.95rem; }
-        .stat-desc { color: #7a90a8; font-size: 0.82rem; margin-top: 2px; }
-        .acc-section-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #2563eb; font-weight: 700; margin: 18px 0 8px; }
+        .stat-name { color: #c0ccd8; font-weight: 500; font-size: 0.95rem; text-align: center; }
+        .stat-desc { color: #7a90a8; font-size: 0.82rem; margin-top: 2px; text-align: center; }
+        .acc-section-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #2563eb; font-weight: 700; margin: 18px 0 8px; text-align: center; }
         </style>
 </head>
 <body>
@@ -234,8 +235,8 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5l5 5 5-5" stroke="#60a0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </span>
   </button>
-  <div class="accordion-body" id="acc-season-stats-body" role="region" aria-labelledby="acc-season-stats-header">
-    <p style="color:#a0b0c0;margin-bottom:20px;font-size:0.95rem;">Die Saison-Übersicht fasst für jedes Saisonspiel die wichtigsten Daten zusammen und zeigt sie kumuliert über die gesamte Saison. Hier siehst du, welche Statistiken jede App dabei erfasst:</p>
+  <div class="accordion-body" id="acc-season-stats-body" role="region" aria-labelledby="acc-season-stats-header" style="text-align:center;">
+    <p style="color:#a0b0c0;margin-bottom:20px;font-size:0.95rem;text-align:center;">Die Saison-Übersicht fasst für jedes Saisonspiel die wichtigsten Daten zusammen und zeigt sie kumuliert über die gesamte Saison. Hier siehst du, welche Statistiken jede App dabei erfasst:</p>
     <div class="stats-grid">
 
       <!-- Pro -->
@@ -243,23 +244,42 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
         <h4>SmartHockey Pro</h4>
         <p class="acc-section-label">Spieler-Statistiken</p>
         <ul>
-          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
-          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
-          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
-          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners (Shots on Goal)</span></li>
-          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
-          <li><span class="stat-name">Plus/Minus (+/-)</span><span class="stat-desc">Torverhältnis, wenn Spieler auf dem Eis ist</span></li>
-          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+          <li><span class="stat-name">Games</span><span class="stat-desc">Anzahl gespielter Spiele</span></li>
+          <li><span class="stat-name">Goals</span><span class="stat-desc">Erzielte Tore</span></li>
+          <li><span class="stat-name">Assists</span><span class="stat-desc">Torvorlagen</span></li>
+          <li><span class="stat-name">Points</span><span class="stat-desc">Goals + Assists</span></li>
+          <li><span class="stat-name">+/-</span><span class="stat-desc">Tore für vs. gegen das Team während der Eiszeit des Spielers</span></li>
+          <li><span class="stat-name">Ø +/-</span><span class="stat-desc">Durchschnittliches +/- pro Spiel</span></li>
+          <li><span class="stat-name">Shots</span><span class="stat-desc">Torschüsse aufs gegnerische Tor</span></li>
+          <li><span class="stat-name">Shots/Game</span><span class="stat-desc">Schüsse pro Spiel</span></li>
+          <li><span class="stat-name">Shots %</span><span class="stat-desc">Trefferquote: Goals ÷ Shots</span></li>
+          <li><span class="stat-name">Goals/Game</span><span class="stat-desc">Tore pro Spiel</span></li>
+          <li><span class="stat-name">Points/Game</span><span class="stat-desc">Punkte pro Spiel</span></li>
+          <li><span class="stat-name">Penalty</span><span class="stat-desc">Strafminuten</span></li>
+          <li><span class="stat-name">Goal Value</span><span class="stat-desc">Gewichtete Torqualität (starke Gegner zählen mehr)</span></li>
+          <li><span class="stat-name">FaceOffs</span><span class="stat-desc">Bullys insgesamt</span></li>
+          <li><span class="stat-name">FaceOffs Won</span><span class="stat-desc">Gewonnene Bullys</span></li>
+          <li><span class="stat-name">FaceOffs %</span><span class="stat-desc">Bully-Erfolgsquote</span></li>
+          <li><span class="stat-name">SF/min</span><span class="stat-desc">Shots For pro Minute Eiszeit (offensive Präsenz)</span></li>
+          <li><span class="stat-name">SA/min</span><span class="stat-desc">Shots Against pro Minute Eiszeit (defensive Präsenz, niedriger = besser)</span></li>
+          <li><span class="stat-name">Shot Share %</span><span class="stat-desc">Puckbesitz-Kennzahl (&gt;50 % = Team dominiert bei Eiszeit)</span></li>
+          <li><span class="stat-name">Time</span><span class="stat-desc">Gespielte Eiszeit (MM:SS)</span></li>
+          <li><span class="stat-name">MVP</span><span class="stat-desc">Rang im MVP-Ranking (1 = wertvollster Spieler)</span></li>
+          <li><span class="stat-name">MVP Points</span><span class="stat-desc">KI-gestützte Gesamtwertung</span></li>
         </ul>
         <p class="acc-section-label">Goalie-Statistiken (exklusiv Pro)</p>
         <ul>
-          <li><span class="stat-name">Gehaltene Schüsse (SV)</span><span class="stat-desc">Gesamtzahl der abgewehrten Schüsse in der Saison</span></li>
-          <li><span class="stat-name">Gegentor (GA)</span><span class="stat-desc">Summe der kassierten Tore</span></li>
-          <li><span class="stat-name">Abwehrquote (SV%)</span><span class="stat-desc">Anteil gehaltener Schüsse an allen Schüssen (SV / (SV + GA))</span></li>
-          <li><span class="stat-name">Gegentorschnitt (GAA)</span><span class="stat-desc">Durchschnittliche Gegentore pro 60 Spielminuten</span></li>
-          <li><span class="stat-name">Shutouts (SO)</span><span class="stat-desc">Spiele ohne Gegentor</span></li>
-          <li><span class="stat-name">Gespielte Minuten (TOI)</span><span class="stat-desc">Eiszeit des Goalies über alle Saisonspiele</span></li>
-          <li><span class="stat-name">Siege / Niederlagen / OT</span><span class="stat-desc">Bilanz des Goalies: reguläre Siege, Niederlagen und Overtime-Ergebnisse</span></li>
+          <li><span class="stat-name">Games</span><span class="stat-desc">Vom Goalie gespielte Spiele</span></li>
+          <li><span class="stat-name">MIN</span><span class="stat-desc">Gespielte Minuten (MM:SS)</span></li>
+          <li><span class="stat-name">GA</span><span class="stat-desc">Goals Against – Gegentore</span></li>
+          <li><span class="stat-name">SA</span><span class="stat-desc">Shots Against – Schüsse aufs eigene Tor</span></li>
+          <li><span class="stat-name">SV</span><span class="stat-desc">Saves – gehaltene Schüsse (SA − GA)</span></li>
+          <li><span class="stat-name">Sv%</span><span class="stat-desc">Fangquote: SV ÷ SA (höher = besser; Elite ≥ 92 %)</span></li>
+          <li><span class="stat-name">GAA</span><span class="stat-desc">Gegentorschnitt pro 60 Min (niedriger = besser; Elite ≤ 2.00)</span></li>
+          <li><span class="stat-name">SO</span><span class="stat-desc">Shutouts – Spiele ohne Gegentor</span></li>
+          <li><span class="stat-name">Goal Value</span><span class="stat-desc">Invertierte Gegnerwichtung – Tore gegen schwache Gegner zählen härter</span></li>
+          <li><span class="stat-name">MVP</span><span class="stat-desc">Rang im Goalie-MVP-Ranking</span></li>
+          <li><span class="stat-name">MVP Points</span><span class="stat-desc">Sv% × Eiszeit-Konfidenz − Goal Value/Spiel + Spielbonus</span></li>
         </ul>
       </div>
 
@@ -268,15 +288,28 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
         <h4>SmartHockey Light</h4>
         <p class="acc-section-label">Spieler-Statistiken</p>
         <ul>
-          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
-          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
-          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
-          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners</span></li>
-          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
-          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+          <li><span class="stat-name">Games</span><span class="stat-desc">Anzahl gespielter Spiele</span></li>
+          <li><span class="stat-name">Goals</span><span class="stat-desc">Erzielte Tore</span></li>
+          <li><span class="stat-name">Assists</span><span class="stat-desc">Torvorlagen</span></li>
+          <li><span class="stat-name">Points</span><span class="stat-desc">Goals + Assists</span></li>
+          <li><span class="stat-name">+/-</span><span class="stat-desc">Tore für vs. gegen das Team während der Eiszeit des Spielers</span></li>
+          <li><span class="stat-name">Ø +/-</span><span class="stat-desc">Durchschnittliches +/- pro Spiel</span></li>
+          <li><span class="stat-name">Shots</span><span class="stat-desc">Torschüsse aufs gegnerische Tor</span></li>
+          <li><span class="stat-name">Shots/Game</span><span class="stat-desc">Schüsse pro Spiel</span></li>
+          <li><span class="stat-name">Shots %</span><span class="stat-desc">Trefferquote: Goals ÷ Shots</span></li>
+          <li><span class="stat-name">Goals/Game</span><span class="stat-desc">Tore pro Spiel</span></li>
+          <li><span class="stat-name">Points/Game</span><span class="stat-desc">Punkte pro Spiel</span></li>
+          <li><span class="stat-name">Penalty</span><span class="stat-desc">Strafminuten</span></li>
+          <li><span class="stat-name">Goal Value</span><span class="stat-desc">Gewichtete Torqualität (starke Gegner zählen mehr)</span></li>
+          <li><span class="stat-name">FaceOffs</span><span class="stat-desc">Bullys insgesamt</span></li>
+          <li><span class="stat-name">FaceOffs Won</span><span class="stat-desc">Gewonnene Bullys</span></li>
+          <li><span class="stat-name">FaceOffs %</span><span class="stat-desc">Bully-Erfolgsquote</span></li>
+          <li><span class="stat-name">Time</span><span class="stat-desc">Gespielte Eiszeit (MM:SS)</span></li>
+          <li><span class="stat-name">MVP</span><span class="stat-desc">Rang im MVP-Ranking (1 = wertvollster Spieler)</span></li>
+          <li><span class="stat-name">MVP Points</span><span class="stat-desc">KI-gestützte Gesamtwertung</span></li>
         </ul>
         <p class="acc-section-label" style="color:#7a90a8;">Goalie-Statistiken</p>
-        <p style="color:#7a90a8;font-size:0.88rem;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
+        <p style="color:#7a90a8;font-size:0.88rem;text-align:center;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
       </div>
 
       <!-- Inline -->
@@ -284,16 +317,31 @@ Vergleiche alle drei Apps, lade sie direkt im Play Store herunter und scanne bei
         <h4>SmartHockey Inline</h4>
         <p class="acc-section-label">Spieler-Statistiken</p>
         <ul>
-          <li><span class="stat-name">Tore (G)</span><span class="stat-desc">Anzahl der erzielten Treffer in der Saison</span></li>
-          <li><span class="stat-name">Assists (A)</span><span class="stat-desc">Vorlagen, die direkt zu einem Tor geführt haben</span></li>
-          <li><span class="stat-name">Punkte (P)</span><span class="stat-desc">Summe aus Toren und Assists</span></li>
-          <li><span class="stat-name">Torschüsse (SOG)</span><span class="stat-desc">Schüsse aufs Tor des Gegners</span></li>
-          <li><span class="stat-name">Strafminuten (PIM)</span><span class="stat-desc">Summe aller erhaltenen Strafminuten</span></li>
-          <li><span class="stat-name">Plus/Minus (+/-)</span><span class="stat-desc">Torverhältnis, wenn Spieler auf dem Eis ist</span></li>
-          <li><span class="stat-name">Spiele (GP)</span><span class="stat-desc">Anzahl absolvierter Saisonspiele</span></li>
+          <li><span class="stat-name">Games</span><span class="stat-desc">Anzahl gespielter Spiele</span></li>
+          <li><span class="stat-name">Goals</span><span class="stat-desc">Erzielte Tore</span></li>
+          <li><span class="stat-name">Assists</span><span class="stat-desc">Torvorlagen</span></li>
+          <li><span class="stat-name">Points</span><span class="stat-desc">Goals + Assists</span></li>
+          <li><span class="stat-name">+/-</span><span class="stat-desc">Tore für vs. gegen das Team während der Eiszeit des Spielers</span></li>
+          <li><span class="stat-name">Ø +/-</span><span class="stat-desc">Durchschnittliches +/- pro Spiel</span></li>
+          <li><span class="stat-name">Shots</span><span class="stat-desc">Torschüsse aufs gegnerische Tor</span></li>
+          <li><span class="stat-name">Shots/Game</span><span class="stat-desc">Schüsse pro Spiel</span></li>
+          <li><span class="stat-name">Shots %</span><span class="stat-desc">Trefferquote: Goals ÷ Shots</span></li>
+          <li><span class="stat-name">Goals/Game</span><span class="stat-desc">Tore pro Spiel</span></li>
+          <li><span class="stat-name">Points/Game</span><span class="stat-desc">Punkte pro Spiel</span></li>
+          <li><span class="stat-name">Penalty</span><span class="stat-desc">Strafminuten</span></li>
+          <li><span class="stat-name">Goal Value</span><span class="stat-desc">Gewichtete Torqualität (starke Gegner zählen mehr)</span></li>
+          <li><span class="stat-name">FaceOffs</span><span class="stat-desc">Bullys insgesamt</span></li>
+          <li><span class="stat-name">FaceOffs Won</span><span class="stat-desc">Gewonnene Bullys</span></li>
+          <li><span class="stat-name">FaceOffs %</span><span class="stat-desc">Bully-Erfolgsquote</span></li>
+          <li><span class="stat-name">SF/min</span><span class="stat-desc">Shots For pro Minute Eiszeit (offensive Präsenz)</span></li>
+          <li><span class="stat-name">SA/min</span><span class="stat-desc">Shots Against pro Minute Eiszeit (defensive Präsenz, niedriger = besser)</span></li>
+          <li><span class="stat-name">Shot Share %</span><span class="stat-desc">Puckbesitz-Kennzahl (&gt;50 % = Team dominiert bei Eiszeit)</span></li>
+          <li><span class="stat-name">Time</span><span class="stat-desc">Gespielte Eiszeit (MM:SS)</span></li>
+          <li><span class="stat-name">MVP</span><span class="stat-desc">Rang im MVP-Ranking (1 = wertvollster Spieler)</span></li>
+          <li><span class="stat-name">MVP Points</span><span class="stat-desc">KI-gestützte Gesamtwertung</span></li>
         </ul>
         <p class="acc-section-label" style="color:#7a90a8;">Goalie-Statistiken</p>
-        <p style="color:#7a90a8;font-size:0.88rem;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
+        <p style="color:#7a90a8;font-size:0.88rem;text-align:center;">❌ Nicht verfügbar (nur in SmartHockey Pro)</p>
       </div>
 
     </div>
