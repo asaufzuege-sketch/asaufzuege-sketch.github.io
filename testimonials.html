@@ -23,9 +23,7 @@ header { background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22,
 .site-nav a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 1rem; }
 .site-nav a:hover, .site-nav a.active { color: #2563eb; }
 section { padding: 60px 0; }
-.section-title { font-size: 2.1rem; margin-bottom: 14px; color: #fff; text-align: center; }
-.section-subtitle { color: #a0b0c0; text-align: center; max-width: 820px; margin: 0 auto 35px; }
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start; }
+.testimonial-grid { display: flex; flex-direction: column; gap: 28px; max-width: 760px; margin: 0 auto; align-items: stretch; }
 .testimonial-card { background: linear-gradient(135deg, rgba(22,33,62,0.88) 0%, rgba(15,52,96,0.84) 100%); border: 1px solid #2a2a3e; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: transform 0.2s, border-color 0.2s; }
 .testimonial-card:hover { transform: translateY(-3px); border-color: #2563eb; }
 .testimonial-image { width: 100%; height: auto; object-fit: contain; display: block; background: rgba(10,22,40,0.7); }
@@ -117,8 +115,6 @@ document.head.appendChild(s);
 </header>
 <section style="background:rgba(15,15,30,0.78);">
 <div class="container">
-<h2 class="section-title">Stimmen aus Coaching, Teamumfeld und Praxis</h2>
-<p class="section-subtitle">Drei Beispiele, wie SmartHockey Products im direkten Einsatz wahrgenommen wird.</p>
 <div class="testimonial-grid">
 <article class="testimonial-card">
 <img alt="Instagram-Testimonial von Devils Labor für SmartHockey Products" class="testimonial-image" loading="lazy" src="Devils Labor Insta Post.png"/>
